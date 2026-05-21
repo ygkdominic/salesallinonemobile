@@ -269,7 +269,8 @@ hr.dv{border:none;border-top:2px dashed var(--bd);margin:13px 0;}
 }
 
 /* ── 할인바 (모바일 최적화) ── */
-#discount-bar{position:fixed;bottom:0;left:0;right:0;z-index:500;background:linear-gradient(135deg,#001830,#002C5F);border-top:3px solid #00D4FF;box-shadow:0 -4px 20px rgba(0,48,135,.4);}
+#discount-bar{position:fixed;bottom:0;left:0;right:0;z-index:500;background:linear-gradient(135deg,#001830,#002C5F);border-top:3px solid #00D4FF;box-shadow:0 -4px 20px rgba(0,48,135,.4);transform:translateZ(0);-webkit-transform:translateZ(0);will-change:transform;}
+
 .dbar-collapsed{padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;min-height:52px;}
 .dbar-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0;}
 .dbar-car-m{font-size:12px;font-weight:800;color:#00D4FF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px;}
@@ -629,6 +630,16 @@ function showCar(id,name){
   if(b)b.classList.add('active');
   resetDiscount();
   document.getElementById('dbar-car-name').textContent='📌 '+(name||id);
+document.body.style.paddingBottom = (id==='summary'||id==='tradein') ? '20px' : '140px';
+
+  /* summary·tradein 탭에서는 할인바 숨기기 */
+  const dbar=document.getElementById('discount-bar');
+  if(id==='summary'||id==='tradein'){
+    dbar.style.display='none';
+  }else{
+    dbar.style.display='';
+  }
+
   closeSidebar();
   window.scrollTo({top:0,behavior:'smooth'});
   if(id==='grandeur'){
