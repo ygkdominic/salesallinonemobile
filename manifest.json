@@ -1,0 +1,25 @@
+{
+  "name": "현대차 Sales All-in-One",
+  "short_name": "세일즈 올인원",
+  "description": "현대차 경남지역본부 카마스터 전용 세일즈 올인원",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F2F4F6",
+  "theme_color": "#3182F6",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
