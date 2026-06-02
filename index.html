@@ -14115,6 +14115,42 @@ function showPtab(g, t) {
     }
     </script>
 
+<script>
+/* ════ 자동 업데이트 감지 + 리프레시 ════ */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(function(reg) {
+
+    /* 5분마다 새 버전 확인 */
+    setInterval(function() {
+      reg.update();
+      console.log('[업데이트 체크] 새 버전 확인 중...');
+    }, 5 * 60 * 1000);
+
+    /* 새 Service Worker 설치 감지 */
+    reg.addEventListener('updatefound', function() {
+      var newWorker = reg.installing;
+      newWorker.addEventListener('statechange', function() {
+        if (newWorker.state === 'installed' &&
+            navigator.serviceWorker.controller) {
+          console.log('[업데이트] 새 버전 감지 → 자동 리프레시');
+          newWorker.postMessage({ type: 'SKIP_WAITING' });
+        }
+      });
+    });
+  });
+
+  /* 새 버전 활성화 시 자동 새로고침 */
+  var refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', function() {
+    if (!refreshing) {
+      refreshing = true;
+      console.log('[업데이트] 최신 버전으로 자동 리프레시');
+      window.location.reload();
+    }
+  });
+}
+</script>
+
 
 </body>
 </html>
