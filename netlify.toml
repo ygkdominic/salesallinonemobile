@@ -1,4 +1,7 @@
-# HTML과 sw.js는 항상 최신 버전 유지
+[build]
+  command = "bash build.sh"
+  publish = "."
+
 [[headers]]
   for = "/*.html"
   [headers.values]
@@ -13,7 +16,6 @@
     Pragma = "no-cache"
     Expires = "0"
 
-# JS·CSS·이미지는 캐시 유지 (성능)
 [[headers]]
   for = "/icon-*.png"
   [headers.values]
