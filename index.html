@@ -2282,7 +2282,7 @@ const SIDEBAR=[
     {id:'ioniq5',ci:'⚡',name:'아이오닉5/N',tag:'EV',tc:'t-ev'},
     {id:'ioniq5_vs_ev5',ci:'⚔️',name:'vs. EV5',tag:'가이드',tc:'t-vs'},
     {id:'ioniq5_vs_ev6',ci:'⚔️',name:'vs. EV6',tag:'가이드',tc:'t-vs'},
-    {id:'ioniq5_vs_modely', name:'vs. 모델Y', tag:'가이드', tc:'t-vs'},
+    {id:'ioniq5_vs_modely', ci:'⚔️', name:'vs. 모델Y', tag:'가이드', tc:'t-vs'},
     {id:'ioniq6',ci:'⚡',name:'아이오닉6/N',tag:'EV',tc:'t-ev'},
     {id:'ioniq9',ci:'⚡',name:'아이오닉9',tag:'EV',tc:'t-ev'},
     {id:'ioniq9_vs',ci:'⚔️',name:'vs. EV9',tag:'가이드',tc:'t-vs'},
@@ -2305,11 +2305,12 @@ const SIDEBAR=[
 (function(){
   const sb = document.getElementById('sidebar-root');
   const closeRow = sb.querySelector('.sidebar-close-row');
-  const VS_IDS = [
-    'konaice_vs','tucson_vs','santafe_vs','palisade_vs',
-    'konaev_vs','ioniq5_vs_ev5','ioniq5_vs_ev6','ioniq9_vs',
-    'staria_vs_pv5_cargo','staria_vs_pv5_passenger'
-  ];
+const VS_IDS = [
+  'konaice_vs','tucson_vs','santafe_vs','palisade_vs',
+  'konaev_vs','ioniq5_vs_ev5','ioniq5_vs_ev6',
+  'ioniq5_vs_modely','ioniq9_vs',
+  'staria_vs','staria_lounge_vs'
+];
   let h = '';
   SIDEBAR.forEach((g, gi) => {
     h += `<div class="sb-group"><div class="sb-label">${g.label}</div>`;
@@ -11433,241 +11434,126 @@ PANELS.grandeur=(()=>{
 
 
 /* ── 더 뉴 그랜저 ── */
-PANELS.newgrandeur=(()=>{
+/* ── 더 뉴 그랜저 ── */
+PANELS.newgrandeur = (function(){
 
-  /* ─── 교육 링크 URL (실제 URL로 교체하세요) ─── */
-  const EDU_LINKS = [
-    {
-      label: '더 뉴 그랜저 플레오스 How to 영상 1부',
-      url:   'https://campus.hyundai.com/frt/serv/lms/dl/knowledge/knowledgeContentsViewNew.do?t_site_id=4094&cntnts_cd=6375&srizno=46&cntntstypecd=A011/', /* ← 실제 교육 URL로 교체 */
-      icon:  '▶️',
-      badge: '영상',
-      color: '#F04452',
-    },
-    {
-      label: '더 뉴 그랜저 플레오스 How to 영상 2부',
-      url:   'https://campus.hyundai.com/frt/serv/lms/dl/knowledge/knowledgeContentsViewNew.do?t_site_id=4094&cntnts_cd=6375&srizno=47&cntntstypecd=A011/', /* ← 실제 교육 URL로 교체 */
-      icon:  '▶️',
-      badge: '영상',
-      color: '#F04452',
-    },
-    {
-      label: '더 뉴 그랜저 ICE 카탈로그 PDF',
-      url:   'https://www.hyundai.com/kr/ko/e/vehicles/the-new-grandeur/catalog/', /* ← 실제 PDF URL로 교체 */
-      icon:  '📄',
-      badge: 'PDF',
-      color: '#3182F6',
-    },
-    {
-      label: '더 뉴 그랜저 HEV 카탈로그 PDF',
-      url:   'https://www.hyundai.com/kr/ko/e/vehicles/the-new-grandeur-hybrid/catalog/', /* ← 실제 PDF URL로 교체 */
-      icon:  '📄',
-      badge: 'PDF',
-      color: '#3182F6',
-    },
-    {
-      label: '더 뉴 그랜저 ICE 가격표',
-      url:   'https://www.hyundai.com/contents/repn-car/catalog/the-new-grandeur-price.pdf/', /* ← 실제 가이드 URL로 교체 */
-      icon:  '📚',
-      badge: '가이드',
-      color: '#00B493',
-    },
-    {
-      label: '더 뉴 그랜저 HEV 가격표',
-      url:   'https://www.hyundai.com/contents/repn-car/catalog/the-new-grandeur-hybrid-price.pdf/', /* ← 실제 가이드 URL로 교체 */
-      icon:  '📚',
-      badge: '가이드',
-      color: '#00B493',
-    },
-  ];
-
-  /* ─── 교육 링크 섹션 HTML 생성기 ─── */
-  function eduLinks() {
-    const cards = EDU_LINKS.map(function(l) {
-      return `<a href="${l.url}" target="_blank" rel="noopener"
-        style="
-          display:flex;align-items:center;gap:12px;
-          background:#fff;border-radius:14px;padding:13px 14px;
-          margin-bottom:9px;
-          box-shadow:0 2px 10px rgba(0,0,0,0.04);
-          border-left:4px solid ${l.color};
-          text-decoration:none;
-          -webkit-tap-highlight-color:transparent;
-        ">
-        <div style="
-          width:34px;height:34px;border-radius:9px;
-          background:${l.color}18;
-          display:flex;align-items:center;justify-content:center;
-          font-size:16px;flex-shrink:0;
-        ">${l.icon}</div>
-        <div style="flex:1;min-width:0;">
-          <div style="font-size:13px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">
-            ${l.label}
-          </div>
-          <div style="font-size:11px;color:#8B95A1;font-weight:500;">탭하여 바로 열기(영상은 로그인 후 다시 열면 재생 가능</div>
-        </div>
-        <span style="
-          background:${l.color};color:#fff;
-          font-size:9px;font-weight:800;
-          padding:2px 7px;border-radius:5px;
-          flex-shrink:0;
-        ">${l.badge}</span>
-      </a>`;
-    }).join('');
-
-    return `
-      <div class="sl" style="margin-top:22px;">
-        <span class="sl-icon">🎓</span>
-        <span class="sl-num" style="background:#5E2FC0;">5</span> 더 뉴 그랜저 주요 자료
-      </div>
-      <div class="scard">
-        ${cards}
-      </div>`;
-  }
-
-  /* ─── 상품성 하이라이트 카드 ─── */
-  function productHighlight() {
-    return `
-      <div class="sl" style="margin-top:22px;">
-        <span class="sl-icon">⭐</span>
-        <span class="sl-num" style="background:#3182F6;">3</span> 상품성 하이라이트
-      </div>
-      <div class="scard">
-        <div class="stitle">
-          <span style="width:18px;height:18px;border-radius:5px;background:#EBF3FF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">⭐</span>
-          더 뉴 그랜저 핵심 상품성
-        </div>
-
-        <!-- 디자인 -->
-        <div style="margin-bottom:14px;">
-          <div style="font-size:11px;font-weight:800;color:#3182F6;margin-bottom:8px;padding:6px 10px;background:#EBF3FF;border-radius:8px;border-left:3px solid #3182F6;">
-            🎨 디자인 — 프리미엄 라운지, 플래그십 세단으로의 진화
-          </div>
-          <div class="tbl-wrap">
-            <table class="rt" style="min-width:260px;">
-              <thead><tr>
-                <th style="text-align:left;border-radius:8px 0 0 0;">항목</th>
-                <th>세부 내용</th>
-              </tr></thead>
-              <tbody>
-                <tr><td class="lb">전면 디자인</td><td>심리스 호라이즌 램프 + 샤크 노즈 후드로 스포티한 디자인</td></tr>
-                <tr><td class="lb">후면 디자인</td><td>사이드 리피터 상향 + 크롬 가니쉬 강화</td></tr>
-                <tr><td class="lb">인테리어</td><td>프리미엄 라운지 컨셉, 17인치 플레오스 커넥트</td></tr>
-                <tr><td class="lb">내/외장 컬러</td><td>10종 외장컬러(유광 7종/무광 3종), 6종 내장컬러</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- 파워트레인 -->
-        <div style="margin-bottom:14px;">
-          <div style="font-size:11px;font-weight:800;color:#00B493;margin-bottom:8px;padding:6px 10px;background:#F0FFF9;border-radius:8px;border-left:3px solid #00B493;">
-            ⚙️ 파워트레인 — 동급 최고 효율
-          </div>
-          <div class="tbl-wrap">
-            <table class="rt" style="min-width:280px;">
-              <thead><tr>
-                <th style="text-align:left;border-radius:8px 0 0 0;">구분</th>
-                <th>ICE (가솔린)</th>
-                <th>HEV (하이브리드)</th>
-              </tr></thead>
-              <tbody>
-                <tr><td class="lb">엔진</td><td>가솔린 3.5 / 가솔린 2.5</td><td>1.6 터보 하이브리드</td></tr>
-                <tr><td class="lb">최고출력</td><td>300 / 198 ps</td><td>인증 후 공개</td></tr>
-                <tr><td class="lb">최대토크</td><td>36.6 / 25.3 kgf·m</td><td>인증 후 공개</td></tr>
-                <tr><td class="lb">복합연비</td><td>10.0 / 11.6 km/ℓ</td><td>인증 후 공개</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- 편의·안전사양 -->
-        <div style="margin-bottom:10px;">
-          <div style="font-size:11px;font-weight:800;color:#FF9F0A;margin-bottom:8px;padding:6px 10px;background:#FFF8E6;border-radius:8px;border-left:3px solid #FF9F0A;">
-            🛡️ 편의·안전사양 신규/강화 항목
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-            ${[
-              {title:'17인치 플레오스 커넥트 기본화',desc:'글레오 AI 음성제어 전 트림 기본'},
-              {title:'9.9" 슬림 디스플레이',desc:'주요 주행 정보 제공'},
-              {title:'스마트 비전 루프',desc:'6분할 영역 투명/불투명 제어'},
-              {title:'전동식 에어벤트',desc:'3가지 자동 풍향모드 -승객 집중, 회피, 자동순환'},
-              {title:'원격 스마트 주차 보조',desc:'스마트폰으로 차량 자동 주차 제어'},
-              {title:'2열 특화 사양',desc:'2열 전동식 도어커튼 및 통풍시트'},
-            ].map(function(item) {
-              return `<div style="background:#F9FAFB;border-radius:10px;padding:11px 12px;">
-                <div style="font-size:12px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">${item.title}</div>
-                <div style="font-size:11px;color:#4E5968;line-height:1.55;">${item.desc}</div>
-              </div>`;
-            }).join('')}
-          </div>
-        </div>`;
-  }
-
-  /* ─── 판매 팁 ─── */
-  const tipSection = tipBox('더 뉴 그랜저 핵심 판매 전략', [
+  var tipSection = tipBox('더 뉴 그랜저 핵심 판매 전략', [
     '<strong>더 뉴 그랜저 가격 부담 고객 26MY 재고 안내</strong><br> — 200만원 기본조건 or 60개월 무이자 소구',
     '더 뉴 그랜저 HEV <strong>7월 중순~말 출고 예상</strong>',
-    '신차 변경 수준의 실내 리프레쉬<strong> - 플레오스 커넥트/슬림 정보창</strong><br>',
+    '신차 변경 수준의 실내 리프레쉬<strong> - 플레오스 커넥트/슬림 정보창</strong>',
     '<span class="rred"><strong>플레오스 관련 하단의 HOW TO 영상 필수 시청</strong></span>',
     '<strong>글레오 AI 적용으로 일반 AI 수준 대화 가능</strong>',
     '세이브오토·굿프렌드 조건 지속 운영 → 연계 판매 조건 활용',
   ]);
 
-  /* ─── 판매 조건 (출고 전 잠정 기준) ─── */
-const saleSection_ = saleSectionV2(
-  [],
-  [saveAutoRadio('newgrandeur'), goodfriendRadio('newgrandeur')],
-  [],
+  var saleSection_ = saleSectionV2(
+    [],
+    [saveAutoRadio('newgrandeur'), goodfriendRadio('newgrandeur')],
+    [],
+    []
+  );
 
-);
-
-
-  /* ─── 금융 프로모션 ─── */
-  const promoSection_ = promoSection([
+  var promoSection_ = promoSection([
     [false,'📌 표준형(JH/JA)','36M: <strong>4.7%</strong>/48M: <strong>4.8%</strong>/60M: <strong>4.9%</strong>'],
   ]);
 
+  /* ── 상품성 하이라이트 ── */
+  var productSection =
+    '<div class="sl" style="margin-top:22px;">'
+    + '<span class="sl-icon">⭐</span>'
+    + '<span class="sl-num" style="background:#3182F6;">3</span> 상품성 하이라이트'
+    + '</div>'
+    + '<div class="scard">'
+
+    /* 디자인 */
+    + '<div style="margin-bottom:14px;">'
+    + '<div style="font-size:11px;font-weight:800;color:#3182F6;margin-bottom:8px;padding:6px 10px;background:#EBF3FF;border-radius:8px;border-left:3px solid #3182F6;">🎨 디자인 — 프리미엄 라운지, 플래그십 세단으로의 진화</div>'
+    + T('<table class="rt" style="min-width:260px;"><thead><tr><th style="text-align:left;border-radius:8px 0 0 0;">항목</th><th>세부 내용</th></tr></thead><tbody>'
+      + '<tr><td class="lb">전면 디자인</td><td>심리스 호라이즌 램프 + 샤크 노즈 후드로 스포티한 디자인</td></tr>'
+      + '<tr><td class="lb">후면 디자인</td><td>사이드 리피터 상향 + 크롬 가니쉬 강화</td></tr>'
+      + '<tr><td class="lb">인테리어</td><td>프리미엄 라운지 컨셉, 17인치 플레오스 커넥트</td></tr>'
+      + '<tr><td class="lb">내/외장 컬러</td><td>10종 외장컬러(유광 7종/무광 3종), 6종 내장컬러</td></tr>'
+      + '</tbody></table>')
+    + '</div>'
+
+    /* 파워트레인 */
+    + '<div style="margin-bottom:14px;">'
+    + '<div style="font-size:11px;font-weight:800;color:#00B493;margin-bottom:8px;padding:6px 10px;background:#F0FFF9;border-radius:8px;border-left:3px solid #00B493;">⚙️ 파워트레인 — 동급 최고 효율</div>'
+    + T('<table class="rt" style="min-width:280px;"><thead><tr><th style="text-align:left;border-radius:8px 0 0 0;">구분</th><th>ICE (가솔린)</th><th>HEV (하이브리드)</th></tr></thead><tbody>'
+      + '<tr><td class="lb">엔진</td><td>가솔린 3.5 / 가솔린 2.5</td><td>1.6 터보 하이브리드</td></tr>'
+      + '<tr><td class="lb">최고출력</td><td>300 / 198 ps</td><td>인증 후 공개</td></tr>'
+      + '<tr><td class="lb">최대토크</td><td>36.6 / 25.3 kgf·m</td><td>인증 후 공개</td></tr>'
+      + '<tr><td class="lb">복합연비</td><td>10.0 / 11.6 km/ℓ</td><td>인증 후 공개</td></tr>'
+      + '</tbody></table>')
+    + '</div>'
+
+    /* 편의·안전사양 */
+    + '<div style="margin-bottom:10px;">'
+    + '<div style="font-size:11px;font-weight:800;color:#FF9F0A;margin-bottom:8px;padding:6px 10px;background:#FFF8E6;border-radius:8px;border-left:3px solid #FF9F0A;">🛡️ 편의·안전사양 신규/강화 항목</div>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">'
+    + '<div style="background:#F9FAFB;border-radius:10px;padding:11px 12px;"><div style="font-size:12px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">17인치 플레오스 커넥트 기본화</div><div style="font-size:11px;color:#4E5968;line-height:1.55;">글레오 AI 음성제어 전 트림 기본</div></div>'
+    + '<div style="background:#F9FAFB;border-radius:10px;padding:11px 12px;"><div style="font-size:12px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">9.9" 슬림 디스플레이</div><div style="font-size:11px;color:#4E5968;line-height:1.55;">주요 주행 정보 제공</div></div>'
+    + '<div style="background:#F9FAFB;border-radius:10px;padding:11px 12px;"><div style="font-size:12px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">스마트 비전 루프</div><div style="font-size:11px;color:#4E5968;line-height:1.55;">6분할 영역 투명/불투명 제어</div></div>'
+    + '<div style="background:#F9FAFB;border-radius:10px;padding:11px 12px;"><div style="font-size:12px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">전동식 에어벤트</div><div style="font-size:11px;color:#4E5968;line-height:1.55;">3가지 자동 풍향모드</div></div>'
+    + '<div style="background:#F9FAFB;border-radius:10px;padding:11px 12px;"><div style="font-size:12px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">원격 스마트 주차 보조</div><div style="font-size:11px;color:#4E5968;line-height:1.55;">스마트폰으로 차량 자동 주차 제어</div></div>'
+    + '<div style="background:#F9FAFB;border-radius:10px;padding:11px 12px;"><div style="font-size:12px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">2열 특화 사양</div><div style="font-size:11px;color:#4E5968;line-height:1.55;">2열 전동식 도어커튼 및 통풍시트</div></div>'
+    + '</div>'
+    + '</div>'
+    + '</div>';
+
+  /* ── 자료 링크 섹션 ── */
+  var EDU_LINKS = [
+    { label:'더 뉴 그랜저 플레오스 How to 영상 1부', url:'https://campus.hyundai.com/frt/serv/lms/dl/knowledge/knowledgeContentsViewNew.do?t_site_id=4094&cntnts_cd=6375&srizno=46&cntntstypecd=A011/', icon:'▶️', badge:'영상', color:'#F04452' },
+    { label:'더 뉴 그랜저 플레오스 How to 영상 2부', url:'https://campus.hyundai.com/frt/serv/lms/dl/knowledge/knowledgeContentsViewNew.do?t_site_id=4094&cntnts_cd=6375&srizno=47&cntntstypecd=A011/', icon:'▶️', badge:'영상', color:'#F04452' },
+    { label:'더 뉴 그랜저 ICE 카탈로그 PDF',         url:'https://www.hyundai.com/kr/ko/e/vehicles/the-new-grandeur/catalog/',        icon:'📄', badge:'PDF',   color:'#3182F6' },
+    { label:'더 뉴 그랜저 HEV 카탈로그 PDF',         url:'https://www.hyundai.com/kr/ko/e/vehicles/the-new-grandeur-hybrid/catalog/', icon:'📄', badge:'PDF',   color:'#3182F6' },
+    { label:'더 뉴 그랜저 ICE 가격표',              url:'https://www.hyundai.com/contents/repn-car/catalog/the-new-grandeur-price.pdf/',        icon:'📚', badge:'가이드', color:'#00B493' },
+    { label:'더 뉴 그랜저 HEV 가격표',              url:'https://www.hyundai.com/contents/repn-car/catalog/the-new-grandeur-hybrid-price.pdf/', icon:'📚', badge:'가이드', color:'#00B493' },
+  ];
+
+  var eduSection =
+    '<div class="sl" style="margin-top:22px;">'
+    + '<span class="sl-icon">🎓</span>'
+    + '<span class="sl-num" style="background:#5E2FC0;">5</span> 더 뉴 그랜저 주요 자료'
+    + '</div>'
+    + EDU_LINKS.map(function(l) {
+        return '<a href="' + l.url + '" target="_blank" rel="noopener"'
+          + ' style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:13px 14px;margin-bottom:9px;box-shadow:0 2px 10px rgba(0,0,0,0.04);border-left:4px solid ' + l.color + ';text-decoration:none;-webkit-tap-highlight-color:transparent;">'
+          + '<div style="width:34px;height:34px;border-radius:9px;background:' + l.color + '18;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">' + l.icon + '</div>'
+          + '<div style="flex:1;min-width:0;">'
+          + '<div style="font-size:13px;font-weight:700;color:#191F28;margin-bottom:3px;line-height:1.4;">' + l.label + '</div>'
+          + '<div style="font-size:11px;color:#8B95A1;font-weight:500;">탭하여 바로 열기</div>'
+          + '</div>'
+          + '<span style="background:' + l.color + ';color:#fff;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;flex-shrink:0;">' + l.badge + '</span>'
+          + '</a>';
+      }).join('');
+
   return hdr(
-    'linear-gradient(135deg,#EBF3FF 0%,#F5F9FF 60%,#EEF8FF 100%)',
-    '🚗',
-    '더 뉴 그랜저',
-    'ICE / HEV',
-    ['ICE','HEV','신형']
-  )
-
-  /* 1. 판매 팁 */
-  + tipSection
-  + '<hr class="dv">'
-
-  /* 2. 판매 조건 */
-  + saleSection_
-
-  /* 3. 상품성 하이라이트 */
-  + productHighlight()
-
-  /* 4. 금융 프로모션 */
-  + `<div class="sl" style="margin-top:22px;">
-      <span class="sl-icon">🏦</span>
-      <span class="sl-num">4</span> 금융프로모션
-      <span style="font-size:11px;font-weight:400;opacity:.85;">· 출고 시점 공문 확인 후 최종 적용</span>
-    </div>`
-  + `<div class="wbox"> 현재 신차로 별도 금융 프로모션 미정, 향후 Business-plan 공문 확인 필수</div>`
-  + promoSection_
-
-  /* 5. 교육 자료 링크 */
-  + eduLinks()
-
-  /* 표준 할부 탭 */
-  + '<hr class="dv">'
-  + ptabs('newgrandeur',[
-      ['std','표준형(JH/JA)'],
-      ['var','변동금리'],
-    ])
-  + tblStd('newgrandeur','JH','JA', STD_EV_GRANDEUR)
-  + tblVar('newgrandeur','JJ','JI', VAR_EV)
+      'linear-gradient(135deg,#EBF3FF 0%,#F5F9FF 60%,#EEF8FF 100%)',
+      '🚗',
+      '더 뉴 그랜저',
+      'ICE / HEV',
+      ['ICE','HEV','신형']
+    )
+    + tipSection
+    + '<hr class="dv">'
+    + saleSection_
+    + '<div class="sl" style="margin-top:22px;">'
+    + '<span class="sl-icon">🏦</span>'
+    + '<span class="sl-num">4</span> 금융프로모션'
+    + '<span style="font-size:11px;font-weight:400;opacity:.85;"> · 출고 시점 공문 확인 후 최종 적용</span>'
+    + '</div>'
+    + '<div class="wbox">현재 신차로 별도 금융 프로모션 미정, 향후 Business-plan 공문 확인 필수</div>'
+    + promoSection_
+    + productSection
+    + eduSection
+    + '<hr class="dv">'
+    + ptabs('newgrandeur',[['std','표준형(JH/JA)'],['var','변동금리']])
+    + tblStd('newgrandeur','JH','JA', STD_EV_GRANDEUR)
+    + tblVar('newgrandeur','JJ','JI', VAR_EV);
 
 })();
+
 
 
 /* ── 베뉴 ── */
@@ -14846,10 +14732,7 @@ if ('serviceWorker' in navigator) {
   }
 })();
 
-
-
 </script>
-
 
 </body>
 </html>
