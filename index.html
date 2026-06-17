@@ -266,10 +266,19 @@ body {
   background: #3182F6;
   transform: rotate(45deg);
 }
+#btn-bluemembers .ci {
+  background: linear-gradient(135deg, #3182F6, #1B64DA);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
 .car-btn.active#btn-summary .ci,
 .car-btn.active#btn-tradein .ci {
   background: #3182F6;
   box-shadow: 0 0 0 2px rgba(49,130,246,0.25);
+}
+#btn-bluemembers.active { color: #3182F6 !important; }
+#btn-bluemembers.active .ci {
+  box-shadow: 0 0 0 2.5px rgba(255,255,255,0.9), 0 0 0 4.5px #3182F6 !important;
 }
 
 /* 현대 ICE/HEV — 미드 블루 */
@@ -1848,6 +1857,16 @@ function closeKakaoGuide() {
   <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
     <span style="display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:2px;background:#EBF3FF;color:#1B64DA;min-width:64px;box-sizing:border-box;">업데이트</span>
     <div>
+      <div style="font-size:12.5px;font-weight:600;color:#191F28;line-height:1.5;margin-bottom:2px;">더 뉴 그랜저/블루멤버스 포인트 안내 추가</div>
+      <div style="font-size:10.5px;color:#8B95A1;font-weight:500;">2026.06.12</div>
+    </div>
+  </div>
+
+
+  <!-- 공지 2 -->
+  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
+    <span style="display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:2px;background:#EBF3FF;color:#1B64DA;min-width:64px;box-sizing:border-box;">업데이트</span>
+    <div>
       <div style="font-size:12.5px;font-weight:600;color:#191F28;line-height:1.5;margin-bottom:2px;">6월 판매조건 업데이트 완료</div>
       <div style="font-size:10.5px;color:#8B95A1;font-weight:500;">2026.05.31</div>
     </div>
@@ -2223,7 +2242,7 @@ function showCar(id,name){
   }
 
   /* 할인바 표시/숨김 */
-  const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || VS_IDS_LIST.includes(id);
+  const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || id==='bluemembers' || VS_IDS_LIST.includes(id);
   document.body.style.paddingBottom = isNoBar ? '20px' : '140px';
   const dbar=document.getElementById('discount-bar');
   dbar.style.display = isNoBar ? 'none' : '';
@@ -2254,6 +2273,7 @@ const SIDEBAR=[
     {id:'evbenefit',ci:'⚡',name:'현대 EV 주요 혜택',tag:'EV',tc:'t-ev'},
     {id:'evsubsidy',ci:'⚡',name:'EV 보조금 조회',tag:'EV',tc:'t-ev'},
     {id:'tradein',ci:'🔄',name:'트레이드인 혜택 조회',tag:'혜택',tc:'t-sum'},
+    {id:'bluemembers', ci:'💳', name:'블루멤버스 포인트 안내', tag:'혜택', tc:'t-sum'},
 
   ]},
   {label:'현대 승용',items:[
@@ -2316,7 +2336,7 @@ const VS_IDS = [
     h += `<div class="sb-group"><div class="sb-label">${g.label}</div>`;
     g.items.forEach(it => {
       const a = (gi === 0 && it.id === 'summary') ? ' active' : '';
-      const isNew = ['stariaev', 'tradein', 'evsubsidy', 'evbenefit', 'newgrandeur'].includes(it.id);
+      const isNew = ['stariaev', 'tradein', 'evsubsidy', 'evbenefit', 'newgrandeur', 'bluemembers'].includes(it.id);
       const isVs  = VS_IDS.includes(it.id);
       h += `<button class="car-btn${a}${isVs ? ' vs-btn' : ''}" id="btn-${it.id}" onclick="showCar('${it.id}','${it.name}')">
         <span class="ci"></span>
@@ -9661,10 +9681,7 @@ return hdr(
   + drivePanel
   + chargePanel
   + sellPanel;
-
 })();
-
-
 
 /* ── 전체 요약 ── */
 PANELS.summary=`
@@ -9672,15 +9689,15 @@ PANELS.summary=`
   <div class="car-hd-info">
     <div class="car-hd-title" style="color:#3182F6;margin-bottom:8px;">26년 6월 전체 판매조건 요약</div>
     <div style="font-size:11px;color:#8B95A1;font-weight:500;">
-     - 최종 업데이트 : 26년 6월 12일 - <span style="color:#C05000;font-weight:800;"><strong>더 뉴 그랜저 사이드바 추가</strong></span><br>
+     - 최종 업데이트<br>
+       · 26년 6월 17일 - <span style="color:#C05000;font-weight:800;"><strong>블루멤버스 포인트 안내 사이드바 추가</strong></span><br>
+       · 26년 6월 12일 - <span style="color:#C05000;font-weight:800;"><strong>더 뉴 그랜저 사이드바 추가</strong></span><br>
        · 26년 6월 8일 - <strong>스타리아 일렉트릭 보조금 추가</strong><br>
        · 26년 6월 2일 - <strong>경쟁사 6월 납기 추가</strong>
       
     </div>
   </div>
 </div>
-
-
 
 <!-- 경남지역본부 주요 공지사항 -->
 <div style="margin-bottom:18px;">
@@ -11187,7 +11204,357 @@ PANELS.tradein =
 + '<div class="wbox" style="background:#EBF3FF;border-color:#003087;color:#003087;">'
 + '💡 <strong>1톤 트럭 디젤 특이사항</strong> · 연식·주행거리 무관하게 노후차 트레이드인 적용 가능</div>'
 + tiQaHtml;
+})();
 
+
+/* ── 블루멤버스 혜택 ── */
+PANELS.bluemembers = (function(){
+
+var html = '';
+
+html += hdr(
+  'linear-gradient(135deg,#EBF3FF 0%,#F5F9FF 60%,#EEF8FF 100%)',
+  '💳','블루멤버스 / 제네시스 멤버십<br>포인트 적립 기준',
+  '2026년 5월 1일부터 적용 · 정액 기준',
+  ['블루멤버스','제네시스 멤버십']
+);
+
+/* ── 상단 안내 ── */
+html += '<div style="background:#EBF3FF;border-radius:16px;padding:16px 18px;margin-bottom:14px;border:1.5px solid rgba(49,130,246,0.2);">';
+html += '<div style="font-size:12px;font-weight:900;color:#1B64DA;margin-bottom:6px;">신차구매 포인트 적립 기준</div>';
+html += '<div style="font-size:10.5px;color:#4E5968;line-height:1.9;">';
+html += '• 적용: 2026년 5월 1일(금) 이후 출고 고객<br>';
+html += '• 적립기준: 구매유형/차종/<strong style="color:#3182F6;">구매횟수 기반 정액</strong>으로 포인트 적립<br>';
+html += '• 구매횟수 산정: <strong style="color:#3182F6;">현대 + 제네시스 합산</strong> 총 구매 대수 기준';
+html += '</div>';
+html += '<div style="margin-top:10px;padding:9px 12px;background:rgba(49,130,246,0.07);border-radius:9px;font-size:10px;color:#8B95A1;line-height:1.8;">';
+html += '※ 2026년 3월 31일까지 계약한 고객은 \'26년 이내 출고 시 변경 전 기준 적용<br>';
+html += '&nbsp;&nbsp;&nbsp;(캐스퍼/캐스퍼 EV는 \'28년 이내 출고 시)<br>';
+html += '※ 출고일은 자동차제작증 발급일 기준 / 포인트 유효기간: 적립일로부터 <strong>5년</strong>';
+html += '</div>';
+html += '</div>';
+
+/* ════════════════════════════════════════
+   ① 현대차 블루멤버스
+════════════════════════════════════════ */
+html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">';
+html += '<div style="width:4px;height:22px;background:#3182F6;border-radius:2px;flex-shrink:0;"></div>';
+html += '<div style="font-size:13px;font-weight:900;color:#3182F6;">블루멤버스 포인트</div>';
+html += '</div>';
+
+/* ── 현대 범례 ── */
+html += '<div style="display:flex;gap:14px;margin-bottom:12px;flex-wrap:wrap;">';
+html += '<div style="display:flex;align-items:center;gap:6px;">';
+html += '<span style="width:10px;height:10px;border-radius:50%;background:#3182F6;flex-shrink:0;"></span>';
+html += '<span style="font-size:11px;font-weight:700;color:#4E5968;">개인회원 — 구매 횟수별 차등 적립</span>';
+html += '</div>';
+html += '<div style="display:flex;align-items:center;gap:6px;">';
+html += '<span style="width:10px;height:10px;border-radius:50%;background:#8B95A1;flex-shrink:0;"></span>';
+html += '<span style="font-size:11px;font-weight:700;color:#4E5968;">법인회원 — 횟수 무관 고정 정액</span>';
+html += '</div>';
+html += '</div>';
+
+/* ── 현대 통합 표 ── */
+html += '<div class="scard">';
+html += '<div class="stitle">';
+html += '<span style="width:20px;height:20px;border-radius:6px;background:#EBF3FF;display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#3182F6;font-weight:800;flex-shrink:0;">1</span>';
+html += '차종별 적립 포인트';
+html += '</div>';
+
+html += '<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;">';
+html += '<table style="width:100%;border-collapse:collapse;font-size:11px;min-width:520px;">';
+
+html += '<thead>';
+html += '<tr style="background:#2D3540;">';
+html += '<th rowspan="2" style="padding:9px 12px;text-align:left;color:#fff;font-weight:700;border-radius:8px 0 0 0;min-width:180px;vertical-align:middle;">차종</th>';
+html += '<th colspan="6" style="padding:9px 10px;text-align:center;color:#fff;font-weight:800;border-left:2px solid rgba(255,255,255,0.15);font-size:11px;">개인회원 (구매횟수별)</th>';
+html += '<th rowspan="2" style="padding:9px 10px;text-align:center;color:#fff;font-weight:800;border-left:2px solid rgba(255,255,255,0.15);border-radius:0 8px 0 0;min-width:52px;vertical-align:middle;font-size:10.5px;">법인<br><span style="font-size:9px;font-weight:500;opacity:0.7;">횟수무관</span></th>';
+html += '</tr>';
+html += '<tr style="background:#2D3540;">';
+['1회','2회','3회','4회','5회','6회'].forEach(function(c, i){
+  var bl = (i===0) ? 'border-left:2px solid rgba(255,255,255,0.15);' : 'border-left:1px solid rgba(255,255,255,0.07);';
+  html += '<th style="padding:7px 6px;text-align:center;color:#B0B8C1;font-weight:600;min-width:46px;font-size:10.5px;'+bl+'">'+c+'</th>';
+});
+html += '</tr>';
+html += '</thead>';
+html += '<tbody>';
+
+function grpRow(label) {
+  return '<tr style="background:#F2F4F6;">'
+    + '<td colspan="8" style="padding:6px 12px;font-size:10px;font-weight:800;color:#4E5968;letter-spacing:0.5px;">'
+    + label + '</td></tr>';
+}
+
+function mergedRow(cars, points, corp, isEven) {
+  var bg = isEven ? '#F9FAFB' : '#fff';
+  var row = '<tr style="background:'+bg+';">';
+  row += '<td style="padding:10px 12px;font-weight:600;color:#191F28;border-bottom:1px solid #f0f0f0;line-height:1.8;">'
+    + cars.join('<br>') + '</td>';
+  points.forEach(function(v, i) {
+    var isMax = (i===5);
+    var bl = (i===0) ? 'border-left:2px solid rgba(49,130,246,0.15);' : 'border-left:1px solid #f0f0f0;';
+    row += '<td style="padding:10px 6px;text-align:center;border-bottom:1px solid #f0f0f0;vertical-align:middle;'+bl
+      +'font-weight:'+(isMax?'900':'600')+';'
+      +'color:'+(isMax?'#3182F6':'#4E5968')+';'
+      +'font-size:'+(isMax?'12':'11')+'px;">'
+      +v+'만</td>';
+  });
+  row += '<td style="padding:10px 6px;text-align:center;border-bottom:1px solid #f0f0f0;vertical-align:middle;border-left:2px solid rgba(0,0,0,0.06);font-weight:700;color:#8B95A1;font-size:11px;">'
+    +corp+'만</td>';
+  row += '</tr>';
+  return row;
+}
+
+var ri = 0;
+
+html += grpRow('▸ 경형 / 소형 RV');
+html += mergedRow(['캐스퍼 (ICE / EV)', '베뉴'], [5,10,15,25,30,40], 3, ri++%2===0);
+
+html += grpRow('▸ 아반떼 계열 / 코나 · 투싼 / 포터');
+html += mergedRow(['아반떼 (ICE / HEV / N)', '코나 (ICE / HEV / EV)', '투싼 (ICE / HEV)', '포터 (LPDI / EV)'], [7,14,21,30,40,50], 5, ri++%2===0);
+
+html += grpRow('▸ 쏘나타 · 그랜저 · 아이오닉6');
+html += mergedRow(['쏘나타 (ICE / HEV)', '그랜저 (ICE / HEV)', '더 뉴 그랜저 (ICE / HEV)', '아이오닉6 (EV / N)'], [10,20,30,45,60,75], 7, ri++%2===0);
+
+html += grpRow('▸ 싼타페 · 팰리세이드 · 아이오닉5 · 아이오닉9 · 넥쏘');
+html += mergedRow(['싼타페 (ICE / HEV)', '팰리세이드 (ICE / HEV)', '아이오닉5 (EV / N)', '아이오닉9', '넥쏘 FCEV'], [10,20,30,45,60,75], 7, ri++%2===0);
+
+html += grpRow('▸ 스타리아 · ST1');
+html += mergedRow(['스타리아 (ICE / HEV / EV)', 'ST1'], [10,20,30,45,60,75], 7, ri++%2===0);
+
+html += '</tbody>';
+html += '</table>';
+html += '</div>';
+html += '</div>'; /* scard 끝 */
+
+/* ── 현대 택시 ── */
+html += '<div class="scard">';
+html += '<div class="stitle">';
+html += '<span style="width:20px;height:20px;border-radius:6px;background:#FFF8E6;display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#C45C00;font-weight:800;flex-shrink:0;">2</span>';
+html += '택시 적립 기준 <span style="font-size:10px;font-weight:500;color:#8B95A1;">· 구매횟수 무관</span>';
+html += '</div>';
+html += '<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;">';
+html += '<table style="width:100%;border-collapse:collapse;font-size:11px;min-width:300px;">';
+html += '<thead>';
+html += '<tr style="background:#2D3540;">';
+html += '<th style="padding:9px 12px;text-align:left;color:#fff;font-weight:700;border-radius:8px 0 0 0;min-width:200px;">차종</th>';
+html += '<th style="padding:9px 10px;text-align:center;color:#fff;font-weight:700;min-width:80px;border-left:1px solid rgba(255,255,255,0.15);">개인택시</th>';
+html += '<th style="padding:9px 10px;text-align:center;color:#fff;font-weight:700;min-width:80px;border-left:1px solid rgba(255,255,255,0.15);border-radius:0 8px 0 0;">법인택시</th>';
+html += '</tr>';
+html += '</thead>';
+html += '<tbody>';
+
+function taxiMergedRow(cars, personal, corp, isEven) {
+  var bg = isEven ? '#F9FAFB' : '#fff';
+  return '<tr style="background:'+bg+';">'
+    +'<td style="padding:10px 12px;font-weight:600;color:#191F28;border-bottom:1px solid #f0f0f0;line-height:1.8;">'+cars.join('<br>')+'</td>'
+    +'<td style="padding:10px 10px;text-align:center;font-weight:700;color:#4E5968;font-size:12px;border-bottom:1px solid #f0f0f0;border-left:1px solid #f0f0f0;vertical-align:middle;">'+personal+'만</td>'
+    +'<td style="padding:10px 10px;text-align:center;font-weight:700;color:#8B95A1;font-size:12px;border-bottom:1px solid #f0f0f0;border-left:1px solid #f0f0f0;vertical-align:middle;">'+corp+'만</td>'
+    +'</tr>';
+}
+
+html += taxiMergedRow(['코나 일렉트릭'], 7, 5, true);
+html += taxiMergedRow(['쏘나타 택시', '그랜저 택시', '아이오닉5 (영업용)', '아이오닉6', '스타리아'], 10, 7, false);
+
+html += '</tbody>';
+html += '</table>';
+html += '</div>';
+html += '</div>'; /* scard 끝 */
+
+/* ════════════════════════════════════════
+   구분선
+════════════════════════════════════════ */
+html += '<div style="display:flex;align-items:center;gap:10px;margin:20px 0 16px;">';
+html += '<div style="flex:1;height:1.5px;background:linear-gradient(to right,rgba(164,117,81,0.4),rgba(164,117,81,0.1));"></div>';
+html += '<div style="background:linear-gradient(135deg,#A47551,#8B6A3A);color:#fff;font-size:11px;font-weight:800;padding:5px 14px;border-radius:20px;white-space:nowrap;letter-spacing:0.5px;">GENESIS MEMBERSHIP</div>';
+html += '<div style="flex:1;height:1.5px;background:linear-gradient(to left,rgba(164,117,81,0.4),rgba(164,117,81,0.1));"></div>';
+html += '</div>';
+
+/* ════════════════════════════════════════
+   ② 제네시스 멤버십
+════════════════════════════════════════ */
+html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">';
+html += '<div style="width:4px;height:22px;background:#A47551;border-radius:2px;flex-shrink:0;"></div>';
+html += '<div style="font-size:13px;font-weight:900;color:#A47551;">제네시스 멤버십</div>';
+html += '</div>';
+
+/* ── 제네시스 범례 ── */
+html += '<div style="display:flex;gap:14px;margin-bottom:12px;flex-wrap:wrap;">';
+html += '<div style="display:flex;align-items:center;gap:6px;">';
+html += '<span style="width:10px;height:10px;border-radius:50%;background:#A47551;flex-shrink:0;"></span>';
+html += '<span style="font-size:11px;font-weight:700;color:#4E5968;">개인회원 — 구매 횟수별 차등 적립</span>';
+html += '</div>';
+html += '<div style="display:flex;align-items:center;gap:6px;">';
+html += '<span style="width:10px;height:10px;border-radius:50%;background:#B0A090;flex-shrink:0;"></span>';
+html += '<span style="font-size:11px;font-weight:700;color:#4E5968;">렌트·리스 이용 개인 / 법인 — 횟수 무관</span>';
+html += '</div>';
+html += '</div>';
+
+/* ── 제네시스 통합 표 ── */
+html += '<div class="scard" style="border:1.5px solid rgba(164,117,81,0.2);">';
+html += '<div class="stitle">';
+html += '<span style="width:20px;height:20px;border-radius:6px;background:#F9F5F0;display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#A47551;font-weight:800;flex-shrink:0;">3</span>';
+html += '차종별 적립 포인트';
+html += '</div>';
+
+html += '<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;">';
+html += '<table style="width:100%;border-collapse:collapse;font-size:11px;min-width:580px;">';
+
+/* 제네시스 헤더 — 개인 6회 + 렌트리스개인 + 법인 */
+html += '<thead>';
+html += '<tr style="background:#3E2723;">';
+html += '<th rowspan="2" style="padding:9px 12px;text-align:left;color:#fff;font-weight:700;border-radius:8px 0 0 0;min-width:190px;vertical-align:middle;">차종</th>';
+html += '<th colspan="6" style="padding:9px 10px;text-align:center;color:#fff;font-weight:800;border-left:2px solid rgba(255,255,255,0.15);font-size:11px;">개인회원 (구매횟수별)</th>';
+html += '<th rowspan="2" style="padding:9px 8px;text-align:center;color:#fff;font-weight:800;border-left:2px solid rgba(255,255,255,0.15);min-width:58px;vertical-align:middle;font-size:10px;line-height:1.4;">렌트·리스<br>이용 개인<br><span style="font-size:9px;font-weight:500;opacity:0.7;">횟수무관</span></th>';
+html += '<th rowspan="2" style="padding:9px 8px;text-align:center;color:#fff;font-weight:800;border-left:2px solid rgba(255,255,255,0.15);border-radius:0 8px 0 0;min-width:52px;vertical-align:middle;font-size:10.5px;">법인<br><span style="font-size:9px;font-weight:500;opacity:0.7;">횟수무관</span></th>';
+html += '</tr>';
+html += '<tr style="background:#3E2723;">';
+['1회','2회','3회','4회','5회','6회'].forEach(function(c, i){
+  var bl = (i===0) ? 'border-left:2px solid rgba(255,255,255,0.15);' : 'border-left:1px solid rgba(255,255,255,0.07);';
+  html += '<th style="padding:7px 6px;text-align:center;color:#C8A882;font-weight:600;min-width:46px;font-size:10.5px;'+bl+'">'+c+'</th>';
+});
+html += '</tr>';
+html += '</thead>';
+html += '<tbody>';
+
+/* ── 제네시스 행 헬퍼 ── */
+/* points: 개인 1~6회, rentPers: 렌트리스개인, corp: 법인 */
+function genRow(cars, points, rentPers, corp, isEven) {
+  var bg = isEven ? '#F9F5F0' : '#fff';
+  var row = '<tr style="background:'+bg+';">';
+
+  /* 차종 */
+  row += '<td style="padding:10px 12px;font-weight:600;color:#191F28;border-bottom:1px solid rgba(164,117,81,0.12);line-height:1.8;">'
+    + cars.join('<br>') + '</td>';
+
+  /* 개인 1~6회 */
+  points.forEach(function(v, i) {
+    var isMax = (i===5);
+    var bl = (i===0) ? 'border-left:2px solid rgba(164,117,81,0.2);' : 'border-left:1px solid rgba(164,117,81,0.08);';
+    row += '<td style="padding:10px 6px;text-align:center;border-bottom:1px solid rgba(164,117,81,0.12);vertical-align:middle;'+bl
+      +'font-weight:'+(isMax?'900':'600')+';'
+      +'color:'+(isMax?'#A47551':'#4E5968')+';'
+      +'font-size:'+(isMax?'12':'11')+'px;">'
+      +v+'만</td>';
+  });
+
+  /* 렌트·리스 이용 개인 */
+  row += '<td style="padding:10px 6px;text-align:center;border-bottom:1px solid rgba(164,117,81,0.12);vertical-align:middle;border-left:2px solid rgba(164,117,81,0.15);font-weight:700;color:#8B7355;font-size:11px;">'
+    +rentPers+'만</td>';
+
+  /* 법인 */
+  row += '<td style="padding:10px 6px;text-align:center;border-bottom:1px solid rgba(164,117,81,0.12);vertical-align:middle;border-left:2px solid rgba(164,117,81,0.15);font-weight:700;color:#8B95A1;font-size:11px;">'
+    +corp+'만</td>';
+
+  row += '</tr>';
+  return row;
+}
+
+var gi = 0;
+
+html += genRow(
+  ['G90'],
+  [25,50,60,70,80,90], 20, 20,
+  gi++%2===0
+);
+html += genRow(
+  ['GV80, GV80 Coupe', 'G80'],
+  [20,40,50,60,70,80], 15, 15,
+  gi++%2===0
+);
+html += genRow(
+  ['GV70', 'G70, G70 Shooting Brake'],
+  [15,20,30,40,50,60], 10, 10,
+  gi++%2===0
+);
+html += genRow(
+  ['GV60'],
+  [10,15,20,30,40,50], 10, 10,
+  gi++%2===0
+);
+
+html += '</tbody>';
+html += '</table>';
+html += '</div>';
+
+/* ── 당사 지정 렌트·리스사 별도 안내 ── */
+html += '<div style="margin-top:12px;background:#F9F5F0;border-radius:12px;padding:12px 14px;border:1px solid rgba(164,117,81,0.2);">';
+html += '<div style="font-size:11px;font-weight:800;color:#8B6A3A;margin-bottom:9px;">당사 지정 렌트·리스사 별도 기준</div>';
+html += '<div style="display:grid;grid-template-columns:1fr;gap:7px;">';
+
+var rentData = [
+  {cars:'G90', base:14, add:6},
+  {cars:'GV80 · GV80 Coupe · G80', base:10, add:5},
+  {cars:'GV70 · G70 · G70 Shooting Brake · GV60', base:7, add:3},
+];
+
+rentData.forEach(function(d) {
+  html += '<div style="background:#fff;border-radius:9px;padding:10px 12px;border:1px solid rgba(164,117,81,0.12);display:flex;flex-direction:column;gap:4px;">';
+  html += '<div style="font-size:11px;font-weight:600;color:#191F28;">'+d.cars+'</div>';
+  html += '<div style="display:flex;align-items:center;flex-wrap:wrap;gap:2px;">';
+  html += '<span style="font-size:11.5px;font-weight:800;color:#A47551;">출고시 '+d.base+'만</span>';
+  html += '<span style="font-size:10.5px;color:#8B95A1;margin:0 4px;">+</span>';
+  html += '<span style="font-size:11px;font-weight:700;color:#00B493;">실운행자 가입시 +'+d.add+'만</span>';
+  html += '<span style="font-size:10px;color:#8B95A1;margin-left:5px;">(최대 '+(d.base+d.add)+'만)</span>';
+  html += '</div>';
+  html += '</div>';
+});
+
+
+html += '</div>'; /* grid 끝 */
+html += '</div>'; /* 렌트리스 안내 끝 */
+
+html += '</div>'; /* scard 끝 */
+
+/* ── 영업 활용 팁 ── */
+html += '<div class="tip-box">';
+html += '<h4 style="display:flex;align-items:center;gap:7px;"><span class="tip-box-icon">💡</span>세일즈 활용 포인트</h4>';
+html += '<ul>';
+html += '<li><strong>현대+제네시스 횟수 합산</strong> — 브랜드 교차 재구매 시에도 횟수 인정 강조</li>';
+html += '<li><strong>법인 고객</strong> — 현대 최대 7만 / 제네시스 최대 20만, 횟수 무관 정액 안내</li>';
+html += '<li><strong>제네시스 렌트·리스사</strong> — 출고 포인트 외에도 실운행자 가입 시 추가 포인트 안내</li>';
+html += '<li>적립 포인트 → <strong>신차 재구매 D/C</strong>로 직접 활용 가능 (최대 400만p)</li>';
+html += '<li><span style="color:#F04452;font-weight:700;"><strong>조달/군용/관용 차량</strong>은 적립 대상 제외</span></li>';
+html += '</ul>';
+html += '</div>';
+
+/* ── 바로가기 링크 ── */
+html += '<div style="display:flex;flex-direction:column;gap:9px;margin-top:4px;">';
+
+/* 현대 블루멤버스 */
+html += '<a href="https://www.hyundai.com/kr/ko/service-membership/bluemembers/car-register/bluemembers-newcar-buy-change"'
+  + ' target="_blank" rel="noopener"'
+  + ' style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:14px 16px;'
+  + 'box-shadow:0 2px 10px rgba(0,0,0,0.04);border:1.5px solid rgba(49,130,246,0.2);'
+  + 'text-decoration:none;-webkit-tap-highlight-color:transparent;">';
+html += '<div style="width:36px;height:36px;border-radius:10px;background:#EBF3FF;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💳</div>';
+html += '<div style="flex:1;min-width:0;">';
+html += '<div style="font-size:13px;font-weight:800;color:#191F28;margin-bottom:2px;">현대자동차 블루멤버스 혜택 바로가기</div>';
+html += '<div style="font-size:10.5px;color:#8B95A1;font-weight:500;">신차구매 포인트 적립 기준 공식 안내 페이지</div>';
+html += '</div>';
+html += '<span style="font-size:16px;color:#3182F6;flex-shrink:0;">›</span>';
+html += '</a>';
+
+/* 제네시스 멤버십 */
+html += '<a href="https://www.genesis.com/kr/ko/members/genesis-membership/membership-overview/membership-points/members_tab_01.html"'
+  + ' target="_blank" rel="noopener"'
+  + ' style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:14px 16px;'
+  + 'box-shadow:0 2px 10px rgba(0,0,0,0.04);border:1.5px solid rgba(164,117,81,0.25);'
+  + 'text-decoration:none;-webkit-tap-highlight-color:transparent;">';
+html += '<div style="width:36px;height:36px;border-radius:10px;background:#F9F5F0;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🏆</div>';
+html += '<div style="flex:1;min-width:0;">';
+html += '<div style="font-size:13px;font-weight:800;color:#191F28;margin-bottom:2px;">제네시스 멤버십 포인트 바로가기</div>';
+html += '<div style="font-size:10.5px;color:#8B95A1;font-weight:500;">제네시스 신차구매 포인트 적립 기준 공식 안내 페이지</div>';
+html += '</div>';
+html += '<span style="font-size:16px;color:#A47551;flex-shrink:0;">›</span>';
+html += '</a>';
+
+html += '</div>'; /* flex 끝 */
+
+html += '<div style="margin-top:10px;font-size:10px;color:#B0B8C1;text-align:center;line-height:1.7;">';
+html += '※ 2026년 5월 1일 이후 출고 기준이며 변경될 수 있습니다.';
+html += '</div>';
+return html;
 
 })();
 
