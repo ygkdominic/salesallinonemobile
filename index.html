@@ -1857,11 +1857,20 @@ function closeKakaoGuide() {
   <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
     <span style="display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:2px;background:#EBF3FF;color:#1B64DA;min-width:64px;box-sizing:border-box;">업데이트</span>
     <div>
+      <div style="font-size:12.5px;font-weight:600;color:#191F28;line-height:1.5;margin-bottom:2px;">전차종 가격표, 판매조건표 추가</div>
+      <div style="font-size:10.5px;color:#8B95A1;font-weight:500;">2026.06.19</div>
+    </div>
+  </div>
+
+
+  <!-- 공지 2 -->
+  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
+    <span style="display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:2px;background:#EBF3FF;color:#1B64DA;min-width:64px;box-sizing:border-box;">업데이트</span>
+    <div>
       <div style="font-size:12.5px;font-weight:600;color:#191F28;line-height:1.5;margin-bottom:2px;">더 뉴 그랜저/블루멤버스 포인트 안내 추가</div>
       <div style="font-size:10.5px;color:#8B95A1;font-weight:500;">2026.06.12</div>
     </div>
   </div>
-
 
   <!-- 공지 2 -->
   <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
@@ -2347,6 +2356,69 @@ const VS_IDS = [
     h += '</div>';
   });
   closeRow.insertAdjacentHTML('afterend', h);
+
+  /* ── 블루멤버스 버튼 바로 아래 링크 삽입 ── */
+  var blueBtn = document.getElementById('btn-bluemembers');
+  if (blueBtn) {
+    var inlineLinks = document.createElement('div');
+    inlineLinks.style.cssText = [
+      'padding:6px 10px 10px',
+      'display:flex',
+      'flex-direction:column',
+      'gap:7px'
+    ].join(';');
+
+    /* ① 차종별 가격표 다운로드 */
+    inlineLinks.innerHTML =
+      '<a href="https://hmcprice.com/vehicle_price"'
+      + ' target="_blank" rel="noopener"'
+      + ' style="'
+      +   'display:flex;align-items:center;gap:10px;'
+      +   'background:#EBF3FF;border-radius:12px;padding:10px 13px;'
+      +   'text-decoration:none;-webkit-tap-highlight-color:transparent;'
+      +   'border:1px solid rgba(49,130,246,0.2);'
+      + '">'
+      + '<div style="width:28px;height:28px;border-radius:7px;background:#3182F6;'
+      +   'display:flex;align-items:center;justify-content:center;'
+      +   'font-size:14px;flex-shrink:0;">📄</div>'
+      + '<div style="flex:1;min-width:0;">'
+      +   '<div style="font-size:12px;font-weight:800;color:#1B64DA;line-height:1.4;">'
+      +     '차종별 가격표 다운로드'
+      +   '</div>'
+      +   '<div style="font-size:10px;color:#8B95A1;font-weight:500;margin-top:1px;">'
+      +     '탭하여 바로 열기'
+      +   '</div>'
+      + '</div>'
+      + '<span style="font-size:14px;color:#3182F6;flex-shrink:0;">↓</span>'
+      + '</a>'
+
+      /* ② 국내사업 판매조건 다운로드 */
+      + '<a href="https://hmcprice.com/sales"'
+      + ' target="_blank" rel="noopener"'
+      + ' style="'
+      +   'display:flex;align-items:center;gap:10px;'
+      +   'background:#F0FFF9;border-radius:12px;padding:10px 13px;'
+      +   'text-decoration:none;-webkit-tap-highlight-color:transparent;'
+      +   'border:1px solid rgba(0,180,147,0.2);'
+      + '">'
+      + '<div style="width:28px;height:28px;border-radius:7px;background:#00B493;'
+      +   'display:flex;align-items:center;justify-content:center;'
+      +   'font-size:14px;flex-shrink:0;">📋</div>'
+      + '<div style="flex:1;min-width:0;">'
+      +   '<div style="font-size:12px;font-weight:800;color:#007A60;line-height:1.4;">'
+      +     '국내사업 판매조건 다운로드'
+      +   '</div>'
+      +   '<div style="font-size:10px;color:#8B95A1;font-weight:500;margin-top:1px;">'
+      +     '공문 첨부파일 · 탭하여 바로 열기'
+      +   '</div>'
+      + '</div>'
+      + '<span style="font-size:14px;color:#00B493;flex-shrink:0;">↓</span>'
+      + '</a>';
+
+    /* 블루멤버스 버튼 바로 다음에 삽입 */
+    blueBtn.insertAdjacentElement('afterend', inlineLinks);
+  }
+
 })();
 
 /* ════════════════════════════════
@@ -9690,6 +9762,7 @@ PANELS.summary=`
     <div class="car-hd-title" style="color:#3182F6;margin-bottom:8px;">26년 6월 전체 판매조건 요약</div>
     <div style="font-size:11px;color:#8B95A1;font-weight:500;">
      - 최종 업데이트<br>
+       · 26년 6월 19일 - <span style="color:#C05000;font-weight:800;"><strong>전차종 가격표/조건표 다운로드 사이드바 추가</strong></span><br>
        · 26년 6월 17일 - <span style="color:#C05000;font-weight:800;"><strong>블루멤버스 포인트 안내 사이드바 추가</strong></span><br>
        · 26년 6월 12일 - <span style="color:#C05000;font-weight:800;"><strong>더 뉴 그랜저 사이드바 추가</strong></span><br>
        · 26년 6월 8일 - <strong>스타리아 일렉트릭 보조금 추가</strong><br>
@@ -9911,7 +9984,8 @@ PANELS.summary=`
   <div class="sum-head">6월 핵심 공통 프로모션</div>
   <div class="pg">
 
-   <div class="wbox"><strong>6월 개별소비세 인하 종료되며 <br>7월부터는 차종별로 30~140만원 수준 실구매가가 인상됩니다. <br>6월 내 구매가 최적기입니다.</strong></div>
+<div class="wbox"><strong style="color:#F04452;">6월 개별소비세 인하 종료 확정적입니다. <br>7월부터는 차종별로 30~140만원 수준 실구매가가 인상됩니다. <br>6월 내 출고 적극 유도 바랍니다.</strong></div>
+
 
 <!-- ① 패밀리카 여름 기획전 (신규) -->
     <div class="pc" style="background:linear-gradient(135deg,#EBF8FF 0%,#F0FBFF 60%,#E8F5FF 100%);border:1.5px solid rgba(49,180,246,0.18);position:relative;overflow:hidden;">
