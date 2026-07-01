@@ -2277,6 +2277,14 @@ if(id==='g80ice'){
     const gc=document.getElementById('g80ice-base-card');
     if(gc&&!gc.classList.contains('selected'))toggleDiscount(gc);
 }
+if(id==='gv70ice'){
+    const gc=document.getElementById('gv70ice-base-card');
+    if(gc&&!gc.classList.contains('selected'))toggleDiscount(gc);
+}
+if(id==='gv80'){
+    const gc=document.getElementById('gv80-base-card');
+    if(gc&&!gc.classList.contains('selected'))toggleDiscount(gc);
+}
 }
 
 
@@ -12790,6 +12798,7 @@ PANELS.gv70ice=(()=>{
       goodfriendRadio('gv70ice','hlg'),
     ],
     [
+  ['🏷️ 기본 판매조건 (7월 신규)','7월 특별 혜택: <span class="hlg">100만원</span>','new',100,'gv70ice-base-card'],
     ],
     [birthMonthRadioGen('gv70ice', BIRTH_GV70ICE), rentRadioGen('gv70ice'), corpRadioGen('gv70ice')]
   )
@@ -12837,6 +12846,7 @@ PANELS.gv80=(()=>{
       goodfriendRadio('gv80','hlg'),
     ],
     [
+  ['🏷️ 기본 판매조건 (7월 신규)','7월 특별 혜택: <span class="hlg">100만원</span>','new',100,'gv80-base-card'],
     ],
     [birthMonthRadioGen('gv80', BIRTH_GV80), rentRadioGen('gv80'), corpRadioGen('gv80')]
   )
