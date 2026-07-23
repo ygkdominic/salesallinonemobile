@@ -19,10 +19,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
 
 /* ════════════════════════════════
-   Toss Style Mobile — 색상 시스템
+   색상 시스템
 ════════════════════════════════ */
 :root {
-  /* Toss 컬러 시스템으로 전환 */
   --p:              #3182F6;
   --hyundai-blue:   #3182F6;
   --hyundai-blue-mid: #1B64DA;
@@ -1356,287 +1355,6 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
   display: flex; flex-direction: column; align-items: center;
 ">
 
-  <!-- ★ 카카오 인앱 안내 팝업 — 랜딩 내부 최상단에 삽입 ★ -->
-  <div id="kakao-guide-overlay" style="
-    display: none;
-    position: fixed; inset: 0; z-index: 10000;
-    background: rgba(0,0,0,0.65);
-    align-items: flex-end;
-    justify-content: center;
-  ">
-    <div style="
-      background: #fff;
-      border-radius: 24px 24px 0 0;
-      padding: 28px 24px 44px;
-      width: 100%; max-width: 480px;
-      animation: sheetUp .3s ease;
-    ">
-      <!-- 핸들바 -->
-      <div style="width:36px;height:4px;background:#E0E0E0;
-        border-radius:2px;margin:0 auto 22px;"></div>
-
-      <!-- 타이틀 -->
-      <div style="font-size:20px;font-weight:900;color:#191F28;
-        margin-bottom:8px;text-align:center;">
-        📲 앱으로 설치하기
-      </div>
-      <div style="font-size:13px;color:#8B95A1;text-align:center;
-        margin-bottom:28px;line-height:1.65;">
-        카카오톡 안에서는 홈화면 설치가 불가해요<br>
-        아래 방법대로 외부 브라우저로 열어주세요
-      </div>
-
-      <!-- 안드로이드 안내 -->
-      <div id="kakao-android-guide" style="display:none;">
-        <div style="background:#F2F4F6;border-radius:16px;padding:18px 16px;margin-bottom:16px;">
-          <div style="font-size:11px;font-weight:800;color:#3182F6;
-            letter-spacing:0.8px;margin-bottom:14px;">
-            🤖 안드로이드 (갤럭시) 사용자
-          </div>
-          <!-- STEP 1 -->
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#3182F6;
-              color:#fff;font-size:13px;font-weight:800;
-              display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-            <div style="font-size:14px;color:#191F28;font-weight:600;
-              line-height:1.55;padding-top:3px;">
-              카카오톡 내 우측 상/하단 중<strong style="color:#3182F6;"> 세로 점 3개</strong> 버튼을 탭하세요
-            </div>
-          </div>
-          <!-- STEP 2 -->
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#3182F6;
-              color:#fff;font-size:13px;font-weight:800;
-              display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-            <div style="font-size:14px;color:#191F28;font-weight:600;
-              line-height:1.55;padding-top:3px;">
-              <strong style="color:#3182F6;">"다른 브라우저로 열기"</strong> 선택<br>
-              <span style="font-size:12px;color:#8B95A1;">또는 "Chrome으로 열기"</span>
-            </div>
-          </div>
-          <!-- STEP 3 -->
-          <div style="display:flex;align-items:flex-start;gap:12px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#00B493;
-              color:#fff;font-size:13px;font-weight:800;
-              display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-            <div style="font-size:14px;color:#191F28;font-weight:600;
-              line-height:1.55;padding-top:3px;">
-              브라우저에서 열리면<br>
-              <strong style="color:#00B493;"> 우측 하단 세로점 세개 클릭</strong> ✅
-            </div>
-           </div>
-         <!-- STEP 4 -->
-          <div style="display:flex;align-items:flex-start;gap:12px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#00B493;
-              color:#fff;font-size:13px;font-weight:800;
-              display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-            <div style="font-size:14px;color:#191F28;font-weight:600;
-              line-height:1.55;padding-top:3px;">
-              현재 페이지 추가 탭 후<br>
-              <strong style="color:#00B493;"> "홈 화면 추가" 탭</strong> ✅
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- iOS 안내 -->
-      <div id="kakao-ios-guide" style="display:none;">
-        <div style="background:#F2F4F6;border-radius:16px;padding:18px 16px;margin-bottom:16px;">
-          <div style="font-size:11px;font-weight:800;color:#3182F6;
-            letter-spacing:0.8px;margin-bottom:14px;">
-            🍎 아이폰 사용자
-          </div>
-          <!-- STEP 1 -->
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#3182F6;
-              color:#fff;font-size:13px;font-weight:800;
-              display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-            <div style="font-size:14px;color:#191F28;font-weight:600;
-              line-height:1.55;padding-top:3px;">
-              우측 하단 <strong style="color:#3182F6;">공유 버튼 ↑</strong> 을 탭하세요
-            </div>
-          </div>
-          <!-- STEP 2 -->
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#3182F6;
-              color:#fff;font-size:13px;font-weight:800;
-              display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-            <div style="font-size:14px;color:#191F28;font-weight:600;
-              line-height:1.55;padding-top:3px;">
-              <strong style="color:#3182F6;">"Safari로 열기"</strong> 선택
-            </div>
-          </div>
-          <!-- STEP 3 -->
-          <div style="display:flex;align-items:flex-start;gap:12px;">
-            <div style="width:28px;height:28px;border-radius:50%;background:#00B493;
-              color:#fff;font-size:13px;font-weight:800;
-              display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-            <div style="font-size:14px;color:#191F28;font-weight:600;
-              line-height:1.55;padding-top:3px;">
-              Safari에서 우측 하단<br>
-              <strong style="color:#00B493;">··· 버튼 → 공유→ "홈 화면에 추가"</strong> ✅
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 닫기 버튼 -->
-      <button onclick="closeKakaoGuide()" style="
-        width:100%;height:52px;
-        background:#F2F4F6;border:none;border-radius:14px;
-        font-size:15px;font-weight:700;color:#4E5968;
-        font-family:'Noto Sans KR',sans-serif;cursor:pointer;
-        -webkit-tap-highlight-color:transparent;
-      ">나중에 할게요</button>
-    </div>
-  </div>
-
-<script>
-
-function closeKakaoGuide() {
-  var overlay = document.getElementById('kakao-guide-overlay');
-  if (overlay) overlay.style.display = 'none';
-}
-
-/* ════ 설치 안내 통합 로직 ════ */
-(function() {
-  var ua = navigator.userAgent || '';
-  var isIOS     = /iphone|ipad|ipod/i.test(ua);
-  var isAndroid = /android/i.test(ua);
-
-  /* PWA 설치 상태면 모든 안내 생략 */
-  var isStandalone = window.matchMedia('(display-mode: standalone)').matches
-                  || window.navigator.standalone === true;
-  if (isStandalone) return;
-
-  /* iOS: 기존 바텀시트 팝업 (카카오 인앱 여부 무관하게 Safari 미설치 환경 안내) */
-  if (isIOS) {
-    /* Safari에서 열린 경우 팝업 생략 (홈화면 추가 안내는 PWA 카드에서 처리) */
-    var isSafari = /safari/i.test(ua) && !/chrome/i.test(ua) && !/crios/i.test(ua);
-    if (!isSafari) {
-      /* 카카오/기타 인앱 → 기존 바텀시트 팝업 */
-      function showIOSOverlay() {
-        var overlay  = document.getElementById('kakao-guide-overlay');
-        var iosGuide = document.getElementById('kakao-ios-guide');
-        if (!overlay || !iosGuide) { setTimeout(showIOSOverlay, 100); return; }
-        iosGuide.style.display = 'block';
-        overlay.style.cssText = [
-          'display:flex','position:fixed','inset:0','z-index:10000',
-          'background:rgba(0,0,0,0.65)','align-items:flex-end','justify-content:center'
-        ].join('!important;') + '!important';
-      }
-      showIOSOverlay();
-      requestAnimationFrame(function(){ requestAnimationFrame(showIOSOverlay); });
-    }
-    return;
-  }
-
-  /* Android: beforeinstallprompt 발생 여부로 크롬/삼성인터넷 vs 인앱 구분 */
-  if (isAndroid) {
-    var _pwaPromptAndroid = null;
-    var _promptChecked    = false;
-
-    window.addEventListener('beforeinstallprompt', function(e) {
-      e.preventDefault();
-      _pwaPromptAndroid = e;
-    });
-
-    function renderAndroidBanner() {
-      if (_promptChecked) return;
-      _promptChecked = true;
-
-      var banner = document.getElementById('android-install-banner');
-      if (!banner) return;
-
-      if (_pwaPromptAndroid) {
-        /* ✅ 크롬/삼성인터넷: 앱 설치 버튼 표시 */
-        banner.innerHTML =
-          '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">' +
-            '<div style="width:46px;height:46px;border-radius:12px;flex-shrink:0;' +
-              'background:linear-gradient(135deg,#EBF3FF,#D6EAFF);' +
-              'display:flex;align-items:center;justify-content:center;font-size:22px;">📲</div>' +
-            '<div>' +
-              '<div style="font-size:13.5px;font-weight:800;color:#191F28;margin-bottom:3px;">앱으로 설치하기</div>' +
-              '<div style="font-size:11.5px;color:#8B95A1;font-weight:500;line-height:1.5;">' +
-                '홈 화면에 추가하면 앱처럼 빠르게 실행됩니다</div>' +
-            '</div>' +
-          '</div>' +
-          '<button id="android-pwa-btn" onclick="androidInstallPWA()" style="' +
-            'width:100%;height:52px;' +
-            'background:linear-gradient(135deg,#3182F6,#1B64DA);' +
-            'color:#fff;border:none;border-radius:14px;' +
-            'font-family:\'Noto Sans KR\',sans-serif;' +
-            'font-size:14px;font-weight:800;cursor:pointer;' +
-            'box-shadow:0 4px 14px rgba(49,130,246,0.32);' +
-            'display:flex;align-items:center;justify-content:center;gap:8px;' +
-            '-webkit-tap-highlight-color:transparent;' +
-          '">📲 &nbsp;홈 화면에 앱으로 추가하기</button>' +
-          '<div id="android-install-done" style="' +
-            'display:none;text-align:center;font-size:12px;font-weight:700;' +
-            'color:#00B493;padding:10px;background:#F0FFF9;border-radius:10px;margin-top:8px;' +
-          '">✅ 설치 완료! 아래에서 비밀번호를 입력하세요.</div>';
-        banner.style.display = 'block';
-
-      } else {
-        /* ⚠️ 인앱 브라우저(카카오 등): 외부 브라우저로 열기 안내 */
-        banner.innerHTML =
-          '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">' +
-            '<div style="width:36px;height:36px;border-radius:10px;flex-shrink:0;' +
-              'background:linear-gradient(135deg,#FFF0F1,#FFE5E7);' +
-              'display:flex;align-items:center;justify-content:center;font-size:18px;">⚠️</div>' +
-            '<div>' +
-              '<div style="font-size:13px;font-weight:800;color:#191F28;margin-bottom:2px;">' +
-                '앱 설치를 위해 브라우저로 열어주세요</div>' +
-            '</div>' +
-          '</div>' +
-          '<div style="background:#F2F4F6;border-radius:14px;padding:16px;">' +
-            '<div style="font-size:11px;font-weight:800;color:#3182F6;' +
-              'letter-spacing:0.5px;margin-bottom:12px;">🤖 안드로이드 설치 방법</div>' +
-            '<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;">' +
-              '<div style="width:24px;height:24px;border-radius:50%;background:#3182F6;' +
-                'color:#fff;font-size:11px;font-weight:800;' +
-                'display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>' +
-              '<div style="font-size:13px;color:#191F28;font-weight:600;line-height:1.5;padding-top:1px;">' +
-                '카카오톡 내 우측 상/하단 중<strong style="color:#3182F6;"> 세로 점 세 개</strong> 버튼 탭</div>' +
-            '</div>' +
-            '<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;">' +
-              '<div style="width:24px;height:24px;border-radius:50%;background:#3182F6;' +
-                'color:#fff;font-size:11px;font-weight:800;' +
-                'display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>' +
-              '<div style="font-size:13px;color:#191F28;font-weight:600;line-height:1.5;padding-top:1px;">' +
-                '<strong style="color:#3182F6;">"다른 브라우저로 열기"</strong> 선택<br>' +
-                '<span style="font-size:11px;color:#8B95A1;">Chrome 또는 삼성인터넷 선택</span></div>' +
-            '</div>' +
-            '<div style="display:flex;align-items:flex-start;gap:10px;">' +
-              '<div style="width:24px;height:24px;border-radius:50%;background:#00B493;' +
-                'color:#fff;font-size:11px;font-weight:800;' +
-                'display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>' +
-              '<div style="font-size:13px;color:#191F28;font-weight:600;line-height:1.5;padding-top:1px;">' +
-                '브라우저에서 열리면<br>' +
-                '<strong style="color:#00B493;">우측 하단 점 세개 클릭 후 "현재 페이지 추가" 탭</strong> ✅</div>' +
-            '</div>' +
-            '<div style="display:flex;align-items:flex-start;gap:10px;">' +
-              '<div style="width:24px;height:24px;border-radius:50%;background:#00B493;' +
-                'color:#fff;font-size:11px;font-weight:800;' +
-                'display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>' +
-              '<div style="font-size:13px;color:#191F28;font-weight:600;line-height:1.5;padding-top:1px;">' +
-                '하단에서 메뉴가 뜨면<br>' +
-                '<strong style="color:#00B493;">"홈 화면" 선택/홈화면 설치 후 사용</strong> ✅</div>' +
-            '</div>'+
-          '</div>';
-        banner.style.display = 'block';
-      }
-    }
-
-    /* 500ms 대기 후 판단 (beforeinstallprompt 이벤트 수신 시간 확보) */
-    setTimeout(renderAndroidBanner, 500);
-  }
-
-})();
-
-</script>
-
-
   <!-- 배경 장식 -->
   <div style="
     position: fixed; top:-120px; right:-80px;
@@ -1728,18 +1446,6 @@ function closeKakaoGuide() {
 
   <!-- 콘텐츠 -->
   <div style="width:100%;max-width:480px;padding:0 16px 60px;position:relative;z-index:1;">
-
-<!-- ★ 안드로이드 설치 안내 배너 ★ -->
-<div id="android-install-banner" style="
-  display:none;
-  background:#FFFFFF;border-radius:20px;padding:18px 18px 16px;
-  margin-top:20px;
-  box-shadow:0 2px 14px rgba(0,0,0,0.04);
-  border:1px solid rgba(49,130,246,0.15);
-">
-  <!-- JS로 채워짐 -->
-</div>
-
 
     <!-- ① 암호 입력 카드 (위로) -->
     <div style="
@@ -1905,149 +1611,9 @@ function closeKakaoGuide() {
       <div style="font-size:10.5px;color:#8B95A1;font-weight:500;">2026.05.22</div>
     </div>
   </div>
-
-  <!-- 공지 추가 시 위 형식 복사 후 붙여넣기 -->
-
 </div>
 
-
-<!-- ════ PWA 설치 안내 카드 ════ -->
-<div id="pwa-install-card" style="
-  background:#FFFFFF;border-radius:20px;padding:18px 18px 16px;
-  margin-top:14px;box-shadow:0 2px 14px rgba(0,0,0,0.04);
-  border:1px solid rgba(49,130,246,0.15);
-  display:none;
-">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-    <div style="
-      width:46px;height:46px;border-radius:12px;flex-shrink:0;
-      background:linear-gradient(135deg,#EBF3FF,#D6EAFF);
-      display:flex;align-items:center;justify-content:center;font-size:22px;
-    ">📲</div>
-    <div>
-      <div style="font-size:13.5px;font-weight:800;color:#191F28;margin-bottom:3px;">앱으로 설치하기</div>
-      <div style="font-size:11.5px;color:#8B95A1;font-weight:500;line-height:1.5;">홈 화면에 추가하면 앱처럼<br>빠르게 실행할 수 있습니다</div>
-    </div>
-  </div>
-
-  <!-- Android 크롬: 자동 설치 버튼 -->
-  <button id="pwa-install-btn" onclick="pwaInstall()" style="
-    display:none;width:100%;height:52px;
-    background:linear-gradient(135deg,#3182F6,#1B64DA);
-    color:#fff;border:none;border-radius:14px;
-    font-family:'Noto Sans KR',sans-serif;
-    font-size:14px;font-weight:800;cursor:pointer;
-    box-shadow:0 4px 14px rgba(49,130,246,0.32);
-    margin-bottom:10px;
-    align-items:center;justify-content:center;gap:8px;
-    transition:all 0.18s;
-    -webkit-tap-highlight-color:transparent;
-  ">
-    📲 &nbsp;홈 화면에 앱으로 추가하기
-  </button>
-
-  <!-- iOS Safari: 수동 안내 -->
-  <div id="pwa-ios-guide" style="display:none;">
-    <div style="
-      background:linear-gradient(135deg,#EBF3FF,#F0F7FF);
-      border-radius:14px;padding:14px 16px;
-      font-size:12px;color:#4E5968;line-height:2.0;
-      border:1px solid rgba(49,130,246,0.12);
-    ">
-      <div style="font-size:13px;font-weight:800;color:#191F28;margin-bottom:8px;">📱 iPhone / iPad 설치 방법</div>
-      <div>① 하단 <strong style="color:#3182F6;">공유 버튼</strong> (↑) 탭</div>
-      <div>② <strong style="color:#3182F6;">"Safari로 열기"</strong> 선택</div>
-      <div>③ <strong style="color:#3182F6;">우측 하단 "···" </strong> 선택 후 공유 (↑) 터치 </div>
-      <div>④ <strong style="color:#3182F6;">"홈화면에 추가" </strong> 선택</div>
-    </div>
-  </div>
-
-  <!-- 이미 설치됨 -->
-  <div id="pwa-already" style="
-    display:none;text-align:center;
-    font-size:12px;font-weight:700;color:#00B493;
-    padding:10px;
-    background:#F0FFF9;border-radius:10px;
-  ">
-    ✅ 이미 홈 화면에 추가되어 있습니다!
-  </div>
-</div>
-
-<script>
-/* ════ PWA 설치 버튼 로직 (통합) ════ */
-var _globalPwaPrompt = null;
-
-/* beforeinstallprompt 전역 캡처 */
-window.addEventListener('beforeinstallprompt', function(e) {
-  e.preventDefault();
-  _globalPwaPrompt = e;
-});
-
-/* 설치 완료 이벤트 */
-window.addEventListener('appinstalled', function() {
-  var banner = document.getElementById('android-install-banner');
-  var done   = document.getElementById('android-install-done');
-  var btn    = document.getElementById('android-pwa-btn');
-  if (btn)  btn.style.display = 'none';
-  if (done) done.style.display = 'block';
-  _globalPwaPrompt = null;
-});
-
-/* ── 전역 설치 함수 (버튼에서 호출) ── */
-function androidInstallPWA() {
-  if (!_globalPwaPrompt) {
-    alert('브라우저 메뉴 → "홈 화면에 추가" 또는 "앱 설치"를 선택해 주세요.');
-    return;
-  }
-  _globalPwaPrompt.prompt();
-  _globalPwaPrompt.userChoice.then(function(result) {
-    if (result.outcome === 'accepted') {
-      var btn  = document.getElementById('android-pwa-btn');
-      var done = document.getElementById('android-install-done');
-      if (btn)  btn.style.display = 'none';
-      if (done) done.style.display = 'block';
-    }
-    _globalPwaPrompt = null;
-  });
-}
-
-/* ── iOS Safari: 수동 안내 (기존 pwa-install-card 재활용) ── */
-function isIOSDevice() {
-  return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
-}
-function isStandaloneMode() {
-  return window.matchMedia('(display-mode: standalone)').matches
-      || window.navigator.standalone === true;
-}
-
-window.addEventListener('load', function() {
-  if (isStandaloneMode()) return;
-  if (isIOSDevice()) {
-    /* iOS Safari일 때만 기존 pwa-install-card 표시 */
-    var isSafari = /safari/i.test(navigator.userAgent)
-               && !/chrome/i.test(navigator.userAgent)
-               && !/crios/i.test(navigator.userAgent);
-    if (isSafari) {
-      var c = document.getElementById('pwa-install-card');
-      if (c) c.style.display = 'block';
-      var g = document.getElementById('pwa-ios-guide');
-      if (g) g.style.display = 'block';
-    }
-  }
-});
-
-/* 기존 pwaInstall 함수 유지 (혹시 다른 곳에서 호출 시) */
-function pwaInstall() { androidInstallPWA(); }
-function isIOS()        { return isIOSDevice(); }
-function isStandalone() { return isStandaloneMode(); }
-function showPwaCard()  {
-  var c = document.getElementById('pwa-install-card');
-  if (c) c.style.display = 'block';
-}
-</script>
-
-
-    <div style="margin-top:24px;font-size:11px;color:#B0B8C1;text-align:center;line-height:1.8;font-weight:500;">
+<div style="margin-top:24px;font-size:11px;color:#B0B8C1;text-align:center;line-height:1.8;font-weight:500;">
       본 앱은 현대자동차 경남지역본부 내부 자료입니다.<br>
       외부 유출 및 무단 배포를 금지합니다.
     </div>
@@ -2966,14 +2532,14 @@ function ptabs(g, defs) {
   </div>`;
 }
 
-/* ── 표준형 할부 테이블 (72개월 이상 전부 제거) ── */
+/* ── 표준형 할부 테이블  ── */
 function tblStd(g,t1,t2,rows,note=''){
-  return `<div class="ppanel" id="pp-${g}-std" data-g="${g}"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 표준형 할부</div>
-
+  return `<div class="ppanel active" id="pp-${g}-std" data-g="${g}"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 표준형 할부</div>
   ${note?`<div class="wbox">${note}</div>`:''}
   ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(${t1})</th><th class="th-n">일반(${t2})</th></tr></thead>
   <tbody>${rows.map(([p,m,n,f])=>`<tr class="${f?'chg-row':''}"><td class="lb">${p}</td><td>${m}</td><td>${n}</td></tr>`).join('')}</tbody></table>`)}</div></div>`;
 }
+
 function tblVar(g,t1,t2,rows){
   return `<div class="ppanel" id="pp-${g}-var" data-g="${g}"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 변동금리형 할부</div>
 
@@ -2986,95 +2552,424 @@ function tblDef(g,t1,t2,rows){
   ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(${t1})</th><th class="th-n">일반(${t2})</th></tr></thead>
   <tbody>${rows.map(([p,m,n])=>`<tr><td class="lb">${p}</td><td>${m}</td><td>${n}</td></tr>`).join('')}</tbody></table>`)}</div></div>`;
 }
+function tblYuye(g, t1, t2, rows){
+  return `<div class="ppanel" id="pp-${g}-yuye" data-g="${g}"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 반납유예형 할부</div>
+  ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(${t1})</th><th class="th-n">일반(${t2})</th></tr></thead>
+  <tbody>${rows.map(([p,m,n])=>`<tr><td class="lb">${p}</td><td>${m}</td><td>${n}</td></tr>`).join('')}</tbody></table>`)}</div></div>`;
+}
 function tblJ5(g,label36,label48){
   return `<div class="ppanel" id="pp-${g}-j5" data-g="${g}"><div class="scard">
   <div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 현장렌트사 특화 할부 (J5)</div>
-
   ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-n">일반(J5)</th></tr></thead>
   <tbody>
     <tr><td class="lb">24개월</td><td><span class="r1">${label36}</span></td></tr>
     <tr><td class="lb">36개월</td><td><span class="r1">${label36}</span></td></tr>
     <tr><td class="lb">48개월</td><td><span class="r1">${label48}</span></td></tr>
-  </tbody></table>`)}</div></div>`;
+  </tbody></table>`)}
+  <div class="pbox"><h4>✅ 조건</h4><ul>
+    <li>24/36/48개월 차량반납 유예형 저금리 (일반 - J5)</li>
+    <li>※ HEV 포함 · 제네시스 전동화/N/스타리아EV/더 뉴 그랜저 제외</li>
+  </ul></div>
+  </div></div>`;
+}
+
+/* ── 단기소액 무이자 (JK) 테이블 ── */
+function tblJK(g, maxAmt) {
+  return `<div class="ppanel" id="pp-${g}-jk" data-g="${g}">
+    <div class="scard">
+      <div class="stitle">
+        <span style="width:18px;height:18px;border-radius:5px;background:#F3EEFF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span>
+        단기소액 무이자 (JK)
+      </div>
+      <div class="wbox">
+        <strong>모빌리티(JK) 전용</strong> · 일반 미적용 · 최대한도 <strong>${maxAmt}</strong>
+      </div>
+      ${T(`<table class="rt">
+        <thead>
+          <tr>
+            <th>기간</th>
+            <th class="th-m">모빌리티(JK)</th>
+            <th class="th-n">일반</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="lb">12개월</td>
+            <td><span class="rzero">0.0%</span></td>
+            <td style="color:#8B95A1;">—</td>
+          </tr>
+        </tbody>
+      </table>`)}
+      <div class="pbox">
+        <h4>✅ 조건</h4>
+        <ul>
+          <li>12개월 무이자 · 모빌리티 한정</li>
+          <li>최대한도 ${maxAmt}</li>
+          <li>단기 소액 구매 고객 적극 소구</li>
+        </ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+function tblJ5(g, label36, label48){        /* ← tblJ5가 별도로 완전하게 존재해야 함 */
+  return `<div class="ppanel" id="pp-${g}-j5" data-g="${g}"><div class="scard">
+  <div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 현장렌트사 특화 할부 (J5)</div>
+  ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-n">일반(J5)</th></tr></thead>
+  <tbody>
+    <tr><td class="lb">24개월</td><td><span class="r1">${label36}</span></td></tr>
+    <tr><td class="lb">36개월</td><td><span class="r1">${label36}</span></td></tr>
+    <tr><td class="lb">48개월</td><td><span class="r1">${label48}</span></td></tr>
+  </tbody></table>`)}
+  <div class="pbox"><h4>✅ 조건</h4><ul>
+    <li>24/36/48개월 차량반납 유예형 저금리 (일반 - J5)</li>
+    <li>※ HEV 포함 · 제네시스 전동화/N/스타리아EV/더 뉴 그랜저 제외</li>
+  </ul></div>
+  </div></div>`;
 }
 
 /* ════════════════════════════════
-   ★ 할부 금리 데이터 (72개월 이상 전부 삭제)
+   ★ 할부 금리 데이터 — 메인 관리 → 금리 변경 시 아래 RATE_CONFIG 만 수정하세요
+   2026년 7월 기준
 ════════════════════════════════ */
-const R=`<span class="rev">`,R1=`<span class="r1">`,Rc=`</span>`;
+const R  = '<span class="rev">';
+const R1 = '<span class="r1">';
+const Rc = '</span>';
 
-/* ICE 계열: 24~60개월만 */
-const STD_ICE=[
-  ['24개월',R+'5.2%'+Rc,R1+'6.0%'+Rc],
-  ['36개월',R+'5.2%'+Rc,R1+'6.0%'+Rc],
-  ['48개월',R+'5.3%'+Rc,R1+'6.1%'+Rc],
-  ['60개월',R+'5.4%'+Rc,R1+'6.2%'+Rc],
-  /* 72개월 이상 삭제 */
-];
-const STD_ICE_AVANTE=[
-  ['24개월',R+'5.2%'+Rc,R1+'6.0%'+Rc],
-  ['36개월',R+'5.2%'+Rc,R1+'6.0%'+Rc],
-  ['48개월',R+'5.3%'+Rc,R1+'6.1%'+Rc],
-  ['60개월',R+'5.4%'+Rc,R1+'6.2%'+Rc],
-];
-const STD_ICE_SHORT=STD_ICE;
+const RATE_CONFIG = {
 
-/* EV 계열: 24~60개월만 */
-const STD_EV=[
-  ['24개월','-',R1+'5.5%'+Rc],
-  ['36개월',R+'4.7%'+Rc,R1+'5.5%'+Rc],
-  ['48개월',R+'4.8%'+Rc,R1+'5.6%'+Rc],
-  ['60개월',R+'4.9%'+Rc,R1+'5.7%'+Rc],
-  /* 72개월 이상 삭제 */
-];
-const STD_EV_SHORT=[
-  ['24개월',R+'4.7%'+Rc,R1+'5.5%'+Rc],
-  ['36개월',R+'4.7%'+Rc,R1+'5.5%'+Rc],
-  ['48개월',R+'4.8%'+Rc,R1+'5.6%'+Rc],
-  ['60개월',R+'4.9%'+Rc,R1+'5.7%'+Rc],
-];
-const STD_EV_IONIQ9=STD_EV_SHORT;
-const STD_EV_PORTER=STD_EV_SHORT;
-const STD_EV_SONATA=[
-  ['24개월','-',R1+'5.5%'+Rc],
-  ['36개월',R+'4.7%'+Rc,R1+'5.5%'+Rc],
-  ['48개월',R+'4.8%'+Rc,R1+'5.6%'+Rc],
-  ['60개월',R+'4.9%'+Rc,R1+'5.7%'+Rc],
-];
-const STD_EV_GRANDEUR=STD_EV_SHORT;
+  /* ────────────────────────────────
+     ICE / HEV 그룹
+  ──────────────────────────────── */
 
-/* 제네시스: 36~60개월만 */
-const STD_GEN=[
-  ['36개월',R+'4.7%'+Rc,R1+'5.5%'+Rc],
-  ['48개월',R+'4.8%'+Rc,R1+'5.6%'+Rc],
-  ['60개월',R+'4.9%'+Rc,R1+'5.7%'+Rc],
-  /* 72개월 이상 삭제 */
-];
-const STD_GEN_SHORT=STD_GEN;
+  /* 1. ICE_STANDARD
+     적용: 아반떼·베뉴·코나ICE/HEV·투싼ICE/HEV
+           팰리세이드ICE/HEV·스타리아ICE/HEV·포터LPDI */
+  ICE_STANDARD: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'5.4%'+Rc, R1+'6.2%'+Rc],
+      ['36개월', R+'5.4%'+Rc, R1+'6.2%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.3%'+Rc],
+      ['60개월', R+'5.6%'+Rc, R1+'6.4%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc, R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc, R1+'5.9%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+      ['48개월', R+'6.0%'+Rc, R1+'7.0%'+Rc],
+      ['60개월', R+'6.4%'+Rc, R1+'7.4%'+Rc],
+    ],
+    yuye: [
+      ['36개월', R+'6.3%'+Rc, R1+'7.3%'+Rc],
+      ['48개월', R+'6.3%'+Rc, R1+'7.3%'+Rc],
+      ['60개월', R+'6.3%'+Rc, R1+'7.3%'+Rc],
+    ],
+  },
 
-/* 스타리아 일렉트릭: 24~60개월만 */
-const STD_STARIAEV=[
-  ['24개월',R+'5.2%'+Rc,R1+'6.0%'+Rc],
-  ['36개월',R+'5.2%'+Rc,R1+'6.0%'+Rc],
-  ['48개월',R+'5.3%'+Rc,R1+'6.1%'+Rc],
-  ['60개월',R+'5.4%'+Rc,R1+'6.2%'+Rc],
-  /* 72개월 이상 삭제 */
-];
-const STD_STARIAEV_SHORT=STD_STARIAEV;
-const STD_NEXO_SHORT=STD_ICE;
+  /* 2. ICE_SONATA
+     적용: 쏘나타ICE/HEV · 싼타페ICE/HEV */
+  ICE_SONATA: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'4.9%'+Rc,  R1+'5.7%'+Rc],
+      ['36개월', R+'4.9%'+Rc,  R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc,  R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc,  R1+'5.9%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.4%'+Rc, R1+'5.2%'+Rc],
+      ['48개월', R+'4.5%'+Rc, R1+'5.3%'+Rc],
+      ['60개월', R+'4.6%'+Rc, R1+'5.4%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.4%'+Rc, R1+'6.4%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.5%'+Rc],
+      ['60개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+    ],
+    yuye: [
+      ['36개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['48개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['60개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+    ],
+  },
 
-/* ST1: 24~60개월만 */
-const STD_ST1_SHORT=[
-  ['24개월',R+'4.7%'+Rc,R1+'5.5%'+Rc],
-  ['36개월',R+'5.5%'+Rc,R1+'6.3%'+Rc],
-  ['48개월',R+'5.6%'+Rc,R1+'6.4%'+Rc],
-  ['60개월',R+'5.7%'+Rc,R1+'6.5%'+Rc],
-  /* 72개월 이상 삭제 */
-];
+  /* 3. ICE_GRANDEUR
+     적용: 그랜저ICE/HEV(26MY) · 더 뉴 그랜저ICE/HEV */
+  ICE_GRANDEUR: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['36개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc, R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc, R1+'5.9%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.4%'+Rc, R1+'5.2%'+Rc],
+      ['48개월', R+'4.5%'+Rc, R1+'5.3%'+Rc],
+      ['60개월', R+'4.6%'+Rc, R1+'5.4%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.4%'+Rc, R1+'6.4%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.5%'+Rc],
+      ['60개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+    ],
+    yuye: [
+      ['36개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['48개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['60개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+    ],
+  },
 
-const VAR_ICE=[['36개월',R+'5.5%'+Rc,R1+'6.3%'+Rc],['48개월',R+'5.6%'+Rc,R1+'6.4%'+Rc],['60개월',R+'5.7%'+Rc,R1+'6.5%'+Rc]];
-const VAR_EV=[['36개월',R+'5.0%'+Rc,R1+'5.8%'+Rc],['48개월',R+'5.1%'+Rc,R1+'5.9%'+Rc],['60개월',R+'5.2%'+Rc,R1+'6.0%'+Rc]];
-const DEF_ICE=[['36개월',R+'5.7%'+Rc,R1+'6.7%'+Rc],['48개월',R+'5.8%'+Rc,R1+'6.8%'+Rc],['60개월',R+'6.2%'+Rc,R1+'7.2%'+Rc]];
+  /* 4. ICE_GENESIS
+     적용: G70·G80·GV70·GV80·GV80쿠페·G90 */
+  ICE_GENESIS: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['36개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc, R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc, R1+'5.9%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.4%'+Rc, R1+'5.2%'+Rc],
+      ['48개월', R+'4.5%'+Rc, R1+'5.3%'+Rc],
+      ['60개월', R+'4.6%'+Rc, R1+'5.4%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.4%'+Rc, R1+'6.4%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.5%'+Rc],
+      ['60개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+    ],
+    yuye: [
+      ['36개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['48개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['60개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+    ],
+  },
+
+  /* ────────────────────────────────
+     EV / FCEV 그룹
+  ──────────────────────────────── */
+
+  /* 5. EV_HYUNDAI
+     적용: 코나일렉트릭·아이오닉5·아이오닉5N
+           아이오닉6·아이오닉6N·아이오닉9 */
+  EV_HYUNDAI: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['36개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc, R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc, R1+'5.9%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.4%'+Rc, R1+'5.2%'+Rc],
+      ['48개월', R+'4.5%'+Rc, R1+'5.3%'+Rc],
+      ['60개월', R+'4.6%'+Rc, R1+'5.4%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.4%'+Rc, R1+'6.4%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.5%'+Rc],
+      ['60개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+    ],
+    yuye: [
+      ['36개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['48개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['60개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+    ],
+    /* ★ 단기소액 무이자 (JK) — 모빌리티 전용 0.0% / 최대 1,500만원 */
+    jk: [
+      ['12개월', '<span class="rzero">0.0%</span>', '-'],
+    ],
+  },
+
+  /* 6. EV_GENESIS
+     적용: GV60 · G80e · GV70e */
+  EV_GENESIS: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['36개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc, R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc, R1+'5.9%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.4%'+Rc, R1+'5.2%'+Rc],
+      ['48개월', R+'4.5%'+Rc, R1+'5.3%'+Rc],
+      ['60개월', R+'4.6%'+Rc, R1+'5.4%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.4%'+Rc, R1+'6.4%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.5%'+Rc],
+      ['60개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+    ],
+    yuye: [
+      ['36개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['48개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+      ['60개월', R+'5.8%'+Rc, R1+'6.8%'+Rc],
+    ],
+    /* ★ 단기소액 무이자 (JK) — 모빌리티 전용 0.0% / 최대 2,000만원 */
+    jk: [
+      ['12개월', '<span class="rzero">0.0%</span>', '-'],
+    ],
+  },
+
+  /* 7. EV_PORTER
+     적용: 포터Ⅱ 일렉트릭 */
+  EV_PORTER: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['36개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc, R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc, R1+'5.9%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.4%'+Rc, R1+'5.2%'+Rc],
+      ['48개월', R+'4.5%'+Rc, R1+'5.3%'+Rc],
+      ['60개월', R+'4.6%'+Rc, R1+'5.4%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.4%'+Rc, R1+'6.4%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.5%'+Rc],
+      ['60개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+    ],
+    /* 유예형: 36M·48M만 존재, 60M 없음 */
+    yuye: [
+      ['36개월', R+'5.4%'+Rc, R1+'6.4%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.5%'+Rc],
+    ],
+    /* ★ 단기소액 무이자 (JK) — 모빌리티 전용 0.0% / 최대 1,500만원 */
+    jk: [
+      ['12개월', '<span class="rzero">0.0%</span>', '-'],
+    ],
+  },
+
+  /* 8. EV_ST1
+     적용: ST1 카고/하이탑
+     ※ 24M만 EV 금리, 36M부터 ICE 변동 수준 */
+  EV_ST1: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'5.7%'+Rc, R1+'6.5%'+Rc],
+      ['36개월', R+'5.7%'+Rc, R1+'6.5%'+Rc],
+      ['48개월', R+'5.8%'+Rc, R1+'6.6%'+Rc],
+      ['60개월', R+'5.9%'+Rc, R1+'6.7%'+Rc],
+      ['72개월', R+'6.7%'+Rc, R1+'7.5%'+Rc],
+      ['84개월', R+'6.7%'+Rc, R1+'7.5%'+Rc],
+      ['96개월', R+'6.7%'+Rc, R1+'7.5%'+Rc],
+      ['108개월', R+'7.2%'+Rc, R1+'8.0%'+Rc],
+      ['120개월', R+'7.2%'+Rc, R1+'8.0%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'5.2%'+Rc, R1+'6.0%'+Rc],
+      ['48개월', R+'5.3%'+Rc, R1+'6.1%'+Rc],
+      ['60개월', R+'5.4%'+Rc, R1+'6.2%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'6.2%'+Rc, R1+'7.2%'+Rc],
+      ['48개월', R+'6.3%'+Rc, R1+'7.3%'+Rc],
+      ['60개월', R+'6.7%'+Rc, R1+'7.7%'+Rc],
+    ],
+    /* 유예형: 36M·48M만 존재, 60M 없음 */
+    yuye: [
+      ['36개월', R+'6.2%'+Rc, R1+'7.2%'+Rc],
+      ['48개월', R+'6.3%'+Rc, R1+'7.3%'+Rc],
+    ],
+    /* ★ 단기소액 무이자 (JK) — 모빌리티 전용 0.0% / 최대 1,000만원 */
+    jk: [
+      ['12개월', '<span class="rzero">0.0%</span>', '-'],
+    ],
+  },
+
+  /* 9. EV_STARIA
+     적용: 스타리아 일렉트릭 카고/투어러/라운지 */
+  EV_STARIA: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'5.4%'+Rc, R1+'6.2%'+Rc],
+      ['36개월', R+'5.4%'+Rc, R1+'6.2%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.3%'+Rc],
+      ['60개월', R+'5.6%'+Rc, R1+'6.4%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc, R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc, R1+'5.9%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+      ['48개월', R+'6.0%'+Rc, R1+'7.0%'+Rc],
+      ['60개월', R+'6.4%'+Rc, R1+'7.4%'+Rc],
+    ],
+    /* 유예형: 36M·48M만 존재, 60M 없음 */
+    yuye: [
+      ['36개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+      ['48개월', R+'6.0%'+Rc, R1+'7.0%'+Rc],
+    ],
+    /* ★ 단기소액 무이자 (JK) — 모빌리티 전용 0.0% / 최대 1,500만원 */
+    jk: [
+      ['12개월', '<span class="rzero">0.0%</span>', '-'],
+    ],
+  },
+
+  /* 10. FCEV_NEXO
+      적용: 넥쏘 수소전기차 */
+  FCEV_NEXO: {
+    label_mob: 'JH', label_gen: 'JA',
+    std: [
+      ['24개월', R+'5.4%'+Rc, R1+'6.2%'+Rc],
+      ['36개월', R+'5.4%'+Rc, R1+'6.2%'+Rc],
+      ['48개월', R+'5.5%'+Rc, R1+'6.3%'+Rc],
+      ['60개월', R+'5.6%'+Rc, R1+'6.4%'+Rc],
+    ],
+    var: [
+      ['36개월', R+'4.9%'+Rc, R1+'5.7%'+Rc],
+      ['48개월', R+'5.0%'+Rc, R1+'5.8%'+Rc],
+      ['60개월', R+'5.1%'+Rc, R1+'5.9%'+Rc],
+    ],
+    def: [
+      ['36개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+      ['48개월', R+'6.0%'+Rc, R1+'7.0%'+Rc],
+      ['60개월', R+'6.4%'+Rc, R1+'7.4%'+Rc],
+    ],
+    /* 유예형: 39개월 단일 운영 */
+    yuye: [
+      ['39개월', R+'5.9%'+Rc, R1+'6.9%'+Rc],
+    ],
+    /* ★ 단기소액 무이자 (JK) — 모빌리티 전용 0.0% / 최대 1,500만원 */
+    jk: [
+      ['12개월', '<span class="rzero">0.0%</span>', '-'],
+    ],
+  },
+
+};
+
+/* ────────────────────────────────
+   하위 호환 별칭 (기존 변수명 유지)
+──────────────────────────────── */
+const STD_ICE            = RATE_CONFIG.ICE_STANDARD.std;
+const STD_ICE_AVANTE     = RATE_CONFIG.ICE_STANDARD.std;
+const STD_ICE_SHORT      = RATE_CONFIG.ICE_STANDARD.std;
+const STD_EV_SONATA      = RATE_CONFIG.ICE_SONATA.std;
+const STD_EV_GRANDEUR    = RATE_CONFIG.ICE_GRANDEUR.std;
+const STD_EV             = RATE_CONFIG.EV_HYUNDAI.std;
+const STD_EV_SHORT       = RATE_CONFIG.EV_HYUNDAI.std;
+const STD_EV_IONIQ9      = RATE_CONFIG.EV_HYUNDAI.std;
+const STD_EV_PORTER      = RATE_CONFIG.EV_PORTER.std;
+const STD_GEN            = RATE_CONFIG.ICE_GENESIS.std;
+const STD_GEN_SHORT      = RATE_CONFIG.ICE_GENESIS.std;
+const STD_STARIAEV       = RATE_CONFIG.EV_STARIA.std;
+const STD_STARIAEV_SHORT = RATE_CONFIG.EV_STARIA.std;
+const STD_NEXO_SHORT     = RATE_CONFIG.FCEV_NEXO.std;
+const STD_ST1_SHORT      = RATE_CONFIG.EV_ST1.std;
+const VAR_ICE            = RATE_CONFIG.ICE_STANDARD.var;
+const VAR_EV             = RATE_CONFIG.EV_HYUNDAI.var;
+const DEF_ICE            = RATE_CONFIG.ICE_STANDARD.def;
 
 /* ════════════════════════════════
    공통 판매 조건 데이터
@@ -3217,12 +3112,20 @@ function evDownPanelFull(g, type) {
     + '</div></div>';
 }
 
-function genEmpPanel(g,xz,xy,title='임직원/그룹사 특화 할부'){
+function delivBox(h, c) {
+  return '<div style="font-size:13px;font-weight:600;background:#EBF3FF;border-radius:8px;padding:8px 12px;margin-bottom:8px;border-left:3px solid #3182F6;">'
+    + '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#3182F6;margin-right:7px;vertical-align:middle;flex-shrink:0;"></span>'
+    + '납기 : <strong style="color:#3182F6;">' + h + '</strong>'
+    + (c ? ' / <strong style="color:#F04452;">' + c + '</strong>' : '')
+    + '</div>';
+}
+
+function genEmpPanel(g,xz,xy,title='임직원/그룹사 특화 할부',note=''){
   return `<div class="ppanel active" id="pp-${g}-lease" data-g="${g}"><div class="scard"><div class="stitle">📌 ${title}</div>
   ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XZ)</th><th class="th-n">일반(XY)</th></tr></thead>
   <tbody><tr><td class="lb">24개월</td><td>${R}${xz}%${Rc}</td><td>${R1}${xy}%${Rc}</td></tr>
   <tr><td class="lb">36개월</td><td>${R}${xz}%${Rc}</td><td>${R1}${xy}%${Rc}</td></tr></tbody></table>`)}
-  <div class="pbox"><h4>✅ 조건</h4><ul><li>36개월 잔존가치 60%→65% 상향</li><li>월 10~20만원대 구매 가능</li></ul></div></div></div>`;
+  <div class="pbox"><h4>✅ 조건</h4><ul><li>24/36개월 차량 반납 유예형 (모빌리티 - XZ / 일반 - XY)</li><li>36개월 잔존가치 60%→65% 상향</li>${note?`<li>${note}</li>`:''}<li>월 10~20만원대 구매 가능</li></ul></div></div></div>`;
 }
 
 /* ════════════════════════════════
@@ -10402,7 +10305,7 @@ PANELS.summary=`
     <td class="delivery-cell" style="color:#F04452;">-<br>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>표준형·반납유예(XV)</td>
   </tr>
   <tr>
@@ -10410,7 +10313,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>표준형·반납유예(XV)</td>
   </tr>
   <tr class="chg-row">
@@ -10418,7 +10321,7 @@ PANELS.summary=`
     <td class="delivery-cell">1.5개월<br><small style="font-weight:500;">N라인 1.5개월</small></td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">K5 4~5주</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>저금리(JM 3.0%~)</td>
   </tr>
   <tr class="chg-row">
@@ -10426,7 +10329,7 @@ PANELS.summary=`
     <td class="delivery-cell">2개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>저금리(JM 3.0%~)</td>
   </tr>
   <tr class="chg-row">
@@ -10434,7 +10337,7 @@ PANELS.summary=`
     <td class="delivery-cell">재고 즉시<br></td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">K8 4~5주</td>
     <td>50만</td><td>30만</td><td>30만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td><strong style="color:#C62828;">기본조건 200만 또는 무이자 60개월</strong>·임직원(XZ/XY)</td>
   </tr>
   <tr class="chg-row">
@@ -10443,7 +10346,7 @@ PANELS.summary=`
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">K9 2개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>50만</td><td>30만</td><td>30만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td><strong style="color:#C62828;">기본조건 200만 또는 무이자 60개월</strong>·임직원(XZ/XY)</td>
   </tr>
   <tr class="new-row">
@@ -10451,7 +10354,7 @@ PANELS.summary=`
     <td class="delivery-cell">2개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td style="color:#8B95A1;">-</td><td style="color:#8B95A1;">-</td><td>30만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>-</td>
   </tr>
   <tr class="new-row">
@@ -10459,7 +10362,7 @@ PANELS.summary=`
     <td class="delivery-cell">추후 공지<br><small style="color:#8B95A1;">7월 중순~말 예상</small></td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td style="color:#8B95A1;">-</td><td style="color:#8B95A1;">-</td><td>30만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>-</td>
   </tr>
 
@@ -10469,7 +10372,7 @@ PANELS.summary=`
     <td class="delivery-cell">6개월<br>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">레이 9개월<br>모닝 2개월</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>표준형</td>
   </tr>
   <tr>
@@ -10477,7 +10380,7 @@ PANELS.summary=`
     <td class="delivery-cell">2개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">셀토스 4.5개월</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>표준형</td>
   </tr>
   <tr>
@@ -10485,7 +10388,7 @@ PANELS.summary=`
     <td class="delivery-cell">2개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">니로 4~5주</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>표준형</td>
   </tr>
   <tr>
@@ -10493,7 +10396,7 @@ PANELS.summary=`
     <td class="delivery-cell">-</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">스포티지 ICE 3.5개월</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>변동·거치형</td>
   </tr>
   <tr>
@@ -10501,7 +10404,7 @@ PANELS.summary=`
     <td class="delivery-cell">-</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">스포티지 HEV 3.5개월</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>변동·거치형</td>
   </tr>
   <tr class="chg-row">
@@ -10509,7 +10412,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">쏘렌토 ICE 7~8주</td>
     <td>50만</td><td>30만</td><td>30만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>저금리(JM 3.0%~)</td>
   </tr>
   <tr class="chg-row">
@@ -10517,7 +10420,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">쏘렌토 HEV 5~6주</td>
     <td>50만</td><td>30만</td><td>30만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>저금리(JM 3.0%~)</td>
   </tr>
   <tr class="chg-row">
@@ -10525,7 +10428,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>50만</td><td>30만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>임직원(XZ/XY)</td>
   </tr>
   <tr class="chg-row">
@@ -10533,7 +10436,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>50만</td><td>30만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>임직원(XZ/XY)</td>
   </tr>
   <tr>
@@ -10541,7 +10444,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">카니발 ICE 1.5개월<br>HEV 4개월</td>
     <td>50만</td><td>30만</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>표준형·현장렌트사(J5)</td>
   </tr>
   <tr>
@@ -10549,7 +10452,7 @@ PANELS.summary=`
     <td class="delivery-cell">A/T 3주<br><small style="font-weight:500;">M/T 1개월</small></td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">봉고 5~6주</td>
     <td>100만</td><td>100만</td><td>20만</td><td>20~30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>표준형·반납유예(XV)</td>
   </tr>
 
@@ -10559,7 +10462,7 @@ PANELS.summary=`
     <td class="delivery-cell">1.5개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">EV3 3개월</td>
     <td>100만</td><td>50만</td><td>30만</td><td>30만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>EV 부담Down 2.8%</td>
   </tr>
   <tr>
@@ -10567,7 +10470,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">EV5 4개월</td>
     <td>100만</td><td>50만</td><td>30만</td><td>30만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>EV 부담Down 신규2.8%/재구매2.3%</td>
   </tr>
   <tr>
@@ -10575,7 +10478,7 @@ PANELS.summary=`
     <td class="delivery-cell">1.5개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">EV6 4~5주</td>
     <td>100만</td><td>50만</td><td>50만</td><td>30만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>표준형(JH/JA)</td>
   </tr>
   <tr>
@@ -10583,7 +10486,7 @@ PANELS.summary=`
     <td class="delivery-cell">2개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">EV4 3개월</td>
     <td>100만</td><td>50만</td><td>30만</td><td>30만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>EV 부담Down 신규2.8%/재구매2.3%</td>
   </tr>
   <tr>
@@ -10591,21 +10494,21 @@ PANELS.summary=`
     <td class="delivery-cell">2개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>100만</td><td>50만</td><td>30만</td><td>30만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
   </tr>
   <tr class="chg-row">
     <td class="slb2">아이오닉9</td>
     <td class="delivery-cell">2개월</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">EV9 2개월</td>
     <td>100만</td><td>50만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
   </tr>
   <tr>
     <td class="slb2">포터 일렉트릭</td>
     <td class="delivery-cell">3주</td>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">봉고 일렉트릭 5~6주</td>
     <td>100만</td><td>100만</td><td>20만</td><td>20~30만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>EV 부담Down 2.8%</td>
   </tr>
   <tr>
@@ -10613,7 +10516,7 @@ PANELS.summary=`
     <td class="delivery-cell">1.5개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>100만</td><td>100만</td><td>30만</td><td>20~30만</td>
-    <td><span class="rev">5.5%</span></td><td><span class="r1">6.3%</span></td>
+    <td><span class="rev">5.7%</span></td><td><span class="r1">6.5%</span></td>
     <td>표준형(JH/JA)</td>
   </tr>
   <tr class="new-row">
@@ -10621,7 +10524,7 @@ PANELS.summary=`
     <td class="delivery-cell">4~6개월<br>
     <td style="font-size:11px;color:#4E5968;text-align:center;font-weight:600;">PV5 5개월</td>
     <td style="color:#8B95A1;">-</td><td style="color:#8B95A1;">-</td><td>20만</td><td>30만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>표준형(JH/JA)<br><small style="color:#8B95A1;">보조금 등재 후 확정</small></td>
   </tr>
   <tr class="chg-row">
@@ -10629,7 +10532,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>20만</td><td>30~50만</td>
-    <td><span class="rev">5.2%</span></td><td><span class="r1">6.0%</span></td>
+    <td><span class="rev">5.4%</span></td><td><span class="r1">6.2%</span></td>
     <td>부담Down 39M 1.8%<br><small style="color:#C62828;font-weight:700;">★당사 매각 200만 (타사차도 가능)</small></td>
   </tr>
 
@@ -10639,7 +10542,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월<br>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>THE BETTER CHOICE·더블픽</td>
   </tr>
   <tr class="chg-row">
@@ -10647,7 +10550,7 @@ PANELS.summary=`
     <td class="delivery-cell">3주<br>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td><strong style="color:#C62828;">기본조건 100만, 제네시스 르망 완주기념 저금리</strong>·임직원특화·더블픽<br><small style="color:#C62828;font-weight:600;">★생산월 최대 10%</small></td>
   </tr>
   <tr>
@@ -10655,7 +10558,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>임직원특화·더블픽</td>
   </tr>
   <tr>
@@ -10663,14 +10566,14 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>100만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
   </tr>
   <tr>
     <td class="slb2">GV60</td>
     <td class="delivery-cell">3주<br><small style="color:#888;">마그마 2개월</small></td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>임직원특화·더블픽</td>
   </tr>
   <tr class="chg-row">
@@ -10678,7 +10581,7 @@ PANELS.summary=`
     <td class="delivery-cell">3주<br>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td><strong style="color:#C62828;">기본조건100만, 제네시스 르망 완주기념 저금리</strong><br><small style="color:#C62828;font-weight:600;">★생산월 최대 10%(26MY)</small></td>
   </tr>
   <tr>
@@ -10686,7 +10589,7 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td>임직원특화·더블픽</td>
   </tr>
   <tr class="chg-row">
@@ -10694,7 +10597,7 @@ PANELS.summary=`
     <td class="delivery-cell">3주<br>
     <td style="font-size:11px;color:#8B95A1;text-align:center;">-</td>
     <td>200만</td><td>100만</td><td>50만</td><td>30~50만</td>
-    <td><span class="rev">4.7%</span></td><td><span class="r1">5.5%</span></td>
+    <td><span class="rev">4.9%</span></td><td><span class="r1">5.7%</span></td>
     <td><strong style="color:#C62828;">기본조건 100만, 제네시스 르망 완주기념 저금리</strong>·임직원특화·더블픽<br><small style="color:#C62828;font-weight:600;">★생산월 최대 10%</small></td>
   </tr>
 </tbody>
@@ -11901,11 +11804,11 @@ return html;
 /* ── 아반떼 ── */
 PANELS.avante=(()=>{
   const ice=`<div class="vpanel active" id="vp-avante-ice" data-g="avante">
-    ${tipBox('아반떼 ICE/HEV 핵심 전략', [
+    ${delivBox('ICE/HEV 즉시', null)}${tipBox('아반떼 ICE/HEV 핵심 전략', [
   '운전결심 PLCC(20만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>115만원</strong>',
   '법인 대표자: 현장법인(50만)+트레이드인(50만)+세이브오토(30만) → 최대 <strong>130만원</strong>',
   '베네피아 제휴 타겟(20만) 병행 시 → 최대 <strong>135만원</strong> (7~9월 출고 한정)',
-  '반납유예형(XV) 6.1% 적극 활용 — 월 납입금 절감형 고객 공략',
+  '반납유예형(XV) 6.3% 적극 활용 — 월 납입금 절감형 고객 공략',
 ])}
     <hr class="dv">
  ${saleSectionV2(
@@ -11918,24 +11821,18 @@ PANELS.avante=(()=>{
   [],                          /* ✅ 3번: 특화카드 없음 → 빈 배열 */
   [corpRadio('avante-ice')]    /* ✅ 4번: 법인 라디오만 */
 )}
+  <hr class="dv">
+    ${promoSection([[false,'📌 표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>'],[false,'📌 반납유예형(XV/XU)','모빌리티(XV): 36~60M <strong>6.3%</strong><br>일반(XU): 36~60M <strong>7.3%</strong>']])}
     <hr class="dv">
-    ${promoSection([[false,'📌 표준형(JH)','36M: <strong>5.2%</strong>/48M: <strong>5.3%</strong>/60M: <strong>5.4%</strong>'],[false,'📌 반납유예형(XV/XU)','모빌리티(XV): 36~60M <strong>6.1%</strong><br>일반(XU): 36~60M <strong>7.1%</strong>']])}
-    <hr class="dv">
-    ${ptabs('avante',[['std','표준형(JH/JA)'],['yuye','반납유예형'],['var','변동금리'],['def','거치형']])}
-    ${tblStd('avante','JH','JA',STD_ICE_AVANTE,'모빌리티(JH): 현대카드 선수금 결제 시 적용')}
-    <div class="ppanel" id="pp-avante-yuye" data-g="avante"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 반납유예형 할부</div>
-    ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XV)</th><th class="th-n">일반(XU)</th></tr></thead><tbody>
-      <tr><td class="lb">36개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-      <tr><td class="lb">48개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-      <tr><td class="lb">60개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    </tbody></table>`)}
-    <div class="pbox"><h4>✅ 특징</h4><ul><li>차량 반납 조건부 유예형 할부</li><li>월 납입금 절감 효과</li></ul></div></div></div>
-    ${tblVar('avante','JJ','JI',VAR_ICE)}
-    ${tblDef('avante','JG','JF',DEF_ICE)}
+    ${ptabs('avante',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])}
+    ${tblStd('avante','JH','JA', RATE_CONFIG.ICE_STANDARD.std, '모빌리티(JH): 현대카드 선수금 결제 시 적용')}
+    ${tblVar('avante','JJ','JI', RATE_CONFIG.ICE_STANDARD.var)}
+    ${tblDef('avante','JG','JF', RATE_CONFIG.ICE_STANDARD.def)}
+    ${tblYuye('avante','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)}
   </div>`;
 
   const n=`<div class="vpanel" id="vp-avante-n" data-g="avante">
-    ${tipBox('아반떼 N 핵심 전략', [
+    ${delivBox('N 1개월', null)}${tipBox('아반떼 N 핵심 전략', [
   '생산월(최대200만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>295만원</strong>',
   '25년 12월 이전~26년 4월 재고: 생산월 <strong>200만원</strong> 집중 공략',
   '26년 5월 생산: 생산월 <strong>100만원</strong> 적용 — 경쟁력 있는 판매조건',
@@ -11952,36 +11849,15 @@ ${saleSectionV2(
   [],                                                                     /* ✅ 3번: 특화카드 없음 */
   [birthMonthRadio('avante-n', BIRTH_AVANTE_N), corpRadio('avante-n')]   /* ✅ 4번: 생산월 + 법인 */
 )}
-    <hr class="dv">
-    ${ptabs('avante-n',[['std-n','표준형(JH/JA)'],['yuye-n','반납유예형(XV/XU)'],['var-n','변동금리'],['def-n','거치형']])}
-    <div class="ppanel active" id="pp-avante-n-std-n" data-g="avante-n"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 표준형 할부</div>
-    ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JH)</th><th class="th-n">일반(JA)</th></tr></thead><tbody>
-      <tr><td class="lb">24개월</td><td>${R}5.2%${Rc}</td><td>${R1}6.0%${Rc}</td></tr>
-      <tr><td class="lb">36개월</td><td>${R}5.2%${Rc}</td><td>${R1}6.0%${Rc}</td></tr>
-      <tr><td class="lb">48개월</td><td>${R}5.3%${Rc}</td><td>${R1}6.1%${Rc}</td></tr>
-      <tr><td class="lb">60개월</td><td>${R}5.4%${Rc}</td><td>${R1}6.2%${Rc}</td></tr>
-    </tbody></table>`)}</div></div>
-    <div class="ppanel" id="pp-avante-n-yuye-n" data-g="avante-n"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 반납유예형 할부</div>
-    ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XV)</th><th class="th-n">일반(XU)</th></tr></thead><tbody>
-      <tr><td class="lb">36개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-      <tr><td class="lb">48개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-      <tr><td class="lb">60개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    </tbody></table>`)}</div></div>
-    <div class="ppanel" id="pp-avante-n-var-n" data-g="avante-n"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 변동금리형 할부</div>
-    ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JJ)</th><th class="th-n">일반(JI)</th></tr></thead><tbody>
-      <tr><td class="lb">36개월</td><td>${R}5.5%${Rc}</td><td>${R1}6.3%${Rc}</td></tr>
-      <tr><td class="lb">48개월</td><td>${R}5.6%${Rc}</td><td>${R1}6.4%${Rc}</td></tr>
-      <tr><td class="lb">60개월</td><td>${R}5.7%${Rc}</td><td>${R1}6.5%${Rc}</td></tr>
-    </tbody></table>`)}</div></div>
-    <div class="ppanel" id="pp-avante-n-def-n" data-g="avante-n"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 거치형 할부</div>
-    ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JG)</th><th class="th-n">일반(JF)</th></tr></thead><tbody>
-      <tr><td class="lb">36개월</td><td>${R}5.7%${Rc}</td><td>${R1}6.7%${Rc}</td></tr>
-      <tr><td class="lb">48개월</td><td>${R}5.8%${Rc}</td><td>${R1}6.8%${Rc}</td></tr>
-      <tr><td class="lb">60개월</td><td>${R}6.2%${Rc}</td><td>${R1}7.2%${Rc}</td></tr>
-    </tbody></table>`)}</div></div>
+  <hr class="dv">
+    ${ptabs('avante-n',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])}
+    ${tblStd('avante-n','JH','JA', RATE_CONFIG.ICE_STANDARD.std)}
+    ${tblYuye('avante-n','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)}
+    ${tblVar('avante-n','JJ','JI', RATE_CONFIG.ICE_STANDARD.var)}
+    ${tblDef('avante-n','JG','JF', RATE_CONFIG.ICE_STANDARD.def)}
   </div>`;
 
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚗','아반떼','ICE / HEV / N · 모빌리티(JH) 5.2% / 일반(JA) 6.0%',['ICE','HEV','N'])
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚗','아반떼','ICE / HEV / N · 모빌리티(JH) 5.4% / 일반(JA) 6.2%',['ICE','HEV','N'])
     +vtabs('avante',[['ice','ICE / HEV'],['n','아반떼 N']])+ice+n;
 })();
 
@@ -11990,6 +11866,7 @@ ${saleSectionV2(
 PANELS.sonata=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚗','쏘나타','ICE / HEV · 저금리(JM) 36M 3.0%',['ICE','HEV'])
   +`<div class="chg-box"><strong>5월부터 적용중</strong> · 저금리(JM): 36M 3.0% / 48M 3.5% / 60M 4.0%<br><strong>이자절감 약 180만원!</strong></div>`
+  +delivBox('ICE 1.5개월(N라인 포함), HEV 2개월', 'K5 4~5주')
   +tipBox('쏘나타 핵심 전략', [
   '⭐ 저금리(JM) 36개월 <strong>3.0%</strong> 최우선 소구 — 이자절감 약 <strong>180만원!</strong>',
   '썸머페스타 생산월(최대300만)+저금리+트레이드인(50만)+유류비(30만)+굿프렌드(15만) → 최대 <strong>395만원+α</strong>',
@@ -12012,30 +11889,27 @@ PANELS.sonata=(()=>{
       corpRadio('sonata'),
     ]
   )
+ +'<hr class="dv">'
+  +promoSection([[true,'📌 쏘나타 저금리★(JM)','36M <strong>3.0%</strong> / 48M <strong>3.5%</strong> / 60M <strong>4.0%</strong>'],[true,'📌 차량반납 유예형(XV/XU)','최대 유예율 <strong>60%</strong> · 전용카드 프로모션 30만원'],[false,'📌 표준형(JH)','36M: <strong>4.9%</strong>/48M: <strong>5.0%</strong>/60M: <strong>5.1%</strong>']])
   +'<hr class="dv">'
-  +promoSection([[true,'📌 쏘나타 저금리★(JM)','36M <strong>3.0%</strong> / 48M <strong>3.5%</strong> / 60M <strong>4.0%</strong>'],[true,'📌 차량반납 유예형(XV/XU)','최대 유예율 <strong>60%</strong> · 전용카드 프로모션 30만원'],[false,'📌 표준형(JH)','36M: <strong>4.7%</strong>/48M: <strong>4.8%</strong>/60M: <strong>4.9%</strong>']])
-  +'<hr class="dv">'
-  +ptabs('sonata',[['jm','저금리(JM)'],['yuye','유예형(XV/XU)'],['std','표준형(JH/JA)'],['j5','현장렌트사(J5)']])
+  +ptabs('sonata',[['jm','저금리'],['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','유예형'],['j5','현장렌트사']])
   +`<div class="ppanel active" id="pp-sonata-jm" data-g="sonata"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 쏘나타 저금리</div>
   ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JM)</th></tr></thead><tbody>
     <tr><td class="lb">36개월</td><td>${R}3.0%${Rc}</td></tr>
     <tr><td class="lb">48개월</td><td>${R}3.5%${Rc}</td></tr>
     <tr><td class="lb">60개월</td><td>${R}4.0%${Rc}</td></tr>
-  </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>HEV 포함</li></ul></div></div></div>
-  <div class="ppanel" id="pp-sonata-yuye" data-g="sonata"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 차량반납 유예형</div>
-  ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XV)</th><th class="th-n">일반(XU)</th></tr></thead><tbody>
-    <tr><td class="lb">24개월</td><td>${R}5.6%${Rc}</td><td>${R1}6.6%${Rc}</td></tr>
-    <tr><td class="lb">36개월</td><td>${R}5.6%${Rc}</td><td>${R1}6.6%${Rc}</td></tr>
-    <tr><td class="lb">48개월</td><td>${R}5.6%${Rc}</td><td>${R1}6.6%${Rc}</td></tr>
-    <tr><td class="lb">60개월</td><td>${R}5.6%${Rc}</td><td>${R1}6.6%${Rc}</td></tr>
-  </tbody></table>`)}<div class="pbox"><h4>✅ 특징</h4><ul><li>최대 유예율 60% · 전용카드 프로모션 30만원</li></ul></div></div></div>`
-  +tblStd('sonata','JH','JA',STD_EV_SONATA)
-  +tblJ5('sonata','6.1%','6.3%');
+  </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>HEV 포함</li></ul></div></div></div>`
+  +tblYuye('sonata','XV','XU', RATE_CONFIG.ICE_SONATA.yuye)
+  +tblStd('sonata','JH','JA', RATE_CONFIG.ICE_SONATA.std)
+  +tblVar('sonata','JJ','JI', RATE_CONFIG.ICE_SONATA.var)
+  +tblDef('sonata','JG','JF', RATE_CONFIG.ICE_SONATA.def)
+  +tblJ5('sonata','6.3%','6.5%');
 })();
 
 /* ── 그랜저 ── */
 PANELS.grandeur=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚗','그랜저','ICE / HEV · <strong>6월 기본조건 200만 or 60개월 무이자</strong>',['ICE','HEV'])
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚗','그랜저','ICE / HEV · <strong>7월 기본조건 200만 or 60개월 무이자</strong>',['ICE','HEV'])
+  +delivBox('재고 즉시(ICE/HEV)', 'K8 4~5주, K9 2개월')
   +tipBox('그랜저 핵심 전략', [
   '⭐ 기본조건 <strong>200만 또는 60개월 무이자</strong>(이자절감 약 540만) 택1 — 그랜저 가성비의 마지막 기회',
   '기본조건(200만)+생산월(최대100만)+트레이드인(50만)+세이브오토(50만)+굿프렌드(15만) → 최대 <strong>415만원</strong>',
@@ -12057,10 +11931,46 @@ PANELS.grandeur=(()=>{
   +'<hr class="dv">'
   +promoSection([
     [true,'⭐ 그랜저 무이자★(JM/JB)','<strong>모빌리티(JM): 36M/48M/60M 무이자</strong><br>일반(JB): 36M/48M/60M <strong>1.0%</strong><br>고객 이자절감 약 <strong>540만원!</strong><br><small style="color:#C62828;">선수율 20% 납입 필수 · 기본조건 200만과 택1</small>'],
-    [false,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.6%</strong><br>일반(XY): <strong>6.6%</strong><br>36개월 잔존가치 65%'],
+    [false,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
   ])
   +'<hr class="dv">'
-  +ptabs('grandeur',[['muicha','무이자★(JM/JB)'],['std','표준형(JH/JA)'],['emp','임직원(XZ/XY)'],['var','변동금리'],['j5','현장렌트사(J5)']])
+  +ptabs('grandeur',[
+  ['muicha','무이자★'],
+  ['std','표준형'],
+  ['emp','임직원'],
+  ['var','변동금리'],
+  ['def','거치형'],          // ★ 추가
+  ['yuye','반납유예형'], // ★ 추가
+  ['j5','현장렌트사']
+])
+
++tblDef('grandeur','JG','JF', RATE_CONFIG.ICE_GRANDEUR.def)   // ★ 추가
++`<div class="ppanel" id="pp-grandeur-yuye" data-g="grandeur">
+  <div class="scard">
+    <div class="stitle">
+      <span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span>
+      반납유예형 할부 (XV/XU)
+    </div>
+    ${T(`<table class="rt">
+      <thead><tr>
+        <th>기간</th>
+        <th class="th-m">모빌리티(XV)</th>
+        <th class="th-n">일반(XU)</th>
+      </tr></thead>
+      <tbody>
+        ${RATE_CONFIG.ICE_GRANDEUR.yuye.map(([p,m,n]) =>
+          `<tr><td class="lb">${p}</td><td>${m}</td><td>${n}</td></tr>`
+        ).join('')}
+      </tbody>
+    </table>`)}
+    <div class="pbox"><h4>✅ 특징</h4>
+      <ul>
+        <li>차량 반납 조건부 유예형 할부</li>
+        <li>월 납입금 절감 효과</li>
+      </ul>
+    </div>
+  </div>
+</div>`
 
   // ── 무이자 탭 ──
   +`<div class="ppanel active" id="pp-grandeur-muicha" data-g="grandeur">
@@ -12113,7 +12023,7 @@ PANELS.grandeur=(()=>{
     </div>
   </div>`
 
-  +tblStd('grandeur','JH','JA',STD_EV_GRANDEUR)
+  +tblStd('grandeur','JH','JA', RATE_CONFIG.ICE_GRANDEUR.std)
 
   +`<div class="ppanel" id="pp-grandeur-emp" data-g="grandeur">
     <div class="scard">
@@ -12130,13 +12040,15 @@ PANELS.grandeur=(()=>{
           </tr>
         </thead>
         <tbody>
-          <tr><td class="lb">24개월</td><td>${R}5.6%${Rc}</td><td>${R1}6.6%${Rc}</td></tr>
-          <tr><td class="lb">36개월</td><td>${R}5.6%${Rc}</td><td>${R1}6.6%${Rc}</td></tr>
+          <tr><td class="lb">24개월</td><td>${R}5.8%${Rc}</td><td>${R1}6.8%${Rc}</td></tr>
+          <tr><td class="lb">36개월</td><td>${R}5.8%${Rc}</td><td>${R1}6.8%${Rc}</td></tr>
         </tbody>
       </table>`)}
       <div class="pbox">
         <h4>✅ 조건</h4>
         <ul>
+          <li>24/36개월 차량 반납 유예형 (모빌리티 - XZ / 일반 - XY)</li>
+          <li>그랜저·팰리세이드 (HEV 포함) ※가솔린 2.5/2.5터보 엔진限 이용 가능</li>
           <li>36개월 잔존가치 65% 상향</li>
           <li>월 10만원대 그랜저 가능</li>
         </ul>
@@ -12144,8 +12056,8 @@ PANELS.grandeur=(()=>{
     </div>
   </div>`
 
-  +tblVar('grandeur','JJ','JI',VAR_EV)
-  +tblJ5('grandeur','6.1%','6.3%');
+  +tblVar('grandeur','JJ','JI', RATE_CONFIG.ICE_GRANDEUR.var)
+  +tblJ5('grandeur','6.3%','6.5%');
 })();
 
 
@@ -12170,7 +12082,7 @@ var saleSection_ = saleSectionV2(
 );
 
   var promoSection_ = promoSection([
-    [false,'📌 표준형(JH/JA)','36M: <strong>4.7%</strong>/48M: <strong>4.8%</strong>/60M: <strong>4.9%</strong>'],
+    [false,'📌 표준형(JH/JA)','36M: <strong>4.9%</strong>/48M: <strong>5.0%</strong>/60M: <strong>5.1%</strong>'],
   ]);
 
   /* ── 상품성 하이라이트 ── */
@@ -12251,22 +12163,48 @@ var saleSection_ = saleSectionV2(
       'ICE / HEV',
       ['ICE','HEV','신형']
     )
+    + delivBox('ICE 2개월, HEV 추후 공지(7월 중순~말 예정)', null)
     + tipSection
     + '<hr class="dv">'
-    + saleSection_
-    + '<div class="sl" style="margin-top:22px;">'
-    + '<span class="sl-icon">🏦</span>'
-    + '<span class="sl-num">4</span> 금융프로모션'
-    + '<span style="font-size:11px;font-weight:400;opacity:.85;"> · 출고 시점 공문 확인 후 최종 적용</span>'
-    + '</div>'
-    + '<div class="wbox">현재 신차로 별도 금융 프로모션 미정, 향후 Business-plan 공문 확인 필수</div>'
     + promoSection_
     + productSection
     + eduSection
     + '<hr class="dv">'
-    + ptabs('newgrandeur',[['std','표준형(JH/JA)'],['var','변동금리']])
-    + tblStd('newgrandeur','JH','JA', STD_EV_GRANDEUR)
-    + tblVar('newgrandeur','JJ','JI', VAR_EV);
+    +ptabs('newgrandeur',[
+  ['std','표준형'],
+  ['var','변동금리'],
+  ['def','거치형'],           // ★ 추가
+  ['yuye','반납유예형'] // ★ 추가
+])
++tblStd('newgrandeur','JH','JA', RATE_CONFIG.ICE_GRANDEUR.std)
++tblVar('newgrandeur','JJ','JI', RATE_CONFIG.ICE_GRANDEUR.var)
++tblDef('newgrandeur','JG','JF', RATE_CONFIG.ICE_GRANDEUR.def) // ★ 추가
++`<div class="ppanel" id="pp-newgrandeur-yuye" data-g="newgrandeur">
+  <div class="scard">
+    <div class="stitle">
+      <span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span>
+      반납유예형 할부 (XV/XU)
+    </div>
+    ${T(`<table class="rt">
+      <thead><tr>
+        <th>기간</th>
+        <th class="th-m">모빌리티(XV)</th>
+        <th class="th-n">일반(XU)</th>
+      </tr></thead>
+      <tbody>
+        ${RATE_CONFIG.ICE_GRANDEUR.yuye.map(([p,m,n]) =>
+          `<tr><td class="lb">${p}</td><td>${m}</td><td>${n}</td></tr>`
+        ).join('')}
+      </tbody>
+    </table>`)}
+    <div class="pbox"><h4>✅ 특징</h4>
+      <ul>
+        <li>차량 반납 조건부 유예형 할부</li>
+        <li>월 납입금 절감 효과</li>
+      </ul>
+    </div>
+  </div>
+</div>`
 
 })();
 
@@ -12274,7 +12212,8 @@ var saleSection_ = saleSectionV2(
 
 /* ── 베뉴 ── */
 PANELS.venue=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚙','베뉴','ICE · 모빌리티(JH) 5.2%',['ICE'])
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚙','베뉴','ICE · 모빌리티(JH) 5.4%',['ICE'])
+  +delivBox('6개월', '레이 9개월, 모닝 2개월')
   +tipBox('베뉴 핵심 전략', [
   '운전결심 PLCC(20만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>115만원</strong>',
   '법인 대표자: 현장법인(50만)+트레이드인(50만)+세이브오토(30만) → 최대 <strong>130만원</strong>',
@@ -12294,15 +12233,17 @@ PANELS.venue=(()=>{
     [corpRadio('venue')]
   )
   +'<hr class="dv">'
-  +ptabs('venue',[['std','표준형(JH/JA)'],['var','변동금리'],['def','거치형']])
+  +ptabs('venue',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])
   +tblStd('venue','JH','JA',STD_ICE)
   +tblVar('venue','JJ','JI',VAR_ICE)
-  +tblDef('venue','JG','JF',DEF_ICE);
+  +tblDef('venue','JG','JF',DEF_ICE)
+  +tblYuye('venue','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye);
 })();
 
 /* ── 코나 ICE/HEV ── */
 PANELS.konaice=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚙','코나 ICE / HEV','ICE / HEV · 모빌리티(JH) 5.2%',['ICE','HEV'])
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚙','코나 ICE / HEV','ICE / HEV · 모빌리티(JH) 5.4%',['ICE','HEV'])
+  +delivBox('ICE/HEV 2개월', '셀토스 4.5개월, 니로 4~5주')
   +tipBox('코나 ICE/HEV 핵심 전략', [
   '운전결심 PLCC(20만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>115만원</strong>',
   '7월 현장렌트사 특별조건: 1대 10만 / 2~3대 30만 / 4~5대 40만 / 6대↑ 50만',
@@ -12322,15 +12263,18 @@ PANELS.konaice=(()=>{
    [rentRadioStd('konaice'), corpRadio('konaice')]
   )
   +'<hr class="dv">'
-  +ptabs('konaice',[['std','표준형(JH/JA)'],['var','변동금리'],['def','거치형']])
-  +tblStd('konaice','JH','JA',STD_ICE_SHORT)
+  +ptabs('konaice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['j5','현장렌트사']])
+  +tblStd ('konaice','JH','JA',STD_ICE)
   +tblVar('konaice','JJ','JI',VAR_ICE)
-  +tblDef('konaice','JG','JF',DEF_ICE);
+  +tblDef('konaice','JG','JF',DEF_ICE)
+  +tblYuye('konaice','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
+  +tblJ5('konaice','6.8%','7.0%');
 })();
 
 /* ── 투싼 ── */
 PANELS.tucson=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚙','투싼','ICE / HEV · 생산월 최대 50만',['ICE','HEV'])
+  +delivBox('즉시', '스포티지 ICE/HEV 3.5개월')
   +tipBox('투싼 최적 판매 전략', [
   '생산월(최대100만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>195만원</strong>',
   '25년 12월 이전~26년 3월 재고: 생산월 <strong>100만원</strong> / 26년 4~5월: 50만원',
@@ -12348,16 +12292,19 @@ PANELS.tucson=(()=>{
     [birthMonthRadio('tucson', BIRTH_TUCSON), rentRadioStd('tucson'), corpRadio('tucson')]
   )
   +'<hr class="dv">'
-  +ptabs('tucson',[['std','표준형(JH/JA)'],['var','변동금리'],['def','거치형']])
+  +ptabs('tucson',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['j5','현장렌트사']])
   +tblStd('tucson','JH','JA',STD_ICE_SHORT)
   +tblVar('tucson','JJ','JI',VAR_ICE)
-  +tblDef('tucson','JG','JF',DEF_ICE);
+  +tblDef('tucson','JG','JF',DEF_ICE)
+  +tblYuye('tucson','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
+  +tblJ5('tucson','6.8%','7.0%');
 })();
 
 /* ── 싼타페 ── */
 PANELS.santafe=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚙','싼타페','ICE / HEV · 저금리(JM) 36M 3.0%',['ICE','HEV'])
   +`<div class="chg-box">🔄 <strong>6월 변경</strong> · 기본판매조건 <strong>100만원</strong> 신규 추가<br>· Welcome Back SUV 혜택 종료</div>`
+  +delivBox('ICE/HEV 1개월', '쏘렌토 ICE 7~8주, HEV 5~6주')
   +tipBox('싼타페 ICE/HEV 핵심 전략', [
   '⭐ 7월 기본조건 <strong>100만원</strong> + 썸머페스타 생산월 최대 <strong>300만원</strong>',
   '기본(100만)+생산월(최대300만)+트레이드인(50만)+유류비(30만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>525만원</strong>',
@@ -12380,31 +12327,27 @@ PANELS.santafe=(()=>{
     [birthMonthRadio('santafe', BIRTH_SANTAFE), rentRadio('santafe'), corpRadio('santafe')]
   )
   +'<hr class="dv">'
-  +promoSection([[true,'📌 싼타페 저금리★(JM)','36M <strong>3.0%</strong> / 48M <strong>3.5%</strong> / 60M <strong>4.0%</strong>'],[true,'📌 유예형★(XV/XU)','최대 유예율 <strong>65%</strong> · 전용카드 프로모션 30만원'],[false,'📌 표준형(JH)','36M: <strong>5.2%</strong>/48M: <strong>5.3%</strong>/60M: <strong>5.4%</strong>']])
+  +promoSection([[true,'📌 싼타페 저금리★(JM)','36M <strong>3.0%</strong> / 48M <strong>3.5%</strong> / 60M <strong>4.0%</strong>'],[true,'📌 유예형★(XV/XU)','최대 유예율 <strong>65%</strong> · 전용카드 프로모션 30만원'],[false,'📌 표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>']])
   +'<hr class="dv">'
-  +ptabs('santafe',[['jm','저금리(JM)'],['yuye','유예형(XV/XU)'],['std','표준형(JH/JA)'],['var','변동금리'],['j5','현장렌트사(J5)']])
+  +ptabs('santafe',[['jm','저금리'],['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','유예형'],['j5','현장렌트사']])
   +`<div class="ppanel active" id="pp-santafe-jm" data-g="santafe"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 싼타페 저금리</div>
   ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JM)</th></tr></thead><tbody>
     <tr><td class="lb">36개월</td><td>${R}3.0%${Rc}</td></tr>
     <tr><td class="lb">48개월</td><td>${R}3.5%${Rc}</td></tr>
     <tr><td class="lb">60개월</td><td>${R}4.0%${Rc}</td></tr>
-  </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>HEV 포함</li></ul></div></div></div>
-  <div class="ppanel" id="pp-santafe-yuye" data-g="santafe"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 차량반납 유예형</div>
-  ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XV)</th><th class="th-n">일반(XU)</th></tr></thead><tbody>
-    <tr><td class="lb">24개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    <tr><td class="lb">36개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    <tr><td class="lb">48개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    <tr><td class="lb">60개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-  </tbody></table>`)}<div class="pbox"><h4>✅ 특징</h4><ul><li>최대 유예율 65% · 전용카드 프로모션 30만원</li></ul></div></div></div>`
-  +tblStd('santafe','JH','JA',STD_ICE)
-  +tblVar('santafe','JJ','JI',VAR_ICE)
-  +tblJ5('santafe','6.6%','6.8%');
+  </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>HEV 포함</li></ul></div></div></div>`
+  +tblYuye('santafe','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
+  +tblStd('santafe','JH','JA', STD_ICE_SHORT)
+  +tblVar('santafe','JJ','JI', VAR_ICE)
+  +tblDef('santafe','JG','JF', DEF_ICE)
+  +tblJ5('santafe','6.8%','7.0%');
 })();
 
 
 /* ── 팰리세이드 ── */
 PANELS.palisade=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚙','팰리세이드','ICE / HEV · 임직원 특화(XZ/XY)',['ICE','HEV'])
+  +delivBox('ICE/HEV 1개월', null)
   +tipBox('팰리세이드 ICE/HEV 핵심 전략', [
   '⭐ 7월 현장렌트사 특별조건: 1대 <strong>100만</strong> / 2대↑ <strong>200만원</strong>',
   '썸머페스타 생산월(최대300만)+트레이드인(50만)+세이브오토(50만)+굿프렌드(15만) → 최대 <strong>415만원</strong>',
@@ -12426,21 +12369,24 @@ PANELS.palisade=(()=>{
   [birthMonthRadio('palisade', BIRTH_PALISADE), corpRadio('palisade')]
 )
   +'<hr class="dv">'
-  +promoSection([[true,'📌 임직원 특화(XZ/XY)','모빌리티(XZ): <strong>6.1%</strong><br>일반(XY): <strong>7.1%</strong><br>36개월 잔존가치 65%'],[false,'📌 표준형(JH)','36M: <strong>5.2%</strong>/48M: <strong>5.3%</strong>/60M: <strong>5.4%</strong>']])
+  +promoSection([[true,'📌 임직원 특화(XZ/XY)','모빌리티(XZ): <strong>6.3%</strong><br>일반(XY): <strong>7.3%</strong><br>36개월 잔존가치 65%'],[false,'📌 표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>']])
   +'<hr class="dv">'
-  +ptabs('palisade',[['std','표준형(JH/JA)'],['emp','임직원(XZ/XY)'],['var','변동금리']])
+  +ptabs('palisade',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['emp','임직원']])
   +tblStd('palisade','JH','JA',STD_ICE)
+  +tblVar('palisade','JJ','JI',VAR_ICE)
+  +tblDef('palisade','JG','JF',DEF_ICE)
+  +tblYuye('palisade','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
   +`<div class="ppanel" id="pp-palisade-emp" data-g="palisade"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 임직원 팰리세이드 특화</div>
   ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XZ)</th><th class="th-n">일반(XY)</th></tr></thead><tbody>
-    <tr><td class="lb">24개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    <tr><td class="lb">36개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-  </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>36개월 잔존가치 65% 상향</li></ul></div></div></div>`
-  +tblVar('palisade','JJ','JI',VAR_ICE);
+    <tr><td class="lb">24개월</td><td>${R}6.3%${Rc}</td><td>${R1}7.3%${Rc}</td></tr>
+    <tr><td class="lb">36개월</td><td>${R}6.3%${Rc}</td><td>${R1}7.3%${Rc}</td></tr>
+  </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>24/36개월 차량 반납 유예형 (모빌리티 - XZ / 일반 - XY)</li><li>그랜저·팰리세이드 (HEV 포함) ※가솔린 2.5/2.5터보 엔진限 이용 가능</li><li>36개월 잔존가치 65% 상향</li></ul></div></div></div>`
 })();
 
 /* ── 스타리아 ── */
 PANELS.staria=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚐','스타리아','ICE / HEV · 생산월 최대 200만',['ICE','HEV'])
+  +delivBox('ICE/HEV 1개월', '카니발 ICE 1.5개월, HEV 4개월')
   +tipBox('스타리아 ICE/HEV 핵심 전략', [
   '⭐ 7월 현장렌트사 특별조건: 1대 <strong>100만</strong> / 2대↑ <strong>200만원</strong>',
   '썸머페스타 생산월(최대300만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>395만원</strong>',
@@ -12457,15 +12403,18 @@ PANELS.staria=(()=>{
     [birthMonthRadio('staria', BIRTH_STARIA), rentRadio('staria'), corpRadio('staria')]
   )
   +'<hr class="dv">'
-  +ptabs('staria',[['std','표준형(JH/JA)'],['var','변동금리'],['j5','현장렌트사(J5)']])
+  +ptabs('staria',[['std','표준형'],['yuye','반납유예형'],['var','변동금리'],['def','거치형'],['j5','현장렌트사']])
   +tblStd('staria','JH','JA',STD_ICE_SHORT)
+  +tblYuye('staria','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
   +tblVar('staria','JJ','JI',VAR_ICE)
-  +tblJ5('staria','6.6%','6.8%');
+  +tblDef('staria','JG','JF',DEF_ICE)
+  +tblJ5('staria','6.8%','7.0%');
 })();
 
 /* ── 포터 LPDI ── */
 PANELS.porterlpdi=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚛','포터 LPDI','생산월 최대 100만 / 상생파트너 40만',['LPDI','소상'])
+  +delivBox('A/T 3주, M/T 1개월', '봉고 5~6주')
   +tipBox('포터 LPDI 핵심 전략', [
   '생산월(최대200만)+트레이드인(100만)+상생파트너(40만)+굿프렌드(15만) → 최대 <strong>355만원</strong>',
   '25년 12월 이전 재고: 생산월 <strong>200만원</strong> / 26년 6월(특장 제외): 100만원',
@@ -12485,23 +12434,19 @@ PANELS.porterlpdi=(()=>{
     [birthMonthRadio('porterlpdi', BIRTH_PORTERLPDI), corpRadio('porterlpdi')]
   )
   +'<hr class="dv">'
-  +promoSection([[true,'📌 차량반납 유예형(XV/XU)','모빌리티(XV): 24~60M <strong>6.1%</strong><br>일반(XU): 24~60M <strong>7.1%</strong>'],[false,'📌 표준형(JH)','36M: <strong>5.2%</strong>/48M: <strong>5.3%</strong>/60M: <strong>5.4%</strong>']])
+  +promoSection([[false,'📌 표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>'],[true,'📌 차량반납 유예형(XV/XU)','모빌리티(XV): 36~60M <strong>6.3%</strong><br>일반(XU): 36~60M <strong>7.3%</strong>']])
   +'<hr class="dv">'
-  +ptabs('porterlpdi',[['yuye','차량반납유예형'],['std','표준형(JH/JA)'],['var','변동금리']])
-  +`<div class="ppanel active" id="pp-porterlpdi-yuye" data-g="porterlpdi"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 차량반납 유예형</div>
-  ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XV)</th><th class="th-n">일반(XU)</th></tr></thead><tbody>
-    <tr><td class="lb">24개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    <tr><td class="lb">36개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    <tr><td class="lb">48개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-    <tr><td class="lb">60개월</td><td>${R}6.1%${Rc}</td><td>${R1}7.1%${Rc}</td></tr>
-  </tbody></table>`)}</div></div>`
+ +ptabs('porterlpdi',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','차량반납유예형']])
   +tblStd('porterlpdi','JH','JA',STD_ICE)
-  +tblVar('porterlpdi','JJ','JI',VAR_ICE);
+  +tblVar('porterlpdi','JJ','JI',VAR_ICE)
+  +tblDef('porterlpdi','JG','JF',DEF_ICE)
+  +tblYuye('porterlpdi','XV','XU',RATE_CONFIG.ICE_STANDARD.yuye);
 })();
 
 /* ── 코나 일렉트릭 ── */
 PANELS.konaev=(()=>{
   return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','⚡','코나 일렉트릭','EV 부담Down 2.8% · 월 10만원대!',['EV'])
+  +delivBox('1.5개월', 'EV3 3개월')
   +tipBox('코나 일렉트릭 최적 판매 전략', [
   '아이오닉 100만대(150만)+트레이드인(100만)+충전크레딧(20만)+굿프렌드(15만) → 최대 <strong>285만원+생산월</strong>',
   '7월 아이오닉 100만대 기념 특별조건 <strong>+50만원 강화</strong> (6월 대비) — 지금이 최고 조건!',
@@ -12525,15 +12470,18 @@ PANELS.konaev=(()=>{
   +promoSection([
     [true,'📌 EV 부담Down★','신규(XI/XH): 36M <strong>2.8%</strong> / <strong>3.8%</strong><br>재구매-EV(XE/XA): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3%<br>재구매-승용(XM/XL): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% <small>(유예율55%)</small>'],
     [false,'📌 택시 동반자 플랜(JM/JB)','모빌리티(JM) 36M <strong>2.7%</strong> / 48M 2.8% / 60M 2.9%<br>일반(JB) 36M <strong>3.5%</strong> / 48M 3.6% / 60M 3.7%'],
-    [false,'📌 표준형(JH)','36M: <strong>4.7%</strong>/48M: <strong>4.8%</strong>/60M: <strong>4.9%</strong>'],
+    [false,'📌 표준형(JH)','36M: <strong>4.9%</strong>/48M: <strong>5.0%</strong>/60M: <strong>5.1%</strong>'],
   ])
   +'<hr class="dv">'
   +ptabs('konaev',[
-    ['evdown','EV 부담Down★'],
-    ['taxi','택시 동반자 플랜'],
-    ['std','표준형(JH/JA)'],
-    ['j5','현장렌트사(J5)'],
-  ])
+  ['evdown','EV 부담Down★'],
+  ['taxi','택시 동반자 플랜'],
+  ['std','표준형'],
+  ['var','변동금리'],
+  ['def','거치형'],
+  ['yuye','반납유예형'],
+  ['jk','단기소액 무이자'],
+])
 
   /* EV 부담Down — 60%/55% 통합 탭 */
   +evDownPanelFull('konaev','konaev')
@@ -12574,78 +12522,78 @@ PANELS.konaev=(()=>{
     </div>
   </div>`
 
-  +tblStd('konaev','JH','JA',STD_EV_SHORT)
-  +tblJ5('konaev','5.8%','6.0%');
-})();
+  +tblStd('konaev','JH','JA', RATE_CONFIG.EV_HYUNDAI.std)
+  +tblVar('konaev','JJ','JI', RATE_CONFIG.EV_HYUNDAI.var)
+  +tblDef('konaev','JG','JF', RATE_CONFIG.EV_HYUNDAI.def)
+  +tblYuye('konaev','XV','XU', RATE_CONFIG.EV_HYUNDAI.yuye)
+  +tblJK('konaev', '1,500만원')
+  })();
 
 
 /* ── 아이오닉5 ── */
 PANELS.ioniq5=(()=>{
-  const ev=`<div class="vpanel active" id="vp-ioniq5-ev" data-g="ioniq5">
-    ${tipBox('아이오닉5 핵심 전략', [
-  '⭐ 아이오닉 100만대 기념 <strong>+50만원 강화!</strong> (7월 150만원 — 6월 대비 상향)',
-  '100만대(150만)+생산월(최대200만)+트레이드인(100만)+충전크레딧(20만)+굿프렌드(15만) → 최대 <strong>485만원</strong>',
-  'EV 부담Down 신규 <strong>2.8%</strong> / 재구매 <strong>2.3%★</strong> — 스트레스프리 패키지 무상 포함',
-  '<strong>최대 유예율 55% — 다음 차 내연기관 승용 재구매도 저금리 적용!</strong>',
-])}
-    <hr class="dv">
-    ${saleSectionV2(
-      [
-    ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31</small>', 'new', 30],
-      ],
-      [tradeInRadio('ioniq5-ev',100,50,'hlev'), saveAutoSingle('ioniq5-ev',30,'hlev'), goodfriendRadio('ioniq5-ev','hlev')],
-      [
-        ['🏆 아이오닉 100만대 기념 특별조건','7월내출고: <span class="hlev">+150만원</span>','chg',150],
-        ['⚡ EV 에브리케어','충전크레딧 <span class="hlev">20만원</span>','',20],
-      ],
-      [birthMonthRadio('ioniq5-ev', BIRTH_IONIQ5N, 'hlev'), rentRadio('ioniq5-ev'), corpRadio('ioniq5-ev','hlev')]
-    )}
-    <hr class="dv">
-    ${promoSection([
-      [true,'📌 EV 부담Down★','신규(XI/XH): 36M <strong>2.8%</strong> / <strong>3.8%</strong><br>재구매-EV(XE/XA): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% (유예율60%)<br>재구매-승용(XM/XL): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% (유예율55%)'],
-      [false,'📌 EV 택시 동반자 플랜(JM/JB)','모빌리티(JM) 36M <strong>2.7%</strong> / 48M 2.8% / 60M 2.9%<br>일반(JB) 36M <strong>3.5%</strong> / 48M 3.6% / 60M 3.7%'],
-      [false,'📌 표준형(JH)','36M: <strong>4.7%</strong>/48M: <strong>4.8%</strong>/60M: <strong>4.9%</strong>'],
-    ])}
-    ${fboxSection(['<span style="color:#C62828;font-weight:700;">재구매 -0.5%p → 최저 2.3%!</span>','스트레스프리 패키지 무상 (개인/개인사업자 限)','유예율 55%: 다음 차를 내연기관 승용으로 바꿔도 저금리 적용!'])}
-    <hr class="dv">
-    ${ptabs('ioniq5',[['evdown','EV 부담Down★'],['taxi','택시 동반자 플랜'],['std','표준형(JH/JA)'],['j5','현장렌트사(J5)']])}
-    ${evDownPanelFull('ioniq5','ioniq5')}
-    <div class="ppanel" id="pp-ioniq5-taxi" data-g="ioniq5">
-      <div class="scard">
-        <div class="stitle">
-          <span style="width:18px;height:18px;border-radius:5px;background:#EBF3FF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">🚕</span>
-          EV 택시 동반자 플랜
-          <span class="badge-new">신규</span>
-        </div>
-        <div class="chg-box" style="margin-bottom:12px;">
-          🚕 <strong>영업용·자가용 트림 모두 적용 가능!</strong><br>
-          동반자 플랜으로 이자 부담 없이 EV 구매하고, 저렴한 유지비로 영업하세요!
-        </div>
-        ${T(`<table class="rt">
-          <thead>
-            <tr>
-              <th>기간</th>
-              <th class="th-m">모빌리티 (JM)</th>
-              <th class="th-n">일반 (JB)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="lb">36개월</td><td><span class="rev">2.7%</span></td><td><span class="r1">3.5%</span></td></tr>
-            <tr><td class="lb">48개월</td><td><span class="rev">2.8%</span></td><td><span class="r1">3.6%</span></td></tr>
-            <tr><td class="lb">60개월</td><td><span class="rev">2.9%</span></td><td><span class="r1">3.7%</span></td></tr>
-          </tbody>
-        </table>`)}
-        <div class="pbox"><h4>✅ 핵심 소구</h4><ul>
-          <li>아이오닉5 <strong>영업용·자가용 트림 모두 적용!</strong></li>
-          <li>저금리로 이자 부담 최소화 → 택시 수익으로 빠른 회수</li>
-          <li>전기차 유지비 절감 (전기요금 vs LPG 대비 대폭 절감)</li>
-        </ul></div>
-      </div>
-    </div>
-    ${tblStd('ioniq5','JH','JA',STD_EV_SHORT)}
-    ${tblJ5('ioniq5','5.8%','6.0%')}
-  </div>`;
+const ev = '<div class="vpanel active" id="vp-ioniq5-ev" data-g="ioniq5">'
+  + delivBox('EV 1개월, N 1.5개월', 'EV5 4개월, EV6 4~5주')
+  + tipBox('아이오닉5 핵심 전략', [
+    '⭐ 아이오닉 100만대 기념 <strong>+50만원 강화!</strong> (7월 150만원 — 6월 대비 상향)',
+    '100만대(150만)+생산월(최대200만)+트레이드인(100만)+충전크레딧(20만)+굿프렌드(15만) → 최대 <strong>485만원</strong>',
+    'EV 부담Down 신규 <strong>2.8%</strong> / 재구매 <strong>2.3%★</strong> — 스트레스프리 패키지 무상 포함',
+    '<strong>최대 유예율 55% — 다음 차 내연기관 승용 재구매도 저금리 적용!</strong>',
+  ])
+  + '<hr class="dv">'
+  + saleSectionV2(
+    [
+      ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
+      ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31</small>', 'new', 30],
+    ],
+    [tradeInRadio('ioniq5-ev',100,50,'hlev'), saveAutoSingle('ioniq5-ev',30,'hlev'), goodfriendRadio('ioniq5-ev','hlev')],
+    [
+      ['🏆 아이오닉 100만대 기념 특별조건','7월내출고: <span class="hlev">+150만원</span>','chg',150],
+      ['⚡ EV 에브리케어','충전크레딧 <span class="hlev">20만원</span>','',20],
+    ],
+    [birthMonthRadio('ioniq5-ev', BIRTH_IONIQ5N, 'hlev'), rentRadio('ioniq5-ev'), corpRadio('ioniq5-ev','hlev')]
+  )
+  + '<hr class="dv">'
+  + promoSection([
+    [true,'📌 EV 부담Down★','신규(XI/XH): 36M <strong>2.8%</strong> / <strong>3.8%</strong><br>재구매-EV(XE/XA): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% (유예율60%)<br>재구매-승용(XM/XL): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% (유예율55%)'],
+    [false,'📌 EV 택시 동반자 플랜(JM/JB)','모빌리티(JM) 36M <strong>2.7%</strong> / 48M 2.8% / 60M 2.9%<br>일반(JB) 36M <strong>3.5%</strong> / 48M 3.6% / 60M 3.7%'],
+    [false,'📌 표준형(JH)','36M: <strong>4.9%</strong>/48M: <strong>5.0%</strong>/60M: <strong>5.1%</strong>'],
+  ])
+  + fboxSection(['<span style="color:#C62828;font-weight:700;">재구매 -0.5%p → 최저 2.3%!</span>','스트레스프리 패키지 무상 (개인/개인사업자 限)','유예율 55%: 다음 차를 내연기관 승용으로 바꿔도 저금리 적용!'])
+  + '<hr class="dv">'
+  + ptabs('ioniq5',[
+    ['evdown','EV 부담Down★'],
+    ['taxi','택시 동반자 플랜'],
+    ['std','표준형'],
+    ['var','변동금리'],
+    ['def','거치형'],
+    ['yuye','반납유예형'],
+    ['jk','단기소액 무이자'],
+    ['j5','현장렌트사'],
+  ])
+  + evDownPanelFull('ioniq5','ioniq5')
+  + '<div class="ppanel" id="pp-ioniq5-taxi" data-g="ioniq5">'
+  + '<div class="scard">'
+  + '<div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#EBF3FF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">🚕</span> EV 택시 동반자 플랜 <span class="badge-new">신규</span></div>'
+  + '<div class="chg-box" style="margin-bottom:12px;">🚕 <strong>영업용·자가용 트림 모두 적용 가능!</strong><br>동반자 플랜으로 이자 부담 없이 EV 구매하고, 저렴한 유지비로 영업하세요!</div>'
+  + T('<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티 (JM)</th><th class="th-n">일반 (JB)</th></tr></thead><tbody>'
+    + '<tr><td class="lb">36개월</td><td><span class="rev">2.7%</span></td><td><span class="r1">3.5%</span></td></tr>'
+    + '<tr><td class="lb">48개월</td><td><span class="rev">2.8%</span></td><td><span class="r1">3.6%</span></td></tr>'
+    + '<tr><td class="lb">60개월</td><td><span class="rev">2.9%</span></td><td><span class="r1">3.7%</span></td></tr>'
+    + '</tbody></table>')
+  + '<div class="pbox"><h4>✅ 핵심 소구</h4><ul>'
+  + '<li>아이오닉5 <strong>영업용·자가용 트림 모두 적용!</strong></li>'
+  + '<li>저금리로 이자 부담 최소화 → 택시 수익으로 빠른 회수</li>'
+  + '<li>전기차 유지비 절감 (전기요금 vs LPG 대비 대폭 절감)</li>'
+  + '</ul></div>'
+  + '</div></div>'
+  + tblStd('ioniq5','JH','JA', RATE_CONFIG.EV_HYUNDAI.std)
+  + tblVar('ioniq5','JJ','JI', RATE_CONFIG.EV_HYUNDAI.var)
+  + tblDef('ioniq5','JG','JF', RATE_CONFIG.EV_HYUNDAI.def)
+  + tblYuye('ioniq5','XV','XU', RATE_CONFIG.EV_HYUNDAI.yuye)
+  + tblJK('ioniq5', '1,500만원')
+  + tblJ5('ioniq5','6.0%','6.2%')
+  + '</div>';
 
   const n=`<div class="vpanel" id="vp-ioniq5-n" data-g="ioniq5">
     <div class="wbox"><strong>⚠ 아이오닉5 N은 EV 부담Down 대상 차종이 아닙니다.</strong></div>
@@ -12672,69 +12620,67 @@ PANELS.ioniq5=(()=>{
 
 /* ── 아이오닉6 ── */
 PANELS.ioniq6=(()=>{
-  const ev=`<div class="vpanel active" id="vp-ioniq6-ev" data-g="ioniq6">
-    ${tipBox('아이오닉6 핵심 전략', [
-  '⭐ 아이오닉 100만대 기념 <strong>+50만원 강화!</strong> (7월 150만원 — 6월 대비 상향)',
-  '100만대(150만)+생산월(최대200만)+트레이드인(100만)+충전크레딧(20만)+굿프렌드(15만) → 최대 <strong>485만원</strong>',
-  'EV 부담Down 신규 <strong>2.8%</strong> / 재구매 <strong>2.3%★</strong> — 스트레스프리 패키지 무상 포함',
-  '즉시 출고 가능 — 빠른 납기로 경쟁사 대기 고객 적극 유치',
-])}
-    <hr class="dv">
-    ${saleSectionV2(
-      [
-    ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31</small>', 'new', 30],
-      ],
-      [tradeInRadio('ioniq6-ev',100,50,'hlev'), saveAutoSingle('ioniq6-ev',30,'hlev'), goodfriendRadio('ioniq6-ev','hlev')],
-      [
-       ['🏆 아이오닉 100만대 기념 특별조건','7월내출고: <span class="hlev">+150만원</span>','chg',150],
-        ['⚡ EV 에브리케어','충전크레딧 <span class="hlev">20만원</span>','',20],
-      ],
-      [birthMonthRadio('ioniq6-ev', BIRTH_IONIQ6N, 'hlev'), rentRadio('ioniq6-ev'), corpRadio('ioniq6-ev','hlev')]
-    )}
-    <hr class="dv">
-    ${promoSection([
-      [true,'📌 EV 부담Down★','신규(XI/XH): 36M <strong>2.8%</strong> / <strong>3.8%</strong><br>재구매-EV(XE/XA): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% (유예율60%)<br>재구매-승용(XM/XL): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% (유예율55%)'],
-      [false,'📌 EV 택시 동반자 플랜(JM/JB)','모빌리티(JM) 36M <strong>2.7%</strong> / 48M 2.8% / 60M 2.9%<br>일반(JB) 36M <strong>3.5%</strong> / 48M 3.6% / 60M 3.7%'],
-      [false,'📌 표준형(JH)','36M: <strong>4.7%</strong>/48M: <strong>4.8%</strong>/60M: <strong>4.9%</strong>'],
-    ])}
-    ${fboxSection(['<span style="color:#C62828;font-weight:700;">재구매 -0.5%p → 최저 2.3%!</span>','스트레스프리 패키지 무상 (개인/개인사업자 限)','유예율 55%: 다음 차를 내연기관 승용으로 바꿔도 저금리 적용!'])}
-    <hr class="dv">
-    ${ptabs('ioniq6',[['evdown','EV 부담Down★'],['taxi','택시 동반자 플랜'],['std','표준형(JH/JA)'],['j5','현장렌트사(J5)']])}
-    ${evDownPanelFull('ioniq6','ioniq6')}
-    <div class="ppanel" id="pp-ioniq6-taxi" data-g="ioniq6">
-      <div class="scard">
-        <div class="stitle">
-          <span style="width:18px;height:18px;border-radius:5px;background:#EBF3FF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">🚕</span>
-          EV 택시 동반자 플랜
-          <span class="badge-new">신규</span>
-        </div>
-        <div class="chg-box" style="margin-bottom:12px;">
-          동반자 플랜으로 이자 부담 없이 EV 구매하고, 저렴한 유지비로 영업하세요!
-        </div>
-        ${T(`<table class="rt">
-          <thead>
-            <tr>
-              <th>기간</th>
-              <th class="th-m">모빌리티 (JM)</th>
-              <th class="th-n">일반 (JB)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="lb">36개월</td><td><span class="rev">2.7%</span></td><td><span class="r1">3.5%</span></td></tr>
-            <tr><td class="lb">48개월</td><td><span class="rev">2.8%</span></td><td><span class="r1">3.6%</span></td></tr>
-            <tr><td class="lb">60개월</td><td><span class="rev">2.9%</span></td><td><span class="r1">3.7%</span></td></tr>
-          </tbody>
-        </table>`)}
-        <div class="pbox"><h4>✅ 핵심 소구</h4><ul>
-          <li>저금리로 이자 부담 최소화 → 택시 수익으로 빠른 회수</li>
-          <li>전기차 유지비 절감 (전기요금 vs LPG 대비 대폭 절감)</li>
-        </ul></div>
-      </div>
-    </div>
-    ${tblStd('ioniq6','JH','JA',STD_EV_SHORT)}
-    ${tblJ5('ioniq6','5.8%','6.0%')}
-  </div>`;
+const ev = '<div class="vpanel active" id="vp-ioniq6-ev" data-g="ioniq6">'
+  + delivBox('EV/N 2개월', 'EV4 3개월')
+  + tipBox('아이오닉6 핵심 전략', [
+    '⭐ 아이오닉 100만대 기념 <strong>+50만원 강화!</strong> (7월 150만원 — 6월 대비 상향)',
+    '100만대(150만)+생산월(최대200만)+트레이드인(100만)+충전크레딧(20만)+굿프렌드(15만) → 최대 <strong>485만원</strong>',
+    'EV 부담Down 신규 <strong>2.8%</strong> / 재구매 <strong>2.3%★</strong> — 스트레스프리 패키지 무상 포함',
+    '즉시 출고 가능 — 빠른 납기로 경쟁사 대기 고객 적극 유치',
+  ])
+  + '<hr class="dv">'
+  + saleSectionV2(
+    [
+      ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
+      ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31</small>', 'new', 30],
+    ],
+    [tradeInRadio('ioniq6-ev',100,50,'hlev'), saveAutoSingle('ioniq6-ev',30,'hlev'), goodfriendRadio('ioniq6-ev','hlev')],
+    [
+      ['🏆 아이오닉 100만대 기념 특별조건','7월내출고: <span class="hlev">+150만원</span>','chg',150],
+      ['⚡ EV 에브리케어','충전크레딧 <span class="hlev">20만원</span>','',20],
+    ],
+    [birthMonthRadio('ioniq6-ev', BIRTH_IONIQ6N, 'hlev'), rentRadio('ioniq6-ev'), corpRadio('ioniq6-ev','hlev')]
+  )
+  + '<hr class="dv">'
+  + promoSection([
+    [true,'📌 EV 부담Down★','신규(XI/XH): 36M <strong>2.8%</strong> / <strong>3.8%</strong><br>재구매-EV(XE/XA): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% (유예율60%)<br>재구매-승용(XM/XL): 36M <span style="color:#C62828;font-weight:800;">2.3%★</span> / 3.3% (유예율55%)'],
+    [false,'📌 EV 택시 동반자 플랜(JM/JB)','모빌리티(JM) 36M <strong>2.7%</strong> / 48M 2.8% / 60M 2.9%<br>일반(JB) 36M <strong>3.5%</strong> / 48M 3.6% / 60M 3.7%'],
+    [false,'📌 표준형(JH)','36M: <strong>4.9%</strong>/48M: <strong>5.0%</strong>/60M: <strong>5.1%</strong>'],
+  ])
+  + fboxSection(['<span style="color:#C62828;font-weight:700;">재구매 -0.5%p → 최저 2.3%!</span>','스트레스프리 패키지 무상 (개인/개인사업자 限)','유예율 55%: 다음 차를 내연기관 승용으로 바꿔도 저금리 적용!'])
+  + '<hr class="dv">'
+  + ptabs('ioniq6',[
+    ['evdown','EV 부담Down★'],
+    ['taxi','택시 동반자 플랜'],
+    ['std','표준형'],
+    ['var','변동금리'],
+    ['def','거치형'],
+    ['yuye','반납유예형'],
+    ['jk','단기소액 무이자'],
+    ['j5','현장렌트사'],
+  ])
+  + evDownPanelFull('ioniq6','ioniq6')
+  + '<div class="ppanel" id="pp-ioniq6-taxi" data-g="ioniq6">'
+  + '<div class="scard">'
+  + '<div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#EBF3FF;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">🚕</span> EV 택시 동반자 플랜 <span class="badge-new">신규</span></div>'
+  + '<div class="chg-box" style="margin-bottom:12px;">동반자 플랜으로 이자 부담 없이 EV 구매하고, 저렴한 유지비로 영업하세요!</div>'
+  + T('<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티 (JM)</th><th class="th-n">일반 (JB)</th></tr></thead><tbody>'
+    + '<tr><td class="lb">36개월</td><td><span class="rev">2.7%</span></td><td><span class="r1">3.5%</span></td></tr>'
+    + '<tr><td class="lb">48개월</td><td><span class="rev">2.8%</span></td><td><span class="r1">3.6%</span></td></tr>'
+    + '<tr><td class="lb">60개월</td><td><span class="rev">2.9%</span></td><td><span class="r1">3.7%</span></td></tr>'
+    + '</tbody></table>')
+  + '<div class="pbox"><h4>✅ 핵심 소구</h4><ul>'
+  + '<li>저금리로 이자 부담 최소화 → 택시 수익으로 빠른 회수</li>'
+  + '<li>전기차 유지비 절감 (전기요금 vs LPG 대비 대폭 절감)</li>'
+  + '</ul></div>'
+  + '</div></div>'
+  + tblStd('ioniq6','JH','JA', RATE_CONFIG.EV_HYUNDAI.std)
+  + tblVar('ioniq6','JJ','JI', RATE_CONFIG.EV_HYUNDAI.var)
+  + tblDef('ioniq6','JG','JF', RATE_CONFIG.EV_HYUNDAI.def)
+  + tblYuye('ioniq6','XV','XU', RATE_CONFIG.EV_HYUNDAI.yuye)
+  + tblJK('ioniq6', '1,500만원')
+  + tblJ5('ioniq6','6.0%','6.2%')
+  + '</div>';
 
   const n=`<div class="vpanel" id="vp-ioniq6-n" data-g="ioniq6">
     <div class="wbox"><strong>⚠ 아이오닉6 N은 EV 부담Down 대상 차종이 아닙니다.</strong></div>
@@ -12761,10 +12707,10 @@ PANELS.ioniq6=(()=>{
     +vtabs('ioniq6',[['ev','아이오닉6 EV'],['n','아이오닉6 N']])+ev+n;
 })();
 
-
 /* ── 아이오닉9 ── */
 PANELS.ioniq9=(()=>{
   return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','⚡','아이오닉9','올해의차 주인공 / 생산월 최대 400만',['EV'])
+  +delivBox('2개월', 'EV9 2개월')
   +tipBox('아이오닉9 핵심 전략', [
   '⭐ 2026 올해의차 3관왕 + 아이오닉 100만대 기념 <strong>+50만원 강화! (7월 150만원)</strong>',
   '100만대(150만)+생산월(최대400만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>665만원+α</strong>',
@@ -12786,14 +12732,24 @@ PANELS.ioniq9=(()=>{
     [birthMonthRadio('ioniq9', BIRTH_IONIQ9, 'hlev'), corpRadio('ioniq9','hlev')]
   )
   +'<hr class="dv">'
-  +ptabs('ioniq9',[['std','표준형(JH/JA)'],['var','변동금리']])
-  +tblStd('ioniq9','JH','JA',STD_EV_IONIQ9)
-  +tblVar('ioniq9','JJ','JI',VAR_EV);
++ptabs('ioniq9',[
+  ['std','표준형'],
+  ['var','변동금리'],
+  ['def','거치형'],
+  ['yuye','반납유예형'],
+  ['jk','단기소액 무이자'],
+])
++tblStd('ioniq9','JH','JA',  RATE_CONFIG.EV_HYUNDAI.std)
++tblVar('ioniq9','JJ','JI',  RATE_CONFIG.EV_HYUNDAI.var)
++tblDef('ioniq9','JG','JF',  RATE_CONFIG.EV_HYUNDAI.def)
++tblYuye('ioniq9','XV','XU', RATE_CONFIG.EV_HYUNDAI.yuye)
++tblJK('ioniq9', '1,500만원');
 })();
 
 /* ── 포터 EV ── */
 PANELS.porterev=(()=>{
   return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','⚡','포터 일렉트릭','EV 부담Down 2.8% / 올해의차+50만',['EV','소상'])
+  +delivBox('3주', '봉고 일렉트릭 5~6주')
   +tipBox('포터 일렉트릭 핵심 전략', [
   '⭐ 아이오닉 100만대 기념 <strong>+50만원 강화! (7월 100만원)</strong>',
   '100만대(100만)+생산월(최대150만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>365만원</strong>',
@@ -12813,16 +12769,42 @@ PANELS.porterev=(()=>{
     [birthMonthRadio('porterev', BIRTH_PORTEREV, 'hlev'), corpRadio('porterev','hlev')]
   )
   +'<hr class="dv">'
-  +promoSection([[true,'📌 포터 EV 부담Down★(XV)','모빌리티(XI): 36M <strong>2.8%</strong><br>일반(XH): 36M <strong>3.8%</strong><br>최대 유예율 <strong>50%</strong>'],[false,'📌 표준형(JH)','36M: <strong>4.7%</strong>/48M: <strong>4.8%</strong>']])
+  +promoSection([[true,'📌 포터 EV 부담Down★(XV)','모빌리티(XI): 36M <strong>2.8%</strong><br>일반(XH): 36M <strong>3.8%</strong><br>최대 유예율 <strong>50%</strong>'],[false,'📌 표준형(JH)','36M: <strong>4.9%</strong>/48M: <strong>5.0%</strong>']])
   +'<hr class="dv">'
-  +ptabs('porterev',[['evdown','EV 부담Down★'],['std','표준형(JH/JA)']])
-  +evDownPanel('porterev','porterev')
-  +tblStd('porterev','JH','JA',STD_EV_PORTER);
+ +ptabs('porterev',[
+  ['evdown','EV 부담Down★'],
+  ['std','표준형'],
+  ['var','변동금리'],
+  ['def','거치형'],
+  ['yuye','반납유예형'],
+  ['jk','단기소액 무이자'],
+])
++`<div class="ppanel active" id="pp-porterev-evdown" data-g="porterev"><div class="scard">
+  <div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#E8FBF4;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">⚡</span> 포터 일렉트릭 EV 부담Down 36개월</div>
+  <div class="wbox">⚠️ <strong>만기 시 차량 반납으로 유예금 상환 — 반드시 고객 안내 필수!</strong></div>
+  ${T(`<table class="rt"><thead><tr>
+    <th>구분</th><th class="th-m">모빌리티(XI)</th><th class="th-n">일반(XH)</th><th>최대 유예율</th>
+  </tr></thead><tbody>
+    <tr><td class="lb">신규구매</td><td>${R}2.8%${Rc}</td><td>${R1}3.8%${Rc}</td><td>50%</td></tr>
+    <tr style="background:#FFF0F5;"><td class="lb" style="color:#C62828;">재구매 ★</td><td><span class="rred">2.3%</span></td><td><span class="rred">3.3%</span></td><td>50%</td></tr>
+  </tbody></table>`)}
+  <div class="pbox"><h4>✅ 핵심 소구</h4><ul>
+    <li>36개월 유예형 · 최대 유예율 <strong>50%</strong> · <strong style="color:#E65100;">월 납입금 10만원대!</strong></li>
+    <li>재구매 고객 <strong style="color:#C62828;">-0.5%p → 최저 2.3%★</strong></li>
+    <li>코드: 신규 <strong>XI / XH</strong> · 재구매 <strong>XE / XA</strong></li>
+  </ul></div>
+</div></div>`
++tblStd('porterev','JH','JA', RATE_CONFIG.EV_PORTER.std)
++tblVar('porterev','JJ','JI', RATE_CONFIG.EV_PORTER.var)
++tblDef('porterev','JG','JF', RATE_CONFIG.EV_PORTER.def)
++tblYuye('porterev','XV','XU', RATE_CONFIG.EV_PORTER.yuye)
++tblJK('porterev', '1,500만원')
 })();
 
 /* ── ST1 EV ── */
 PANELS.st1ev=(()=>{
   return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','⚡','ST1','올해의차+50만 / 생산월 최대 150만',['EV','소상'])
+  +delivBox('1.5개월', null)
   +tipBox('ST1 핵심 전략', [
   '⭐ 아이오닉 100만대 기념 <strong>+50만원 강화! (7월 100만원)</strong>',
   '100만대(100만)+생산월(최대150만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>365만원</strong>',
@@ -12841,15 +12823,33 @@ PANELS.st1ev=(()=>{
     [birthMonthRadio('st1ev', BIRTH_ST1EV), corpRadio('st1ev')]
   )
   +'<hr class="dv">'
-  +ptabs('st1ev',[['std','표준형(JH/JA)'],['var','변동금리']])
-  +tblStd('st1ev','JH','JA',STD_ST1_SHORT)
-  +tblVar('st1ev','JJ','JI',[['36개월',R+'5.8%'+Rc,R1+'6.6%'+Rc],['48개월',R+'5.9%'+Rc,R1+'6.7%'+Rc],['60개월',R+'6.0%'+Rc,R1+'6.8%'+Rc]]);
++ptabs('st1ev',[
+  ['std','표준형'],
+  ['var','변동금리'],
+  ['def','거치형'],
+  ['yuye','반납유예형'],
+  ['jk','단기소액 무이자'],
+])
++tblStd('st1ev','JH','JA', RATE_CONFIG.EV_ST1.std)
++tblVar('st1ev','JJ','JI', RATE_CONFIG.EV_ST1.var)
++tblDef('st1ev','JG','JF', RATE_CONFIG.EV_ST1.def)
++`<div class="ppanel" id="pp-st1ev-yuye" data-g="st1ev"><div class="scard">
+  <div class="stitle">📌 반납유예형 할부 (XU/XV)</div>
+  ${T(`<table class="rt"><thead><tr>
+    <th>기간</th><th class="th-m">모빌리티(XV)</th><th class="th-n">일반(XU)</th>
+  </tr></thead><tbody>
+    <tr><td class="lb">36개월</td><td>${R}6.2%${Rc}</td><td>${R1}7.2%${Rc}</td></tr>
+    <tr><td class="lb">48개월</td><td>${R}6.3%${Rc}</td><td>${R1}7.3%${Rc}</td></tr>
+  </tbody></table>`)}
+</div></div>`
++tblJK('st1ev', '1,000만원');
 })();
 
 /* ── 스타리아 일렉트릭 ── */
 PANELS.stariaev=(()=>{
   return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','⚡','스타리아 일렉트릭','신규 차종 추가 <span class="badge-new">NEW</span>',['EV'])
   +`<div class="new-box">🆕 <strong>5월 신규 추가 차종!</strong> 스타리아 일렉트릭</div>`
+  +delivBox('4~6개월', 'PV5 5개월')
   +tipBox('스타리아 일렉트릭 핵심 전략', [
   '신규 출시 차종 — 트레이드인·생산월 조건 없음 · 전시차(20만)+세이브오토(30만)+굿프렌드(15만) → <strong>65만원</strong>',
   'EV 에브리케어 — 화재 100억·잔가 55%·10년 무상점검 적극 강조',
@@ -12870,14 +12870,33 @@ PANELS.stariaev=(()=>{
     [corpRadio('stariaev')]
   )
   +'<hr class="dv">'
-  +ptabs('stariaev',[['std','표준형(JH/JA)']])
-  +tblStd('stariaev','JH','JA',STD_STARIAEV_SHORT);
+ +ptabs('stariaev',[
+  ['std','표준형'],
+  ['var','변동금리'],
+  ['def','거치형'],
+  ['yuye','반납유예형'],
+  ['jk','단기소액 무이자'],
+])
++tblStd('stariaev','JH','JA', RATE_CONFIG.EV_STARIA.std)
++tblVar('stariaev','JJ','JI', RATE_CONFIG.EV_STARIA.var)
++tblDef('stariaev','JG','JF', RATE_CONFIG.EV_STARIA.def)
++`<div class="ppanel" id="pp-stariaev-yuye" data-g="stariaev"><div class="scard">
+  <div class="stitle">📌 반납유예형 할부 (XU/XV)</div>
+  ${T(`<table class="rt"><thead><tr>
+    <th>기간</th><th class="th-m">모빌리티(XV)</th><th class="th-n">일반(XU)</th>
+  </tr></thead><tbody>
+    <tr><td class="lb">36개월</td><td>${R}5.9%${Rc}</td><td>${R1}6.9%${Rc}</td></tr>
+    <tr><td class="lb">48개월</td><td>${R}6.0%${Rc}</td><td>${R1}7.0%${Rc}</td></tr>
+  </tbody></table>`)}
+</div></div>`
++tblJK('stariaev', '1,500만원')
 })();
 
 /* ── 넥쏘 FCEV ── */
 PANELS.nexo=(()=>{
   return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','💧','넥쏘 FCEV','부담Down 39M 2.8% / 트레이드인 강화 200만',['FCEV'])
   +`<div class="chg-box">🔄 <strong>6월 변경</strong> · 넥쏘 부담Down: 39M 모빌리티 <strong>2.8%</strong> / 일반 <strong>3.8%</strong><br>· <strong style="color:#4527A0;">트레이드인 강화: 넥쏘 外 차종 당사 매각도 200만원 가능!</strong><br>· <strong style="color:#4527A0;">타사 차량 신규 매각: 100만원 (신규 적용)</strong></div>`
+  +delivBox('1개월', null)
   +tipBox('넥쏘 최적 판매 전략', [
   '⭐ <strong>1주년 기념 대폭 강화!</strong> 부담Down 39M <strong>1.8%</strong> — 월 최저 납입 <strong>6만원!</strong>',
   '생산월(200만)+당사 트레이드인(200만)+수소충전크레딧(40만)+굿프렌드(15만) → 최대 <strong>455만원</strong>',
@@ -12903,23 +12922,34 @@ PANELS.nexo=(()=>{
     [birthMonthRadio('nexo', BIRTH_NEXO, 'hlp'), corpRadio('nexo','hlp')]
   )
   +'<hr class="dv">'
-  +promoSection([[true,'📌 넥쏘 부담Down★ 39M(XI/XH)','모빌리티(XI): 39M <strong>1.8%</strong><br>일반(XH): 39M <strong>2.8%</strong><br>최대 유예율: <strong>45%</strong>'],[false,'📌 표준형(JH)','36M: <strong>5.2%</strong>/48M: <strong>5.3%</strong>/60M: <strong>5.4%</strong>']])
+  +promoSection([[true,'📌 넥쏘 부담Down★ 39M(XI/XH)','모빌리티(XI): 39M <strong>1.8%</strong><br>일반(XH): 39M <strong>2.8%</strong><br>최대 유예율: <strong>45%</strong>'],[false,'📌 표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>']])
   +fboxSection(['부담Down 1.8%: 선수금 3.6% 기준 월 최저 <strong>6만원(일 1,900원)!</strong>','<strong style="color:#4527A0;">★ 타사 차량 신규 매각 100만원 → 신규 고객 확장 가능!</strong>','넥쏘 외 차종 보유 고객도 당사 매각 +200만원 → 고객 풀 대폭 확대!'])
   +'<hr class="dv">'
-  +ptabs('nexo',[['nexodown','넥쏘 부담Down★'],['std','표준형(JH/JA)'],['var','변동금리']])
++ptabs('nexo',[
+  ['nexodown','넥쏘 부담Down★'],
+  ['std','표준형'],
+  ['var','변동금리'],
+  ['def','거치형'],
+  ['yuye','반납유예형'],
+  ['jk','단기소액 무이자'],
+])
   +`<div class="ppanel active" id="pp-nexo-nexodown" data-g="nexo"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F2F4F6;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 넥쏘 부담Down 39개월 유예형</div>
   <div class="new-box">🆕 월 14만원(일 4,500원)으로 넥쏘 이용! (선수금 3.6% 기준)</div>
 ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XI)</th><th class="th-n">일반(XH)</th><th>유예율</th></tr></thead><tbody>
   <tr><td class="lb">39개월</td><td>${R}1.8%${Rc}</td><td>${R1}2.8%${Rc}</td><td>45%</td></tr>
 </tbody></table>`)}</div></div>`
-  +tblStd('nexo','JH','JA',STD_NEXO_SHORT)
-  +tblVar('nexo','JJ','JI',VAR_ICE);
++tblStd('nexo','JH','JA', RATE_CONFIG.FCEV_NEXO.std)
++tblVar('nexo','JJ','JI', RATE_CONFIG.FCEV_NEXO.var)   // ✅ 직접 참조
++tblDef('nexo','JG','JF', RATE_CONFIG.FCEV_NEXO.def)
++tblYuye('nexo','XV','XU', RATE_CONFIG.FCEV_NEXO.yuye)
++tblJK('nexo', '1,500만원')
 })();
 
 
 /* ── 제네시스 G70 ── */
 PANELS.g70=(()=>{
   return hdr('linear-gradient(135deg,#1A237E,#283593)','🏆','G70 / 슈팅브레이크','THE BETTER CHOICE 50만 / 트레이드인 당사200만',['ICE','슈팅브레이크'])
+  +delivBox('1개월', null)
   +tipBox('G70/슈팅브레이크 핵심 전략', [
   '전용카드(50만)+트레이드인(200만)+세이브오토(50만)+굿프렌드(15만) → 최대 <strong>315만원</strong>',
   '<strong>THE BETTER CHOICE 6월 종료 → 7월부터 미운영!</strong> 기존 THE BETTER CHOICE 조건은 7월 기준 공문 확인 필요',
@@ -12947,13 +12977,17 @@ PANELS.g70=(()=>{
     [corpRadioGen('g70')]
   )
   +'<hr class="dv">'
-  +ptabs('g70',[['std','표준형(JH/JA)']])
-  +tblStd('g70','JH','JA',STD_GEN_SHORT);
+  +ptabs('g70',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])
+  +tblStd('g70','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
+  +tblVar('g70','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
+  +tblDef('g70','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
+  +tblYuye('g70','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye);
 })();
 
 /* ── G80 ICE ── */
 PANELS.g80ice=(()=>{
   return hdr('linear-gradient(135deg,#1A237E,#283593)','🏆','G80','생산월 최대 8% / 임직원/그룹사 특화 할부',['ICE'])
+  +delivBox('3주', null)
   +tipBox('G80 ICE 핵심 전략', [
   '⭐ <strong>르망24 완주기념 저금리 신규!</strong> 24M 0.9% / 36M 1.9% / 48M 2.9% / 60M 3.9%',
   '⭐ 7월 기본조건 <strong>100만원</strong> + 생산월 최대 <strong>10%</strong>',
@@ -12983,11 +13017,11 @@ PANELS.g80ice=(()=>{
   +'<hr class="dv">'
 +promoSection([
   [true,'📌 제네시스 르망24 완주기념 저금리★','24M 0.9% / 36M 1.9% / 48M 2.9% / 60M 3.9%'],
-  [true,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.6%</strong><br>일반(XY): <strong>6.6%</strong><br>36개월 잔존가치 65%'],
+  [true,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
   [false,'📌 더블픽','중도상환 면제+4%+신차 우선공급'],
 ])
   +'<hr class="dv">'
-  +ptabs('g80ice',[['lemans','르망24 저금리★'],['lease','임직원/그룹사 특화'],['std','표준형(JH/JA)'],['j5','현장렌트사(J5)']])
+  +ptabs('g80ice',[['lemans','르망24 저금리★'],['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사']])
 +`<div class="ppanel active" id="pp-g80ice-lemans" data-g="g80ice"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F9F5F0;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 제네시스 르망24 완주 기념 저금리<span class="badge-new">7월 신규</span></div>
 ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JM)</th></tr></thead><tbody>
   <tr><td class="lb">24개월</td><td>${R}0.9%${Rc}</td></tr>
@@ -12995,14 +13029,18 @@ ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(J
   <tr><td class="lb">48개월</td><td>${R}2.9%${Rc}</td></tr>
   <tr><td class="lb">60개월</td><td>${R}3.9%${Rc}</td></tr>
 </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>G80 ICE 대상 · 7월 한정 운영</li></ul></div></div></div>`
-  +genEmpPanel('g80ice','5.6','6.6','임직원/그룹사 특화 할부')
-  +tblStd('g80ice','JH','JA',STD_GEN_SHORT)
-  +tblJ5('g80ice','6.1%','6.3%');
+  +tblStd('g80ice','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
+  +tblVar('g80ice','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
+  +tblDef('g80ice','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
+  +tblYuye('g80ice','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye)
+  +genEmpPanel('g80ice','5.8','6.8','임직원/그룹사 특화 할부','G80·GV80·GV70 ※2.5터보 엔진限 이용 가능').replace('ppanel active','ppanel')
+  +tblJ5('g80ice','6.3%','6.5%');
 })();
 
 /* ── GV70 ICE ── */
 PANELS.gv70ice=(()=>{
   return hdr('linear-gradient(135deg,#1A237E,#283593)','🏆','GV70','생산월 최대 8% / THE BETTER CHOICE',['ICE'])
+  +delivBox('3주', null)
   +tipBox('GV70 ICE 핵심 전략', [
   '⭐ <strong>르망24 완주기념 저금리 신규!</strong> 24M 0.9% / 36M 1.9% / 48M 2.9% / 60M 3.9%',
   '⭐ 7월 기본조건 <strong>100만원</strong> + 생산월 최대 <strong>10%</strong>',
@@ -13032,11 +13070,11 @@ PANELS.gv70ice=(()=>{
   +'<hr class="dv">'
 +promoSection([
   [true,'📌 제네시스 르망24 완주기념 저금리★','24M 0.9% / 36M 1.9% / 48M 2.9% / 60M 3.9%'],
-  [true,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>6.1%</strong><br>일반(XY): <strong>7.1%</strong><br>36개월 잔존가치 65%'],
+  [true,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
   [false,'📌 더블픽','중도상환 면제+4%+신차 우선공급'],
 ])
   +'<hr class="dv">'
-  +ptabs('gv70ice',[['lemans','르망24 저금리★'],['lease','임직원/그룹사 특화'],['std','표준형(JH/JA)'],['j5','현장렌트사(J5)']])
+  +ptabs('gv70ice',[['lemans','르망24 저금리★'],['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사']])
 +`<div class="ppanel active" id="pp-gv70ice-lemans" data-g="gv70ice"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F9F5F0;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 제네시스 르망24 완주 기념 저금리<span class="badge-new">7월 신규</span></div>
 ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JM)</th></tr></thead><tbody>
   <tr><td class="lb">24개월</td><td>${R}0.9%${Rc}</td></tr>
@@ -13044,14 +13082,18 @@ ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(J
   <tr><td class="lb">48개월</td><td>${R}2.9%${Rc}</td></tr>
   <tr><td class="lb">60개월</td><td>${R}3.9%${Rc}</td></tr>
 </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>GV70 ICE 대상 · 7월 한정 운영</li></ul></div></div></div>`
-  +genEmpPanel('gv70ice','6.1','7.1','임직원/그룹사 특화 할부')
-  +tblStd('gv70ice','JH','JA',STD_GEN_SHORT)
-  +tblJ5('gv70ice','6.1%','6.3%');
+  +tblStd('gv70ice','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
+  +tblVar('gv70ice','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
+  +tblDef('gv70ice','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
+  +tblYuye('gv70ice','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye)
+  +genEmpPanel('gv70ice','5.8','6.8','임직원/그룹사 특화 할부','G80·GV80·GV70 ※2.5터보 엔진限 이용 가능').replace('ppanel active','ppanel')
+  +tblJ5('gv70ice','6.3%','6.5%');
 })();
 
 /* ── GV80 ── */
 PANELS.gv80=(()=>{
   return hdr('linear-gradient(135deg,#1A237E,#283593)','🏆','GV80 / 쿠페','생산월 최대 8% / THE BETTER CHOICE 100만',['ICE','쿠페'])
+  +delivBox('3주', null)
   +tipBox('GV80/쿠페 핵심 전략', [
   '⭐ <strong>르망24 완주기념 저금리 신규!</strong> 24M 0.9% / 36M 1.9% / 48M 2.9% / 60M 3.9%',
   '⭐ 7월 기본조건 <strong>100만원</strong> + 생산월 최대 <strong>10%</strong>',
@@ -13081,11 +13123,11 @@ PANELS.gv80=(()=>{
   +'<hr class="dv">'
 +promoSection([
   [true,'📌 제네시스 르망24 완주기념 저금리★','24M 0.9% / 36M 1.9% / 48M 2.9% / 60M 3.9%'],
-  [true,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>6.6%</strong><br>일반(XY): <strong>7.1%</strong><br>36개월 잔존가치 65%'],
+  [true,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
   [false,'📌 더블픽','중도상환 면제+4%+신차 우선공급'],
 ])
   +'<hr class="dv">'
-  +ptabs('gv80',[['lemans','르망24 저금리★'],['lease','임직원/그룹사 특화'],['std','표준형(JH/JA)'],['j5','현장렌트사(J5)']])
+  +ptabs('gv80',[['lemans','르망24 저금리★'],['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사']])
 +`<div class="ppanel active" id="pp-gv80-lemans" data-g="gv80"><div class="scard"><div class="stitle"><span style="width:18px;height:18px;border-radius:5px;background:#F9F5F0;display:inline-flex;align-items:center;justify-content:center;font-size:10px;">📌</span> 제네시스 르망24 완주 기념 저금리<span class="badge-new">7월 신규</span></div>
 ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JM)</th></tr></thead><tbody>
   <tr><td class="lb">24개월</td><td>${R}0.9%${Rc}</td></tr>
@@ -13093,18 +13135,22 @@ ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(J
   <tr><td class="lb">48개월</td><td>${R}2.9%${Rc}</td></tr>
   <tr><td class="lb">60개월</td><td>${R}3.9%${Rc}</td></tr>
 </tbody></table>`)}<div class="pbox"><h4>✅ 조건</h4><ul><li>GV80 / GV80 쿠페 대상 · 7월 한정 운영</li></ul></div></div></div>`
-  +genEmpPanel('gv80','6.6','7.1','임직원/그룹사 특화 할부')
-  +tblStd('gv80','JH','JA',STD_GEN_SHORT)
-  +tblJ5('gv80','6.1%','6.3%');
+  +tblStd('gv80','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
+  +tblVar('gv80','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
+  +tblDef('gv80','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
+  +tblYuye('gv80','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye)
+  +genEmpPanel('gv80','5.8','6.8','임직원/그룹사 특화 할부','G80·GV80·GV70 ※2.5터보 엔진限 이용 가능').replace('ppanel active','ppanel')
+  +tblJ5('gv80','6.3%','6.5%');
 })();
 
 /* ── G90 ── */
 PANELS.g90=(()=>{
   return hdr('linear-gradient(135deg,#1A237E,#283593)','🏆','제네시스 G90','THE BETTER CHOICE 최대 300만 / 생산월',['ICE'])
+  +delivBox('1개월', null)
   +tipBox('제네시스 EV 핵심 전략', [
   '⭐ G-EXCHANGE 7월 유지 — 3년 +200만원 / 5년 +100만원',
   '전용카드(50만)+트레이드인(200만)+생산월(최대6%)+굿프렌드(15만) → 최대 <strong>265만원+생산월%</strong>',
-  '임직원 특화(XZ/XY): 36M 5.6% · 잔가율 65% → 월 10~20만원대 소구',
+  '임직원 특화(XZ/XY): 36M 5.8% · 잔가율 65% → 월 10~20만원대 소구',
   '더블픽: HEV 신차 대기 중인 제네시스 고객 리스 12/24개월 → 신차 우선공급',
 ])
   +'<hr class="dv">'
@@ -13129,13 +13175,17 @@ PANELS.g90=(()=>{
   )
   +promoSection([[true,'📌 더블픽','중도상환 면제+4%+신차 우선공급']])
   +'<hr class="dv">'
-  +ptabs('g90',[['std','표준형(JH/JA)']])
-  +tblStd('g90','JH','JA',STD_GEN_SHORT);
+  +ptabs('g90',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])
+  +tblStd('g90','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
+  +tblVar('g90','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
+  +tblDef('g90','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
+  +tblYuye('g90','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye);
 })();
 
 /* ── 제네시스 EV ── */
 PANELS.genesisev=(()=>{
   return hdr('linear-gradient(135deg,#1A237E,#283593)','⚡','GV60 / G80e / GV70e','THE BETTER CHOICE 최대 100만 / 생산월',['EV'])
+  +delivBox('GV60 3주(마그마 2개월), G80e/GV70e 1개월', null)
   +tipBox('제네시스 EV 핵심 전략', [
   '제네시스 THE BETTER CHOICE <strong>6월까지만 운영 후 7월부터 미운영</strong>지금이 적기임을 강조',
   '트레이드인(200만)+생산월(최대6%) 삼중 혜택 집중 소구',
@@ -13173,12 +13223,35 @@ PANELS.genesisev=(()=>{
     ]
   )
   +'<hr class="dv">'
-  +promoSection([[true,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.6%</strong><br>일반(XY): <strong>6.6%</strong><br>36개월 잔가율 65%'],[true,'📌 더블픽','중도상환 면제+4%+신차 우선공급']])
+  +promoSection([[true,'📌 임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔가율 65%'],[true,'📌 더블픽','중도상환 면제+4%+신차 우선공급']])
   +fboxSection(['GV60 MAGMA 임직원 특화: 표준형 대비 월 납입금 약 117만원 절감!'])
   +'<hr class="dv">'
-  +ptabs('genesisev',[['lease','임직원/그룹사 특화'],['std','표준형(JH/JA)']])
-  +genEmpPanel('genesisev','5.6','6.6','임직원/그룹사 특화 할부')
-  +tblStd('genesisev','JH','JA',STD_GEN_SHORT);
+  +ptabs('genesisev',[
+  ['std','표준형'],
+  ['var','변동금리'],
+  ['def','거치형'],
+  ['yuye','반납유예형'],
+  ['jk','단기소액 무이자'],
+  ['lease','임직원/그룹사 특화'],
+])
++tblStd('genesisev','JH','JA', RATE_CONFIG.EV_GENESIS.std)
++tblVar('genesisev','JJ','JI', RATE_CONFIG.EV_GENESIS.var)
++tblDef('genesisev','JG','JF', RATE_CONFIG.EV_GENESIS.def)
++`<div class="ppanel" id="pp-genesisev-yuye" data-g="genesisev"><div class="scard">
+  <div class="stitle">📌 반납유예형 할부 (XU/XV)</div>
+  ${T(`<table class="rt"><thead><tr>
+    <th>기간</th><th class="th-m">모빌리티(XV)</th><th class="th-n">일반(XU)</th>
+  </tr></thead><tbody>
+    <tr><td class="lb">36개월</td><td>${R}5.8%${Rc}</td><td>${R1}6.8%${Rc}</td></tr>
+    <tr><td class="lb">48개월</td><td>${R}5.8%${Rc}</td><td>${R1}6.8%${Rc}</td></tr>
+    <tr><td class="lb">60개월</td><td>${R}5.8%${Rc}</td><td>${R1}6.8%${Rc}</td></tr>
+  </tbody></table>`)}
+  <div class="pbox"><h4>✅ 조건</h4><ul>
+    <li>36개월 잔존가치 65% 상향</li>
+  </ul></div>
+</div></div>`
++tblJK('genesisev', '2,000만원')
++genEmpPanel('genesisev','5.8','6.8','임직원/그룹사 특화 할부','GV60 MAGMA 36개월限 이용 가능').replace('ppanel active','ppanel');
 })();
 
 /* ════════════════════════════════
