@@ -15821,6 +15821,45 @@ PANELS.summary=`
 </div>
 </div>
 
+<!-- ══ 8월 1차 특별 판매조건 ══ -->
+<div style="margin-bottom:18px;">
+<div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
+<button class="accordion-btn"
+  style="border-left:4px solid #F04452;border-radius:var(--r-md);"
+  onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+  <span style="display:flex;align-items:center;gap:8px;flex:1;">
+    <span style="background:#F04452;color:#fff;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;">긴급</span>
+    <span style="font-weight:800;">8월 1차 특별 판매조건 실시 <small style="color:#F04452;font-weight:700;">(8/5 09:30 전산오픈~)</small></span>
+  </span>
+  <span class="acc-arrow">▼</span>
+</button>
+<div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+
+  <div style="background:#FFF5F5;border-left:3px solid #F04452;border-radius:8px;padding:9px 12px;margin-bottom:12px;font-size:13px;font-weight:800;color:#C62828;">
+    ⚡ 전산오픈: 8월 5일(수) 09:30~ &nbsp;·&nbsp; 총 4,000대 한정
+  </div>
+
+  <div style="line-height:1.9;font-size:13px;">
+    <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,0.06);">
+      <strong style="color:#1B64DA;">① 싼타페 HEV</strong>&nbsp;<strong style="color:#F04452;">+50만원</strong><br>
+      7월 생산분 <small style="color:#8B95A1;">(현재 200만)</small> 중 선호재고 약 <strong>1,500대</strong> 선정
+    </div>
+    <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,0.06);">
+      <strong style="color:#1B64DA;">② 팰리세이드 HEV</strong>&nbsp;<strong style="color:#F04452;">+50만원</strong><br>
+      7월 생산분 <small style="color:#8B95A1;">(현재 조건 미운영)</small> 중 선호재고 약 <strong>1,600대</strong> 선정<br>
+      <small style="color:#856404;background:#FFF8E1;padding:2px 6px;border-radius:4px;display:inline-block;margin-top:3px;">※ 쏘렌토 저금리 대응 — 7월 생산월 재고 전략적 활용 강조</small>
+    </div>
+    <div>
+      <strong style="color:#1B64DA;">③ 포터 일반</strong>&nbsp;<strong style="color:#F04452;">+50만원</strong><br>
+      6월 생산분 <small style="color:#8B95A1;">(현재 150만)</small> 중 약 <strong>900대</strong> 선정<br>
+      <small style="color:#856404;background:#FFF8E1;padding:2px 6px;border-radius:4px;display:inline-block;margin-top:3px;">※ 포터 5월 이전 재고 소진 → 최대 조건 200만 운영 모수 확대</small>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
 
 <div class="sum-sec">
   <div class="sum-head">8월 핵심 공통 프로모션</div>
@@ -15981,7 +16020,8 @@ PANELS.summary=`
     <strong>대상:</strong> 한국항공우주산업 / 한국항공서비스 재직 임직원<br>
     <strong>차종:</strong> 현대·제네시스 전 차종 <small>(캐스퍼·쏘나타 택시·상용 제외)</small><br>
     <strong>혜택:</strong> 현대 <span class="hl">30만원</span> / 제네시스 <span style="color:#A47551;font-weight:800;">50만원</span><br>
-    <strong>기간:</strong> 2026년 7월 1일 ~ 9월 30일 · <strong>출고 기준</strong><br>
+    <strong>기간:</strong> 2026년 7월 1일 ~ 12월 31일 · <strong>출고 기준</strong><br>
+    <small style="color:#C62828;">※ 예산 소진 시 조기 마감될 수 있습니다.</small><br>
     <strong>방법:</strong> 경남 지점/대리점 방문 후 <strong>재직증명서 사본 제출</strong><br>
     <small style="color:#8B95A1;">임직원 본인·배우자 공동명의 가능 · 가족관계증명서 필요<br>타 할인 중복 여부 최종 확인 필수</small>
   </div>
@@ -17821,7 +17861,7 @@ PANELS.avante=(()=>{
   [
     ['🖥️ 운전결심 X PLCC','<span class="hl">20만 캐시백</span>','new',20],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
   [tradeInRadio('avante-ice',50,30), saveAutoSingle('avante-ice',30), goodfriendRadio('avante-ice')],
   [],                          /* ✅ 3번: 특화카드 없음 → 빈 배열 */
@@ -17849,7 +17889,7 @@ ${saleSectionV2(
   [
     ['🖥️ 운전결심 X PLCC','<span class="hl">20만 캐시백</span>','new',20],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
   [tradeInRadio('avante-n',50,30), saveAutoSingle('avante-n',30), goodfriendRadio('avante-n')],
   [],                                                                     /* ✅ 3번: 특화카드 없음 */
@@ -17882,7 +17922,7 @@ PANELS.sonata=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('sonata',50,30), saveAutoSingle('sonata',30), goodfriendRadio('sonata')],
     [],
@@ -17917,7 +17957,7 @@ PANELS.grandeur=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('grandeur',50,30), saveAutoRadio('grandeur'), goodfriendRadio('grandeur')],
     [],
@@ -18017,7 +18057,7 @@ PANELS.newgrandeur = (function(){
 
 var saleSection_ = saleSectionV2(
   [
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
   [tradeInRadio('newgrandeur',50,30), saveAutoRadio('newgrandeur'), goodfriendRadio('newgrandeur')],
   [],
@@ -18184,7 +18224,7 @@ PANELS.venue=(()=>{
     [
       ['🖥️ 운전결심 X PLCC','<span class="hl">20만 캐시백</span>','new',20],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [corpRadio('venue')]
   )
@@ -18211,7 +18251,7 @@ PANELS.konaice=(()=>{
     [
       ['🖥️ 운전결심 X PLCC','<span class="hl">20만 캐시백</span>','new',20],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('konaice',50,30), saveAutoSingle('konaice',30), goodfriendRadio('konaice')],
     [
@@ -18241,7 +18281,7 @@ PANELS.tucson=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('tucson',50,30), saveAutoSingle('tucson',30), goodfriendRadio('tucson')],
     [],
@@ -18269,7 +18309,7 @@ PANELS.santafe=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('santafe',50,30), saveAutoSingle('santafe',30), goodfriendRadio('santafe')],
     [
@@ -18304,7 +18344,7 @@ PANELS.palisade=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
  [
     tradeInRadio('palisade', 50, 30),
@@ -18344,7 +18384,7 @@ PANELS.staria=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('staria',50,30), saveAutoSingle('staria',30), goodfriendRadio('staria')],
     [],
@@ -18373,7 +18413,7 @@ PANELS.porterlpdi=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('porterlpdi',100,100), saveAutoSingle('porterlpdi',30), goodfriendRadio('porterlpdi')],
     [
@@ -18405,7 +18445,7 @@ PANELS.konaev=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('konaev',100,50,'hlev'), saveAutoSingle('konaev',30,'hlev'), goodfriendRadio('konaev','hlev')],
     [
@@ -18493,7 +18533,7 @@ const ev = '<div class="vpanel active" id="vp-ioniq5-ev" data-g="ioniq5">'
   + saleSectionV2(
     [
       ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-      ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+      ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('ioniq5-ev',100,50,'hlev'), saveAutoSingle('ioniq5-ev',30,'hlev'), goodfriendRadio('ioniq5-ev','hlev')],
     [
@@ -18554,7 +18594,7 @@ const ev = '<div class="vpanel active" id="vp-ioniq5-ev" data-g="ioniq5">'
     ${saleSectionV2(
       [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
       ],
       [tradeInRadio('ioniq5-n',100,50,'hlev'), saveAutoSingle('ioniq5-n',30,'hlev'), goodfriendRadio('ioniq5-n','hlev')],
       [
@@ -18582,7 +18622,7 @@ const ev = '<div class="vpanel active" id="vp-ioniq6-ev" data-g="ioniq6">'
   + saleSectionV2(
     [
       ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-      ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+      ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('ioniq6-ev',100,50,'hlev'), saveAutoSingle('ioniq6-ev',30,'hlev'), goodfriendRadio('ioniq6-ev','hlev')],
     [
@@ -18643,7 +18683,7 @@ const ev = '<div class="vpanel active" id="vp-ioniq6-ev" data-g="ioniq6">'
     ${saleSectionV2(
       [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
       ],
       [tradeInRadio('ioniq6-n',100,50,'hlev'), saveAutoSingle('ioniq6-n',30,'hlev'), goodfriendRadio('ioniq6-n','hlev')],
       [
@@ -18672,7 +18712,7 @@ PANELS.ioniq9=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('ioniq9',100,50,'hlev'), saveAutoRadio('ioniq9','hlev'), goodfriendRadio('ioniq9','hlev')],
     [
@@ -18715,7 +18755,7 @@ PANELS.porterev=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('porterev',100,100,'hlev'), saveAutoSingle('porterev',30,'hlev'), goodfriendRadio('porterev','hlev')],
     [
@@ -18769,7 +18809,7 @@ PANELS.st1ev=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('st1ev',100,100), saveAutoSingle('st1ev',30), goodfriendRadio('st1ev')],
     [
@@ -18814,7 +18854,7 @@ PANELS.stariaev=(()=>{
   +saleSectionV2(    
     [  ['🔄 트레이드인','<span class="hl">해당 없음</span>','',0],
       ['♻ 세이브 오토','<span class="hl">30만원</span>','',30],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [goodfriendRadio('stariaev')],
     [
@@ -18861,7 +18901,7 @@ PANELS.nexo=(()=>{
   +saleSectionV2(
     [
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 30],
+    ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [
       radioGroup('트레이드인 — 차종 선택 (넥쏘 外도 당사 가능)', 'sg',
@@ -18914,7 +18954,7 @@ PANELS.g70=(()=>{
     [
      ['💳 트레이드인 전용카드','<span class="hlg">50만원</span><br><small>제네시스/현대차 전용카드 1,000만원 결제+세이브오토</small>','new',50],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 50],
+['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 50],
 
     ],
     [
@@ -18957,7 +18997,7 @@ PANELS.g80ice=(()=>{
     [
       ['💳 트레이드인 전용카드','<span class="hlg">50만원</span><br><small>제네시스/현대차 전용카드 1,000만원 결제+세이브오토</small>','new',50],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 50],
+['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 50],
     ],
     [
       radioGroup('트레이드인 (당사 / 타사 선택)', 'sg',
@@ -19001,7 +19041,7 @@ PANELS.gv70ice=(()=>{
     [
       ['💳 트레이드인 전용카드','<span class="hlg">50만원</span><br><small>제네시스/현대차 전용카드 1,000만원 결제+세이브오토</small>','new',50],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 50],
+['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 50],
     ],
     [
       radioGroup('트레이드인 (당사 / 타사 선택)', 'sg',
@@ -19045,7 +19085,7 @@ PANELS.gv80=(()=>{
     [
       ['💳 트레이드인 전용카드','<span class="hlg">50만원</span><br><small>제네시스/현대차 전용카드 1,000만원 결제+세이브오토</small>','new',50],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 50],
+['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 50],
     ],
     [
       radioGroup('트레이드인 (당사 / 타사 선택)', 'sg',
@@ -19090,7 +19130,7 @@ PANELS.g90=(()=>{
     [
       ['💳 트레이드인 전용카드','<span class="hlg">50만원</span><br><small>제네시스/현대차 전용카드 1,000만원 결제+세이브오토</small>','new',50],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 50],
+['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 50],
     ],
     [
       radioGroup('트레이드인 (당사 / 타사 선택)', 'sg',
@@ -19133,7 +19173,7 @@ PANELS.genesisev=(()=>{
     [
       ['💳 트레이드인 전용카드','<span class="hlg">50만원</span><br><small>제네시스/현대차 전용카드 1,000만원 결제+세이브오토</small>','new',50],
     ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
-['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~9/30 출고</small>', 'new', 50],
+['🏢 KAI/한국항공서비스 임직원 D/C', '<span class="hlg">50만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 50],
     ],
     [
       radioGroup('트레이드인 (당사 / 타사 선택)', 'sg',
@@ -21949,8 +21989,12 @@ if ('serviceWorker' in navigator) {
      ★ 업데이트마다 아래 두 곳만 수정
      ──────────────────────────────── */
   var VERSION = '2608-01';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
-  var UPDATE_DATE = '2026.08.01';   // 업데이트 날짜 표시용
+  var UPDATE_DATE = '2026.08.05';   // 업데이트 날짜 표시용
   var UPDATES = [                   // 업데이트 내용 목록
+    {
+      title: '8월 1차 특별 판매조건 (8/5 09:30~)',
+      desc:  '싼타페HEV·팰리세이드HEV +50만 / 포터일반 +50만 · 총4,000대 한정'
+    },
     {
       title: '8월 판매조건 업데이트 완료',
       desc:  '생산월 조건·신규 프로모션·EV에브리케어 변경사항 반영'
