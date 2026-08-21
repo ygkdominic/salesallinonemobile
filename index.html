@@ -1939,7 +1939,7 @@ const VS_IDS = [
     h += `<div class="sb-group"><div class="sb-label">${g.label}</div>`;
     g.items.forEach(it => {
       const a = (gi === 0 && it.id === 'summary') ? ' active' : '';
-      const isNew = ['newgrandeur', 'commercial'].includes(it.id);
+      const isNew = ['newgrandeur', 'commercial', 'avante'].includes(it.id);
       const isChg8 = it.id === 'evbenefit';
       const isVs  = VS_IDS.includes(it.id);
       h += `<button class="car-btn${a}${isVs ? ' vs-btn' : ''}" id="btn-${it.id}" onclick="showCar('${it.id}','${it.name}')">
@@ -15454,14 +15454,14 @@ PANELS.summary=`
 <div style="height:8px;"></div>
 
 
-<!-- 공지 2 안내 — 경남 지자체 EV 공모 현황 (7월) -->
+<!-- 공지 2 안내 — 경남 지자체 EV 공모 현황 (8월) -->
 <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
 <button class="accordion-btn"
   style="border-left:4px solid #3182F6;border-radius:var(--r-md);"
   onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
   <span style="display:flex;align-items:center;gap:8px;flex:1;">
     <span style="background:#E3F5EC;color:#1A7035;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;">EV</span>
-    <span style="color:#F04452;font-weight:800;">경남 전기차 공모 현황/7월 추가공모 안내<br>(7/29 기준★★)</span>
+    <span style="color:#F04452;font-weight:800;">경남 전기차 공모 현황 / 하반기 추가공모 안내<br>(8/18 기준)</span>
   </span>
   <span class="acc-arrow">▼</span>
 </button>
@@ -15470,61 +15470,15 @@ PANELS.summary=`
   <!-- 고객 상담 멘트 -->
   <div style="background:#FFF5F5;border-radius:10px;padding:11px 14px;margin-bottom:10px;border:1.5px solid rgba(240,68,82,0.2);">
     <div style="font-size:12px;font-weight:800;color:#F04452;margin-bottom:4px;">고객 상담 활용 멘트</div>
-    <div style="font-size:13px;font-weight:800;color:#C62828;line-height:1.6;">"지금 계약하셔야 8~9월에 접수할 수 있습니다!"</div>
+    <div style="font-size:13px;font-weight:800;color:#C62828;line-height:1.6;">"지역별로 잔여대수가 얼마 남지 않았습니다. 원하시는 차종이 있으시면 서둘러 신청하세요!"</div>
   </div>
 
-  <!-- ★ 7월 추가공모 임박 3개 지자체 -->
-  <div style="margin-bottom:10px;">
-    <div style="font-size:13px;font-weight:800;color:#191F28;margin-bottom:7px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,0.06);">
-      ★ 7~8월 추가공모 임박 지자체 
-    </div>
-    <table style="width:100%;border-collapse:collapse;font-size:13px;">
-      <thead>
-        <tr style="background:#C62828;">
-          <th style="color:#fff;padding:7px 10px;text-align:center;border-radius:6px 0 0 0;white-space:nowrap;">지자체</th>
-          <th style="color:#fff;padding:7px 10px;text-align:center;white-space:nowrap;">승용</th>
-          <th style="color:#fff;padding:7px 10px;text-align:center;white-space:nowrap;">화물</th>
-          <th style="color:#fff;padding:7px 10px;text-align:center;white-space:nowrap;">승합</th>
-          <th style="color:#fff;padding:7px 10px;text-align:left;border-radius:0 6px 0 0;">공고 / 접수 일정</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background:#FFF5F5;">
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;white-space:nowrap;color:#C62828;">★산청군<br>(확정)</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">50대<br>(10시)</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">20대<br>(10시)</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">4대(잔여)</td>
-          <td style="padding:8px 10px;border-bottom:1px solid #ffd0d0;color:#C62828;font-size:12px;font-weight:700;">
-            7월 30일 10시 접수 예정<br>
-            <span style="color:#8B0000;font-weight:400;">* 9월경 추가 가능성 (승용 40 / 화물 40)</span>
-          </td>
-        </tr>
-        <tr style="background:#FFF5F5;">
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;white-space:nowrap;color:#C62828;">★창녕군<br>(확정)</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">16대<br>(9시)</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">17대<br>(13시)</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">14대<br>(16시)</td>
-          <td style="padding:8px 10px;border-bottom:1px solid #ffd0d0;color:#C62828;font-size:12px;font-weight:700;">
-            8월 3일 접수 예정<br>
-          </td>
-        </tr>
-        <tr style="background:#FFF5F5;">
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;white-space:nowrap;color:#C62828;">함양군</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">40대</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">25대</td>
-          <td style="padding:8px 10px;text-align:center;font-weight:800;border-bottom:1px solid #ffd0d0;color:#C62828;">-</td>
-          <td style="padding:8px 10px;border-bottom:1px solid #ffd0d0;color:#C62828;font-size:12px;font-weight:700;">
-            7월말 추경 / 8월 2~3주차 접수 예정<br>
-            <span style="color:#8B0000;font-weight:400;">26년 최종 물량</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div style="font-size:12px;color:#8B95A1;font-weight:600;margin-bottom:8px;">
+    ※ 잔여대수는 현재 남은 물량, 예정물량은 하반기 추가공고 예산 확보 시 예정된 물량입니다.
   </div>
 
 <!-- 경남 지자체 현황 테이블 — 첫행·첫열 고정 + 터치 드래그 지원 -->
 <style>
-  /* ─── 고정 테이블 전용 스타일 ─── */
   .sticky-table-wrap {
     position: relative;
     overflow: auto;
@@ -15533,76 +15487,51 @@ PANELS.summary=`
     border-radius: 10px;
     border: 1px solid rgba(0,0,0,0.08);
     margin-bottom: 12px;
-    /* 터치 드래그 강제 활성화 */
     touch-action: pan-x pan-y;
     overscroll-behavior: contain;
   }
   .sticky-tbl {
     border-collapse: separate;
     border-spacing: 0;
-    font-size:13px;
-    min-width: 700px;
+    font-size:12.5px;
+    min-width: 780px;
     width: max-content;
     white-space: nowrap;
   }
-  /* ─── 첫 행(헤더) 고정 ─── */
   .sticky-tbl thead th {
-    position: sticky;
-    top: 0;
-    z-index: 30;
     background: #2D3540 !important;
     color: #fff;
-    padding: 9px 10px;
+    padding: 8px 8px;
     text-align: center;
     font-weight: 700;
-    font-size:12px;
+    font-size:11.5px;
     border-bottom: 2px solid #1a1f28;
   }
-  /* ─── 첫 열 고정 ─── */
+  .sticky-tbl thead th.grp-remain { background: #37474F !important; }
+  .sticky-tbl thead th.grp-plan  { background: #1B64DA !important; }
   .sticky-tbl thead th:first-child,
   .sticky-tbl tbody td:first-child {
     position: sticky;
     left: 0;
     z-index: 20;
   }
-  /* ─── 교차점(좌상단 셀) — 가장 위 레이어 ─── */
-  .sticky-tbl thead th:first-child {
-    z-index: 40;
-    text-align: left;
-  }
-  /* ─── 첫 열 바디 스타일 ─── */
+  .sticky-tbl thead th:first-child { z-index: 30; text-align: left; }
   .sticky-tbl tbody td:first-child {
     background: var(--bg-subtle, #F9FAFB);
     font-weight: 700;
     color: var(--tx-secondary, #4E5968);
     border-right: 2px solid rgba(0,0,0,0.10);
     min-width: 80px;
-    padding: 9px 10px;
+    padding: 8px 10px;
   }
-  /* ─── 바디 셀 ─── */
   .sticky-tbl tbody td {
-    padding: 9px 10px;
+    padding: 8px 8px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
     text-align: center;
     vertical-align: middle;
     background: #fff;
   }
-  .sticky-tbl tbody tr:hover td {
-    background: #EBF3FF;
-  }
-  /* ─── 상태 뱃지 ─── */
-  .ev-status {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size:12px;
-  }
-  .ev-s-open   { background: #E3F5EC; color: #1A7035; }
-  .ev-s-soon   { background: #FFF3CD; color: #856404; }
-  .ev-s-done   { background: #F2F4F6; color: #8B95A1; }
-  .ev-s-none   { color: #B0B8C1; }
-  /* ─── 드래그 힌트 ─── */
+  .sticky-tbl tbody tr:hover td { background: #EBF3FF; }
   .scroll-hint {
     display: flex;
     align-items: center;
@@ -15617,196 +15546,151 @@ PANELS.summary=`
 <div class="scroll-hint">
   ← 좌우로 드래그하여 더 보기 →
 </div>
-<div class="sticky-table-wrap" id="evStatusTableWrap">
-  <table class="sticky-tbl" id="evStatusTable">
+<div class="sticky-table-wrap">
+  <table class="sticky-tbl">
     <thead>
       <tr>
-        <th style="min-width:80px; text-align:left;">지자체</th>
-        <th style="min-width:52px;">승용<br>대수</th>
-        <th style="min-width:52px;">화물<br>대수</th>
-        <th style="min-width:52px;">승합<br>대수</th>
-        <th style="min-width:52px;">수소<br>대수</th>
-        <th style="min-width:180px; text-align:left;">추가 공고 예정 일정</th>
-        <th style="min-width:70px;">상태</th>
+        <th rowspan="2">지자체</th>
+        <th colspan="4" class="grp-remain">잔여대수</th>
+        <th colspan="4" class="grp-plan">하반기 추가공고 예상<br><small style="font-weight:500;opacity:.85;">(예산 확보시 예정물량)</small></th>
+        <th rowspan="2" style="min-width:220px; text-align:left;">추가 공모 일정</th>
+      </tr>
+      <tr>
+        <th class="grp-remain">승용</th>
+        <th class="grp-remain">화물</th>
+        <th class="grp-remain">승합</th>
+        <th class="grp-remain">수소</th>
+        <th class="grp-plan">승용</th>
+        <th class="grp-plan">화물</th>
+        <th class="grp-plan">승합</th>
+        <th class="grp-plan">수소</th>
       </tr>
     </thead>
     <tbody>
-      <!-- 합계 행 -->
+      <!-- 경남 합계 (16개 지자체 기준, 김해·양산 제외) -->
       <tr style="background:#EBF3FF;">
-        <td style="background:#EBF3FF; color:#1B64DA; font-weight:900;">합 계</td>
-        <td style="font-weight:900; color:#1B64DA;">1,951</td>
-        <td style="font-weight:900; color:#1B64DA;">610</td>
-        <td style="font-weight:900; color:#1B64DA;">61</td>
-        <td style="font-weight:900; color:#1B64DA;">21</td>
-        <td style="text-align:left;"></td>
-        <td></td>
+        <td style="background:#EBF3FF; color:#1B64DA; font-weight:900;">경남 (합계)</td>
+        <td style="font-weight:900; color:#1B64DA;">25</td>
+        <td style="font-weight:900; color:#1B64DA;">-</td>
+        <td style="font-weight:900; color:#1B64DA;">68</td>
+        <td style="font-weight:900; color:#1B64DA;">70</td>
+        <td style="font-weight:900; color:#1B64DA;">1,850</td>
+        <td style="font-weight:900; color:#1B64DA;">530</td>
+        <td style="font-weight:900; color:#1B64DA;">52</td>
+        <td style="font-weight:900; color:#1B64DA;">36</td>
+        <td style="text-align:left; color:#8B95A1; font-size:12px;">경남 16개 지자체 합 (김해·양산 관할 외 제외)</td>
       </tr>
       <!-- 창원시 -->
       <tr>
         <td>창원시</td>
-        <td>1,300</td>
-        <td>300</td>
-        <td>40</td>
-        <td>20</td>
-        <td style="text-align:left; color:#191F28;">전기 9월 중순, 수소 8월</td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td>1,300</td><td>300</td><td>40</td><td>20</td>
+        <td style="text-align:left; color:#191F28;">9월 중순 이후 / 수소 8월말 예정</td>
       </tr>
       <!-- 진주시 -->
       <tr>
         <td>진주시</td>
-        <td>300</td>
-        <td>100</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="text-align:left; color:#191F28;">9월 중순~9월말 예정</td>
-        <td><span class="ev-status ev-s-open">접수중</span></td>
+        <td>-</td><td>-</td><td>11</td><td>30</td>
+        <td>300</td><td>100</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28;">9월11일 공고<br><small>(승용 9/17, 화물 9/21 접수예정)</small></td>
       </tr>
       <!-- 거제시 -->
-      <tr>
-        <td>거제시</td>
-        <td>100</td>
-        <td>55</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="text-align:left; color:#191F28;">8월초 공고/8월2주차 접수 예정<br><span style="background:#FFF3CD;color:#856404;font-size:9px;padding:1px 4px;border-radius:3px;font-weight:700;">26년 최종</span></td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
+      <tr style="background:#FFF5F5;">
+        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">거제시</td>
+        <td>-</td><td>-</td><td style="font-weight:800; color:#C62828;">6</td><td>-</td>
+        <td>100</td><td>55</td><td>-</td><td>5</td>
+        <td style="text-align:left; color:#C62828; font-weight:700;">8월 중순 공고 / 8월 3주차 접수 예정<br><small style="color:#856404;font-weight:400;">※ 26년 최종</small></td>
       </tr>
       <!-- 통영시 -->
       <tr>
         <td>통영시</td>
-        <td>60</td>
-        <td>60</td>
-        <td>8</td>
-        <td>—</td>
-        <td style="text-align:left; color:#191F28;">9월 예정 (전기/수소)</td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td>50</td><td>50</td><td>10</td><td>10</td>
+        <td style="text-align:left; color:#191F28;">9월말 공고_10월초 접수 예정(전기/수소)</td>
       </tr>
       <!-- 밀양시 -->
       <tr>
         <td>밀양시</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td>—</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="text-align:left; color:#191F28; white-space:normal; min-width:180px;">국도비 미편성 시 26년 최종<br>추가 편성 시 승용50~100/화물20</td>
-        <td><span class="ev-status ev-s-open">접수중</span></td>
+        <td>-</td><td>3</td><td>-</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28; white-space:normal; min-width:220px;">국도비 추가물량 내려오면 9월말~10월초 공고 예정<br><small>(승용 50~100대/화물 20대/승합 0)</small><br><small style="color:#856404;">※ 국도비 미편성 시 현 잔여물량이 26년 최종</small></td>
       </tr>
       <!-- 사천시 -->
       <tr>
         <td>사천시</td>
-        <td>—</td>
-        <td>—</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="text-align:left; color:#191F28;">8월말~9월초 공고 / 접수 9월 예정</td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
+        <td>-</td><td>-</td><td>20</td><td>29</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28;">8월 24일 이후 일정확인 가능_9월 공모예정<br><small>(대수 미정)</small></td>
       </tr>
       <!-- 거창군 -->
       <tr>
         <td>거창군</td>
-        <td>—</td>
-        <td>—</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td>—</td>
-        <td style="text-align:left; color:#191F28;">추경 계획 없음 · 승합 집행잔여물량</td>
-        <td><span class="ev-status ev-s-open">접수중</span></td>
+        <td>-</td><td>-</td><td>8</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28;">추경 계획 없음</td>
       </tr>
       <!-- 고성군 -->
       <tr>
         <td>고성군</td>
-        <td>30</td>
-        <td>5</td>
-        <td>—</td>
-        <td>1</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td>50</td><td>5</td><td>2</td><td>1</td>
         <td style="text-align:left; color:#191F28;">9월 중순 예정</td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
       </tr>
       <!-- 남해군 -->
       <tr>
         <td>남해군</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="text-align:left; color:#191F28; white-space:normal;">잔여대수 종료 시 26년 마감<br>수소 11대 추가 예정(일정 미정)</td>
-        <td><span class="ev-status ev-s-open">접수중</span></td>
+        <td>-</td><td>-</td><td>5</td><td>11</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28;">8월말경 승용 限 추가공고 예정<br><small>(약 20대)</small></td>
       </tr>
-      <!-- 산청군 ★임박 -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">
-          산청군
-        </td>
-        <td style="font-weight:800; color:#C62828;">50</td>
-        <td style="font-weight:800; color:#C62828;">20</td>
-        <td style="font-weight:800; color:#C62828;">-</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td style="text-align:left; color:#C62828; font-weight:700; white-space:normal;">7월 30일 10시 접수<br><span style="color:#888;font-weight:400;">9월 추가 가능(승용40/화물40)</span></td>
-        <td><span class="ev-status ev-s-soon" style="background:#FFF0F1;color:#C62828;">★확정</span></td>
+      <!-- 산청군 -->
+      <tr>
+        <td>산청군</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28;">9월 승용·화물 13~15대가량 추가예정</td>
       </tr>
       <!-- 의령군 -->
       <tr>
         <td>의령군</td>
-        <td>30</td>
-        <td>8</td>
-        <td style="color:#8B95A1; font-style:italic;">접수중</td>
-        <td>—</td>
-        <td style="text-align:left; color:#191F28;">9월초 예정</td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28;">9월중 예정</td>
       </tr>
-      <!-- 창녕군 ★임박 -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">
-          창녕군
-        </td>
-        <td style="font-weight:800; color:#C62828;">16</td>
-        <td style="font-weight:800; color:#C62828;">17</td>
-        <td style="font-weight:800; color:#C62828;">14</td>
-        <td>—</td>
-        <td style="text-align:left; color:#C62828; font-weight:700; white-space:normal;">8월 3일 접수 9시부터 접수<br><span style="color:#888;font-weight:400;">향후 승용20/화물20/승합 소량</span></td>
-        <td><span class="ev-status ev-s-soon" style="background:#FFF0F1;color:#C62828;">★확정</span></td>
+      <!-- 창녕군 -->
+      <tr>
+        <td>창녕군</td>
+        <td>-</td><td>-</td><td>12</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#8B95A1;">-</td>
       </tr>
       <!-- 하동군 -->
       <tr>
         <td>하동군</td>
-        <td>—</td>
-        <td>—</td>
-        <td>—</td>
-        <td>—</td>
-        <td style="text-align:left; color:#191F28;">8월말~9월초 예정</td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
+        <td>5</td><td>35</td><td>-</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#8B95A1;">-</td>
       </tr>
       <!-- 함안군 -->
       <tr>
         <td>함안군</td>
-        <td>—</td>
-        <td>—</td>
-        <td>—</td>
-        <td>—</td>
-        <td style="text-align:left; color:#191F28;">8월말~9월초 예정</td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28;">9월초 예정_세부일정 금주내 확정예정</td>
       </tr>
-      <!-- 함양군 ★임박 -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">
-          <span style="background:#F04452;color:#fff;font-size:8px;font-weight:800;padding:1px 4px;border-radius:3px;display:block;margin-bottom:2px;">★임박</span>
-          함양군
-        </td>
-        <td style="font-weight:800; color:#C62828;">40</td>
-        <td style="font-weight:800; color:#C62828;">25</td>
-        <td>0</td>
-        <td>—</td>
-        <td style="text-align:left; color:#C62828; font-weight:700; white-space:normal;">7월말 추경 / 8월2~3주차 접수 예정<br><span style="background:#FFF3CD;color:#856404;font-size:9px;padding:1px 4px;border-radius:3px;font-weight:700;">26년 최종</span></td>
-        <td><span class="ev-status ev-s-soon" style="background:#FFF0F1;color:#C62828;">★임박</span></td>
+      <!-- 함양군 -->
+      <tr>
+        <td>함양군</td>
+        <td>20</td><td>20</td><td>-</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#8B95A1;">-</td>
       </tr>
       <!-- 합천군 -->
       <tr>
         <td>합천군</td>
-        <td>40</td>
-        <td>30</td>
-        <td>0</td>
-        <td>—</td>
-        <td style="text-align:left; color:#191F28; white-space:normal;">9월 초중 공고/접수 · 지연 시 10월<br><span style="background:#FFF3CD;color:#856404;font-size:9px;padding:1px 4px;border-radius:3px;font-weight:700;">26년 최종</span></td>
-        <td><span class="ev-status ev-s-soon">예정</span></td>
+        <td>-</td><td>-</td><td>6</td><td>-</td>
+        <td>50</td><td>20</td><td>-</td><td>-</td>
+        <td style="text-align:left; color:#191F28;">9월 28일 이후 공고_10월 12일 이후 접수예정</td>
       </tr>
     </tbody>
   </table>
@@ -15819,46 +15703,8 @@ PANELS.summary=`
 
 </div>
 </div>
-</div>
 
-<!-- ══ 8월 1차 특별 판매조건 ══ -->
-<div style="margin-bottom:18px;">
-<div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
-<button class="accordion-btn"
-  style="border-left:4px solid #F04452;border-radius:var(--r-md);"
-  onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-  <span style="display:flex;align-items:center;gap:8px;flex:1;">
-    <span style="background:#F04452;color:#fff;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0;">긴급</span>
-    <span style="font-weight:800;">8월 1차 특별 판매조건 실시 <small style="color:#F04452;font-weight:700;">(8/5 09:30 전산오픈~)</small></span>
-  </span>
-  <span class="acc-arrow">▼</span>
-</button>
-<div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
 
-  <div style="background:#FFF5F5;border-left:3px solid #F04452;border-radius:8px;padding:9px 12px;margin-bottom:12px;font-size:13px;font-weight:800;color:#C62828;">
-    ⚡ 전산오픈: 8월 5일(수) 09:30~ &nbsp;·&nbsp; 총 4,000대 한정
-  </div>
-
-  <div style="line-height:1.9;font-size:13px;">
-    <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,0.06);">
-      <strong style="color:#1B64DA;">① 싼타페 HEV</strong>&nbsp;<strong style="color:#F04452;">+50만원</strong><br>
-      7월 생산분 <small style="color:#8B95A1;">(현재 200만)</small> 중 선호재고 약 <strong>1,500대</strong> 선정
-    </div>
-    <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,0.06);">
-      <strong style="color:#1B64DA;">② 팰리세이드 HEV</strong>&nbsp;<strong style="color:#F04452;">+50만원</strong><br>
-      7월 생산분 <small style="color:#8B95A1;">(현재 조건 미운영)</small> 중 선호재고 약 <strong>1,600대</strong> 선정<br>
-      <small style="color:#856404;background:#FFF8E1;padding:2px 6px;border-radius:4px;display:inline-block;margin-top:3px;">※ 쏘렌토 저금리 대응 — 7월 생산월 재고 전략적 활용 강조</small>
-    </div>
-    <div>
-      <strong style="color:#1B64DA;">③ 포터 일반</strong>&nbsp;<strong style="color:#F04452;">+50만원</strong><br>
-      6월 생산분 <small style="color:#8B95A1;">(현재 150만)</small> 중 약 <strong>900대</strong> 선정<br>
-      <small style="color:#856404;background:#FFF8E1;padding:2px 6px;border-radius:4px;display:inline-block;margin-top:3px;">※ 포터 5월 이전 재고 소진 → 최대 조건 200만 운영 모수 확대</small>
-    </div>
-  </div>
-
-</div>
-</div>
-</div>
 
 
 <div class="sum-sec">
@@ -16207,7 +16053,7 @@ PANELS.summary=`
   <tr>
     <th class="lh" rowspan="2" style="white-space:nowrap;min-width:110px;">차종</th>
     <th rowspan="2" class="delivery-th" style="white-space:nowrap;min-width:70px;">납기(당사)<br><small style="font-weight:500;opacity:.8;">8월 기준</small></th>
-    <th rowspan="2" style="white-space:nowrap;min-width:70px;background:#37474F !important;">납기(경쟁사)<br><small style="font-weight:500;opacity:.8;">7월 기준</small></th>
+    <th rowspan="2" style="white-space:nowrap;min-width:70px;background:#37474F !important;">납기(경쟁사)<br><small style="font-weight:500;opacity:.8;">8월 기준</small></th>
     <th colspan="2" style="white-space:nowrap;">트레이드인</th>
     <th rowspan="2" style="white-space:nowrap;min-width:50px;">전시차</th>
     <th rowspan="2" style="white-space:nowrap;min-width:60px;">세이브오토</th>
@@ -17849,23 +17695,22 @@ return html;
 
 /* ── 아반떼 ── */
 PANELS.avante=(()=>{
-  const ice=`<div class="vpanel active" id="vp-avante-ice" data-g="avante">
-    ${delivBox('ICE/HEV 즉시', null)}${tipBox('아반떼 ICE/HEV 핵심 전략', [
+const ice=`<div class="vpanel active" id="vp-avante-ice" data-g="avante">
+    ${delivBox('ICE/HEV 더뉴그랜저 출고개시 8/27, 납기 별도 안내', null)}${tipBox('아반떼 ICE/HEV 핵심 전략', [
   '운전결심 PLCC(20만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>115만원</strong>',
-  '법인 대표자: 현장법인(50만)+트레이드인(50만)+세이브오토(30만) → 최대 <strong>130만원</strong>',
-  '베네피아 제휴 타겟(20만) 병행 시 → 최대 <strong>135만원</strong> (7~9월 출고 한정)',
+  'KAI/한국항공서비스 임직원 D/C(30만) 병행 시 → 최대 <strong>145만원</strong> (경남한정 · 7/1~12/31)',
+  '기본조건·생산월 조건 미운영 — 공통조건 중심으로 소구',
   '반납유예형(XV) 6.3% 적극 활용 — 월 납입금 절감형 고객 공략',
 ])}
     <hr class="dv">
  ${saleSectionV2(
   [
     ['🖥️ 운전결심 X PLCC','<span class="hl">20만 캐시백</span>','new',20],
-    ['💳 베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
   [tradeInRadio('avante-ice',50,30), saveAutoSingle('avante-ice',30), goodfriendRadio('avante-ice')],
-  [],                          /* ✅ 3번: 특화카드 없음 → 빈 배열 */
-  [corpRadio('avante-ice')]    /* ✅ 4번: 법인 라디오만 */
+  [],   /* 특화카드 없음 */
+  []    /* ✅ 법인 라디오(corpRadio) 삭제 — 타겟조건 미운영 */
 )}
   <hr class="dv">
     ${promoSection([[false,'📌 표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>'],[false,'📌 반납유예형(XV/XU)','모빌리티(XV): 36~60M <strong>6.3%</strong><br>일반(XU): 36~60M <strong>7.3%</strong>']])}
@@ -17877,7 +17722,7 @@ PANELS.avante=(()=>{
     ${tblYuye('avante','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)}
   </div>`;
 
-  const n=`<div class="vpanel" id="vp-avante-n" data-g="avante">
+const n=`<div class="vpanel" id="vp-avante-n" data-g="avante">
     ${delivBox('N 1개월', null)}${tipBox('아반떼 N 핵심 전략', [
   '생산월(최대200만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>295만원</strong>',
   '25년 12월 이전~26년 4월 재고: 생산월 <strong>200만원</strong> 집중 공략',
@@ -17892,8 +17737,8 @@ ${saleSectionV2(
     ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
   [tradeInRadio('avante-n',50,30), saveAutoSingle('avante-n',30), goodfriendRadio('avante-n')],
-  [],                                                                     /* ✅ 3번: 특화카드 없음 */
-  [birthMonthRadio('avante-n', BIRTH_AVANTE_N), corpRadio('avante-n')]   /* ✅ 4번: 생산월 + 법인 */
+  [],
+  [birthMonthRadio('avante-n', BIRTH_AVANTE_N), corpRadio('avante-n')]
 )}
   <hr class="dv">
     ${ptabs('avante-n',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])}
@@ -17902,7 +17747,6 @@ ${saleSectionV2(
     ${tblVar('avante-n','JJ','JI', RATE_CONFIG.ICE_STANDARD.var)}
     ${tblDef('avante-n','JG','JF', RATE_CONFIG.ICE_STANDARD.def)}
   </div>`;
-
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚗','아반떼','ICE / HEV / N · 모빌리티(JH) 5.4% / 일반(JA) 6.2%',['ICE','HEV','N'])
     +vtabs('avante',[['ice','ICE / HEV'],['n','아반떼 N']])+ice+n;
 })();
@@ -21991,10 +21835,6 @@ if ('serviceWorker' in navigator) {
   var VERSION = '2608-01';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
   var UPDATE_DATE = '2026.08.05';   // 업데이트 날짜 표시용
   var UPDATES = [                   // 업데이트 내용 목록
-    {
-      title: '8월 1차 특별 판매조건 (8/5 09:30~)',
-      desc:  '싼타페HEV·팰리세이드HEV +50만 / 포터일반 +50만 · 총4,000대 한정'
-    },
     {
       title: '8월 판매조건 업데이트 완료',
       desc:  '생산월 조건·신규 프로모션·EV에브리케어 변경사항 반영'
