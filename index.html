@@ -80,15 +80,35 @@ body {
   padding: 5px 14px; border-radius: 20px;
 }
 .menu-toggle {
-  background: var(--bg);
+  background: linear-gradient(135deg, #3182F6, #1B64DA);
   border: none;
-  color: var(--tx-secondary);
-  font-size: 20px;
-  width: 36px; height: 36px;
-  border-radius: 10px; cursor: pointer;
+  color: #fff;
+  cursor: pointer;
   display: flex; align-items: center; justify-content: center;
+  gap: 5px;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 20px;
   flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(49,130,246,0.4);
+  animation: menuPulse 2.4s ease-in-out infinite;
+  font-family: 'Noto Sans KR', sans-serif;
 }
+.menu-toggle-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+.menu-toggle-text {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+@keyframes menuPulse {
+  0%, 100% { box-shadow: 0 3px 10px rgba(49,130,246,0.4); transform: scale(1); }
+  50%      { box-shadow: 0 3px 16px rgba(49,130,246,0.65); transform: scale(1.04); }
+}
+
+
 
 /* ════════════════════════════════
    HERO — 밝은 토스 그라데이션
@@ -1651,7 +1671,10 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
 
 <div class="top-header">
-  <button class="menu-toggle" onclick="toggleSidebar()" aria-label="차종 메뉴">☰</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="차종 메뉴">
+  <span class="menu-toggle-icon">☰</span>
+  <span class="menu-toggle-text">메뉴</span>
+</button>
   <span class="region-badge">현대차 경남지역본부</span>
 </div>
 
@@ -1869,7 +1892,7 @@ if(id==='gv80'){
 ════════════════════════════════ */
 const SIDEBAR=[
   {label:'전체',items:[
-    {id:'summary',ci:'📊',name:'전체 요약',tag:'ALL',tc:'t-sum'},
+    {id:'summary',ci:'📊',name:'홈 화면[전체 요약])',tag:'ALL',tc:'t-sum'},
     {id:'evbenefit',ci:'⚡',name:'현대 EV 주요 혜택',tag:'EV',tc:'t-ev'},
     {id:'evsubsidy',ci:'⚡',name:'EV 보조금 조회',tag:'EV',tc:'t-ev'},
     {id:'tradein',ci:'🔄',name:'트레이드인 혜택 조회',tag:'혜택',tc:'t-sum'},
@@ -1939,7 +1962,7 @@ const VS_IDS = [
     h += `<div class="sb-group"><div class="sb-label">${g.label}</div>`;
     g.items.forEach(it => {
       const a = (gi === 0 && it.id === 'summary') ? ' active' : '';
-      const isNew = ['newgrandeur', 'commercial', 'avante'].includes(it.id);
+      const isNew = ['newgrandeur', 'commercial'].includes(it.id);
       const isChg8 = it.id === 'evbenefit';
       const isVs  = VS_IDS.includes(it.id);
       h += `<button class="car-btn${a}${isVs ? ' vs-btn' : ''}" id="btn-${it.id}" onclick="showCar('${it.id}','${it.name}')">
@@ -15419,7 +15442,7 @@ PANELS.summary=`
 </div>
 
 <!-- 경남지역본부 주요 공지사항 -->
-<div style="margin-bottom:20px;">
+<div style="margin-bottom:18px;">
   <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
     <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#F04452,#C62828);display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;flex-shrink:0;">📢</div>
     <span style="font-size:14px;font-weight:800;color:#191F28;">경남지역본부 주요 공지사항</span>
@@ -15453,7 +15476,6 @@ PANELS.summary=`
 
 <div style="height:8px;"></div>
 
-
 <!-- 공지 2 안내 — 경남 지자체 EV 공모 현황 (8월) -->
 <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
 <button class="accordion-btn"
@@ -15470,11 +15492,11 @@ PANELS.summary=`
   <!-- 고객 상담 멘트 -->
   <div style="background:#FFF5F5;border-radius:10px;padding:11px 14px;margin-bottom:10px;border:1.5px solid rgba(240,68,82,0.2);">
     <div style="font-size:12px;font-weight:800;color:#F04452;margin-bottom:4px;">고객 상담 활용 멘트</div>
-    <div style="font-size:13px;font-weight:800;color:#C62828;line-height:1.6;">"지역별로 잔여대수가 얼마 남지 않았습니다. 원하시는 차종이 있으시면 서둘러 신청하세요!"</div>
+    <div style="font-size:13px;font-weight:800;color:#C62828;line-height:1.6;">"지역별로 잔여대수가 얼마 남지 않았습니다.<br> 원하시는 차종이 있으시면 서둘러 신청하세요!"</div>
   </div>
 
   <div style="font-size:12px;color:#8B95A1;font-weight:600;margin-bottom:8px;">
-    ※ 잔여대수는 현재 남은 물량, 예정물량은 하반기 추가공고 예산 확보 시 예정된 물량입니다.
+    ※ 잔여대수는 현재 남은 물량, <br> 예정물량은 하반기 추가공고 예산 확보 시 예정된 물량입니다.
   </div>
 
 <!-- 경남 지자체 현황 테이블 — 첫행·첫열 고정 + 터치 드래그 지원 -->
@@ -15703,8 +15725,9 @@ PANELS.summary=`
 
 </div>
 </div>
+</div>
 
-<div style="height:20px;"></div>
+<div style="height:15px;"></div>
 
 <div class="sum-sec">
   <div class="sum-head">8월 핵심 공통 프로모션</div>
@@ -16052,7 +16075,7 @@ PANELS.summary=`
   <tr>
     <th class="lh" rowspan="2" style="white-space:nowrap;min-width:110px;">차종</th>
     <th rowspan="2" class="delivery-th" style="white-space:nowrap;min-width:70px;">납기(당사)<br><small style="font-weight:500;opacity:.8;">8월 기준</small></th>
-    <th rowspan="2" style="white-space:nowrap;min-width:70px;background:#37474F !important;">납기(경쟁사)<br><small style="font-weight:500;opacity:.8;">8월 기준</small></th>
+    <th rowspan="2" style="white-space:nowrap;min-width:70px;background:#37474F !important;">납기(경쟁사)<br><small style="font-weight:500;opacity:.8;">7월 기준</small></th>
     <th colspan="2" style="white-space:nowrap;">트레이드인</th>
     <th rowspan="2" style="white-space:nowrap;min-width:50px;">전시차</th>
     <th rowspan="2" style="white-space:nowrap;min-width:60px;">세이브오토</th>
@@ -17695,7 +17718,7 @@ return html;
 /* ── 아반떼 ── */
 PANELS.avante=(()=>{
 const ice=`<div class="vpanel active" id="vp-avante-ice" data-g="avante">
-    ${delivBox('ICE/HEV 더뉴그랜저 출고개시 8/27, 납기 별도 안내', null)}${tipBox('아반떼 ICE/HEV 핵심 전략', [
+    ${delivBox('ICE/HEV 디 올 뉴 아반떼 출고개시 8/27, 납기 별도 안내', null)}${tipBox('아반떼 ICE/HEV 핵심 전략', [
   '운전결심 PLCC(20만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>115만원</strong>',
   'KAI/한국항공서비스 임직원 D/C(30만) 병행 시 → 최대 <strong>145만원</strong> (경남한정 · 7/1~12/31)',
   '기본조건·생산월 조건 미운영 — 공통조건 중심으로 소구',
@@ -17721,7 +17744,7 @@ const ice=`<div class="vpanel active" id="vp-avante-ice" data-g="avante">
     ${tblYuye('avante','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)}
   </div>`;
 
-const n=`<div class="vpanel" id="vp-avante-n" data-g="avante">
+  const n=`<div class="vpanel" id="vp-avante-n" data-g="avante">
     ${delivBox('N 1개월', null)}${tipBox('아반떼 N 핵심 전략', [
   '생산월(최대200만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>295만원</strong>',
   '25년 12월 이전~26년 4월 재고: 생산월 <strong>200만원</strong> 집중 공략',
@@ -17736,8 +17759,8 @@ ${saleSectionV2(
     ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
   [tradeInRadio('avante-n',50,30), saveAutoSingle('avante-n',30), goodfriendRadio('avante-n')],
-  [],
-  [birthMonthRadio('avante-n', BIRTH_AVANTE_N), corpRadio('avante-n')]
+  [],                                                                     /* ✅ 3번: 특화카드 없음 */
+  [birthMonthRadio('avante-n', BIRTH_AVANTE_N), corpRadio('avante-n')]   /* ✅ 4번: 생산월 + 법인 */
 )}
   <hr class="dv">
     ${ptabs('avante-n',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])}
@@ -17746,6 +17769,7 @@ ${saleSectionV2(
     ${tblVar('avante-n','JJ','JI', RATE_CONFIG.ICE_STANDARD.var)}
     ${tblDef('avante-n','JG','JF', RATE_CONFIG.ICE_STANDARD.def)}
   </div>`;
+
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','🚗','아반떼','ICE / HEV / N · 모빌리티(JH) 5.4% / 일반(JA) 6.2%',['ICE','HEV','N'])
     +vtabs('avante',[['ice','ICE / HEV'],['n','아반떼 N']])+ice+n;
 })();
@@ -21834,6 +21858,10 @@ if ('serviceWorker' in navigator) {
   var VERSION = '2608-01';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
   var UPDATE_DATE = '2026.08.05';   // 업데이트 날짜 표시용
   var UPDATES = [                   // 업데이트 내용 목록
+    {
+      title: '8/18 기준 전기차 공모 현황 업데이트',
+      desc:  '경남 주요지역 하반기 공모 진행현황 반영'
+    },  
     {
       title: '8월 판매조건 업데이트 완료',
       desc:  '생산월 조건·신규 프로모션·EV에브리케어 변경사항 반영'
