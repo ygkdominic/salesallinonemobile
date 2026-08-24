@@ -1297,6 +1297,19 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
   box-shadow: 0 0 0 2.5px rgba(255,255,255,0.9), 0 0 0 4.5px #00B493 !important;
 }
 
+/* EV 부담DOWN 간편견적 버튼 불릿 */
+#btn-evcalc .ci {
+  background: linear-gradient(135deg, #3182F6, #1B64DA);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+#btn-evcalc.active {
+  color: #3182F6 !important;
+}
+#btn-evcalc.active .ci {
+  box-shadow: 0 0 0 2.5px rgba(255,255,255,0.9), 0 0 0 4.5px #3182F6 !important;
+}
+
 /* ── 이달 핵심 공통 프로모션 섹션 타이틀 앞 네모 불릿 ── */
 .sum-head::before {
   content: '■';
@@ -1856,8 +1869,12 @@ function showCar(id,name){
     if(childRow) childRow.style.display = 'none';
   }
 
+  if(id === 'evcalc' && typeof EvCalcCore !== 'undefined'){
+    EvCalcCore.reset();
+  }
+
   /* 할인바 표시/숨김 */
-  const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || id==='bluemembers' || VS_IDS_LIST.includes(id);
+  const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || id==='bluemembers' || id==='evcalc' || VS_IDS_LIST.includes(id);
   document.body.style.paddingBottom = isNoBar ? '20px' : '140px';
   const dbar=document.getElementById('discount-bar');
   dbar.style.display = isNoBar ? 'none' : '';
@@ -1892,7 +1909,8 @@ if(id==='gv80'){
 ════════════════════════════════ */
 const SIDEBAR=[
   {label:'전체',items:[
-    {id:'summary',ci:'📊',name:'홈 화면[전체 요약])',tag:'ALL',tc:'t-sum'},
+    {id:'summary',ci:'📊',name:'홈 화면[전체 요약]',tag:'ALL',tc:'t-sum'},
+    {id:'evcalc',ci:'💰',name:'EV 부담DOWN 간편견적',tag:'EV',tc:'t-ev'},
     {id:'evbenefit',ci:'⚡',name:'현대 EV 주요 혜택',tag:'EV',tc:'t-ev'},
     {id:'evsubsidy',ci:'⚡',name:'EV 보조금 조회',tag:'EV',tc:'t-ev'},
     {id:'tradein',ci:'🔄',name:'트레이드인 혜택 조회',tag:'혜택',tc:'t-sum'},
@@ -1962,7 +1980,7 @@ const VS_IDS = [
     h += `<div class="sb-group"><div class="sb-label">${g.label}</div>`;
     g.items.forEach(it => {
       const a = (gi === 0 && it.id === 'summary') ? ' active' : '';
-      const isNew = ['newgrandeur', 'commercial'].includes(it.id);
+      const isNew = ['newgrandeur', 'commercial', 'evcalc'].includes(it.id);   
       const isChg8 = it.id === 'evbenefit';
       const isVs  = VS_IDS.includes(it.id);
       h += `<button class="car-btn${a}${isVs ? ' vs-btn' : ''}" id="btn-${it.id}" onclick="showCar('${it.id}','${it.name}')">
@@ -13943,6 +13961,48 @@ var evType = null;
 var evSel  = {};
 evSel.childrenCnt = 2;
 
+/* evsubsidy 차종명 문자열 → EvCalc 차종/트림 키 매핑 */
+function evsGetEvCalcVehicle(model) {
+  if (!model) return null;
+  if (model.indexOf('아이오닉5') !== -1) return 'ioniq5';
+  if (model.indexOf('아이오닉6') !== -1) return 'ioniq6';
+  if (model.indexOf('코나 일렉트릭') !== -1) return 'konaev';
+  return null;
+}
+
+function evsGetEvCalcTrim(vehicleKey, model) {
+  if (!vehicleKey || !model) return null;
+
+  /* 구동방식: AWD 명시 없으면 2WD로 간주 */
+  var drive = (model.indexOf('AWD') !== -1) ? 'awd' : '2wd';
+
+  /* 트림 타입: N라인 > 스탠다드 > 롱레인지(기본) 순으로 판별 */
+  var type;
+  if (model.indexOf('N라인') !== -1) type = 'longN';
+  else if (model.indexOf('스탠다드') !== -1) type = 'std';
+  else type = 'long';
+
+  /* 휠 인치수 추출 (예: "19인치" → "19") */
+  var wheelMatch = model.match(/(\d{2})\s*인치/);
+  if (!wheelMatch) return null;
+  var wheel = wheelMatch[1];
+
+  var key = drive + '_' + type + '_' + wheel;
+
+  var vTrims = window.EvCalcCore && window.EvCalcCore.getTrims
+    ? window.EvCalcCore.getTrims(vehicleKey)
+    : null;
+
+  /* getTrims 헬퍼가 없으면 안전하게 그룹키 그대로 반환 → prefillAndOpen이 최종 검증 */
+  if (!vTrims) return key;
+
+  /* key(휠인치 그룹)에 해당하는 세부트림이 하나라도 존재하는지 확인 */
+  var found = Object.keys(vTrims).some(function(k) {
+    return (vTrims[k].group || k) === key;
+  });
+  return found ? key : null;
+}
+
 // ── 계산 함수 ──
 function evCalc() {
   var region = document.getElementById('evs-region').value;
@@ -14038,6 +14098,24 @@ if (evSel.dv) {
   if (resultBox) resultBox.style.display = 'block';
   if (cn)  cn.textContent  = document.getElementById('evs-model').value;
   if (rt)  rt.textContent  = document.getElementById('evs-region').value + ' · 현대/제네시스 · 2026년 기준';
+
+  /* ↓↓↓ EV 부담DOWN 간편견적 연동 버튼 활성화 ↓↓↓ */
+  var goBtn = document.getElementById('evs-to-evcalc-btn');
+  if (goBtn) {
+    var evcalcVKey = evsGetEvCalcVehicle(model);
+    if (evType === 'passenger' && evcalcVKey) {
+      var evcalcTKey = evsGetEvCalcTrim(evcalcVKey, model);
+      var subsidyWon = total * 10000; /* 만원 → 원 */
+      goBtn.style.display = 'block';
+      goBtn.onclick = function() {
+        if (window.EvCalcCore && EvCalcCore.prefillAndOpen) {
+          EvCalcCore.prefillAndOpen(evcalcVKey, evcalcTKey, subsidyWon);
+        }
+      };
+    } else {
+      goBtn.style.display = 'none';
+    }
+  }
 }
 
 function makeRow(label, val, cls) {
@@ -14723,8 +14801,6 @@ ${hdr('linear-gradient(135deg,#EBF3FF,#F0F8FF)','','EV 보조금 조회','2026�
   </div>
 </div>
 
-
-
 ${evsCondCard('firstcar','생애 첫차 <span class="evs-tag evs-tag-x">전환·폐차와 중복불가</span>','개인사업자 불가 · 국비×20% 추가','fc','국비×20%')}
 ${evsCondCard('lowincome','차상위 이하 계층','개인사업자/법인 불가 · 수급자격 사전확인 필요','li','국비×20%')}
       ${evsCondCard('scrap','노후 전기차 폐차','BMS 업데이트 불가 차량만 해당','scrap','+20만원')}
@@ -14770,12 +14846,714 @@ ${evsCondCard('lowincome','차상위 이하 계층','개인사업자/법인 불�
         보조금은 지차제 예산 소진 시 조기 마감됩니다.<br>
          정확한 금액은 무공해차 통합누리집에서 확인하세요.
       </div>
+      <button id="evs-to-evcalc-btn" style="display:none;width:100%;margin-top:14px;height:48px;border:none;border-radius:12px;background:#3182F6;color:#fff;font-size:14px;font-weight:800;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+        💰 EV 부담DOWN 간편견적 바로가기
+      </button>
     </div>
   </div>
 </div>
 `;
 
 })(); /* PANELS.evsubsidy IIFE 종료 */
+
+/* ════════════════════════════════
+   EV 부담DOWN 간편견적 패널
+════════════════════════════════ */
+PANELS.evcalc = (function() {
+
+/* ── 차종별 트림 가격 데이터 ──────────────────────
+   base        : 기본차량가 (원 단위, 정가)
+   taxIncluded : 세제혜택포함가 (원 단위, 개소세 감면 반영가)
+   ※ 가격표 기준 실제 수치로 채우면 됩니다 (현재 0=TODO)
+──────────────────────────────────────────────── */
+const EVCALC_DATA = {
+  konaev: {
+    label: '코나 일렉트릭',
+    trims: {
+      '2wd_std_17_evalue':          { group:'2wd_std_17',  name:'2WD 스탠다드 17인치 · E-Value+',              base:43680000, taxIncluded:41520913 },
+      '2wd_std_17_premium':         { group:'2wd_std_17',  name:'2WD 스탠다드 17인치 · 프리미엄',                base:45830000, taxIncluded:43564638 },
+      '2wd_long_17_modernplus':     { group:'2wd_long_17', name:'2WD 롱레인지 17인치 · 모던 플러스',              base:48030000, taxIncluded:45655894 },
+      '2wd_long_17_premium':        { group:'2wd_long_17', name:'2WD 롱레인지 17인치 · 프리미엄',                base:48990000, taxIncluded:46568441 },
+      '2wd_long_19_inspiration':    { group:'2wd_long_19', name:'2WD 롱레인지 19인치 · 인스퍼레이션',             base:52520000, taxIncluded:49923954 },
+      '2wd_long_19_blackext':       { group:'2wd_long_19', name:'2WD 롱레인지 19인치 · 블랙 익스테리어',          base:52870000, taxIncluded:50256654 },
+      '2wd_long_19_inspirationNline': { group:'2wd_long_19', name:'2WD 롱레인지 19인치 · 인스퍼레이션 N Line',   base:53510000, taxIncluded:50865019 },
+    }
+  },
+  ioniq5: {
+    label: '아이오닉5',
+    trims: {
+      '2wd_std_19_evalue':          { group:'2wd_std_19',   name:'2WD 스탠다드 19인치 · E-Value+',              base:49810000, taxIncluded:47347909 },
+      '2wd_long_19_elite':          { group:'2wd_long_19',  name:'2WD 롱레인지 19인치 · E-Lite',                base:53270000, taxIncluded:50636882 },
+      '2wd_long_19_modern':         { group:'2wd_long_19',  name:'2WD 롱레인지 19인치 · 모던',                   base:55650000, taxIncluded:52899239 },
+      '2wd_long_19_premium':        { group:'2wd_long_19',  name:'2WD 롱레인지 19인치 · 프리미엄',                base:61270000, taxIncluded:58241444 },
+      '2wd_long_19_inspiration':    { group:'2wd_long_19',  name:'2WD 롱레인지 19인치 · 인스퍼레이션',             base:64470000, taxIncluded:61283269 },
+      '2wd_long_20_premium':        { group:'2wd_long_20',  name:'2WD 롱레인지 20인치 · 프리미엄',                base:61760000, taxIncluded:58707225 },
+      '2wd_long_20_inspiration':    { group:'2wd_long_20',  name:'2WD 롱레인지 20인치 · 인스퍼레이션',             base:64960000, taxIncluded:61749049 },
+      '2wd_longN_20_nline':         { group:'2wd_longN_20', name:'2WD 롱레인지 N라인 20인치 · N Line',           base:62540000, taxIncluded:59448669 },
+      'awd_long_19_elite':          { group:'awd_long_19',  name:'AWD 롱레인지 19인치 · E-Lite',                base:55740000, taxIncluded:52984790 },
+      'awd_long_19_modern':         { group:'awd_long_19',  name:'AWD 롱레인지 19인치 · 모던',                   base:58120000, taxIncluded:55247149 },
+      'awd_long_19_premium':        { group:'awd_long_19',  name:'AWD 롱레인지 19인치 · 프리미엄',                base:63740000, taxIncluded:60589354 },
+      'awd_long_19_inspiration':    { group:'awd_long_19',  name:'AWD 롱레인지 19인치 · 인스퍼레이션',             base:66940000, taxIncluded:63631179 },
+      'awd_long_20_premium':        { group:'awd_long_20',  name:'AWD 롱레인지 20인치 · 프리미엄',                base:64230000, taxIncluded:61055133 },
+      'awd_long_20_inspiration':    { group:'awd_long_20',  name:'AWD 롱레인지 20인치 · 인스퍼레이션',             base:67430000, taxIncluded:64096957 },
+      'awd_longN_20_nline':         { group:'awd_longN_20', name:'AWD 롱레인지 N라인 20인치 · N Line',           base:65010000, taxIncluded:61796578 },
+    }
+  },
+  ioniq6: {
+    label: '아이오닉6',
+    trims: {
+      '2wd_std_18_evalue':          { group:'2wd_std_18',   name:'2WD 스탠다드 18인치 · E-Value+',              base:51090000, taxIncluded:48649639 },
+      '2wd_std_18_exclusive':       { group:'2wd_std_18',   name:'2WD 스탠다드 18인치 · 익스클루시브',            base:53600000, taxIncluded:51035570 },
+      '2wd_std_18_prestige':        { group:'2wd_std_18',   name:'2WD 스탠다드 18인치 · 프레스티지',              base:58420000, taxIncluded:55617319 },
+      '2wd_long_18_elite':          { group:'2wd_long_18',  name:'2WD 롱레인지 18인치 · E-Lite',                base:53270000, taxIncluded:50721882 },
+      '2wd_long_18_exclusive':      { group:'2wd_long_18',  name:'2WD 롱레인지 18인치 · 익스클루시브',            base:58020000, taxIncluded:55237091 },
+      '2wd_long_18_prestige':       { group:'2wd_long_18',  name:'2WD 롱레인지 18인치 · 프레스티지',              base:62830000, taxIncluded:59809335 },
+      '2wd_long_20_elite':          { group:'2wd_long_20',  name:'2WD 롱레인지 20인치 · E-Lite',                base:53860000, taxIncluded:51282719 },
+      '2wd_long_20_exclusive':      { group:'2wd_long_20',  name:'2WD 롱레인지 20인치 · 익스클루시브',            base:58610000, taxIncluded:55797927 },
+      '2wd_long_20_prestige':       { group:'2wd_long_20',  name:'2WD 롱레인지 20인치 · 프레스티지',              base:63420000, taxIncluded:60370171 },
+      '2wd_longN_20_exclusive':     { group:'2wd_longN_20', name:'2WD 롱레인지 N라인 20인치 · 익스클루시브',       base:60440000, taxIncluded:57537471 },
+      '2wd_longN_20_prestige':      { group:'2wd_longN_20', name:'2WD 롱레인지 N라인 20인치 · 프레스티지',         base:64510000, taxIncluded:61406293 },
+      'awd_long_18_elite':          { group:'awd_long_18',  name:'AWD 롱레인지 18인치 · E-Lite',                base:55740000, taxIncluded:53069790 },
+      'awd_long_18_exclusive':      { group:'awd_long_18',  name:'AWD 롱레인지 18인치 · 익스클루시브',            base:60490000, taxIncluded:57585000 },
+      'awd_long_18_prestige':       { group:'awd_long_18',  name:'AWD 롱레인지 18인치 · 프레스티지',              base:65300000, taxIncluded:62157243 },
+      'awd_long_20_elite':          { group:'awd_long_20',  name:'AWD 롱레인지 20인치 · E-Lite',                base:56330000, taxIncluded:53630627 },
+      'awd_long_20_exclusive':      { group:'awd_long_20',  name:'AWD 롱레인지 20인치 · 익스클루시브',            base:61080000, taxIncluded:58145837 },
+      'awd_long_20_prestige':       { group:'awd_long_20',  name:'AWD 롱레인지 20인치 · 프레스티지',              base:65890000, taxIncluded:62718079 },
+      'awd_longN_20_exclusive':     { group:'awd_longN_20', name:'AWD 롱레인지 N라인 20인치 · 익스클루시브',       base:62910000, taxIncluded:59885381 },
+      'awd_longN_20_prestige':      { group:'awd_longN_20', name:'AWD 롱레인지 N라인 20인치 · 프레스티지',         base:66980000, taxIncluded:63754201 },
+    }
+  }
+};
+
+
+/* ── 할부코드 그룹 (본사 캡처 3건 역산 검증 기준) ── */
+const EVCALC_RATE_GROUPS = {
+  g60: {
+    label: 'EV/FCEV 재구매 예정 (최대 유예율 60%)',
+    maxYuye: 0.60,
+    rates: {
+      new:   { mobility: { rate: 2.8, code: 'XI' }, general: { rate: 3.8, code: 'XH' } },
+      rebuy: { mobility: { rate: 2.3, code: 'XE' }, general: { rate: 3.3, code: 'XA' } }
+    }
+  },
+  g55: {
+    label: '국내 승용 자유 재구매 예정 (최대 유예율 55%)',
+    maxYuye: 0.55,
+    rates: {
+      new:   { mobility: { rate: 2.8, code: 'J4' }, general: { rate: 3.8, code: 'J3' } },
+      rebuy: { mobility: { rate: 2.3, code: 'XM' }, general: { rate: 3.3, code: 'XL' } }
+    }
+  }
+};
+
+const EVCALC_TERM = 36;
+
+/* ── 계산 엔진 ── */
+function evcalcRound10man(v){ return Math.round(v / 100000) * 100000; }
+
+function evcalcForward(p) {
+  const yeyeGeum = evcalcRound10man(p.base * p.yeyeRatePct / 100);
+  const deductionSubsidy = p.includeSubsidy ? p.subsidy : 0;
+  let principal = p.taxIncluded - yeyeGeum - deductionSubsidy - p.discount - p.downPayment;
+  if (principal < 0) principal = 0;
+
+  const monthlyRate = p.annualRate / 12 / 100;
+  const principalPortion = Math.floor(principal * monthlyRate / (1 - Math.pow(1 + monthlyRate, -EVCALC_TERM)));
+  const yeyeInterest = Math.floor(yeyeGeum * monthlyRate);
+  const monthly = principalPortion + yeyeInterest;
+
+  return { yeyeGeum, principal, monthly, deductionSubsidy };
+}
+
+
+function evcalcFindYeyeForTarget(targetMonthly, maxPct, baseParams) {
+  for (let pct = 1; pct <= maxPct; pct++) {
+    const r = evcalcForward(Object.assign({}, baseParams, { yeyeRatePct: pct }));
+    if (r.monthly <= targetMonthly) return Object.assign({ pct: pct, achieved: true }, r);
+  }
+  const rMax = evcalcForward(Object.assign({}, baseParams, { yeyeRatePct: maxPct }));
+  return Object.assign({ pct: maxPct, achieved: false }, rMax);
+}
+
+function evcalcFmt(n) { return Math.round(n).toLocaleString('ko-KR'); }
+function evcalcParseNum(str) { return Number(String(str).replace(/[^0-9]/g, '')) || 0; }
+
+/* ── 상태 ── */
+const evcalcState = {
+  vehicle: 'ioniq5', trim: '2wd_long_19_premium', group: 'g60', buyerType: 'new', channel: 'mobility',
+  subsidy: 0, includeSubsidy: true, discount: 0, downPayment: 0,
+  mode: 'rate', yeyeRatePct: 60, targetMonthly: 0,
+};
+
+/* ── 아코디언 상태 (위저드) ── */
+let ecUnlockedStep = 1; /* 여기까지는 열람/입력 가능 */
+let ecOpenStep = 1;     /* 현재 펼쳐진 스텝 */
+
+function ecSummaryText(i) {
+  const s = evcalcState;
+  if (i === 1) {
+    const t = EVCALC_DATA[s.vehicle].trims[s.trim];
+    return EVCALC_DATA[s.vehicle].label + ' · ' + (t ? t.name : '');
+  }
+  if (i === 2) {
+    return s.subsidy > 0 ? ('보조금 ' + evcalcFmt(s.subsidy/10000) + '만원 반영') : '보조금 미입력';
+  }
+  if (i === 3) {
+    const parts = [];
+    if (s.discount > 0) parts.push('할인 ' + evcalcFmt(s.discount/10000) + '만원');
+    if (s.downPayment > 0) parts.push('선수금 ' + evcalcFmt(s.downPayment/10000) + '만원');
+    return parts.length ? parts.join(' · ') : '추가 할인/선수금 없음';
+  }
+  if (i === 4) {
+    return s.mode === 'rate'
+      ? ('유예율 ' + s.yeyeRatePct + '% 직접설정')
+      : ('목표 월납입금 ' + evcalcFmt(s.targetMonthly/10000) + '만원 기준');
+  }
+  return '';
+}
+
+function ecRenderAccordion() {
+  for (let i = 1; i <= 5; i++) {
+    const header = document.getElementById('ec-header-' + i);
+    const body   = document.getElementById('ec-body-' + i);
+    const numEl  = document.getElementById('ec-num-' + i);
+    const sumEl  = document.getElementById('ec-summary-' + i);
+    if (!header || !body) continue;
+
+    const locked = i > ecUnlockedStep;
+    header.classList.toggle('locked', locked);
+
+    const isOpen = (i === ecOpenStep) && !locked;
+    body.style.display = isOpen ? 'block' : 'none';
+    header.classList.toggle('active', isOpen);
+
+    const done = !locked && i < ecUnlockedStep;
+    header.classList.toggle('done', done);
+    if (numEl) numEl.textContent = done ? '✓' : String(i);
+    if (sumEl) sumEl.textContent = (done && i < 5) ? ecSummaryText(i) : '';
+  }
+}
+
+function ecToggleStep(i) {
+  if (i > ecUnlockedStep) return;
+  ecOpenStep = (ecOpenStep === i) ? 0 : i;
+  ecRenderAccordion();
+  if (ecOpenStep === 5) evcalcRecalc();
+}
+
+function ecNextStep(i) {
+  ecUnlockedStep = Math.max(ecUnlockedStep, i + 1);
+  ecOpenStep = i + 1;
+  ecRenderAccordion();
+  if (ecOpenStep === 5) evcalcRecalc();
+  const el = document.getElementById('ec-step-' + (i + 1));
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/* ── DOM 헬퍼 ── */
+function evcalcBuildTrimOptions() {
+  const v = EVCALC_DATA[evcalcState.vehicle];
+  const keys = Object.keys(v.trims);
+  if (!keys.includes(evcalcState.trim)) evcalcState.trim = keys[0];
+
+  /* 그룹(휠인치 단위) 순서대로 묶어서 optgroup 생성 */
+  const groupOrder = [];
+  keys.forEach(function(k) {
+    const g = v.trims[k].group || k;
+    if (groupOrder.indexOf(g) === -1) groupOrder.push(g);
+  });
+
+  return groupOrder.map(function(g) {
+    const groupKeys = keys.filter(function(k){ return (v.trims[k].group || k) === g; });
+    const groupLabel = v.trims[groupKeys[0]].name.split(' · ')[0];
+    const opts = groupKeys.map(function(k) {
+      const t = v.trims[k];
+      const subName = t.name.indexOf(' · ') !== -1 ? t.name.split(' · ')[1] : t.name;
+      const sel = (k === evcalcState.trim) ? ' selected' : '';
+      return '<option value="' + k + '"' + sel + '>' + subName + '</option>';
+    }).join('');
+    return '<optgroup label="' + groupLabel + '">' + opts + '</optgroup>';
+  }).join('');
+}
+
+function evcalcRenderPriceCard() {
+  const t = EVCALC_DATA[evcalcState.vehicle].trims[evcalcState.trim];
+  const box = document.getElementById('ec-price-card');
+  if (!box) return;
+  if (!t || t.base === 0) {
+    box.innerHTML = '<div class="wbox" style="margin:0;">⚠️ 해당 트림의 가격 데이터가 아직 입력되지 않았습니다.</div>';
+    return;
+  }
+  box.innerHTML =
+    '<div class="ec-price-row"><span>기본차량가</span><strong>' + evcalcFmt(t.base) + '원</strong></div>' +
+    '<div class="ec-price-row"><span>세제혜택포함가</span><strong>' + evcalcFmt(t.taxIncluded) + '원</strong></div>';
+}
+
+function evcalcOnVehicleChange(val) {
+  evcalcState.vehicle = val;
+  const trimSel = document.getElementById('ec-trim');
+  if (trimSel) trimSel.innerHTML = evcalcBuildTrimOptions();
+  evcalcRenderPriceCard();
+}
+
+function evcalcUpdateMaxYuye() {
+  const group = EVCALC_RATE_GROUPS[evcalcState.group];
+  const maxPct = Math.round(group.maxYuye * 100);
+  const slider = document.getElementById('ec-yeyerate');
+  if (!slider) return;
+  slider.max = maxPct;
+  if (evcalcState.yeyeRatePct > maxPct) evcalcSetYeyePct(maxPct);
+  const maxLabel = document.getElementById('ec-yeyerate-max');
+  if (maxLabel) maxLabel.textContent = '최대 ' + maxPct + '%';
+}
+
+function evcalcOnInputChange() {
+  evcalcState.trim           = document.getElementById('ec-trim').value;
+  evcalcState.subsidy        = evcalcParseNum(document.getElementById('ec-subsidy').value) * 10000;
+  evcalcState.includeSubsidy = document.getElementById('ec-includeSubsidy').checked;
+  evcalcState.discount       = evcalcParseNum(document.getElementById('ec-discount').value) * 10000;
+  evcalcState.downPayment    = evcalcParseNum(document.getElementById('ec-downpay').value) * 10000;
+  evcalcState.group          = document.getElementById('ec-group').value;
+  evcalcState.buyerType      = document.querySelector('input[name="ec-buyertype"]:checked').value;
+  evcalcState.channel        = document.querySelector('input[name="ec-channel"]:checked').value;
+  evcalcRenderPriceCard();
+  evcalcUpdateMaxYuye();
+}
+
+function evcalcSwitchMode(mode) {
+  evcalcState.mode = mode;
+  document.getElementById('ec-mode-rate').style.display   = (mode === 'rate')   ? 'block' : 'none';
+  document.getElementById('ec-mode-target').style.display = (mode === 'target') ? 'block' : 'none';
+  document.querySelectorAll('.ec-mode-tab').forEach(function(b){ b.classList.remove('on'); });
+  document.getElementById('ec-modebtn-' + mode).classList.add('on');
+}
+
+function evcalcSetYeyePct(pct) {
+  pct = Number(pct);
+  evcalcState.yeyeRatePct = pct;
+  document.getElementById('ec-yeyerate').value = pct;
+  document.getElementById('ec-yeyerate-label').textContent = pct + '%';
+}
+function evcalcOnSliderInput(val) { evcalcSetYeyePct(val); }
+function evcalcOnTargetInput() {
+  evcalcState.targetMonthly = evcalcParseNum(document.getElementById('ec-target').value) * 10000;
+}
+
+/* ── 최종 계산 및 결과(스토리텔링) 렌더 ── */
+function evcalcRecalc() {
+  const trimData = EVCALC_DATA[evcalcState.vehicle].trims[evcalcState.trim];
+  const group = EVCALC_RATE_GROUPS[evcalcState.group];
+  const rateInfo = group.rates[evcalcState.buyerType][evcalcState.channel];
+  const maxPct = Math.round(group.maxYuye * 100);
+
+  const slider = document.getElementById('ec-yeyerate');
+  if (slider) {
+    slider.max = maxPct;
+    if (evcalcState.yeyeRatePct > maxPct) evcalcSetYeyePct(maxPct);
+    document.getElementById('ec-yeyerate-max').textContent = '최대 ' + maxPct + '%';
+  }
+
+  const resultBox = document.getElementById('ec-result');
+  if (!resultBox) return;
+  if (!trimData || trimData.base === 0) {
+    resultBox.innerHTML = '<div class="wbox" style="margin:0;">⚠️ 가격 데이터 미입력 트림입니다.</div>';
+    return;
+  }
+
+  const baseParams = {
+    base: trimData.base, taxIncluded: trimData.taxIncluded,
+    subsidy: evcalcState.subsidy, includeSubsidy: evcalcState.includeSubsidy,
+    discount: evcalcState.discount, downPayment: evcalcState.downPayment,
+    annualRate: rateInfo.rate,
+  };
+
+  let r, usedPct, noteHtml = '';
+
+  if (evcalcState.mode === 'rate') {
+    usedPct = evcalcState.yeyeRatePct;
+    r = evcalcForward(Object.assign({}, baseParams, { yeyeRatePct: usedPct }));
+  } else {
+    const target = evcalcState.targetMonthly;
+    if (target <= 0) {
+      resultBox.innerHTML = '<div class="wbox" style="margin:0;">💡 희망하는 월 납입금을 입력하면 필요한 최소 유예율을 자동으로 찾아드립니다.</div>';
+      return;
+    }
+    const found = evcalcFindYeyeForTarget(target, maxPct, baseParams);
+    usedPct = found.pct; r = found;
+    noteHtml = found.achieved
+      ? '<div class="ec-note ec-note-ok">✅ 유예율 ' + usedPct + '%로 목표 월납입금 이하가 가능합니다.</div>'
+      : '<div class="ec-note ec-note-warn">⚠️ 최대 유예율(' + maxPct + '%)로도 목표에 도달하지 못해, 최대 유예율 기준 결과를 보여드립니다.</div>';
+  }
+
+  let deductRows = '';
+  if (evcalcState.includeSubsidy && evcalcState.subsidy > 0) {
+    deductRows += '<div class="ec-story-sub"><span>· 보조금</span><strong>- ' + evcalcFmt(evcalcState.subsidy) + '원</strong></div>';
+  }
+  if (evcalcState.discount > 0) {
+    deductRows += '<div class="ec-story-sub"><span>· 추가 할인</span><strong>- ' + evcalcFmt(evcalcState.discount) + '원</strong></div>';
+  }
+  if (evcalcState.downPayment > 0) {
+    deductRows += '<div class="ec-story-sub"><span>· 선수금</span><strong>- ' + evcalcFmt(evcalcState.downPayment) + '원</strong></div>';
+  }
+
+resultBox.innerHTML =
+  noteHtml +
+  '<div class="ec-result-row"><span>① 차량가 (세제혜택포함가)</span><strong>' + evcalcFmt(trimData.taxIncluded) + '원</strong></div>' +
+  '<div class="ec-result-row"><span>② 유예금 (' + usedPct + '%, 36개월 뒤 정산)</span><strong>' + evcalcFmt(r.yeyeGeum) + '원</strong></div>' +
+  (deductRows ? '<div class="ec-story-group">' + deductRows + '</div>' : '') +
+  '<div class="ec-result-row"><span>③ 할부원금</span><strong>' + evcalcFmt(r.principal) + '원</strong></div>' +
+  '<div class="ec-divider"></div>' +
+  '<div class="ec-result-row ec-result-final"><span>④ 월 납입금 (연 ' + rateInfo.rate + '%)</span><strong>' + evcalcFmt(r.monthly) + '원</strong></div>' +
+  '<button class="ec-copy-btn" onclick="EvCalcCore.copySummary()">📋 상담용 요약 복사하기</button>';
+
+window.__evcalcSummary =
+  '[EV 부담DOWN 간편견적]\n' +
+  EVCALC_DATA[evcalcState.vehicle].label + ' ' + trimData.name + '\n' +
+  '① 차량가: ' + evcalcFmt(trimData.taxIncluded) + '원\n' +
+  '② 유예금(' + usedPct + '%): ' + evcalcFmt(r.yeyeGeum) + '원\n' +
+  '③ 할부원금: ' + evcalcFmt(r.principal) + '원\n' +
+  '④ 월 납입금: ' + evcalcFmt(r.monthly) + '원 (연 ' + rateInfo.rate + '%)\n' +
+  '(실제 계약조건은 TOPS 최종확인 필요)';
+}
+
+function evcalcCopySummary() {
+  if (!window.__evcalcSummary) return;
+  navigator.clipboard.writeText(window.__evcalcSummary).then(function() {
+    alert('상담용 요약이 복사되었습니다.');
+  }).catch(function() {
+    alert('복사에 실패했습니다.');
+  });
+}
+
+function evcalcGoSubsidyTab() {
+  if (typeof showCar === 'function') showCar('evsubsidy', 'EV 보조금 조회');
+}
+
+function evcalcGoSubsidyTab() {
+  if (typeof showCar === 'function') showCar('evsubsidy', 'EV 보조금 조회');
+}
+
+/* ↓↓↓ 여기부터 새로 추가 ↓↓↓ */
+
+/* evsubsidy 탭의 차종코드 → EVCALC_DATA 키 매핑
+   ※ 실제 evsubsidy에서 쓰는 차종코드 값으로 좌측 key를 교체해야 함 */
+const SUBSIDY_VEHICLE_MAP = {
+  'KONA_EV': 'konaev',
+  'IONIQ5':  'ioniq5',
+  'IONIQ6':  'ioniq6'
+};
+
+function evcalcMapSubsidyVehicle(code) {
+  return SUBSIDY_VEHICLE_MAP[code] || null;
+}
+
+function evcalcPrefillAndOpen(vehicleKey, trimKey, subsidyWon) {
+  if (!vehicleKey || !EVCALC_DATA[vehicleKey]) return;
+  if (typeof showCar === 'function') showCar('evcalc', 'EV 부담DOWN 간편견적');
+
+  evcalcState.vehicle = vehicleKey;
+  const trims = EVCALC_DATA[vehicleKey].trims;
+  const trimKeys = Object.keys(trims);
+  /* trimKey가 정확한 세부트림 키면 그대로 사용, 아니면 같은 그룹(휠인치)의 첫 세부트림으로 진입 */
+  let resolvedTrim = null;
+  if (trimKey && trims[trimKey]) {
+    resolvedTrim = trimKey;
+  } else if (trimKey) {
+    resolvedTrim = trimKeys.find(function(k){ return (trims[k].group || k) === trimKey; }) || null;
+  }
+  evcalcState.trim = resolvedTrim || trimKeys[0];
+  evcalcState.subsidy = subsidyWon || 0;
+  evcalcState.includeSubsidy = true;
+
+  setTimeout(function() {
+    const vSel = document.getElementById('ec-vehicle');
+    if (vSel) vSel.value = evcalcState.vehicle;
+    const tSel = document.getElementById('ec-trim');
+    if (tSel) { tSel.innerHTML = evcalcBuildTrimOptions(); tSel.value = evcalcState.trim; }
+    const subInput = document.getElementById('ec-subsidy');
+    if (subInput) subInput.value = evcalcState.subsidy ? Math.round(evcalcState.subsidy / 10000) : '';
+    const chk = document.getElementById('ec-includeSubsidy');
+    if (chk) chk.checked = true;
+
+    evcalcRenderPriceCard();
+    evcalcUpdateMaxYuye();
+
+    ecUnlockedStep = 3;
+    ecOpenStep = 3;
+    ecRenderAccordion();
+
+    const el = document.getElementById('ec-step-3');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 80);
+}
+
+function evcalcReset() {
+    Object.assign(evcalcState, {
+    vehicle:'ioniq5', trim:'2wd_long_19_premium', group:'g60', buyerType:'new', channel:'mobility',
+    subsidy:0, includeSubsidy:true, discount:0, downPayment:0,
+    mode:'rate', yeyeRatePct:60, targetMonthly:0,
+  });
+  ecUnlockedStep = 1; ecOpenStep = 1;
+
+  const v = document.getElementById('ec-vehicle');
+  if (!v) return;
+  v.value = 'ioniq5';
+  document.getElementById('ec-trim').innerHTML = evcalcBuildTrimOptions();
+  document.getElementById('ec-subsidy').value = '';
+  document.getElementById('ec-includeSubsidy').checked = true;
+  document.getElementById('ec-discount').value = '';
+  document.getElementById('ec-downpay').value = '';
+  document.getElementById('ec-group').value = 'g60';
+  document.querySelector('input[name="ec-buyertype"][value="new"]').checked = true;
+  document.querySelector('input[name="ec-channel"][value="general"]').checked = true;
+  document.getElementById('ec-target').value = '';
+  evcalcSwitchMode('rate');
+  evcalcSetYeyePct(60);
+  evcalcRenderPriceCard();
+  document.getElementById('ec-result').innerHTML = '<div class="ec-result-row"><span>안내</span><strong>단계를 진행하면 자동 계산됩니다</strong></div>';
+  ecRenderAccordion();
+}
+
+window.EvCalcCore = {
+  onVehicleChange: evcalcOnVehicleChange,
+  onInputChange: evcalcOnInputChange,
+  switchMode: evcalcSwitchMode,
+  onSliderInput: evcalcOnSliderInput,
+  setYeyePct: evcalcSetYeyePct,
+  onTargetInput: evcalcOnTargetInput,
+  goSubsidyTab: evcalcGoSubsidyTab,
+  copySummary: evcalcCopySummary,
+  toggleStep: ecToggleStep,
+  nextStep: ecNextStep,
+  reset: evcalcReset,
+  mapSubsidyVehicle: evcalcMapSubsidyVehicle,
+  prefillAndOpen: evcalcPrefillAndOpen,
+};
+
+/* ── HTML 반환 ── */
+return `
+<style>
+.ec-accordion{display:flex;flex-direction:column;gap:10px;}
+.ec-step{background:#fff;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.04);border:1.5px solid rgba(0,0,0,0.05);}
+.ec-step-header{display:flex;align-items:center;gap:10px;padding:15px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.ec-step-header.locked{cursor:not-allowed;opacity:.42;}
+.ec-step-num{width:24px;height:24px;border-radius:50%;background:#EBF3FF;color:#3182F6;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ec-step-header.active .ec-step-num{background:#3182F6;color:#fff;}
+.ec-step-header.done .ec-step-num{background:#00B493;color:#fff;}
+.ec-step-title{font-size:13.5px;font-weight:800;color:var(--tx-primary);flex-shrink:0;}
+.ec-step-summary{flex:1;font-size:12px;color:var(--tx-muted);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;padding-right:4px;}
+.ec-step-arrow{font-size:12px;color:var(--tx-muted);transition:transform .2s;flex-shrink:0;}
+.ec-step-header.active .ec-step-arrow{transform:rotate(180deg);color:#3182F6;}
+.ec-step-body{display:none;padding:0 16px 18px;border-top:1px solid rgba(0,0,0,0.05);}
+
+.ec-field-label{font-size:12px;font-weight:700;color:var(--tx-muted);margin:14px 0 6px;padding-left:2px;letter-spacing:.3px;display:flex;align-items:center;gap:5px;}
+.ec-field-label::before{content:'';display:inline-block;width:3px;height:12px;border-radius:2px;background:#3182F6;flex-shrink:0;}
+.ec-step-body select,.ec-step-body input[type="text"]{
+  width:100%;height:48px;padding:0 14px;border:1.5px solid rgba(0,0,0,0.08);border-radius:var(--r-md);
+  font-size:13.5px;font-weight:600;color:var(--tx);background:var(--bg-subtle);font-family:'Noto Sans KR',sans-serif;
+}
+.ec-step-body select:focus,.ec-step-body input:focus{outline:none;border-color:#3182F6;background:#EBF3FF;}
+
+.ec-price-card{background:#EBF3FF;border-radius:var(--r-md);padding:12px 14px;margin-top:14px;border:1px solid rgba(49,130,246,0.15);}
+.ec-price-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;}
+.ec-price-row span{color:var(--tx-muted);}
+.ec-price-row strong{color:var(--tx-primary);}
+
+.ec-subsidy-guide{display:flex;align-items:center;gap:10px;background:#EBF3FF;border-radius:var(--r-md);padding:11px 14px;margin-bottom:4px;border:1px solid rgba(49,130,246,0.15);}
+.ec-subsidy-guide span{font-size:12px;color:#1B64DA;font-weight:600;flex:1;line-height:1.5;}
+.ec-subsidy-guide button{flex-shrink:0;background:#3182F6;color:#fff;border:none;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;}
+
+.ec-checkbox-row{display:flex;align-items:center;gap:8px;margin-top:14px;background:var(--bg-subtle);padding:10px 14px;border-radius:var(--r-md);}
+.ec-checkbox-row input{width:18px;height:18px;accent-color:#3182F6;flex-shrink:0;}
+.ec-checkbox-row label{font-size:12.5px;font-weight:600;color:var(--tx-secondary);}
+
+.ec-radio-row{display:flex;gap:8px;margin-top:14px;}
+.ec-radio-btn{flex:1;position:relative;}
+.ec-radio-btn input{position:absolute;opacity:0;pointer-events:none;}
+.ec-radio-btn label{display:flex;align-items:center;justify-content:center;height:44px;border-radius:var(--r-md);border:1.5px solid rgba(0,0,0,0.08);background:#fff;font-size:13px;font-weight:700;color:var(--tx-secondary);cursor:pointer;transition:all .15s;}
+.ec-radio-btn input:checked+label{background:#3182F6;border-color:#3182F6;color:#fff;box-shadow:0 4px 12px rgba(49,130,246,0.28);}
+
+.ec-mode-tabs{display:flex;gap:6px;margin-top:14px;}
+.ec-mode-tab{flex:1;height:46px;border:none;border-radius:var(--r-md);background:#F2F4F6;font-size:12.5px;font-weight:700;color:var(--tx-secondary);cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .15s;}
+.ec-mode-tab.on{background:#3182F6;color:#fff;box-shadow:0 4px 12px rgba(49,130,246,0.28);}
+
+.ec-quickbtns{display:flex;gap:6px;margin-top:14px;margin-bottom:10px;}
+.ec-quickbtn{flex:1;height:38px;border:1.5px solid rgba(49,130,246,0.3);border-radius:10px;background:#fff;color:#3182F6;font-size:12px;font-weight:800;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
+.ec-quickbtn:active{background:#EBF3FF;}
+
+.ec-slider-head{display:flex;justify-content:space-between;margin-bottom:8px;}
+.ec-slider-head strong{color:#3182F6;font-size:16px;}
+.ec-slider-head small{color:var(--tx-muted);font-size:12px;}
+.ec-step-body input[type="range"]{width:100%;accent-color:#3182F6;margin-bottom:0;}
+
+.ec-next-btn{width:100%;margin-top:16px;height:48px;border:none;border-radius:var(--r-md);background:#3182F6;color:#fff;font-size:13.5px;font-weight:800;cursor:pointer;font-family:'Noto Sans KR',sans-serif;box-shadow:0 4px 12px rgba(49,130,246,0.28);}
+.ec-next-btn:active{background:#1B64DA;}
+
+.ec-result-box{background:linear-gradient(145deg,#EBF3FF 0%,#F0F8FF 100%);border-radius:var(--r-xl);padding:18px;border:1.5px solid rgba(49,130,246,0.2);}
+.ec-note{border-radius:10px;padding:9px 12px;font-size:12px;font-weight:600;margin-bottom:10px;line-height:1.6;}
+.ec-note-ok{background:#E3F5EC;color:#1A7035;}
+.ec-note-warn{background:#FFF0F1;color:#C62828;}
+.ec-result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:13px;}
+.ec-result-row:last-of-type{border-bottom:none;}
+.ec-result-row span{color:var(--tx-secondary);font-weight:600;}
+.ec-result-row strong{color:var(--tx-primary);font-weight:700;}
+.ec-story-group{background:rgba(255,255,255,0.6);border-radius:10px;padding:6px 12px;margin:4px 0;}
+.ec-story-sub{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;color:var(--tx-muted);}
+.ec-story-sub strong{color:#C62828;font-weight:700;}
+.ec-divider{height:1px;background:rgba(49,130,246,0.2);margin:6px 0 10px;}
+.ec-result-final strong{color:#3182F6;font-size:20px;font-weight:900;}
+.ec-hint{font-size:11px;color:var(--tx-muted);margin-top:6px;line-height:1.6;}
+.ec-copy-btn{width:100%;margin-top:14px;height:46px;border:none;border-radius:var(--r-md);background:#191F28;color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
+</style>
+
+${hdr('linear-gradient(135deg,#EBF3FF,#F0F8FF)','💰','현대 EV 부담DOWN 간편견적 - EV 보조금 탭 연동','36개월 유예형 할부 · 코나 일렉트릭·아이오닉5·아이오닉6 한정',['간편견적','36개월'])}
+
+<div class="ec-accordion">
+
+  <div class="ec-step" id="ec-step-1">
+    <div class="ec-step-header active" id="ec-header-1" onclick="EvCalcCore.toggleStep(1)">
+      <span class="ec-step-num" id="ec-num-1">1</span>
+      <span class="ec-step-title">차종 · 트림 선택</span>
+      <span class="ec-step-summary" id="ec-summary-1"></span>
+      <span class="ec-step-arrow">▾</span>
+    </div>
+    <div class="ec-step-body" id="ec-body-1" style="display:block;">
+      <div class="ec-field-label" style="margin-top:0;">차종</div>
+      <select id="ec-vehicle" onchange="EvCalcCore.onVehicleChange(this.value)">
+        <option value="konaev">코나 일렉트릭</option>
+        <option value="ioniq5" selected>아이오닉5</option>
+        <option value="ioniq6">아이오닉6</option>
+      </select>
+      <div class="ec-field-label">트림</div>
+      <select id="ec-trim" onchange="EvCalcCore.onInputChange()">${evcalcBuildTrimOptions()}</select>
+      <div id="ec-price-card" class="ec-price-card"></div>
+      <button class="ec-next-btn" onclick="EvCalcCore.nextStep(1)">다음 단계 →</button>
+    </div>
+  </div>
+
+  <div class="ec-step" id="ec-step-2">
+    <div class="ec-step-header locked" id="ec-header-2" onclick="EvCalcCore.toggleStep(2)">
+      <span class="ec-step-num" id="ec-num-2">2</span>
+      <span class="ec-step-title">보조금 입력</span>
+      <span class="ec-step-summary" id="ec-summary-2"></span>
+      <span class="ec-step-arrow">▾</span>
+    </div>
+    <div class="ec-step-body" id="ec-body-2">
+      <div class="ec-subsidy-guide" style="margin-top:14px;">
+        <span>💡 정확한 보조금은 지역·차종에 따라 다릅니다. <strong>EV 보조금 조회</strong> 탭에서 확인 후 입력하세요.</span>
+        <button onclick="EvCalcCore.goSubsidyTab()">조회하기</button>
+      </div>
+      <div class="ec-field-label">보조금 (만원 단위)</div>
+      <input type="text" id="ec-subsidy" placeholder="예: 737" oninput="EvCalcCore.onInputChange()">
+      <div class="ec-checkbox-row">
+        <input type="checkbox" id="ec-includeSubsidy" checked onchange="EvCalcCore.onInputChange()">
+        <label for="ec-includeSubsidy">보조금을 할부원금 계산에 반영</label>
+      </div>
+      <button class="ec-next-btn" onclick="EvCalcCore.nextStep(2)">다음 단계 →</button>
+    </div>
+  </div>
+
+  <div class="ec-step" id="ec-step-3">
+    <div class="ec-step-header locked" id="ec-header-3" onclick="EvCalcCore.toggleStep(3)">
+      <span class="ec-step-num" id="ec-num-3">3</span>
+      <span class="ec-step-title">추가 할인 · 선수금</span>
+      <span class="ec-step-summary" id="ec-summary-3"></span>
+      <span class="ec-step-arrow">▾</span>
+    </div>
+    <div class="ec-step-body" id="ec-body-3">
+      <div class="ec-field-label" style="margin-top:14px;">추가 할인금액 (만원 단위, 딜러 협의분)</div>
+      <input type="text" id="ec-discount" placeholder="예: 20" oninput="EvCalcCore.onInputChange()">
+      <div class="ec-field-label">선수금 (만원 단위)</div>
+      <input type="text" id="ec-downpay" placeholder="예: 77" oninput="EvCalcCore.onInputChange()">
+      <button class="ec-next-btn" onclick="EvCalcCore.nextStep(3)">다음 단계 →</button>
+    </div>
+  </div>
+
+  <div class="ec-step" id="ec-step-4">
+    <div class="ec-step-header locked" id="ec-header-4" onclick="EvCalcCore.toggleStep(4)">
+      <span class="ec-step-num" id="ec-num-4">4</span>
+      <span class="ec-step-title">할부 조건</span>
+      <span class="ec-step-summary" id="ec-summary-4"></span>
+      <span class="ec-step-arrow">▾</span>
+    </div>
+    <div class="ec-step-body" id="ec-body-4">
+      <div class="ec-field-label" style="margin-top:14px;">미래 재구매 예정 차종</div>
+      <select id="ec-group" onchange="EvCalcCore.onInputChange()">
+        <option value="g60">EV/FCEV 재구매 예정 (최대 유예율 60%)</option>
+        <option value="g55">국내 승용 자유 재구매 예정 (최대 유예율 55%)</option>
+      </select>
+
+      <div class="ec-field-label">고객 구분</div>
+      <div class="ec-radio-row">
+        <div class="ec-radio-btn">
+          <input type="radio" name="ec-buyertype" id="ec-bt-new" value="new" checked onchange="EvCalcCore.onInputChange()">
+          <label for="ec-bt-new">신규 구매</label>
+        </div>
+        <div class="ec-radio-btn">
+          <input type="radio" name="ec-buyertype" id="ec-bt-rebuy" value="rebuy" onchange="EvCalcCore.onInputChange()">
+          <label for="ec-bt-rebuy">재구매 (-0.5%p)</label>
+        </div>
+      </div>
+
+      <div class="ec-field-label">할부 방식</div>
+      <div class="ec-radio-row">
+        <div class="ec-radio-btn">
+          <input type="radio" name="ec-channel" id="ec-ch-mob" value="mobility" checked onchange="EvCalcCore.onInputChange()">
+          <label for="ec-ch-mob">모빌리티</label>
+        </div>
+        <div class="ec-radio-btn">
+          <input type="radio" name="ec-channel" id="ec-ch-gen" value="general" onchange="EvCalcCore.onInputChange()">
+          <label for="ec-ch-gen">일반</label>
+        </div>
+      </div>
+
+      <div class="ec-field-label">견적 방식</div>
+        <div class="ec-mode-tabs">
+         <button class="ec-mode-tab on" id="ec-modebtn-rate" onclick="EvCalcCore.switchMode('rate')">① 유예율 직접설정</button>
+         <button class="ec-mode-tab" id="ec-modebtn-target" onclick="EvCalcCore.switchMode('target')">② 목표 월납입금 역산</button>
+      </div>
+
+      <div id="ec-mode-rate">
+        <div class="ec-quickbtns">
+          <button class="ec-quickbtn" onclick="EvCalcCore.setYeyePct(30)">30%</button>
+          <button class="ec-quickbtn" onclick="EvCalcCore.setYeyePct(40)">40%</button>
+          <button class="ec-quickbtn" onclick="EvCalcCore.setYeyePct(50)">50%</button>
+          <button class="ec-quickbtn" onclick="EvCalcCore.setYeyePct(document.getElementById('ec-yeyerate').max)">최대</button>
+        </div>
+        <div class="ec-slider-head">
+          <span class="ec-field-label" style="margin:0;">유예율</span>
+          <span><strong id="ec-yeyerate-label">60%</strong> <small id="ec-yeyerate-max">최대 60%</small></span>
+        </div>
+        <input type="range" id="ec-yeyerate" min="1" max="60" step="1" value="60" oninput="EvCalcCore.onSliderInput(this.value)">
+      </div>
+
+      <div id="ec-mode-target" style="display:none;">
+        <div class="ec-field-label">희망 월 납입금 (만원 단위)</div>
+        <input type="text" id="ec-target" placeholder="예: 20" oninput="EvCalcCore.onTargetInput()">
+      </div>
+
+      <button class="ec-next-btn" onclick="EvCalcCore.nextStep(4)">결과 확인하기 →</button>
+    </div>
+  </div>
+
+  <div class="ec-step" id="ec-step-5">
+    <div class="ec-step-header locked" id="ec-header-5" onclick="EvCalcCore.toggleStep(5)">
+      <span class="ec-step-num" id="ec-num-5">5</span>
+      <span class="ec-step-title">예상 결과</span>
+      <span class="ec-step-summary" id="ec-summary-5"></span>
+      <span class="ec-step-arrow">▾</span>
+    </div>
+    <div class="ec-step-body" id="ec-body-5">
+      <div class="ec-result-box" id="ec-result" style="margin-top:14px;">
+        <div class="ec-result-row"><span>안내</span><strong>단계를 진행하면 자동 계산됩니다</strong></div>
+      </div>
+      <div class="wbox" style="margin-top:12px;">⚠️ 본 계산기는 참고용이며 실제 계약 조건은 <strong>국내판매시스템/TOPS</strong>에서 최종 확인해주세요.</div>
+    </div>
+  </div>
+
+</div>
+`;
+})(); /* PANELS.evcalc IIFE 종료 */
 
 /* ════════════════════════════════
    현대 EV 주요 혜택 패널
@@ -15340,15 +16118,15 @@ var chargePanel = '<div class="vpanel" id="vp-evb-charge" data-g="evb">'
   + '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">광주</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">14,755</td></tr>'
   + '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">울산</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">10,265</td></tr>'
   + '<tr style="background:#F9FAFB;"><td style="padding:7px 10px;font-weight:700;border-bottom:1px solid #f0f0f0;">특별자치시</td><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">세종</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">6,288</td></tr>'
-  + '<tr><td style="padding:7px 10px;font-weight:700;border-bottom:1px solid #f0f0f0;" rowspan="9">도</td><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">경기</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">148,004</td></tr>'
+  + '<tr><td style="padding:7px 10px;font-weight:700;border-bottom:1px solid #f0f0f0;" rowspan="7">도</td><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">경기</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">148,004</td></tr>'
   + '<tr style="background:#EBF3FF;"><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;font-weight:800;color:#1B64DA;">경남 ★</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;font-weight:800;color:#1B64DA;">29,508</td></tr>'
   + '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">경북</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">21,500</td></tr>'
   + '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">충남</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">21,207</td></tr>'
   + '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">충북</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">16,374</td></tr>'
   + '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">전남</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">15,642</td></tr>'
   + '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">전북</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">16,975</td></tr>'
-+ '<tr><td style="padding:7px 10px;font-weight:700;border-bottom:1px solid #f0f0f0;" rowspan="2">특별자치도</td><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">강원</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">16,720</td></tr>'
-+ '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">제주</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">8,413</td></tr>'
+  + '<tr><td style="padding:7px 10px;font-weight:700;border-bottom:1px solid #f0f0f0;" rowspan="2">특별자치도</td><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">강원</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">16,720</td></tr>'
+  + '<tr><td style="padding:7px 10px;border-bottom:1px solid #f0f0f0;">제주</td><td style="padding:7px 10px;text-align:right;border-bottom:1px solid #f0f0f0;">8,413</td></tr>'
   + '</tbody></table>'
   + '</div>'
 
@@ -17926,7 +18704,7 @@ var saleSection_ = saleSectionV2(
   [
     ['🏢 한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
-  [tradeInRadio('newgrandeur',50,30), saveAutoRadio('newgrandeur'), goodfriendRadio('newgrandeur')],
+  [],
   [],
   [birthMonthRadio('newgrandeur', BIRTH_NEWGRANDEUR), rentRadio('newgrandeur'), corpRadio('newgrandeur')]
 );
@@ -21856,19 +22634,19 @@ if ('serviceWorker' in navigator) {
      ★ 업데이트마다 아래 두 곳만 수정
      ──────────────────────────────── */
   var VERSION = '2608-01';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
-  var UPDATE_DATE = '2026.08.05';   // 업데이트 날짜 표시용
+  var UPDATE_DATE = '2026.08.24';   // 업데이트 날짜 표시용
   var UPDATES = [                   // 업데이트 내용 목록
+    {
+      title: '<span style="color:#F04452;">[신규적용] EV 부담다운 간편견적 탭 추가</span>',
+      desc:  'EV 보조금 조회 탭 연계, 월 납입금 조회 및 안내 가능'
+    },   
     {
       title: '8/18 기준 전기차 공모 현황 업데이트',
       desc:  '경남 주요지역 하반기 공모 진행현황 반영'
     },  
     {
-      title: '8월 판매조건 업데이트 완료',
+      title: '8월 판매조건/납기 업데이트 완료',
       desc:  '생산월 조건·신규 프로모션·EV에브리케어 변경사항 반영'
-    },
-    {
-      title: '8월 납기 업데이트 완료',
-      desc:  '8월 계출운영 공지사항 기준 차종별 납기 반영'
     },
   ];
   /* ────────────────────────────────
