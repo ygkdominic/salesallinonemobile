@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
 <!-- PWA 설정 -->
 <link rel="manifest" href="/manifest.json">
@@ -58,7 +58,7 @@ body {
   background: var(--bg);
   color: var(--tx);
   font-size: 15px;
-  padding-bottom: 76px;
+  padding-bottom: calc(76px + max(10px, env(safe-area-inset-bottom, 0px)));
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.3px;
   overscroll-behavior-y: contain;
@@ -823,7 +823,7 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
    — Toss 스타일 흰 배경으로 변경
 ════════════════════════════════ */
 #discount-bar {
-  position: fixed; bottom: 56px; left: 0; right: 0; z-index: 500;
+  position: fixed; bottom: calc(56px + max(10px, env(safe-area-inset-bottom, 0px))); left: 0; right: 0; z-index: 500;
   background: var(--bg-white);
   border-top: none;
   box-shadow: 0 -8px 32px rgba(0,0,0,0.08);
@@ -835,7 +835,8 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
 
 #bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 480;
-  height: 56px; display: flex;
+  height: calc(56px + max(10px, env(safe-area-inset-bottom, 0px))); display: flex;
+  padding-bottom: max(10px, env(safe-area-inset-bottom, 0px));
   background: var(--bg-white);
   box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
   border-top: 1px solid rgba(0,0,0,0.06);
@@ -2017,7 +2018,9 @@ function showCar(id,name,opts){
 
   /* 할인바 표시/숨김 */
   const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || id==='bluemembers' || id==='evcalc' || id==='vscenter' || VS_IDS_LIST.includes(id);
-  document.body.style.paddingBottom = isNoBar ? '76px' : '196px';
+  document.body.style.paddingBottom = isNoBar
+    ? 'calc(76px + max(10px, env(safe-area-inset-bottom, 0px)))'
+    : 'calc(196px + max(10px, env(safe-area-inset-bottom, 0px)))';
   const dbar=document.getElementById('discount-bar');
   dbar.style.display = isNoBar ? 'none' : '';
 
