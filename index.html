@@ -198,7 +198,8 @@ body {
 ════════════════════════════════ */
 .sidebar-overlay {
   display: none; position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0; left: 0; right: 0;
+  bottom: calc(56px + max(10px, env(safe-area-inset-bottom, 0px)));
   background: rgba(0,0,0,0.45); z-index: 400;
 }
 .sidebar-overlay.open { display: block; }
@@ -208,7 +209,7 @@ body {
   background: var(--bg);
   overflow-y: auto;
   position: fixed; top: 0; left: -272px;
-  height: 100vh; z-index: 500;
+  height: calc(100vh - 56px - max(10px, env(safe-area-inset-bottom, 0px))); z-index: 500;
   transition: left .28s ease;
   box-shadow: 4px 0 24px rgba(0,0,0,0.12);
 }
@@ -1796,7 +1797,7 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
   <!-- 드로어 사이드바 -->
   <aside class="sidebar" id="sidebar-root">
     <div class="sidebar-close-row">
-      <span class="sidebar-close-title">차종 선택</span>
+      <span class="sidebar-close-title">메뉴 선택</span>
       <button class="sidebar-close-btn" onclick="closeSidebar()">✕</button>
     </div>
     <!-- 차종 버튼은 JS로 생성 -->
@@ -1873,22 +1874,18 @@ function toggleSidebar(){
   sidebar.classList.toggle('open');
   overlay.classList.toggle('open');
 
-  /* 사이드바 열릴 때 할인바/하단내비 숨김 / 닫힐 때 복원 */
+  /* 사이드바 열릴 때 할인바 숨김 / 닫힐 때 복원 — 하단 내비게이션 바는 항상 고정 노출 */
   if (!isOpen) {
     if (dbar) dbar.style.visibility = 'hidden';
-    if (bnav) bnav.style.visibility = 'hidden';
   } else {
     if (dbar) dbar.style.visibility = '';
-    if (bnav) bnav.style.visibility = '';
   }
 }
 
 function closeSidebar(){
   document.getElementById('sidebar-root').classList.remove('open');
   document.getElementById('sidebar-overlay').classList.remove('open');
-  /* 사이드바 닫히면 할인바/하단내비 복원 */
-  var bnavC = document.getElementById('bottom-nav');
-  if (bnavC) bnavC.style.visibility = '';
+  /* 사이드바 닫히면 할인바 복원 */
   var dbar = document.getElementById('discount-bar');
   if (dbar) dbar.style.visibility = '';
 }
