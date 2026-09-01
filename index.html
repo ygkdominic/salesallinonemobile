@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-title" content="세일즈 올인원">
 <link rel="apple-touch-icon" href="/icon-192.png">
 
-<title>26년 8월 현대자동차 경남지역본부 Sales All-in-One</title>
+<title>26년 9월 현대자동차 경남지역본부 Sales All-in-One</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
 
@@ -1564,7 +1564,7 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
     line-height:1.35; letter-spacing:-0.5px;
     margin-bottom:8px;
     position:relative; z-index:1;
-  ">26년 8월 현대자동차 경남지역본부<br><span style="color:var(--hyundai-blue);">Sales All-in-One</span></h1>
+  ">26년 9월 현대자동차 경남지역본부<br><span style="color:var(--hyundai-blue);">Sales All-in-One</span></h1>
 
   <!-- 서브텍스트 -->
   <p style="
@@ -1690,6 +1690,15 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
     </div>
   </div>
 
+  <!-- 공지 1-1 -->
+  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
+    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);min-width:64px;box-sizing:border-box;">업데이트</span>
+    <div>
+      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">9월 판매조건 업데이트 완료</div>
+      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.09.01</div>
+    </div>
+  </div>
+
   <!-- 공지 2 -->
   <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
     <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);min-width:64px;box-sizing:border-box;">업데이트</span>
@@ -1783,7 +1792,7 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
 
 <div class="hero">
-  <h1 class="hero-title">26년 8월 <br>현대자동차 경남지역본부<br><span class="ac">Sales All-in-One</span></h1>
+  <h1 class="hero-title">26년 9월 <br>현대자동차 경남지역본부<br><span class="ac">Sales All-in-One</span></h1>
   <p class="hero-sub">차종별 판매조건·납기·판매팁·금융 프로모션·트레이드인을 한번에!</p>
   <div class="hero-contact-row">
     <span class="contact-badge">
@@ -2811,13 +2820,14 @@ function tblJ5(g,label36,label48){
   </div></div>`;
 }
 
-/* ── 단기소액 무이자 (JK) 테이블 ── */
+/* ── 단기소액 저금리 (JK) 테이블 — '26.9월 24개월 1.9% 구간 신규 추가 ── */
 function tblJK(g, maxAmt) {
   return `<div class="ppanel" id="pp-${g}-jk" data-g="${g}">
     <div class="scard">
       <div class="stitle">
         <span style="width:18px;height:18px;border-radius: var(--r-sm);background:#F3EEFF;display:inline-flex;align-items:center;justify-content:center;font-size: 13.5px;"></span>
-        단기소액 무이자 (JK)
+        단기소액 저금리 (JK)
+        <span class="badge-new">9월 신규</span>
       </div>
       <div class="wbox">
         <strong>모빌리티(JK) 전용</strong> · 일반 미적용 · 최대한도 <strong>${maxAmt}</strong>
@@ -2836,13 +2846,19 @@ function tblJK(g, maxAmt) {
             <td><span class="rzero">0.0%</span></td>
             <td style="color:var(--tx-muted);">—</td>
           </tr>
+          <tr>
+            <td class="lb">24개월</td>
+            <td><span class="rev">1.9%</span></td>
+            <td style="color:var(--tx-muted);">—</td>
+          </tr>
         </tbody>
       </table>`)}
       <div class="pbox">
         <h4>조건</h4>
         <ul>
-          <li>12개월 무이자 · 모빌리티 한정</li>
-          <li>최대한도 ${maxAmt}</li>
+          <li>12개월 무이자 / 24개월 1.9% · 모빌리티 한정</li>
+          <li>할부원금 최대한도 ${maxAmt}</li>
+          <li>중도상환 수수료 전 기간 면제 (12개월 限)</li>
           <li>단기 소액 구매 고객 적극 소구</li>
         </ul>
       </div>
@@ -2868,7 +2884,7 @@ function tblJ5(g, label36, label48){        /* ← tblJ5가 별도로 완전하�
 
 /* ════════════════════════════════
    할부 금리 데이터 — 메인 관리 → 금리 변경 시 아래 RATE_CONFIG 만 수정하세요
-   2026년 8월 기준
+   2026년 9월 기준
 ════════════════════════════════ */
 const R  = '<span class="rev">';
 const R1 = '<span class="r1">';
@@ -3367,102 +3383,91 @@ function genEmpPanel(g,xz,xy,title='임직원/그룹사 특화 할부',note=''){
 }
 
 /* ════════════════════════════════
-   생산월 라디오 데이터 — 8월 업데이트
+   생산월 라디오 데이터 — 9월 업데이트
 ════════════════════════════════ */
 const BIRTH_AVANTE_N=[
-  {label:'25년 12월 이전 ~ 26년 5월 생산', amount:200, flag:''},
-  {label:'26년 6월 생산',                  amount:100, flag:''},
+  {label:'25년 12월 이전 ~ 26년 6월 생산', amount:200, flag:''},
+  {label:'26년 7월 생산',                  amount:100, flag:''},
 ];
 const BIRTH_SONATA=[
   {label:'25년 12월 이전 ~ 26년 7월 생산', amount:100, flag:''},
 ];
 const BIRTH_GRANDEUR=[
-  {label:'25년 12월 이전 ~ 26년 6월 생산 · 2.5가솔린/HEV', amount:300, flag:''},
-  {label:'25년 12월 이전 ~ 26년 6월 생산 · 3.5가솔린',     amount:450, flag:''},
+  {label:'25년 12월 이전 ~ 26년 7월 생산 · 2.5가솔린/HEV', amount:300, flag:''},
+  {label:'25년 12월 이전 ~ 26년 7월 생산 · 3.5가솔린',     amount:450, flag:''},
 ];
 const BIRTH_NEWGRANDEUR=[
-  {label:'26년 5월 생산 (저금리 병행·HEV 제외)', amount:200, flag:''},
-  {label:'26년 6월 생산 (저금리 병행·HEV 제외)', amount:100, flag:''},
+  {label:'26년 5~6월 생산 (HEV 제외)', amount:200, flag:''},
 ];
 const BIRTH_TUCSON=[
 ];
 const BIRTH_SANTAFE=[
-  {label:'25년 12월 이전 ~ 26년 6월 생산', amount:300, flag:''},
-  {label:'26년 7월 생산',                  amount:200, flag:''},
+  {label:'25년 12월 이전 ~ 26년 7월 생산', amount:300, flag:''},
+  {label:'26년 8월 생산',                  amount:200, flag:''},
 ];
 const BIRTH_PALISADE=[
-  {label:'25년 12월 이전 ~ 26년 3월 생산', amount:200, flag:''},
-  {label:'26년 4~5월 생산',               amount:150, flag:''},
-  {label:'26년 6월 생산',                 amount:100, flag:''},
+  {label:'25년 12월 이전 ~ 26년 4월 생산', amount:200, flag:''},
+  {label:'26년 5~6월 생산',               amount:150, flag:''},
+  {label:'26년 7월 생산',                 amount:100, flag:''},
 ];
 const BIRTH_STARIA=[
-  {label:'25년 12월 이전 ~ 26년 3월 생산', amount:200, flag:''},
-  {label:'26년 4~5월 생산',               amount:150, flag:''},
-  {label:'26년 6월 생산',                 amount:100, flag:''},
+  {label:'25년 12월 이전 ~ 26년 4월 생산', amount:200, flag:''},
+  {label:'26년 5~6월 생산',               amount:150, flag:''},
+  {label:'26년 7월 생산',                 amount:100, flag:''},
 ];
 const BIRTH_PORTERLPDI=[
-  {label:'25년 12월 이전 ~ 26년 5월 생산',      amount:200, flag:''},
-  {label:'26년 6~7월 생산 (특장 제외)',          amount:150, flag:''},
+  {label:'25년 12월 이전 ~ 26년 6월 생산',      amount:200, flag:''},
+  {label:'26년 7~8월 생산 (특장 제외)',          amount:150, flag:''},
 ];
 const BIRTH_KONAEV=[
   {label:'25년 12월 이전 ~ 26년 5월 생산', amount:150, flag:''},
-  {label:'26년 6월 생산',                 amount:50,  flag:''},
+  {label:'26년 6~7월 생산',               amount:50,  flag:''},
 ];
 const BIRTH_IONIQ5N=[
   {label:'25년 12월 이전 ~ 26년 5월 생산', amount:150, flag:''},
-  {label:'26년 6월 생산',                 amount:50,  flag:''},
+  {label:'26년 6~7월 생산',               amount:50,  flag:''},
 ];
 const BIRTH_IONIQ6N=[
   {label:'25년 12월 이전 ~ 26년 5월 생산', amount:150, flag:''},
-  {label:'26년 6월 생산',                 amount:50,  flag:''},
+  {label:'26년 6~7월 생산',               amount:50,  flag:''},
 ];
 const BIRTH_IONIQ9=[
-  {label:'25년 12월 이전 ~ 26년 3월 생산', amount:400, flag:''},
-  {label:'26년 4~5월 생산',               amount:300, flag:''},
+  {label:'25년 12월 이전 ~ 26년 5월 생산', amount:300, flag:''},
   {label:'26년 6월 생산',                 amount:200, flag:''},
   {label:'26년 7월 생산',                 amount:100, flag:''},
 ];
 const BIRTH_PORTEREV=[
   {label:'25년 12월 이전 ~ 26년 5월 생산',            amount:150, flag:''},
-  {label:'26년 6월 생산 (특장 제외)',                  amount:50,  flag:''},
+  {label:'26년 6~7월 생산 (특장 제외)',                amount:50,  flag:''},
 ];
 const BIRTH_ST1EV=[
   {label:'25년 12월 이전 ~ 26년 5월 생산 (샤시캡 제외)', amount:150, flag:''},
-  {label:'26년 6월 생산',                              amount:50,  flag:''},
+  {label:'26년 6~7월 생산',                            amount:50,  flag:''},
 ];
 const BIRTH_NEXO=[
   {label:'25년 12월 이전 ~ 26년 5월 생산', amount:200, flag:''},
 ];
 /* ── 제네시스 생산월 조건 (비율형) ── */
 const BIRTH_G80ICE=[
-  {label:'25년 12월 이전 ~ 26년 6월 생산', amount:0, amtLabel:'4% 할인', flag:''},
-  {label:'26년 7월 생산',                  amount:0, amtLabel:'2% 할인', flag:''},
+  {label:'25년 12월 이전 ~ 26년 7월 생산', amount:0, amtLabel:'5% 할인', flag:''},
 ];
 const BIRTH_G80EV=[
-  {label:'25년 12월 이전 ~ 26년 3월 생산', amount:0, amtLabel:'10% 할인', flag:''},
-  {label:'26년 4월 생산',                  amount:0, amtLabel:'5% 할인',  flag:''},
-  {label:'26년 5월 생산',                  amount:0, amtLabel:'3% 할인',  flag:''},
+  {label:'25년 12월 이전 ~ 26년 6월 생산', amount:0, amtLabel:'5% 할인', flag:''},
 ];
 const BIRTH_G90=[
-  {label:'25년 12월 이전 ~ 26년 4월 생산', amount:0, amtLabel:'10% 할인', flag:''},
+  {label:'25년 12월 이전 ~ 26년 5월 생산', amount:0, amtLabel:'10% 할인', flag:''},
 ];
 const BIRTH_GV60=[
-  {label:'25년 12월 이전 ~ 26년 3월 생산', amount:0, amtLabel:'10% 할인', flag:''},
-  {label:'26년 4월 생산',                  amount:0, amtLabel:'5% 할인',  flag:''},
-  {label:'26년 5월 생산',                  amount:0, amtLabel:'3% 할인',  flag:''},
+  {label:'25년 12월 이전 ~ 26년 6월 생산', amount:0, amtLabel:'5% 할인', flag:''},
 ];
 const BIRTH_GV70ICE=[
-  {label:'25년 12월 이전 ~ 26년 6월 생산', amount:0, amtLabel:'3% 할인', flag:''},
-  {label:'26년 7월 생산',                  amount:0, amtLabel:'2% 할인', flag:''},
+  {label:'25년 12월 이전 ~ 26년 7월 생산', amount:0, amtLabel:'3% 할인', flag:''},
 ];
 const BIRTH_GV70EV=[
-  {label:'25년 12월 이전 ~ 26년 3월 생산', amount:0, amtLabel:'10% 할인', flag:''},
-  {label:'26년 4월 생산',                  amount:0, amtLabel:'5% 할인',  flag:''},
-  {label:'26년 5월 생산',                  amount:0, amtLabel:'3% 할인',  flag:''},
+  {label:'25년 12월 이전 ~ 26년 6월 생산', amount:0, amtLabel:'5% 할인', flag:''},
 ];
 const BIRTH_GV80=[
-  {label:'25년 12월 이전 ~ 26년 6월 생산', amount:0, amtLabel:'5% 할인', flag:''},
-  {label:'26년 7월 생산',                  amount:0, amtLabel:'2% 할인', flag:''},
+  {label:'25년 12월 이전 ~ 26년 7월 생산', amount:0, amtLabel:'5% 할인', flag:''},
 ];
 
 /* ════════════════════════════════
@@ -16369,7 +16374,7 @@ var sellPanel = '<div class="vpanel" id="vp-evb-sell" data-g="evb">'
   + '</div>'
   + '</div>'
 
-  + '<div class="wbox" style="margin-top:12px;">※ \'26.08월 기준 / 사전 공지 없이 변경될 수 있음 / 세부사항 현대자동차 홈페이지 참조</div>'
+  + '<div class="wbox" style="margin-top:12px;">※ \'26.09월 기준 / 사전 공지 없이 변경될 수 있음 / 세부사항 현대자동차 홈페이지 참조</div>'
 
   + '</div>';
 
@@ -16378,7 +16383,7 @@ return hdr(
     'linear-gradient(135deg,var(--hyundai-blue-light),#EBF9F5)',
     '',
     '현대 EV 주요 혜택',
-    '\'26년 8월 기준 · 살 때부터 탈 때까지 EV 全 주기 혜택 (배터리 코치+ 신규)',
+    '\'26년 9월 기준 · 살 때부터 탈 때까지 EV 全 주기 혜택 (배터리 코치+ 신규)',
     ['살 때','탈 때','충전','팔 때']
   )
   + tabHtml
@@ -16393,7 +16398,7 @@ return hdr(
 PANELS.summary=`
 <div class="car-hd" style="background:linear-gradient(135deg,var(--hyundai-blue-light) 0%,#F5F9FF 60%,#EEF8FF 100%);padding:16px 18px 12px;">
   <div class="car-hd-info">
-    <div class="car-hd-title" style="color:var(--hyundai-blue);margin-bottom:8px;">26년 8월 주요 판매조건</div>
+    <div class="car-hd-title" style="color:var(--hyundai-blue);margin-bottom:8px;">26년 9월 주요 판매조건</div>
   </div>
 </div>
 
@@ -16692,32 +16697,35 @@ PANELS.summary=`
 <div style="height:15px;"></div>
 
 <div class="sum-sec">
-  <div class="sum-head">8월 핵심 공통 프로모션</div>
+  <div class="sum-head">9월 핵심 공통 프로모션</div>
 
-<!-- ══ 7→8월 주요 변경사항 ══ -->
+<!-- ══ 8→9월 주요 변경사항 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
   <button class="accordion-btn" style="border-left:4px solid var(--accent-warn);border-radius:var(--r-md);font-size: 17px;"
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;">
-      <span style="color:var(--accent-warn);font-weight:800;">7월 → 8월 주요 변경사항</span>
+      <span style="color:var(--accent-warn);font-weight:800;">8월 → 9월 주요 변경사항</span>
       <span style="background:var(--accent-warn);color:#fff;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">변경요약</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
     <div style="line-height:2.0;font-size: 14.5px;">
-      <strong style="color:var(--hyundai-blue-mid);">[신규] 더 뉴 그랜저 재고한정 저금리</strong><br> - 5~6월 생산분 限 JM 36M 3.0%/48M 3.5%/60M 4.0% · 조건 차감 없음<br>
-      <strong style="color:var(--hyundai-blue-mid);">[신규] 팰리세이드 전용카드 프로모션 50만</strong><br> - 현대/제네시스 전용카드 2,000만 이상 + 세이브오토 시 25만D/C+25만캐시백<br>
-      <strong style="color:var(--hyundai-blue-mid);">[신규] 경쟁EV 되치기 특별 D/C</strong><br> - 8월 3일~31일 출고 기준 · 선착순 50대 · 고객 10만원 + 판매점 10만원 포상<br>
-      <strong style="color:var(--hyundai-blue-mid);">[신규] 제네시스 GS 칼텍스 고급유 할인 프로모션</strong><br> - 제네시스 ICE 차종 구매 고객 대상 · 세부 내용 별도 공문 참조<br>
-      <strong style="color:var(--hyundai-blue-mid);">[신규] 제네시스 대한항공 마일리지 적립 프로모션</strong><br> - 제네시스 EV 차종 구매 고객 대상 · 세부 내용 별도 공문 참조<br>
-      <strong style="color:var(--hyundai-blue-mid);">[변경] 2026그랜저 조건</strong><br> - 기본조건 → 썸머페스타 재고조건 2.5가솔린/HEV 300만 / 3.5가솔린 450만<br>
-      <strong style="color:var(--hyundai-blue-mid);">[변경] 아이오닉 100만대 기념</strong><br> - 26년 계약+8월내출고·개인/개인사업자(AA1/BA1) 한정으로 조건 명확화<br>
-      <strong style="color:var(--accent-warn);">[종료] 제네시스 르망24 완주 기념 저금리</strong><br> - G80·GV70·GV80 24M 0.9%~60M 3.9% 종료<br>
-      <strong style="color:var(--accent-warn);">[종료] 현장렌트사 특별조건</strong><br> - 주요차종 1대 100만/2대 이상 200만 종료<br>
-      <strong style="color:var(--accent-warn);">[종료] 그랜저(26MY) 무이자 프로모션</strong><br> - 36M/48M/60M 무이자 종료<br>
-      <strong style="color:var(--accent-warn);">[종료] 싼타페 기본조건 100만원 / 저금리(JM) / 전용카드 30만</strong><br> - 36M 3.0%/48M 3.5%/60M 4.0% 종료<br>
-      <strong style="color:var(--accent-warn);">[종료] 쏘나타 저금리(JM) / 전용카드 30만</strong><br> - 36M 3.0%/48M 3.5%/60M 4.0% 종료
+      <strong style="color:var(--hyundai-blue-mid);">[신규] 2026 추석 가족사랑조건 100만원</strong><br> - 그랜저(신형HEV 제외)·싼타페·팰리세이드·스타리아(EV제외)·아이오닉5·6·9·코나EV 대상 · 임직원/대리점/협력사 4촌 이내 친인척 한정<br>
+      <strong style="color:var(--hyundai-blue-mid);">[신규] EV to 내연기관 전환 출고 혜택 50만원</strong><br> - '26년 1~8월 EV 계약 후 미출고 고객, 9월 내 내연기관 전환 출고 시<br>
+      <strong style="color:var(--hyundai-blue-mid);">[신규] 비포 서비스 애프터 세일즈 20만원</strong><br> - 비포서비스 점검일 기준 3개월 뒤 말일까지 신차 구매 고객<br>
+      <strong style="color:var(--hyundai-blue-mid);">[신규] 더 뉴 그랜저 트레이드인 타겟조건</strong><br> - 당사매각 50만 / 타사매각 30만 (노후차 트레이드인 20만 별도) · 최초 신설<br>
+      <strong style="color:var(--hyundai-blue-mid);">[변경] G80 생산월 조건 강화</strong><br> - 4% → <strong>5%</strong> (7월 이전 재고까지 확대 적용)<br>
+      <strong style="color:var(--hyundai-blue-mid);">[변경] G90 생산월 조건 강화</strong><br> - 6% → <strong>10%</strong> ('25.12월 이전~'26.5월 생산분)<br>
+      <strong style="color:var(--hyundai-blue-mid);">[변경] 그랜저 영업용(택시) 생산월 조건 확대</strong><br> - 5월 생산분까지 <strong>300만원</strong> 유지 (기존 5월 250만 → 300만)<br>
+      <strong style="color:var(--hyundai-blue-mid);">[연장] 경쟁 EV 되치기 특별 D/C</strong><br> - 9월 한정 · 선착순 50대 계속 운영<br>
+      <strong style="color:var(--tx-muted);">[정리] '썸머페스타' 캠페인명 삭제</strong><br> - 그랜저·쏘나타·싼타페·팰리세이드·스타리아 생산월 조건으로 통합 표기 (금액 동일)<br>
+      <strong style="color:var(--accent-warn);">[종료] 더 뉴 그랜저 재고한정 저금리</strong><br> - JM 36M 3.0%/48M 3.5%/60M 4.0% 종료<br>
+      <strong style="color:var(--hyundai-blue-mid);">[신규] '들어줘, 글레오' 전시장 방문고객 이벤트</strong><br> - 디 올 뉴 아반떼 Gleo AI 체험+설문 참여 시 100% 당첨(선착순 1만명) · 인스타그램 인증 추첨 이벤트<br>
+      <strong style="color:var(--hyundai-blue-mid);">[신규] 제네시스 전기차 E-pit 충전 감사 프로모션</strong><br> - GV60·GV70EV·G80EV 대상 · 전국 E-pit/현대엔지니어링 충전소 무료충전(9~11월)<br>
+      <strong style="color:var(--hyundai-blue-mid);">[복원] 제네시스 카드 제휴 프로모션 재운영</strong><br> - GS칼텍스 고급유 할인 / 대한항공 마일리지 적립 프로모션 8/1~12/31 계속 운영<br>
+      <strong style="color:var(--hyundai-blue-mid);">[신규 노출] 현대N 지인추천 이벤트</strong><br> - 추천인/피추천인 모두 혜택(피추천인 50만원+양측 26FW N컬렉션 자켓) · 기존 운영 중 항목 이번에 처음 카드로 안내<br>
+      <strong style="color:var(--hyundai-blue-mid);">[신규 노출] 현대차증권 X 현대자동차 제휴 프로모션</strong><br> - 증권 생애최초 계좌개설 시 계약금 10만원 D/C 등 · 기존 운영 중 항목 이번에 처음 카드로 안내
     </div>
   </div>
 </div>
@@ -16725,25 +16733,124 @@ PANELS.summary=`
 <!-- 신규·변경 구분선 -->
 <div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px;">
   <div style="width:3px;height:14px;background:var(--hyundai-blue-mid);border-radius:2px;flex-shrink:0;"></div>
-  <span style="font-size: 12.5px;font-weight:800;color:var(--hyundai-blue-mid);letter-spacing:.8px;">8월 신규 · 변경 항목</span>
+  <span style="font-size: 12.5px;font-weight:800;color:var(--hyundai-blue-mid);letter-spacing:.8px;">9월 신규 · 변경 항목</span>
   <div style="flex:1;height:1px;background:rgba(49,130,246,0.15);"></div>
 </div>
 
-<!-- ══ 더뉴그랜저 재고한정 저금리 ══ -->
+<!-- ══ '들어줘, 글레오' 전시장 방문고객 이벤트 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
   <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>더 뉴 그랜저 — 재고한정 저금리</span>
-      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">8월 신규</span>
+      <span>'들어줘, 글레오' 전시장 방문고객 이벤트</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <strong>대상:</strong> 더 뉴 그랜저 ICE <small>(HEV·영업용·임직원 제외)</small><br>
-    <strong>조건:</strong> 5~6월 생산분 한정<br>
-    <strong>금리:</strong> JM 36M <span class="hl">3.0%</span> / 48M <span class="hl">3.5%</span> / 60M <span class="hl">4.0%</span><br>
-    <small style="color:var(--tx-muted);">※ 판매조건(생산월 등) 차감 없이 병행 가능</small>
+    <strong>기간:</strong> 2026년 9월 1일 ~ 9월 30일<br>
+    <strong>대상:</strong> 지점·대리점·드라이빙라운지 방문, 디 올 뉴 아반떼 Gleo AI 체험 후 설문조사 참여 고객<br>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
+      <strong>EVENT 1. 설문 참여만 해도 100% 당첨</strong> <small>(선착순 1만명)</small><br>
+      아반떼 전시·시승차 Gleo AI와 대화 후 안내문 QR로 설문 참여 시 <span class="hl">5천원 모바일 상품권</span> 100% 증정 (차수당 선착순 2,500명)<br>
+      <small style="color:var(--tx-muted);">1차(9/1~9) 올리브영 · 2차(9/10~16) GS25 · 3차(9/17~23) 배달의민족 · 4차(9/24~30) 이마트</small>
+    </div>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
+      <strong>EVENT 2. 인스타그램 인증 이벤트</strong><br>
+      Gleo AI와의 대화를 사진/영상 촬영 후 인스타그램 업로드 시 추첨으로 경품 추가 증정 (설문조사 참여 필수)<br>
+      <small style="color:var(--tx-muted);">아반떼 9박10일 시승권+스테이폴리오 100만원권(1명), 다이슨 헤어드라이어(5명), B&O 무선스피커(20명) 등<br>계정 @gleo_avante · 해시태그 #현대자동차 #아반떼 #들어줘글레오 (비공개 계정 참여 불가)</small>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 제네시스 전기차 E-pit 충전 감사 프로모션 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>제네시스 전기차 E-pit 충전 감사 프로모션</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>기간:</strong> 2026년 9월 1일 ~ 11월 30일<br>
+    <strong>대상:</strong> GV60(마그마 포함)·GV70 EV·G80 EV <small>(개인 AA1·개인사업자 BA1 限)</small><br>
+    <strong>혜택:</strong> 프로모션 기간 내 전국 <span class="hl">E-pit 및 현대엔지니어링 충전소</span>(일부 제외) 초고속·완속 충전요금 <span class="hl">0원/kWh</span><br>
+    <small style="color:var(--tx-muted);">① 9~10월 내 제네시스 전기차 출고 및 E-pit 앱에서 혜택 신청 → ② 9~11월 限 전국 E-pit·현대엔지니어링 충전소 무료 충전 제공</small>
+  </div>
+</div>
+
+
+<!-- ══ 2026 추석 가족사랑조건 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>2026 추석 가족사랑조건 100만원</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>대상 차종:</strong> 그랜저(신형 HEV 제외)·싼타페·팰리세이드·스타리아(EV 제외)·아이오닉5·6·9·코나EV<br>
+    <strong>혜택:</strong> <span class="hl">100만원</span><br>
+    <strong>대상 고객:</strong> 현대차 임직원(배우자)·판매대리점 대표/등록인원·블루핸즈 대표·계열사/관계사/협력사 대표·임직원 <strong>4촌 이내 친인척</strong><br>
+    <strong>기간:</strong> 2026년 9월 1일 ~ 10월 31일<br>
+    <small style="color:var(--tx-muted);">※ 증빙: 직원 증빙서류 및 가족관계 증명서류 · 그랜저/싼타페/팰리세이드/스타리아는 직원할인+가족사랑 결합만 적용 가능 (직원할인 없이 가족사랑 단독 불가) · 아이오닉5·6·9/코나EV는 직원할인 불가하여 가족사랑 조건만 적용 가능</small>
+  </div>
+</div>
+
+<!-- ══ EV to 내연기관 전환 출고 혜택 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>EV to 내연기관 전환 출고 혜택 50만원</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>대상 차종:</strong> 국내승용 전차종(내연기관) <small>(신형 아반떼·신형 그랜저 제외)</small><br>
+    <strong>혜택:</strong> <span class="hl">50만원</span><br>
+    <strong>대상 고객:</strong> '26년 1~8월 EV 차종을 계약하고 출고 전인 고객 (AA1·BA1)이 9월 내 내연기관 전환 출고 시<br>
+    <small style="color:var(--tx-muted);">※ 증빙: 1~8월 EV계약건의 계약/요청 매매주문서 캡처본 · EV 1대당 내연기관 1대 출고만 적용 · 8월 내 EV 계약분 출고 완료 시 적용 불가</small>
+  </div>
+</div>
+
+<!-- ══ 비포 서비스 애프터 세일즈 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>비포 서비스 애프터 세일즈 20만원</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>대상 차종:</strong> 국내승용 전차종 <small>(신형 아반떼·신형 그랜저 제외)</small><br>
+    <strong>혜택:</strong> <span class="hl">20만원</span><br>
+    <strong>대상 고객:</strong> 비포서비스 점검일 기준 3개월 뒤 말일까지 신차 구매 고객 (AA1·BA1) <small>(예: 9/10 비포서비스 시 12/31까지 적용)</small><br>
+    <small style="color:var(--tx-muted);">※ 국내판매시스템 타겟 미확인 건은 별도 증빙 필요(차량 등록원부 등) · 세부 내용 별도 공문 참조</small>
+  </div>
+</div>
+
+<!-- ══ 더 뉴 그랜저 트레이드인 타겟조건 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>더 뉴 그랜저 — 트레이드인 타겟조건 신설</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>대상:</strong> 더 뉴 그랜저 전 트림<br>
+    <strong>혜택:</strong> 당사 매각 <span class="hl">50만원</span> / 타사 매각 <span class="hl">30만원</span> · 노후차 트레이드인 <span class="hl">20만원</span> 별도<br>
+    <small style="color:var(--tx-muted);">※ 그동안 트레이드인 타겟 대상에서 제외되어 있었으나 9월부 최초 신설</small>
   </div>
 </div>
 
@@ -16753,7 +16860,7 @@ PANELS.summary=`
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
       <span>팰리세이드 전용카드 프로모션 50만</span>
-      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">8월 신규</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
@@ -16765,29 +16872,68 @@ PANELS.summary=`
   </div>
 </div>
 
-<!-- ══ 제네시스 신규 프로모션 ══ -->
+<!-- ══ 제네시스 카드 제휴 프로모션 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
   <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>제네시스 신규 프로모션</span>
-      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">8월 신규</span>
+      <span>제네시스 카드 제휴 프로모션</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
     <div style="padding:5px 0 8px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong style="color:#A47551;">GS 칼텍스 고급유 할인 프로모션</strong> <small style="background:var(--bg);padding:1px 5px;border-radius:4px;">ICE</small><br>
-      <strong>대상:</strong> 제네시스 전 차종 출고 고객 (개인/개인사업자 AA1·BA1)<br>
-      <strong>혜택:</strong> GS 칼텍스 고급 휘발유 <span style="color:#A47551;font-weight:800;">월 최대 2만원 할인</span> 모바일 카드 지급<br>
-      <small>· 1L당 50원 할인 / 월 400L 한도 · 등록일로부터 1년간 사용 가능</small><br>
-      <small style="color:var(--tx-muted);">출고 익월 대상 고객 개별 문자로 카드 번호 발송 예정</small>
+      <strong style="color:#A47551;">GS 칼텍스 고급유 할인 프로모션</strong> <small style="background:var(--bg);padding:1px 5px;border-radius:4px;">전차종</small><br>
+      <strong>기간:</strong> 2026년 8월 1일 ~ 12월 31일<br>
+      <strong>대상:</strong> 제네시스 전 차종 (개인 AA1·개인사업자 BA1 限)<br>
+      <strong>혜택:</strong> 고급 휘발유 <span style="color:#A47551;font-weight:800;">리터당 50원 할인</span> (월 최대 2만원)<br>
+      <small style="color:var(--tx-muted);">출고 고객 대상 익월 1~2주차 문자 발송 예정 (할인 등록 후 365일 사용 가능)</small>
     </div>
     <div style="padding:8px 0 0;">
       <strong style="color:#A47551;">대한항공 마일리지 적립 프로모션</strong> <small style="background:#E3F5EC;color:#1A7035;padding:1px 5px;border-radius:4px;">EV</small><br>
-      제네시스 EV 차종 구매 고객 대상<br>
-      <small style="color:var(--tx-muted);">세부 혜택 및 신청 방법은 별도 공문 참조</small>
+      <strong>기간:</strong> 2026년 8월 1일 ~ 12월 31일<br>
+      <strong>대상:</strong> GV60(마그마 포함)·GV70 EV·G80 EV (개인 AA1·개인사업자 BA1 限)<br>
+      <strong>혜택:</strong> 구매고객 전원 대상 <span style="color:#A47551;font-weight:800;">대한항공 1만 마일리지</span> 적립<br>
+      <small style="color:var(--tx-muted);">대상 차종 출고 및 마일리지 적립 신청서 작성 → 본사 주관 Skypass 회원번호 취합 후 익월 자동 적립</small>
     </div>
+  </div>
+</div>
+
+<!-- ══ 현대N 지인추천 이벤트 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>현대N 지인추천 이벤트</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>기간:</strong> 2026년 8월 3일 ~ 9월 30일<br>
+    <strong>대상:</strong> 추천하신 분(현대N 신차 구매 이력 보유, N Line 제외) / 추천받은 분(현대N 신규 구매자: 아반떼N·아이오닉5N·아이오닉6N) <small>둘 다 개인(AA1)·개인사업자(BA1) 限</small><br>
+    <strong>혜택:</strong> 추천받은 분 <span class="hl">50만원 구매혜택(쿠폰)</span> / 추천하신 분·받은 분 공통 <span class="hl">26FW N컬렉션 MA-1 자켓</span><br>
+    <small style="color:var(--tx-muted);">旣 출고고객 H-event 응모 및 쿠폰 수령(본사 주관 매주 월 발송) → 추천하신 분이 추천받은 분에게 쿠폰 직접 전달 → 계약 시 쿠폰 제출·타겟조건 적용<br>※ 쿠폰 적용 시 성명 두 자리+연락처 뒤 2자리 계약자와 일치 여부 확인 必</small>
+  </div>
+</div>
+
+<!-- ══ 현대차증권 X 현대자동차 제휴 프로모션 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>현대차증권 X 현대자동차 제휴 프로모션</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>신청기간:</strong> 2026년 7월 10일 ~ 10월 9일 <small>(출고: 26년 10월 31일 限)</small><br>
+    <strong>대상:</strong> 전차종 출고 · 일반개인(AA1)·개인사업자(BA1) 限 <small>(캐스퍼·캐스퍼일렉트릭·트럭·버스·택시 제외)</small><br>
+    <strong>참여방법:</strong> 현대닷컴/마이현대 이벤트 배너로 계좌개설 이벤트 참여 후 현대차증권 생애최초 계좌개설 → 현대자동차 계약금 할인 이벤트 신청 및 10월 내 대상 차종 계약/출고<br>
+    <strong>혜택:</strong> ① <span class="hl">현대차 계약금 10만원 타겟 D/C</span> ② 현대차증권 플러스 금융상품권 3만원권 및 거래수수료 3개월 할인 ③ 금융상품권 5천원권 추가 증정 <small>(선착순 5천명 限)</small><br>
+    <small style="color:var(--tx-muted);">※ 혜택(타겟조건) 문자 수신 고객 본인 명의 구매 시 적용 (타인 양도 불가, 공동명의 가능)</small>
   </div>
 </div>
 
@@ -16797,7 +16943,7 @@ PANELS.summary=`
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
       <span>경쟁 EV 되치기 특별 D/C</span>
-      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">8월 한정 · 선착순 50대</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 한정 · 선착순 50대</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
@@ -16806,7 +16952,7 @@ PANELS.summary=`
     <strong>조건:</strong> 타사 전기차(EV3·EV6·EV9·모델Y 등) 계약 고객의 현대 EV 신차 출고<br>
     <strong>고객 혜택:</strong> <span style="color:var(--hyundai-azure);font-weight:800;">10만원 할인</span> (개인/개인사업자 · 선착순 50대)<br>
     <strong>지점/대리점 포상:</strong> <span class="hl">대당 10만원</span><br>
-    <strong>기간:</strong> 2026년 8월 3일 ~ 8월 31일 · <strong>출고일 기준</strong><br>
+    <strong>기간:</strong> 2026년 9월 1일 ~ 9월 30일 · <strong>출고일 기준</strong><br>
     <small style="color:var(--tx-muted);">경쟁사 EV 견적서 또는 계약서 사본 (사진촬영본도 인정)<br>
     ※ 고객 주소지 무관 (경남 외 지역 고객도 경남지역 내 구매 시 인정)<br>
     ※ 경쟁사 견적 또는 계약일이 당사 EV 계약일 이전일 것</small>
@@ -16889,12 +17035,12 @@ PANELS.summary=`
   </div>
 </div>
 
-<!-- ══ 현대 썸머 페스타 ══ -->
+<!-- ══ 현대 생산월 조건 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
   <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>현대 썸머 페스타 — 생산월 조건</span>
+      <span>현대 생산월 조건</span>
       <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
     </span>
     <span class="acc-arrow">▼</span>
@@ -16903,7 +17049,7 @@ PANELS.summary=`
     <div style="padding:5px 0 6px;border-bottom:1px solid rgba(0,119,182,0.12);">
       <strong style="color:#0077B6;">그랜저(26MY)</strong> — 재고 한정
       <span style="color:#C05000;font-weight:800;">2.5가솔린/HEV 300만 · 3.5가솔린 450만</span>
-      <small>(6월 이전 생산분)</small>
+      <small>(7월 이전 생산분) · 가족사랑조건(100만) 별도 중복 가능</small>
     </div>
     <div style="padding:5px 0 6px;border-bottom:1px solid rgba(0,119,182,0.12);">
       <strong style="color:#0077B6;">쏘나타</strong> — 25년 12월 이전~26년 7월 생산
@@ -16911,52 +17057,55 @@ PANELS.summary=`
       <small>(ICE/HEV)</small>
     </div>
     <div style="padding:5px 0 6px;border-bottom:1px solid rgba(0,119,182,0.12);">
-      <strong style="color:#0077B6;">싼타페</strong> — ~6월 생산
+      <strong style="color:#0077B6;">싼타페</strong> — ~7월 생산
       <span style="color:#C05000;font-weight:800;">300만</span>
-      · 7월 생산
+      · 8월 생산
       <span style="color:#C05000;font-weight:800;">200만원</span>
-      <small>(ICE/HEV)</small>
+      <small>(ICE/HEV) · 가족사랑조건(100만) 별도 중복 가능</small>
     </div>
     <div style="padding:5px 0 6px;border-bottom:1px solid rgba(0,119,182,0.12);">
-      <strong style="color:#0077B6;">팰리세이드</strong> — ~3월
+      <strong style="color:#0077B6;">팰리세이드</strong> — 4월 이전
       <span style="color:#C05000;font-weight:800;">200만</span>
-      · 4~5월
+      · 5~6월
       <span style="color:#C05000;font-weight:800;">150만</span>
-      · 6월
+      · 7월
       <span style="color:#C05000;font-weight:800;">100만원</span>
-      <small>(ICE/HEV)</small>
+      <small>(ICE/HEV) · 8월부 조건 없음 · 가족사랑조건(100만) 별도 중복 가능</small>
     </div>
     <div style="padding:5px 0 0;">
-      <strong style="color:#0077B6;">스타리아</strong> — ~3월
+      <strong style="color:#0077B6;">스타리아</strong> — 4월 이전
       <span style="color:#C05000;font-weight:800;">200만</span>
-      · 4~5월
+      · 5~6월
       <span style="color:#C05000;font-weight:800;">150만</span>
-      · 6월
+      · 7월
       <span style="color:#C05000;font-weight:800;">100만원</span>
-      <small>(ICE/HEV)</small>
+      <small>(ICE/HEV) · 8월부 조건 없음 · 가족사랑조건(100만, EV 제외) 별도 중복 가능</small>
     </div>
   </div>
 </div>
 
-<!-- ══ 제네시스 썸머 페스타 ══ -->
+<!-- ══ 제네시스 생산월 조건 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
   <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>제네시스 썸머 페스타 — 기본+생산월</span>
-      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+      <span>제네시스 생산월 조건</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 강화</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
     <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong>G80</strong> — ~6월 생산 <span class="hlg">4% 할인</span> · 7월 생산 <span class="hlg">2% 할인</span>
+      <strong>G80</strong> — 7월 이전 재고 <span class="hlg">5% 할인</span> <small>(8월 이후 생산분 조건 없음, 기존 4%→5% 인상)</small>
     </div>
     <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong>GV70</strong> — ~6월 생산 <span class="hlg">3% 할인</span> · 7월 생산 <span class="hlg">2% 할인</span>
+      <strong>GV70</strong> — 7월 이전 재고 <span class="hlg">3% 할인</span> <small>(8월 이후 생산분 조건 없음)</small>
     </div>
     <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong>GV80</strong> — ~6월 생산 <span class="hlg">5% 할인</span> · 7월 생산 <span class="hlg">2% 할인</span>
+      <strong>GV80</strong> — 7월 이전 재고 <span class="hlg">5% 할인</span> <small>(8월 이후 생산분 조건 없음)</small>
+    </div>
+    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
+      <strong>G90</strong> — '25.12월 이전~'26.5월 생산 <span class="hlg">10% 할인</span> <small>(6월 이후 생산분 조건 없음, 기존 6%→10% 인상)</small>
     </div>
     <div style="padding:5px 0 0;">
       <small style="color:var(--tx-muted);">전용카드·트레이드인 등 추가 조건 합산 가능</small>
@@ -17031,19 +17180,22 @@ PANELS.summary=`
 
 
 <div class="sum-sec">
-<div class="sum-head">8월 당사/경쟁사 차종별 납기</div>
+<div class="sum-head">9월 당사/경쟁사 차종별 납기</div>
+  <div style="background:#FFF5F5;border:1.5px solid rgba(240,68,82,0.3);border-radius: var(--r-sm);padding:10px 14px;margin-bottom:10px;">
+    <strong style="color:#C62828;font-size: 14.5px;">9월 경쟁사 EV 납기가 대폭 증가했습니다. 참고하셔서 당사 EV로 적극 유도 바랍니다.</strong>
+  </div>
   <div class="stbl-wrap"><table class="stbl" style="table-layout:fixed;">
 <thead>
   <tr>
     <th class="lh" style="white-space:nowrap;width:36%;">차종</th>
-    <th style="white-space:nowrap;width:32%;">당사(8월 기준)</th>
-    <th style="white-space:nowrap;width:32%;">경쟁사(8월 기준)</th>
+    <th style="white-space:nowrap;width:32%;">당사(9월 기준)</th>
+    <th style="white-space:nowrap;width:32%;">경쟁사(9월 기준)</th>
   </tr>
 </thead>
 
  <tbody><tr><td class="slb2" colspan="3" style="background:#EEF2FF;color:#003087;font-weight:800;padding:0;"><div style="position:sticky;left:0;width:max-content;padding:6px 12px;font-size: 11.5px;font-weight:800;color:#003087;">■ 현대 승용</div></td></tr>
   <tr>
-    <td class="slb2">아반떼 ICE/HEV </td>
+    <td class="slb2">아반떼 26MY (ICE/HEV)</td>
     <td class="delivery-cell" style="color:var(--accent-warn);">-<br>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
@@ -17052,46 +17204,51 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
-  <tr class="chg-row">
-    <td class="slb2">쏘나타 ICE</td>
-    <td class="delivery-cell">2개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">K5 4~5주</td>
+  <tr class="new-row">
+    <td class="slb2">디 올 뉴 아반떼 가솔린/LPi</td>
+    <td class="delivery-cell">3개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
+    </tr>
+  <tr class="new-row">
+    <td class="slb2">디 올 뉴 아반떼 HEV</td>
+    <td class="delivery-cell" style="color:var(--accent-warn);">10월 중 출고개시 예상</td>
+    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
   <tr class="chg-row">
+    <td class="slb2">쏘나타 가솔린/LPi</td>
+    <td class="delivery-cell">1개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">K5 4~5주</td>
+    </tr>
+  <tr>
     <td class="slb2">쏘나타 HEV</td>
     <td class="delivery-cell">2개월</td>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
-  <tr class="chg-row">
-    <td class="slb2">그랜저 ICE(26MY) <span class="badge-new">재고300~450만</span></td>
-    <td class="delivery-cell">재고 즉시<br></td>
+  <tr class="new-row">
+    <td class="slb2">쏘나타 택시(DT23)</td>
+    <td class="delivery-cell">1개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
+    </tr>
+  <tr>
+    <td class="slb2">더 뉴 그랜저 가솔린/LPi</td>
+    <td class="delivery-cell">1개월</td>
     <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">K8 4~5주</td>
     </tr>
   <tr class="chg-row">
-    <td class="slb2">그랜저 HEV(26MY) <span class="badge-new">재고300만</span></td>
-    <td class="delivery-cell">재고 즉시<br></td>
+    <td class="slb2">더 뉴 그랜저 HEV</td>
+    <td class="delivery-cell">2.5개월</td>
     <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">K9 2개월</td>
     </tr>
-  <tr class="chg-row">
-    <td class="slb2">더 뉴 그랜저 ICE <span class="badge-new">저금리(5~6월)</span></td>
-    <td class="delivery-cell">2개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
-    </tr>
-  <tr class="new-row">
-    <td class="slb2">더 뉴 그랜저 HEV</td>
-    <td class="delivery-cell">3개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
-    </tr>
-  <tr><td class="slb2" colspan="3" style="background:#F0FFF4;color:#1b5e20;font-weight:800;padding:0;"><div style="position:sticky;left:0;width:max-content;padding:6px 12px;font-size: 11.5px;font-weight:800;color:#1b5e20;">■ 현대 SUV/소상</div></td></tr>
+  <tr><td class="slb2" colspan="3" style="background:#F0FFF4;color:#1b5e20;font-weight:800;padding:0;"><div style="position:sticky;left:0;width:max-content;padding:6px 12px;font-size: 11.5px;font-weight:800;color:#1b5e20;">■ 현대 SUV</div></td></tr>
   <tr>
     <td class="slb2">베뉴</td>
     <td class="delivery-cell">6개월<br>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">레이 9개월<br>모닝 2개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">레이/레이EV 10개월<br>모닝 2.5개월</td>
     </tr>
   <tr>
     <td class="slb2">코나 ICE</td>
     <td class="delivery-cell">4개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">셀토스 4.5개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">셀토스 3.5개월</td>
     </tr>
   <tr>
     <td class="slb2">코나 HEV</td>
@@ -17101,93 +17258,89 @@ PANELS.summary=`
   <tr>
     <td class="slb2">투싼 ICE</td>
     <td class="delivery-cell">-</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">스포티지 ICE 3.5개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">스포티지 가솔린/HEV 3개월</td>
     </tr>
   <tr>
     <td class="slb2">투싼 HEV</td>
     <td class="delivery-cell">-</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">스포티지 HEV 3.5개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">스포티지 가솔린/HEV 3개월</td>
     </tr>
-  <tr class="chg-row">
+  <tr>
     <td class="slb2">싼타페 ICE</td>
     <td class="delivery-cell">1개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">쏘렌토 ICE 7~8주</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">쏘렌토 5~6주</td>
     </tr>
-  <tr class="chg-row">
+  <tr>
     <td class="slb2">싼타페 HEV</td>
     <td class="delivery-cell">1개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">쏘렌토 HEV 5~6주</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">쏘렌토 5~6주</td>
     </tr>
-  <tr class="chg-row">
+  <tr>
     <td class="slb2">팰리세이드 ICE</td>
     <td class="delivery-cell">1개월</td>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
-  <tr class="chg-row">
+  <tr>
     <td class="slb2">팰리세이드 HEV</td>
     <td class="delivery-cell">1개월</td>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
-  <tr>
-    <td class="slb2">스타리아 ICE/HEV</td>
-    <td class="delivery-cell">1개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">카니발 ICE 1.5개월<br>HEV 4개월</td>
-    </tr>
-  <tr>
-    <td class="slb2">포터 LPDI</td>
-    <td class="delivery-cell">A/T 1개월<br><small style="font-weight:500;">M/T 별도문의</small></td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">봉고 5~6주</td>
-    </tr>
   <tr><td class="slb2" colspan="3" style="background:#E0F7FA;color:#006064;font-weight:800;padding:0;"><div style="position:sticky;left:0;width:max-content;padding:6px 12px;font-size: 11.5px;font-weight:800;color:#006064;">■ 현대 EV/수소</div></td></tr>
-  <tr>
+  <tr class="chg-row">
     <td class="slb2">코나 일렉트릭</td>
-    <td class="delivery-cell">1.5개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV3 3개월</td>
+    <td class="delivery-cell">1개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV3 5개월</td>
     </tr>
   <tr>
     <td class="slb2">아이오닉5</td>
     <td class="delivery-cell">1개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV5 4개월</td>
-    </tr>
-  <tr>
-    <td class="slb2">아이오닉5 N</td>
-    <td class="delivery-cell">1.5개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV6 4~5주</td>
-    </tr>
-  <tr>
-    <td class="slb2">아이오닉6</td>
-    <td class="delivery-cell">1.5개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV4 3개월</td>
-    </tr>
-  <tr>
-    <td class="slb2">아이오닉6 N</td>
-    <td class="delivery-cell">1.5개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV5 7개월</td>
     </tr>
   <tr class="chg-row">
-    <td class="slb2">아이오닉9</td>
-    <td class="delivery-cell">1.5개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV9 2개월</td>
+    <td class="slb2">아이오닉5 N</td>
+    <td class="delivery-cell">1개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV6 4개월</td>
+    </tr>
+  <tr class="chg-row">
+    <td class="slb2">아이오닉6 (N 포함)</td>
+    <td class="delivery-cell">1개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV4 5개월</td>
     </tr>
   <tr>
-    <td class="slb2">포터 일렉트릭</td>
+    <td class="slb2">아이오닉9</td>
+    <td class="delivery-cell">1.5개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">EV9 2.5개월</td>
+    </tr>
+  <tr>
+    <td class="slb2">넥쏘 FCEV</td>
     <td class="delivery-cell">1개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">봉고 일렉트릭 5~6주</td>
+    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
+    </tr>
+  <tr><td class="slb2" colspan="3" style="background:#FFF3E0;color:#9C4E00;font-weight:800;padding:0;"><div style="position:sticky;left:0;width:max-content;padding:6px 12px;font-size: 11.5px;font-weight:800;color:#9C4E00;">■ 소형상용</div></td></tr>
+  <tr>
+    <td class="slb2">스타리아 LPi/HEV</td>
+    <td class="delivery-cell">1개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">카니발 가솔린 5~6주<br>HEV 2.5개월</td>
+    </tr>
+  <tr>
+    <td class="slb2">스타리아 일렉트릭</td>
+    <td class="delivery-cell">4~6개월<br>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">PV5 5개월</td>
     </tr>
   <tr>
     <td class="slb2">ST1</td>
     <td class="delivery-cell">2개월</td>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
-  <tr class="new-row">
-    <td class="slb2">스타리아 일렉트릭 <span class="badge-new">NEW</span></td>
-    <td class="delivery-cell">4~6개월<br>
-    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">PV5 5개월</td>
+  <tr class="chg-row">
+    <td class="slb2">포터 (일반/슈퍼캡/더블캡)</td>
+    <td class="delivery-cell">A/T 3주<br><small style="font-weight:500;">M/T 1개월</small></td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">봉고/봉고EV 5~6주</td>
     </tr>
   <tr class="chg-row">
-    <td class="slb2">넥쏘 FCEV</td>
-    <td class="delivery-cell">1개월</td>
-    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
+    <td class="slb2">포터 일렉트릭</td>
+    <td class="delivery-cell">3주</td>
+    <td style="font-size: 14.5px;color:var(--tx-secondary);text-align:center;font-weight:600;">봉고/봉고EV 5~6주</td>
     </tr>
   <tr><td class="slb2" colspan="3" style="background:#F3E5F5;color:#4527A0;font-weight:800;padding:0;"><div style="position:sticky;left:0;width:max-content;padding:6px 12px;font-size: 11.5px;font-weight:800;color:#4527A0;">■ 제네시스</div></td></tr>
   <tr>
@@ -17195,8 +17348,8 @@ PANELS.summary=`
     <td class="delivery-cell">1개월<br>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
-  <tr class="chg-row">
-    <td class="slb2">G80 ICE <span class="badge-new">생산월 최대 4%</span></td>
+  <tr>
+    <td class="slb2">G80 ICE</td>
     <td class="delivery-cell">1개월<br>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
@@ -17211,13 +17364,18 @@ PANELS.summary=`
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
   <tr>
-    <td class="slb2">GV60</td>
-    <td class="delivery-cell">1개월<br><small style="color:#888;">마그마 2개월</small></td>
+    <td class="slb2">GV60 일반</td>
+    <td class="delivery-cell">1개월</td>
+    <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
+    </tr>
+  <tr class="new-row">
+    <td class="slb2">GV60 마그마</td>
+    <td class="delivery-cell">2개월</td>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
   <tr class="chg-row">
-    <td class="slb2">GV70 ICE <span class="badge-new">생산월 최대 3%</span></td>
-    <td class="delivery-cell">1.5개월<br>
+    <td class="slb2">GV70 가솔린</td>
+    <td class="delivery-cell">1개월<br>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
   <tr>
@@ -17225,8 +17383,8 @@ PANELS.summary=`
     <td class="delivery-cell">1개월</td>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr>
-  <tr class="chg-row">
-    <td class="slb2">GV80/쿠페 <span class="badge-new">생산월 최대 5%</span></td>
+  <tr>
+    <td class="slb2">GV80/쿠페</td>
     <td class="delivery-cell">1개월<br>
     <td style="font-size: 14.5px;color:var(--tx-muted);text-align:center;">-</td>
     </tr></tbody>
@@ -18550,7 +18708,7 @@ return html;
 /* ── 아반떼 ── */
 PANELS.avante=(()=>{
 const ice=`<div class="vpanel active" id="vp-avante-ice" data-g="avante">
-    ${delivBox('ICE/HEV 디 올 뉴 아반떼 출고개시 8/27, 납기 별도 안내', null)}${tipBox('아반떼 ICE/HEV 핵심 전략', [
+    ${delivBox('ICE/LPi 3개월, HEV 10월 중 출고개시 예상', null)}${tipBox('아반떼 ICE/HEV 핵심 전략', [
   '운전결심 PLCC(20만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>115만원</strong>',
   'KAI/한국항공서비스 임직원 D/C(30만) 병행 시 → 최대 <strong>145만원</strong> (경남한정 · 7/1~12/31)',
   '기본조건·생산월 조건 미운영 — 공통조건 중심으로 소구',
@@ -18559,6 +18717,8 @@ const ice=`<div class="vpanel active" id="vp-avante-ice" data-g="avante">
     <hr class="dv">
  ${saleSectionV2(
   [
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['운전결심 X PLCC','<span class="hl">20만 캐시백</span>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
@@ -18569,23 +18729,26 @@ const ice=`<div class="vpanel active" id="vp-avante-ice" data-g="avante">
   <hr class="dv">
     ${promoSection([[false,'표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>'],[false,'반납유예형(XV/XU)','모빌리티(XV): 36~60M <strong>6.3%</strong><br>일반(XU): 36~60M <strong>7.3%</strong>']])}
     <hr class="dv">
-    ${ptabs('avante',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])}
+    ${ptabs('avante',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['jk','단기소액저금리']])}
     ${tblStd('avante','JH','JA', RATE_CONFIG.ICE_STANDARD.std, '모빌리티(JH): 현대카드 선수금 결제 시 적용')}
     ${tblVar('avante','JJ','JI', RATE_CONFIG.ICE_STANDARD.var)}
     ${tblDef('avante','JG','JF', RATE_CONFIG.ICE_STANDARD.def)}
     ${tblYuye('avante','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)}
+    ${tblJK('avante', '1,000만원')}
   </div>`;
 
   const n=`<div class="vpanel" id="vp-avante-n" data-g="avante">
     ${delivBox('N 1개월', null)}${tipBox('아반떼 N 핵심 전략', [
   '생산월(최대200만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>295만원</strong>',
-  '25년 12월 이전~26년 4월 재고: 생산월 <strong>200만원</strong> 집중 공략',
-  '26년 5월 생산: 생산월 <strong>100만원</strong> 적용 — 경쟁력 있는 판매조건',
+  '25년 12월 이전~26년 6월 재고: 생산월 <strong>200만원</strong> 집중 공략',
+  '26년 7월 생산: 생산월 <strong>100만원</strong> 적용 — 경쟁력 있는 판매조건',
   '법인: 현장법인(50만)+생산월+트레이드인 조합으로 최대 <strong>345만원</strong>',
 ])}
     <hr class="dv">
 ${saleSectionV2(
   [
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['운전결심 X PLCC','<span class="hl">20만 캐시백</span>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
@@ -18595,11 +18758,12 @@ ${saleSectionV2(
   [birthMonthRadio('avante-n', BIRTH_AVANTE_N), corpRadio('avante-n')]   /* 4번: 생산월 + 법인 */
 )}
   <hr class="dv">
-    ${ptabs('avante-n',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])}
+    ${ptabs('avante-n',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['jk','단기소액저금리']])}
     ${tblStd('avante-n','JH','JA', RATE_CONFIG.ICE_STANDARD.std)}
     ${tblYuye('avante-n','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)}
     ${tblVar('avante-n','JJ','JI', RATE_CONFIG.ICE_STANDARD.var)}
     ${tblDef('avante-n','JG','JF', RATE_CONFIG.ICE_STANDARD.def)}
+    ${tblJK('avante-n', '1,000만원')}
   </div>`;
 
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','아반떼','ICE / HEV / N · 모빌리티(JH) 5.4% / 일반(JA) 6.2%',['ICE','HEV','N'])
@@ -18610,16 +18774,18 @@ ${saleSectionV2(
 /* ── 쏘나타 ── */
 PANELS.sonata=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','쏘나타','ICE / HEV',['ICE','HEV'])
-  +delivBox('ICE 2개월(N라인 포함), HEV 2개월', 'K5 4~5주')
+  +delivBox('ICE 1개월(N라인 포함), HEV 2개월', 'K5 4~5주')
   +delivBox('DT23 (쏘나타 택시) 1개월', null)
   +tipBox('쏘나타 핵심 전략', [
-  '썸머페스타 생산월 최대 <strong>300만원</strong> — 25년 12월 이전 재고 집중 공략',
-  '생산월(최대300만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>395만원+α</strong>',
+  '생산월 조건 최대 <strong>100만원</strong> — 25년 12월 이전~26년 7월 생산 (8월부 조건 없음)',
+  '생산월(최대100만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>195만원+α</strong>',
   '현장렌트사: 1대 10만 / 2~3대 30만 / 4~5대 40만 / 6대↑ 50만 (ICE/HEV 포함)',
 ])
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
@@ -18634,20 +18800,22 @@ PANELS.sonata=(()=>{
  +'<hr class="dv">'
   +promoSection([[true,'차량반납 유예형(XV/XU)','최대 유예율 <strong>60%</strong>'],[false,'표준형(JH)','36M: <strong>4.9%</strong>/48M: <strong>5.0%</strong>/60M: <strong>5.1%</strong>']])
   +'<hr class="dv">'
-  +ptabs('sonata',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','유예형'],['j5','현장렌트사']])
+  +ptabs('sonata',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','유예형'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblYuye('sonata','XV','XU', RATE_CONFIG.ICE_SONATA.yuye)
   +tblStd('sonata','JH','JA', RATE_CONFIG.ICE_SONATA.std)
   +tblVar('sonata','JJ','JI', RATE_CONFIG.ICE_SONATA.var)
   +tblDef('sonata','JG','JF', RATE_CONFIG.ICE_SONATA.def)
-  +tblJ5('sonata','6.3%','6.5%');
+  +tblJ5('sonata','6.3%','6.5%')
+  +tblJK('sonata', '1,500만원');
 })();
 
 /* ── 그랜저 ── */
 PANELS.grandeur=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','그랜저','ICE / HEV · <strong>썸머페스타 재고 최대 450만</strong>',['ICE','HEV'])
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','그랜저','ICE / HEV · <strong>생산월 재고 최대 450만 + 가족사랑 100만</strong>',['ICE','HEV'])
   +delivBox('재고 즉시(ICE/HEV)', 'K8 4~5주, K9 2개월')
   +tipBox('그랜저 핵심 전략', [
-  '썸머페스타 재고조건: <strong>2.5가솔린/HEV 300만 / 3.5가솔린 450만</strong> (6월 이전 생산분)',
+  '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가 (신형 HEV 제외)',
+  '생산월 조건: <strong>2.5가솔린/HEV 300만 / 3.5가솔린 450만</strong> (7월 이전 생산분, 8월부 조건 없음)',
   '생산월(최대 450만)+트레이드인(50만)+세이브오토(50만)+굿프렌드(15만) → 최대 <strong>565만원</strong>',
   '재고 소진 임박 — 남은 재고 신속 계약 유도',
   '임직원/그룹사 특화(XZ/XY): 잔가 65% → 월 <strong>10만원대</strong> 그랜저 소구',
@@ -18655,6 +18823,9 @@ PANELS.grandeur=(()=>{
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['2026 추석 가족사랑조건','<span class="hl">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31 (신형 HEV 제외)</small>','new',100],
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
@@ -18673,7 +18844,8 @@ PANELS.grandeur=(()=>{
   ['var','변동금리'],
   ['def','거치형'],
   ['yuye','반납유예형'],
-  ['j5','현장렌트사']
+  ['j5','현장렌트사'],
+  ['jk','단기소액저금리']
 ])
 
 +tblDef('grandeur','JG','JF', RATE_CONFIG.ICE_GRANDEUR.def)   // 추가
@@ -18737,7 +18909,8 @@ PANELS.grandeur=(()=>{
   </div>`
 
   +tblVar('grandeur','JJ','JI', RATE_CONFIG.ICE_GRANDEUR.var)
-  +tblJ5('grandeur','6.3%','6.5%');
+  +tblJ5('grandeur','6.3%','6.5%')
+  +tblJK('grandeur', '1,500만원');
 })();
 
 
@@ -18745,9 +18918,10 @@ PANELS.grandeur=(()=>{
 PANELS.newgrandeur = (function(){
 
   var tipSection = tipBox('더 뉴 그랜저 핵심 판매 전략', [
-  '<strong>5~6월 생산분 한정</strong> 썸머페스타 생산월 조건 + 저금리(JM) 36M 3.0% 병행',
-  '5월 생산 200만 + 6월 생산 100만 — 조건 차감 없이 저금리 이용 가능',
-  '더 뉴 그랜저 HEV <strong>3개월 납기</strong> — 대기 고객 출고 일정 사전 안내 필수',
+  '<strong>9월 신규!</strong> 트레이드인 타겟조건 신설 — 당사 매각 <strong>50만원</strong> / 타사 매각 <strong>30만원</strong> (노후차 20만원 별도)',
+  '5~6월 생산분 생산월 조건 <strong>200만원</strong> 집중 공략 (7월 이후 생산분 조건 없음)',
+  '<span style="color:var(--tx-muted);"><strong>[종료]</strong> 재고한정 저금리(JM) 프로모션 종료</span>',
+  '더 뉴 그랜저 HEV <strong>2.5개월 납기</strong> — 대기 고객 출고 일정 사전 안내 필수',
   '신차 변경 수준의 실내 리프레쉬 — <strong>플레오스 커넥트/슬림 정보창</strong> 적극 소구',
   '<span class="rred"><strong>플레오스 관련 하단 HOW TO 영상 필수 시청 후 고객 시연</strong></span>',
 ]);
@@ -18756,13 +18930,14 @@ var saleSection_ = saleSectionV2(
   [
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
   ],
-  [],
-  [],
+  [tradeInRadio('newgrandeur',50,30)],
+  [
+    ['노후차 트레이드인','<span class="hl">+20만원</span>','new',20],
+  ],
   [birthMonthRadio('newgrandeur', BIRTH_NEWGRANDEUR), rentRadio('newgrandeur'), corpRadio('newgrandeur')]
 );
 
   var promoSection_ = promoSection([
-    [true,'더 뉴 그랜저 저금리(JM)','<strong>5~6월 생산분 한정</strong><br>36M <strong>3.0%</strong> / 48M <strong>3.5%</strong> / 60M <strong>4.0%</strong><br><small>HEV 제외·영업용 제외·조건 차감 없음</small>'],
     [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>6.3%</strong><br>일반(XY): <strong>7.3%</strong><br>24/36개월 잔존가치 65%'],
     [false,'표준형(JH/JA)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>'],
   ]);
@@ -18844,7 +19019,7 @@ var saleSection_ = saleSectionV2(
       'ICE / HEV',
       ['ICE','HEV','신형']
     )
-    + delivBox('ICE 2개월, HEV 3개월', null)
+    + delivBox('ICE 1개월, HEV 2.5개월', null)
     + tipSection
     + '<hr class="dv">'
     + saleSection_
@@ -18852,19 +19027,13 @@ var saleSection_ = saleSectionV2(
     + promoSection_
     + '<hr class="dv">'
     +ptabs('newgrandeur',[
-  ['jm','저금리(5~6월)'],
   ['std','표준형'],
   ['var','변동금리'],
   ['def','거치형'],
   ['yuye','반납유예형'],
-  ['emp','임직원 특화']
+  ['emp','임직원 특화'],
+  ['jk','단기소액저금리']
 ])
-+`<div class="ppanel active" id="pp-newgrandeur-jm" data-g="newgrandeur"><div class="scard"><div class="stitle">더 뉴 그랜저 선택형 저금리</div>
-${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(JM)</th></tr></thead><tbody>
-  <tr><td class="lb">36개월</td><td>${R}3.0%${Rc}</td></tr>
-  <tr><td class="lb">48개월</td><td>${R}3.5%${Rc}</td></tr>
-  <tr><td class="lb">60개월</td><td>${R}4.0%${Rc}</td></tr>
-</tbody></table>`)}<div class="pbox"><h4>조건</h4><ul><li>5~6월 생산분 한정 · HEV·영업용 제외</li><li>생산월 조건(썸머페스타) 차감 없이 병행 가능</li></ul></div></div></div>`
 +tblStd('newgrandeur','JH','JA', RATE_CONFIG.ICE_STANDARD.std)
 +tblVar('newgrandeur','JJ','JI', RATE_CONFIG.ICE_STANDARD.var)
 +tblDef('newgrandeur','JG','JF', RATE_CONFIG.ICE_STANDARD.def)
@@ -18894,6 +19063,7 @@ ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(J
   </div>
 </div>`
 +genEmpPanel('newgrandeur','6.3','7.3','임직원/그룹사 특화 할부','더 뉴 그랜저·팰리세이드 HEV 포함 ※가솔린 2.5/2.5터보 엔진限 이용 가능').replace('ppanel active','ppanel')
++ tblJK('newgrandeur', '1,500만원')
 + productSection
 + eduSection
 
@@ -18904,7 +19074,7 @@ ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(J
 /* ── 베뉴 ── */
 PANELS.venue=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','베뉴','ICE · 모빌리티(JH) 5.4%',['ICE'])
-  +delivBox('6개월', '레이 9개월, 모닝 2개월')
+  +delivBox('6개월', '레이/레이EV 10개월, 모닝 2.5개월')
   +tipBox('베뉴 핵심 전략', [
   '운전결심 PLCC(20만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>115만원</strong>',
   '법인 대표자: 현장법인(50만)+트레이드인(50만)+세이브오토(30만) → 최대 <strong>130만원</strong>',
@@ -18914,6 +19084,8 @@ PANELS.venue=(()=>{
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ],
     [tradeInRadio('venue',50,30), saveAutoSingle('venue',30), goodfriendRadio('venue')],
     [
@@ -18924,17 +19096,18 @@ PANELS.venue=(()=>{
     [corpRadio('venue')]
   )
   +'<hr class="dv">'
-  +ptabs('venue',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])
+  +ptabs('venue',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['jk','단기소액저금리']])
   +tblStd('venue','JH','JA',STD_ICE)
   +tblVar('venue','JJ','JI',VAR_ICE)
   +tblDef('venue','JG','JF',DEF_ICE)
-  +tblYuye('venue','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye);
+  +tblYuye('venue','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
+  +tblJK('venue', '1,000만원');
 })();
 
 /* ── 코나 ICE/HEV ── */
 PANELS.konaice=(()=>{
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','코나 ICE / HEV','ICE / HEV · 모빌리티(JH) 5.4%',['ICE','HEV'])
-  +delivBox('ICE 4개월, HEV 3개월', '셀토스 4.5개월, 니로 4~5주')
+  +delivBox('ICE 4개월, HEV 3개월', '셀토스 3.5개월, 니로 4~5주')
   +tipBox('코나 ICE/HEV 핵심 전략', [
   '운전결심 PLCC(20만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>115만원</strong>',
   '현장렌트사: 1대 10만 / 2~3대 30만 / 4~5대 40만 / 6대↑ 50만',
@@ -18944,6 +19117,8 @@ PANELS.konaice=(()=>{
   +'<hr class="dv">'
   +saleSectionV2(
     [
+      ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+      ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
       ['운전결심 X PLCC','<span class="hl">20만 캐시백</span>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
@@ -18954,27 +19129,29 @@ PANELS.konaice=(()=>{
    [rentRadio('konaice'), corpRadio('konaice')]
   )
   +'<hr class="dv">'
-  +ptabs('konaice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['j5','현장렌트사']])
+  +ptabs('konaice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblStd ('konaice','JH','JA',STD_ICE)
   +tblVar('konaice','JJ','JI',VAR_ICE)
   +tblDef('konaice','JG','JF',DEF_ICE)
   +tblYuye('konaice','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
-  +tblJ5('konaice','6.8%','7.0%');
+  +tblJ5('konaice','6.8%','7.0%')
+  +tblJK('konaice', '1,000만원');
 })();
 
 /* ── 투싼 ── */
 PANELS.tucson=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','투싼','ICE / HEV · 생산월 최대 50만',['ICE','HEV'])
-  +delivBox('즉시', '스포티지 ICE/HEV 3.5개월')
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','투싼','ICE / HEV',['ICE','HEV'])
+  +delivBox('- (NX4 추가 생산요청 불가)', '스포티지 가솔린/HEV 3개월')
   +tipBox('투싼 최적 판매 전략', [
-  '생산월(최대100만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>195만원</strong>',
-  '25년 12월 이전~26년 3월 재고: 생산월 <strong>100만원</strong> / 26년 4~5월: 50만원',
+  '트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>95만원</strong> (생산월 조건 미운영)',
   '현장렌트사: 1대 10만 / 2~3대 30만 / 4~5대 40만 / 6대↑ 50만',
   '영유아 운전모드·레이더 기반 후석 알림 — 스포티지 대비 확실히 가족 타겟 우수한 상품성',
 ])
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
@@ -18983,26 +19160,31 @@ PANELS.tucson=(()=>{
     [birthMonthRadio('tucson', BIRTH_TUCSON), rentRadio('tucson'), corpRadio('tucson')]
   )
   +'<hr class="dv">'
-  +ptabs('tucson',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['j5','현장렌트사']])
+  +ptabs('tucson',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblStd('tucson','JH','JA',STD_ICE_SHORT)
   +tblVar('tucson','JJ','JI',VAR_ICE)
   +tblDef('tucson','JG','JF',DEF_ICE)
   +tblYuye('tucson','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
-  +tblJ5('tucson','6.8%','7.0%');
+  +tblJ5('tucson','6.8%','7.0%')
+  +tblJK('tucson', '1,500만원');
 })();
 
 /* ── 싼타페 ── */
 PANELS.santafe=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','싼타페','ICE / HEV',['ICE','HEV'])
-  +delivBox('ICE/HEV 1개월', '쏘렌토 ICE 7~8주, HEV 5~6주')
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','싼타페','ICE / HEV · 생산월 최대 300만 + 가족사랑 100만',['ICE','HEV'])
+  +delivBox('ICE/HEV 1개월', '쏘렌토 5~6주')
   +tipBox('싼타페 ICE/HEV 핵심 전략', [
-  '썸머페스타 생산월 최대 <strong>300만원</strong> — 25년 12월 이전 재고 집중 공략',
+  '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가',
+  '생산월 조건 최대 <strong>300만원</strong> — 25년 12월 이전 재고 집중 공략',
   '생산월(최대300만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>395만원</strong>',
   '현장렌트사: 1대 10만 / 2~3대 30만 / 4~5대 40만 / 6대↑ 50만 (ICE/HEV 포함)',
 ])
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['2026 추석 가족사랑조건','<span class="hl">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31</small>','new',100],
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
@@ -19016,28 +19198,33 @@ PANELS.santafe=(()=>{
   +'<hr class="dv">'
   +promoSection([[true,'유예형(XV/XU)','최대 유예율 <strong>65%</strong>'],[false,'표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>']])
   +'<hr class="dv">'
-  +ptabs('santafe',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','유예형'],['j5','현장렌트사']])
+  +ptabs('santafe',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','유예형'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblYuye('santafe','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
   +tblStd('santafe','JH','JA', STD_ICE_SHORT)
   +tblVar('santafe','JJ','JI', VAR_ICE)
   +tblDef('santafe','JG','JF', DEF_ICE)
-  +tblJ5('santafe','6.8%','7.0%');
+  +tblJ5('santafe','6.8%','7.0%')
+  +tblJK('santafe', '1,500만원');
 })();
 
 
 /* ── 팰리세이드 ── */
 PANELS.palisade=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','팰리세이드','ICE / HEV · 임직원 특화(XZ/XY)',['ICE','HEV'])
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','팰리세이드','ICE / HEV · 임직원 특화(XZ/XY) · 가족사랑 100만',['ICE','HEV'])
   +delivBox('ICE/HEV 1개월', null)
   +tipBox('팰리세이드 ICE/HEV 핵심 전략', [
-  '썸머페스타 생산월(최대300만)+전용카드(50만)+트레이드인(50만)+세이브오토(50만)+굿프렌드(15만) → 최대 <strong>465만원</strong>',
-  '<span class="rred">전용카드 프로모션 신규!</span> 현대/제네시스 전용카드 2,000만 이상 + 세이브오토 → <strong>50만원</strong> (25만 D/C + 25만 캐시백)',
-  '25년 12월 이전 재고: 썸머페스타 특별조건 <strong>최대 300만원</strong> — 최대 혜택 집중 공략',
+  '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가',
+  '생산월(최대200만)+전용카드(50만)+트레이드인(50만)+세이브오토(50만)+굿프렌드(15만) → 최대 <strong>365만원</strong>',
+  '전용카드 프로모션 현대/제네시스 전용카드 2,000만 이상 + 세이브오토 → <strong>50만원</strong> (25만 D/C + 25만 캐시백)',
+  '25년 12월~26년 4월 이전 재고: 생산월 조건 <strong>최대 200만원</strong> — 최대 혜택 집중 공략',
   '9인승: 부가세 환급·개소세 면제·버스전용차로 이용 — 임직원 XZ/XY 잔가율 <strong>65%</strong>',
 ])
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['2026 추석 가족사랑조건','<span class="hl">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31</small>','new',100],
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
@@ -19054,7 +19241,7 @@ PANELS.palisade=(()=>{
   +'<hr class="dv">'
   +promoSection([[true,'임직원 특화(XZ/XY)','모빌리티(XZ): <strong>6.3%</strong><br>일반(XY): <strong>7.3%</strong><br>36개월 잔존가치 65%'],[false,'표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>']])
   +'<hr class="dv">'
-  +ptabs('palisade',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['emp','임직원']])
+  +ptabs('palisade',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['emp','임직원'],['jk','단기소액저금리']])
   +tblStd('palisade','JH','JA',STD_ICE)
   +tblVar('palisade','JJ','JI',VAR_ICE)
   +tblDef('palisade','JG','JF',DEF_ICE)
@@ -19064,20 +19251,25 @@ PANELS.palisade=(()=>{
     <tr><td class="lb">24개월</td><td>${R}6.3%${Rc}</td><td>${R1}7.3%${Rc}</td></tr>
     <tr><td class="lb">36개월</td><td>${R}6.3%${Rc}</td><td>${R1}7.3%${Rc}</td></tr>
   </tbody></table>`)}<div class="pbox"><h4>조건</h4><ul><li>24/36개월 차량 반납 유예형 (모빌리티 - XZ / 일반 - XY)</li><li>그랜저·팰리세이드 (HEV 포함) ※가솔린 2.5/2.5터보 엔진限 이용 가능</li><li>36개월 잔존가치 65% 상향</li></ul></div></div></div>`
+  +tblJK('palisade', '1,000만원')
 })();
 
 /* ── 스타리아 ── */
 PANELS.staria=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','스타리아','ICE / HEV · 생산월 최대 200만',['ICE','HEV'])
-  +delivBox('ICE/HEV 1개월', '카니발 ICE 1.5개월, HEV 4개월')
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','스타리아','ICE / HEV · 생산월 최대 200만 · 가족사랑 100만',['ICE','HEV'])
+  +delivBox('ICE/HEV 1개월', '카니발 가솔린 5~6주, HEV 2.5개월')
   +tipBox('스타리아 ICE/HEV 핵심 전략', [
-  '썸머페스타 생산월(최대300만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>395만원</strong>',
-  '25년 12월 이전 재고: 썸머페스타 특별조건 최대 <strong>150만원</strong> 추가',
+  '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가 (EV 제외)',
+  '생산월(최대200만)+트레이드인(50만)+세이브오토(30만)+굿프렌드(15만) → 최대 <strong>295만원</strong>',
+  '25년 12월~26년 4월 이전 재고: 생산월 조건 최대 <strong>200만원</strong>',
   '현장렌트사: 1대 10만 / 2~3대 30만 / 4~5대 40만 / 6대↑ 50만 (ICE/HEV 포함)',
 ])
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['2026 추석 가족사랑조건','<span class="hl">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31 (EV 제외)</small>','new',100],
+    ['EV to 내연기관 전환 출고 혜택','<span class="hl">50만원</span><br><small>\'26년 1~8월 EV 계약 후 미출고 고객, 9월 내 전환 출고 시</small>','new',50],
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
@@ -19086,21 +19278,22 @@ PANELS.staria=(()=>{
     [birthMonthRadio('staria', BIRTH_STARIA), rentRadio('staria'), corpRadio('staria')]
   )
   +'<hr class="dv">'
-  +ptabs('staria',[['std','표준형'],['yuye','반납유예형'],['var','변동금리'],['def','거치형'],['j5','현장렌트사']])
+  +ptabs('staria',[['std','표준형'],['yuye','반납유예형'],['var','변동금리'],['def','거치형'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblStd('staria','JH','JA',STD_ICE_SHORT)
   +tblYuye('staria','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
   +tblVar('staria','JJ','JI',VAR_ICE)
   +tblDef('staria','JG','JF',DEF_ICE)
-  +tblJ5('staria','6.8%','7.0%');
+  +tblJ5('staria','6.8%','7.0%')
+  +tblJK('staria', '1,000만원');
 })();
 
 /* ── 포터 LPDI ── */
 PANELS.porterlpdi=(()=>{
-  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','포터 LPDI','생산월 최대 100만 / 상생파트너 40만',['LPDI','소상'])
-  +delivBox('A/T 1개월, M/T 별도문의', '봉고 5~6주')
+  return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','포터 LPDI','생산월 최대 150만(특장제외) / 상생파트너 40만',['LPDI','소상'])
+  +delivBox('A/T 3주, M/T 1개월', '봉고/봉고EV 5~6주')
   +tipBox('포터 LPDI 핵심 전략', [
   '생산월(최대200만)+트레이드인(100만)+상생파트너(40만)+굿프렌드(15만) → 최대 <strong>355만원</strong>',
-  '25년 12월 이전 재고: 생산월 <strong>200만원</strong> / 26년 6월(특장 제외): 100만원',
+  '25년 12월 이전~26년 6월 생산: 생산월 <strong>200만원</strong> / 26년 7~8월(특장 제외): 150만원',
   '현장렌트사 특별조건 없음 — 표준 렌트사(J5 할부) 적극 활용',
   '상생파트너 충전비: SK가스 20만 할인+20만 캐시백 = <strong>40만원</strong> 추가 강조',
 ])
@@ -19119,32 +19312,36 @@ PANELS.porterlpdi=(()=>{
   +'<hr class="dv">'
   +promoSection([[false,'표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>'],[true,'차량반납 유예형(XV/XU)','모빌리티(XV): 36~60M <strong>6.3%</strong><br>일반(XU): 36~60M <strong>7.3%</strong>']])
   +'<hr class="dv">'
- +ptabs('porterlpdi',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','차량반납유예형']])
+ +ptabs('porterlpdi',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','차량반납유예형'],['jk','단기소액저금리']])
   +tblStd('porterlpdi','JH','JA',STD_ICE)
   +tblVar('porterlpdi','JJ','JI',VAR_ICE)
   +tblDef('porterlpdi','JG','JF',DEF_ICE)
-  +tblYuye('porterlpdi','XV','XU',RATE_CONFIG.ICE_STANDARD.yuye);
+  +tblYuye('porterlpdi','XV','XU',RATE_CONFIG.ICE_STANDARD.yuye)
+  +tblJK('porterlpdi', '1,000만원');
 })();
 
 /* ── 코나 일렉트릭 ── */
 PANELS.konaev=(()=>{
-  return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','','코나 일렉트릭','EV 부담Down 2.8% · 월 10만원대!',['EV'])
-  +delivBox('1.5개월', 'EV3 3개월')
+  return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','','코나 일렉트릭','EV 부담Down 2.8% · 월 10만원대! · 가족사랑 100만',['EV'])
+  +delivBox('1개월', 'EV3 5개월')
   +tipBox('코나 일렉트릭 최적 판매 전략', [
+  '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가',
   '아이오닉 100만대(150만)+트레이드인(100만)+충전크레딧(20만)+굿프렌드(15만) → 최대 <strong>285만원+생산월</strong>',
-  '26년 계약·8월 내 출고·개인/개인사업자(AA1/BA1) 한정 — 자격 사전 확인 필수',
+  '26년 계약·9월 내 출고·개인/개인사업자(AA1/BA1) 한정 — 자격 사전 확인 필수',
   'EV 부담Down(XI) 2.8% · 최대 유예율 60% → <strong style="color:#E65100;">월 10만원대</strong>',
   '재구매 고객: 유예율 <strong>60%(EV/FCEV 재구매)</strong> 또는 <strong>55%(국내 승용 재구매 가능)</strong>',
 ])
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['2026 추석 가족사랑조건','<span class="hlev">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31</small>','new',100],
+    ['비포 서비스 애프터 세일즈','<span class="hlev">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('konaev',100,50,'hlev'), saveAutoSingle('konaev',30,'hlev'), goodfriendRadio('konaev','hlev')],
     [
-      ['아이오닉 100만대 기념 특별조건','26년 계약 · 8월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
+      ['아이오닉 100만대 기념 특별조건','26년 계약 · 9월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
       ['EV 에브리케어','충전크레딧 <span class="hlev">20만원</span>','',20],
     ],
     [birthMonthRadio('konaev', BIRTH_KONAEV, 'hlev'), rentRadio('konaev'), corpRadio('konaev','hlev')]
@@ -19217,9 +19414,10 @@ PANELS.konaev=(()=>{
 /* ── 아이오닉5 ── */
 PANELS.ioniq5=(()=>{
 const ev = '<div class="vpanel active" id="vp-ioniq5-ev" data-g="ioniq5">'
-  + delivBox('EV 1개월, N 1.5개월', 'EV5 4개월, EV6 4~5주')
+  + delivBox('EV 1개월, N 1개월', 'EV5 7개월, EV6 4개월')
   + tipBox('아이오닉5 핵심 전략', [
-    '아이오닉 100만대 기념 <strong>150만원</strong> — 26년 계약·8월 내 출고·개인/개인사업자 한정',
+    '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가',
+    '아이오닉 100만대 기념 <strong>150만원</strong> — 26년 계약·9월 내 출고·개인/개인사업자 한정',
     '100만대(150만)+생산월(최대200만)+트레이드인(100만)+충전크레딧(20만)+굿프렌드(15만) → 최대 <strong>485만원</strong>',
     'EV 부담Down 신규 <strong>2.8%</strong> / 재구매 <strong>2.3%</strong> — 스트레스프리 패키지 무상 포함',
     '<strong>최대 유예율 55% — 다음 차 내연기관 승용 재구매도 저금리 적용!</strong>',
@@ -19227,12 +19425,14 @@ const ev = '<div class="vpanel active" id="vp-ioniq5-ev" data-g="ioniq5">'
   + '<hr class="dv">'
   + saleSectionV2(
     [
+      ['2026 추석 가족사랑조건','<span class="hlev">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31</small>','new',100],
+      ['비포 서비스 애프터 세일즈','<span class="hlev">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
       ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
       ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('ioniq5-ev',100,50,'hlev'), saveAutoSingle('ioniq5-ev',30,'hlev'), goodfriendRadio('ioniq5-ev','hlev')],
     [
-      ['아이오닉 100만대 기념 특별조건','26년 계약 · 8월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
+      ['아이오닉 100만대 기념 특별조건','26년 계약 · 9월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
       ['EV 에브리케어','충전크레딧 <span class="hlev">20만원</span>','',20],
     ],
     [birthMonthRadio('ioniq5-ev', BIRTH_IONIQ5N, 'hlev'), rentRadio('ioniq5-ev'), corpRadio('ioniq5-ev','hlev')]
@@ -19283,17 +19483,20 @@ const ev = '<div class="vpanel active" id="vp-ioniq5-ev" data-g="ioniq5">'
   const n=`<div class="vpanel" id="vp-ioniq5-n" data-g="ioniq5">
     <div class="wbox"><strong>아이오닉5 N은 EV 부담Down 대상 차종이 아닙니다.</strong></div>
     ${tipBox('아이오닉5 N 핵심 전략', [
+  '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가',
   '올해의차(100만)+생산월(최대200만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>415만원</strong>',
 ])}
     <hr class="dv">
     ${saleSectionV2(
       [
+    ['2026 추석 가족사랑조건','<span class="hlev">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31</small>','new',100],
+    ['비포 서비스 애프터 세일즈','<span class="hlev">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
       ],
       [tradeInRadio('ioniq5-n',100,50,'hlev'), saveAutoSingle('ioniq5-n',30,'hlev'), goodfriendRadio('ioniq5-n','hlev')],
       [
-      ['아이오닉 100만대 기념 특별조건','26년 계약 · 8월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
+      ['아이오닉 100만대 기념 특별조건','26년 계약 · 9월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
       ],
       [birthMonthRadio('ioniq5-n', BIRTH_IONIQ5N, 'hlev'), rentRadio('ioniq5-n'), corpRadio('ioniq5-n','hlev')]
     )}
@@ -19306,9 +19509,10 @@ const ev = '<div class="vpanel active" id="vp-ioniq5-ev" data-g="ioniq5">'
 /* ── 아이오닉6 ── */
 PANELS.ioniq6=(()=>{
 const ev = '<div class="vpanel active" id="vp-ioniq6-ev" data-g="ioniq6">'
-  + delivBox('EV/N 1.5개월', 'EV4 3개월')
+  + delivBox('EV/N 1개월', 'EV4 5개월')
   + tipBox('아이오닉6 핵심 전략', [
-    '아이오닉 100만대 기념 <strong>150만원</strong> — 26년 계약·8월 내 출고·개인/개인사업자 한정',
+    '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가',
+    '아이오닉 100만대 기념 <strong>150만원</strong> — 26년 계약·9월 내 출고·개인/개인사업자 한정',
     '100만대(150만)+생산월(최대200만)+트레이드인(100만)+충전크레딧(20만)+굿프렌드(15만) → 최대 <strong>485만원</strong>',
     'EV 부담Down 신규 <strong>2.8%</strong> / 재구매 <strong>2.3%</strong> — 스트레스프리 패키지 무상 포함',
     '즉시 출고 가능 — 빠른 납기로 경쟁사 대기 고객 적극 유치',
@@ -19316,12 +19520,14 @@ const ev = '<div class="vpanel active" id="vp-ioniq6-ev" data-g="ioniq6">'
   + '<hr class="dv">'
   + saleSectionV2(
     [
+      ['2026 추석 가족사랑조건','<span class="hlev">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31</small>','new',100],
+      ['비포 서비스 애프터 세일즈','<span class="hlev">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
       ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
       ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('ioniq6-ev',100,50,'hlev'), saveAutoSingle('ioniq6-ev',30,'hlev'), goodfriendRadio('ioniq6-ev','hlev')],
     [
-      ['아이오닉 100만대 기념 특별조건','26년 계약 · 8월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
+      ['아이오닉 100만대 기념 특별조건','26년 계약 · 9월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
       ['EV 에브리케어','충전크레딧 <span class="hlev">20만원</span>','',20],
     ],
     [birthMonthRadio('ioniq6-ev', BIRTH_IONIQ6N, 'hlev'), rentRadio('ioniq6-ev'), corpRadio('ioniq6-ev','hlev')]
@@ -19371,18 +19577,21 @@ const ev = '<div class="vpanel active" id="vp-ioniq6-ev" data-g="ioniq6">'
   const n=`<div class="vpanel" id="vp-ioniq6-n" data-g="ioniq6">
     <div class="wbox"><strong>아이오닉6 N은 EV 부담Down 대상 차종이 아닙니다.</strong></div>
     ${tipBox('아이오닉6 N 핵심 전략', [
-  '100만대(150만)+생산월(최대200만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>465만원</strong> (26년 계약·8월내출고·AA1/BA1)',
+  '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가',
+  '100만대(150만)+생산월(최대200만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>465만원</strong> (26년 계약·9월내출고·AA1/BA1)',
   '즉시 출고 가능 — 빠른 납기 + N 브랜드 고성능 감성 집중 소구',
 ])}
     <hr class="dv">
     ${saleSectionV2(
       [
+    ['2026 추석 가족사랑조건','<span class="hlev">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31</small>','new',100],
+    ['비포 서비스 애프터 세일즈','<span class="hlev">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
       ],
       [tradeInRadio('ioniq6-n',100,50,'hlev'), saveAutoSingle('ioniq6-n',30,'hlev'), goodfriendRadio('ioniq6-n','hlev')],
       [
-        ['아이오닉 100만대 기념 특별조건','26년 계약 · 8월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
+        ['아이오닉 100만대 기념 특별조건','26년 계약 · 9월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
         ['노후차','<span class="hlev">+30만원</span>','',30],
       ],
       [birthMonthRadio('ioniq6-n', BIRTH_IONIQ6N, 'hlev'), rentRadio('ioniq6-n'), corpRadio('ioniq6-n','hlev')]
@@ -19395,23 +19604,26 @@ const ev = '<div class="vpanel active" id="vp-ioniq6-ev" data-g="ioniq6">'
 
 /* ── 아이오닉9 ── */
 PANELS.ioniq9=(()=>{
-  return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','','아이오닉9','올해의차 주인공 / 생산월 최대 400만',['EV'])
-  +delivBox('1.5개월', 'EV9 2개월')
+  return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','','아이오닉9','올해의차 주인공 / 생산월 최대 300만',['EV'])
+  +delivBox('1.5개월', 'EV9 2.5개월')
   +tipBox('아이오닉9 핵심 전략', [
-  '2026 올해의차 3관왕 + 아이오닉 100만대 기념 <strong>150만원</strong> — 26년 계약·8월 내 출고·개인/개인사업자 한정',
-  '100만대(150만)+생산월(최대400만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>665만원+α</strong>',
-  '25년 12월 이전~26년 2월 재고: 생산월 <strong>400만원</strong> — 역대 최고 혜택 집중 소구',
+  '<strong>9월 신규!</strong> 2026 추석 가족사랑조건 <strong>100만원</strong> 추가',
+  '2026 올해의차 3관왕 + 아이오닉 100만대 기념 <strong>150만원</strong> — 26년 계약·9월 내 출고·개인/개인사업자 한정',
+  '100만대(150만)+생산월(최대300만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>565만원+α</strong>',
+  '25년 12월 이전~26년 5월 재고: 생산월 <strong>300만원</strong> — 역대 최고 혜택 집중 소구',
   'EV9 프레스티지 AWD 대비 84만원 저렴+배터리 10.5kWh 우위+AI 어시스턴트 기본',
 ])
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['2026 추석 가족사랑조건','<span class="hlev">100만원</span><br><small>당사/대리점/협력사 임직원 4촌 이내 친인척 · 9/1~10/31</small>','new',100],
+    ['비포 서비스 애프터 세일즈','<span class="hlev">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
     [tradeInRadio('ioniq9',100,50,'hlev'), saveAutoRadio('ioniq9','hlev'), goodfriendRadio('ioniq9','hlev')],
     [
-      ['아이오닉 100만대 기념 특별조건','26년 계약 · 8월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
+      ['아이오닉 100만대 기념 특별조건','26년 계약 · 9월내출고 · 개인/개인사업자: <span class="hlev">+150만원</span>','chg',150],
       ['EV 에브리케어','충전크레딧 <span class="hlev">20만원</span>','',20],
       ['라이팅 패턴','현대캐피탈 할부 이용 시 연구독권 증정','new',0],
     ],
@@ -19439,9 +19651,9 @@ PANELS.ioniq9=(()=>{
 /* ── 포터 EV ── */
 PANELS.porterev=(()=>{
   return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','','포터 일렉트릭','EV 부담Down 2.8% / 올해의차+50만',['EV','소상'])
-  +delivBox('1개월', '봉고 일렉트릭 5~6주')
+  +delivBox('3주', '봉고/봉고EV 5~6주')
   +tipBox('포터 일렉트릭 핵심 전략', [
-  '아이오닉 100만대 기념 <strong>100만원</strong> — 26년 계약·8월 내 출고·개인/개인사업자 한정',
+  '아이오닉 100만대 기념 <strong>100만원</strong> — 26년 계약·9월 내 출고·개인/개인사업자 한정',
   '100만대(100만)+생산월(최대200만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>415만원</strong>',
   'EV 부담Down(XI) 2.8% · 최대 유예율 50% → <strong style="color:#E65100;">월 10만원대</strong>',
   '<strong>유예는 가능하나 만기 시 차량 반납으로 유예금 상환 불가 안내 필수</strong>',
@@ -19454,7 +19666,7 @@ PANELS.porterev=(()=>{
     ],
     [tradeInRadio('porterev',100,100,'hlev'), saveAutoSingle('porterev',30,'hlev'), goodfriendRadio('porterev','hlev')],
     [
-      ['아이오닉 100만대 기념 특별조건','26년 계약 · 8월내출고 · 개인/개인사업자: <span class="hlev">+100만원</span>','chg',100],
+      ['아이오닉 100만대 기념 특별조건','26년 계약 · 9월내출고 · 개인/개인사업자: <span class="hlev">+100만원</span>','chg',100],
     ],
     [birthMonthRadio('porterev', BIRTH_PORTEREV, 'hlev'), corpRadio('porterev','hlev')]
   )
@@ -19496,7 +19708,7 @@ PANELS.st1ev=(()=>{
   return hdr('linear-gradient(135deg,#1B5E20,#2E7D32)','','ST1','올해의차+50만 / 생산월 최대 150만',['EV','소상'])
   +delivBox('2개월', null)
   +tipBox('ST1 핵심 전략', [
-  '아이오닉 100만대 기념 <strong>100만원</strong> — 26년 계약·8월 내 출고·개인/개인사업자 한정',
+  '아이오닉 100만대 기념 <strong>100만원</strong> — 26년 계약·9월 내 출고·개인/개인사업자 한정',
   '100만대(100만)+생산월(최대200만)+트레이드인(100만)+굿프렌드(15만) → 최대 <strong>415만원</strong>',
   '25년 12월 이전~26년 3월(샤시캡 제외): 생산월 <strong>200만원</strong> 집중 공략',
 ])
@@ -19508,7 +19720,7 @@ PANELS.st1ev=(()=>{
     ],
     [tradeInRadio('st1ev',100,100), saveAutoSingle('st1ev',30), goodfriendRadio('st1ev')],
     [
-      ['아이오닉 100만대 기념 특별조건','26년 계약 · 8월내출고 · 개인/개인사업자: <span class="hlev">+100만원</span>','chg',100],
+      ['아이오닉 100만대 기념 특별조건','26년 계약 · 9월내출고 · 개인/개인사업자: <span class="hlev">+100만원</span>','chg',100],
      ],
     [birthMonthRadio('st1ev', BIRTH_ST1EV), corpRadio('st1ev')]
   )
@@ -19546,8 +19758,9 @@ PANELS.stariaev=(()=>{
   'PV5 카고 대비 900kg 적재·800V 초급속·세미 보닛 안전구조 압도적 우위 소구',
 ])
   +'<hr class="dv">'
-  +saleSectionV2(    
-    [  ['트레이드인','<span class="hl">해당 없음</span>','',0],
+  +saleSectionV2(
+    [  ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
+      ['트레이드인','<span class="hl">해당 없음</span>','',0],
       ['세이브 오토','<span class="hl">30만원</span>','',30],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
@@ -19595,6 +19808,7 @@ PANELS.nexo=(()=>{
   +'<hr class="dv">'
   +saleSectionV2(
     [
+    ['비포 서비스 애프터 세일즈','<span class="hl">20만원</span><br><small>비포서비스 점검 후 3개월 뒤 말일까지 신차 구매 시</small>','new',20],
     ['베네피아 제휴 타겟','<span class="hl">20만원</span><br><small>\'26년 이후 포인트 전환 고객 · 7~9월 출고 한정</small>','new',20],
     ['한국항공우주산업/한국항공서비스 임직원 D/C', '<span class="hl">30만원</span><br><small>재직증명서 제출 · 경남한정 · 7/1~12/31 출고 · 선착순 조기마감</small>', 'new', 30],
     ],
@@ -19666,24 +19880,25 @@ PANELS.g70=(()=>{
   )
   +'<hr class="dv">'
   +promoSection([
-  [true,'GS 칼텍스 고급유 할인 프로모션','<strong>월 최대 2만원</strong> 고급 휘발유 모바일 할인카드<br><small>1L당 50원 / 월 400L 한도 · 출고 익월 개별 문자 발송</small>'],
+  [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
 ])
   +'<hr class="dv">'
-  +ptabs('g70',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])
+  +ptabs('g70',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['jk','단기소액저금리']])
   +tblStd('g70','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
   +tblVar('g70','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
   +tblDef('g70','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
-  +tblYuye('g70','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye);
+  +tblYuye('g70','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye)
+  +tblJK('g70', '2,000만원');
 })();
 
 /* ── G80 ICE ── */
 PANELS.g80ice=(()=>{
-  return hdr('linear-gradient(135deg,#1A237E,#283593)','','G80','생산월 최대 4%(7월 2%) / 임직원/그룹사 특화 할부',['ICE'])
+  return hdr('linear-gradient(135deg,#1A237E,#283593)','','G80','생산월 최대 5%(7월 이전 재고) / 임직원/그룹사 특화 할부',['ICE'])
   +delivBox('1개월', null)
   +tipBox('G80 ICE 핵심 전략', [
-  '8월 기본조건 없음 — 생산월 조건 ~6월 생산 <strong>4%</strong> / 7월 생산 <strong>2%</strong>',
+  '<strong>9월 강화!</strong> 생산월 조건 — 7월 이전 재고 <strong>5%</strong> (8월 이후 생산분은 조건 없음)',
   '생산월+전용카드(50만)+트레이드인(200만)+굿프렌드(15만) → 최대 <strong>265만원+생산월%</strong>',
   '현장렌트사: 1대 20만 / 2~3대 40만 / 4~5대 60만 / 6대↑ 100만',
 ])
@@ -19707,27 +19922,29 @@ PANELS.g80ice=(()=>{
   )
   +'<hr class="dv">'
 +promoSection([
-  [true,'GS 칼텍스 고급유 할인 프로모션','<strong>월 최대 2만원</strong> 고급 휘발유 모바일 할인카드<br><small>1L당 50원 / 월 400L 한도 · 출고 익월 개별 문자 발송</small>'],
+  [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>91만</strong> / 렌트 <strong>104만</strong><br>생산월조건 적용 시: 리스 <strong>82만~</strong> / 렌트 <strong>92만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
 ])
   +'<hr class="dv">'
-  +ptabs('g80ice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사']])
+  +ptabs('g80ice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblStd('g80ice','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
   +tblVar('g80ice','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
   +tblDef('g80ice','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
   +tblYuye('g80ice','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye)
   +genEmpPanel('g80ice','5.8','6.8','임직원/그룹사 특화 할부','G80·GV80·GV70 ※2.5터보 엔진限 이용 가능').replace('ppanel active','ppanel')
-  +tblJ5('g80ice','6.3%','6.5%');
+  +tblJ5('g80ice','6.3%','6.5%')
+  +tblJK('g80ice', '2,000만원');
 })();
 
 /* ── GV70 ICE ── */
 PANELS.gv70ice=(()=>{
-  return hdr('linear-gradient(135deg,#1A237E,#283593)','','GV70','생산월 최대 3%(7월 2%) / THE BETTER CHOICE',['ICE'])
-  +delivBox('1.5개월', null)
+  return hdr('linear-gradient(135deg,#1A237E,#283593)','','GV70','생산월 최대 3%(7월 이전 재고) / THE BETTER CHOICE',['ICE'])
+  +delivBox('1개월', null)
   +tipBox('GV70 ICE 핵심 전략', [
-  '8월 기본조건 없음 — 생산월 조건 ~6월 생산 <strong>3%</strong> / 7월 생산 <strong>2%</strong>',
+  '생산월 조건 — 7월 이전 재고 <strong>3%</strong> (8월 이후 생산분은 조건 없음)',
   '생산월+전용카드(50만)+트레이드인(200만)+굿프렌드(15만) → 최대 <strong>265만원+생산월%</strong>',
   '현장렌트사: 1대 20만 / 2~3대 40만 / 4~5대 60만 / 6대↑ 100만',
 ])
@@ -19751,27 +19968,29 @@ PANELS.gv70ice=(()=>{
   )
   +'<hr class="dv">'
 +promoSection([
-  [true,'GS 칼텍스 고급유 할인 프로모션','<strong>월 최대 2만원</strong> 고급 휘발유 모바일 할인카드<br><small>1L당 50원 / 월 400L 한도 · 출고 익월 개별 문자 발송</small>'],
+  [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>82만</strong> / 렌트 <strong>91만</strong><br>생산월조건 적용 시: 리스 <strong>75만~</strong> / 렌트 <strong>83만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
 ])
   +'<hr class="dv">'
-  +ptabs('gv70ice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사']])
+  +ptabs('gv70ice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblStd('gv70ice','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
   +tblVar('gv70ice','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
   +tblDef('gv70ice','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
   +tblYuye('gv70ice','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye)
   +genEmpPanel('gv70ice','5.8','6.8','임직원/그룹사 특화 할부','G80·GV80·GV70 ※2.5터보 엔진限 이용 가능').replace('ppanel active','ppanel')
-  +tblJ5('gv70ice','6.3%','6.5%');
+  +tblJ5('gv70ice','6.3%','6.5%')
+  +tblJK('gv70ice', '2,000만원');
 })();
 
 /* ── GV80 ── */
 PANELS.gv80=(()=>{
-  return hdr('linear-gradient(135deg,#1A237E,#283593)','','GV80 / 쿠페','생산월 최대 5%(7월 2%) / THE BETTER CHOICE',['ICE','쿠페'])
-  +delivBox('1개월', null)
+  return hdr('linear-gradient(135deg,#1A237E,#283593)','','GV80 / 쿠페','생산월 최대 5%(7월 이전 재고) / THE BETTER CHOICE',['ICE','쿠페'])
+  +delivBox('1개월 (9월 중순 27MY 런칭 예정)', null)
   +tipBox('GV80/쿠페 핵심 전략', [
-  '8월 기본조건 없음 — 생산월 조건 ~6월 생산 <strong>5%</strong> / 7월 생산 <strong>2%</strong>',
+  '생산월 조건 — 7월 이전 재고 <strong>5%</strong> (8월 이후 생산분은 조건 없음)',
   '생산월+전용카드(50만)+트레이드인(200만)+굿프렌드(15만) → 최대 <strong>265만원+생산월%</strong>',
   '현장렌트사: 1대 20만 / 2~3대 40만 / 4~5대 60만 / 6대↑ 100만',
 ])
@@ -19795,19 +20014,21 @@ PANELS.gv80=(()=>{
   )
   +'<hr class="dv">'
 +promoSection([
-  [true,'GS 칼텍스 고급유 할인 프로모션','<strong>월 최대 2만원</strong> 고급 휘발유 모바일 할인카드<br><small>1L당 50원 / 월 400L 한도 · 출고 익월 개별 문자 발송</small>'],
+  [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>98만</strong> / 렌트 <strong>114만</strong><br>생산월조건 적용 시: 리스 <strong>87만~</strong> / 렌트 <strong>101만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
 ])
   +'<hr class="dv">'
-  +ptabs('gv80',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사']])
+  +ptabs('gv80',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblStd('gv80','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
   +tblVar('gv80','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
   +tblDef('gv80','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
   +tblYuye('gv80','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye)
   +genEmpPanel('gv80','5.8','6.8','임직원/그룹사 특화 할부','G80·GV80·GV70 ※2.5터보 엔진限 이용 가능').replace('ppanel active','ppanel')
-  +tblJ5('gv80','6.3%','6.5%');
+  +tblJ5('gv80','6.3%','6.5%')
+  +tblJK('gv80', '2,000만원');
 })();
 
 /* ── G90 ── */
@@ -19816,7 +20037,7 @@ PANELS.g90=(()=>{
   +delivBox('1개월', null)
   +tipBox('제네시스 EV 핵심 전략', [
   'G-EXCHANGE — 3년 +200만원 / 5년 +100만원',
-  '전용카드(50만)+트레이드인(200만)+생산월(최대6%)+굿프렌드(15만) → 최대 <strong>265만원+생산월%</strong>',
+  '전용카드(50만)+트레이드인(200만)+생산월(4월이전~5월 10%)+굿프렌드(15만) → 최대 <strong>265만원+생산월%</strong>',
   '임직원 특화(XZ/XY): 36M 5.8% · 잔가율 65% → 월 10~20만원대 소구',
   '더블픽: HEV 신차 대기 중인 제네시스 고객 리스 12/24개월 → 신차 우선공급',
 ])
@@ -19841,26 +20062,28 @@ PANELS.g90=(()=>{
     [birthMonthRadioGen('g90', BIRTH_G90), corpRadioGen('g90')]
   )
   +promoSection([
-  [true,'GS 칼텍스 고급유 할인 프로모션','<strong>월 최대 2만원</strong> 고급 휘발유 모바일 할인카드<br><small>1L당 50원 / 월 400L 한도 · 출고 익월 개별 문자 발송</small>'],
+  [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>163만</strong> / 렌트 <strong>175만</strong><br>생산월조건 적용 시: 리스 <strong>139만~</strong> / 렌트 <strong>148만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
 ])
   +'<hr class="dv">'
-  +ptabs('g90',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형']])
+  +ptabs('g90',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['jk','단기소액저금리']])
   +tblStd('g90','JH','JA', RATE_CONFIG.ICE_GENESIS.std)
   +tblVar('g90','JJ','JI', RATE_CONFIG.ICE_GENESIS.var)
   +tblDef('g90','JG','JF', RATE_CONFIG.ICE_GENESIS.def)
-  +tblYuye('g90','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye);
+  +tblYuye('g90','XV','XU', RATE_CONFIG.ICE_GENESIS.yuye)
+  +tblJK('g90', '2,000만원');
 })();
 
 /* ── 제네시스 EV ── */
 PANELS.genesisev=(()=>{
-  return hdr('linear-gradient(135deg,#1A237E,#283593)','','GV60 / G80e / GV70e','THE BETTER CHOICE 최대 100만 / 생산월',['EV'])
+  return hdr('linear-gradient(135deg,#1A237E,#283593)','','GV60 / G80e / GV70e','THE BETTER CHOICE 최대 100만 / 생산월 최대 5%',['EV'])
   +delivBox('GV60 1개월(마그마 2개월), G80e/GV70e 1개월', null)
   +tipBox('제네시스 EV 핵심 전략', [
   '제네시스 THE BETTER CHOICE <strong>6월까지만 운영 후 7월부터 미운영</strong>지금이 적기임을 강조',
-  '트레이드인(200만)+생산월(최대6%) 삼중 혜택 집중 소구',
-  'G80e: THE BETTER CHOICE(100만)+전용카드(50만)+트레이드인(200만)+굿프렌드(15만) → 최대 <strong>365만원+생산월6%</strong>',
+  '트레이드인(200만)+생산월(25년12월이전~26년6월 5%, 7월이후 없음) 삼중 혜택 집중 소구',
+  'G80e: THE BETTER CHOICE(100만)+전용카드(50만)+트레이드인(200만)+굿프렌드(15만) → 최대 <strong>365만원+생산월5%</strong>',
   'GV60 MAGMA 임직원 특화: 표준형 대비 월 납입금 약 <strong>120만원 절감</strong> — 임직원 고객 필수 소구',
 ])
   +'<hr class="dv">'
@@ -19881,13 +20104,10 @@ PANELS.genesisev=(()=>{
     [
     ],
     [
-      /* GV60과 G80e/GV70e는 생산월 조건이 다르므로 안내 문구로 처리 */
-      radioGroup('생산월 조건 (차종 선택)', 'sg',
-        makeCardRadio('spc','GV60 — 25년 12월 이전','<span class="hlg">6% 할인</span>','genesisev-birth-gv60','',0) +
-        makeCardRadio('spc','GV60 — 26년 1~3월 생산','<span class="hlg">3% 할인</span>','genesisev-birth-gv60','',0) +
-        makeCardRadio('spc','G80e — 25년 12월 이전','<span class="hlg">6% 할인</span>','genesisev-birth-g80e','',0) +
-        makeCardRadio('spc','G80e — 26년 1~3월 생산','<span class="hlg">3% 할인</span>','genesisev-birth-g80e','',0) +
-        makeCardRadio('spc','GV70e — 25년 12월 이전','<span class="hlg">6% 할인</span>','genesisev-birth-gv70e','',0)
+      /* GV60/G80e/GV70e 동일 조건 — 25년12월이전~26년6월생산 5%, 7월부터 없음 */
+      radioGroup('생산월 조건 (GV60/G80e/GV70e 공통)', 'sg',
+        makeCardRadio('spc','25년 12월 이전 ~ 26년 6월 생산','<span class="hlg">5% 할인</span>','genesisev-birth','',0) +
+        makeCardRadio('spc','26년 7월 이후 생산','<span class="hlg">해당없음 (—)</span>','genesisev-birth','',0)
       ),
       gExchangeRadio('genesisev'),
       corpRadioGen('genesisev')
@@ -19895,8 +20115,10 @@ PANELS.genesisev=(()=>{
   )
   +'<hr class="dv">'
   +promoSection([
-  [true,'대한항공 마일리지 적립 프로모션','제네시스 EV 차종 구매 고객 대상<br><small style="color:var(--tx-muted);">세부 내용 별도 공문 참조</small>'],
+  [true,'E-pit 충전 감사 프로모션','<strong>9/1~11/30</strong> · 전국 E-pit·현대엔지니어링 충전소 <strong>충전요금 0원/kWh</strong><br><small>9~10월 출고 및 E-pit 앱 신청 → 9~11월 무료충전 제공</small>'],
+  [true,'대한항공 마일리지 적립 프로모션','\'26.8/1~12/31 · 구매고객 전원 <strong>대한항공 1만 마일리지</strong> 적립'],
   [false,'EV 렌트/리스 프로모션','잔가 <strong>5% 추가 상향</strong> — 시장 최저 월납입금<br><small>재구매 고객 중도상환 수수료 면제 (만기 3개월 이내)</small>'],
+  [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔가율 65%'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
@@ -21932,6 +22154,16 @@ PANELS.commercial = (()=>{
     );
   }
 
+  /* 재구매 조건과 증차 기본조건은 중복 적용 불가 — 단일 라디오 그룹으로 배타 처리 */
+  function rebuyIncRadio(id, cls) {
+    var c = cls || 'hl';
+    return radioGroup('재구매 / 증차 조건 (택1)', 'sg',
+      makeCardRadio('com','재구매 — 2회차','<span class="'+c+'"><strong>30만원</strong></span>',id+'-rebuyinc','',30) +
+      makeCardRadio('com','재구매 — 3회차 이상','<span class="'+c+'"><strong>50만원</strong></span>',id+'-rebuyinc','',50) +
+      makeCardRadio('spc','증차 기본조건','<span class="'+c+'"><strong>60만원</strong></span><br><small>지방자치단체 증차 \'본인가\' 결과 공문 필요</small>',id+'-rebuyinc','',60)
+    );
+  }
+
   function corpTaxiDiscRadio(id) {
     return radioGroup('법인택시 표준할인 (해당 구분 선택)', 'sg',
       makeCardRadio('spc','특별군 (5대 미만)','<span class="hl"><strong>15만원</strong></span><br><small>M/S 100% + 당사차 3대 이상 동시 충족</small>',id+'-corpdisc','',15) +
@@ -21953,17 +22185,16 @@ PANELS.commercial = (()=>{
 
   function grandeurBirthRadio(id) {
     return radioGroup('생산월 조건 (생산월 선택)', 'sg',
-      makeCardRadio('spc','\'25년 12월 이전 ~ 26년 4월','<span class="hl"><strong>300만원</strong></span>',id+'-birth','',300) +
-      makeCardRadio('spc','26년 5월','<span class="hl"><strong>250만원</strong></span>',id+'-birth','',250) +
-      makeCardRadio('spc','26년 6월 · 7월 이후','<span class="hl">해당없음 (—)</span>',id+'-birth','',0)
+      makeCardRadio('spc','\'25년 12월 이전 ~ 26년 5월','<span class="hl"><strong>300만원</strong></span>',id+'-birth','',300) +
+      makeCardRadio('spc','26년 6월 이후','<span class="hl">해당없음 (—)</span>',id+'-birth','',0)
     );
   }
 
   function evBirthRadio(id) {
     return radioGroup('생산월 조건 (생산월 선택)', 'sg',
-      makeCardRadio('spc','\'25년 12월 이전 ~ 26년 5월','<span class="hlev"><strong>150만원</strong></span>',id+'-birth','',150) +
-      makeCardRadio('spc','26년 6월','<span class="hlev"><strong>50만원</strong></span>',id+'-birth','',50) +
-      makeCardRadio('spc','26년 7월 이후','<span class="hlev">해당없음 (—)</span>',id+'-birth','',0)
+      makeCardRadio('spc','26년 5월 이전','<span class="hlev"><strong>150만원</strong></span>',id+'-birth','',150) +
+      makeCardRadio('spc','26년 6~7월','<span class="hlev"><strong>50만원</strong></span>',id+'-birth','',50) +
+      makeCardRadio('spc','26년 8월 이후','<span class="hlev">해당없음 (—)</span>',id+'-birth','',0)
     );
   }
 
@@ -21974,6 +22205,29 @@ PANELS.commercial = (()=>{
     +'36M <strong>2.7%</strong> / 48M <strong>2.8%</strong> / 60M <strong>2.9%</strong><br>'
     +'<span style="font-weight:400;color:var(--tx-secondary);">※ 법인택시 모빌리티(JM) 출고 불가 · 상세 내용 금융 프로모션 공문 참조</span>'
     +'</div></div>';
+
+  /* EV 택시 동반자 플랜 — 할부조건 탭/표로 별도 구성 (유의사항 앞) */
+  function taxiPlanSection(id) {
+    return ptabs(id, [['taxiplan','할부조건']])
+    + `<div class="ppanel active" id="pp-${id}-taxiplan" data-g="${id}">
+      <div class="scard">
+        <div class="stitle">EV 택시 동반자 플랜</div>
+        ${T(`<table class="rt">
+          <thead><tr><th>기간</th><th class="th-m">모빌리티 (JM)</th><th class="th-n">일반 (JB)</th></tr></thead>
+          <tbody>
+            <tr><td class="lb">36개월</td><td><span class="rev">2.7%</span></td><td><span class="r1">3.5%</span></td></tr>
+            <tr><td class="lb">48개월</td><td><span class="rev">2.8%</span></td><td><span class="r1">3.6%</span></td></tr>
+            <tr><td class="lb">60개월</td><td><span class="rev">2.9%</span></td><td><span class="r1">3.7%</span></td></tr>
+          </tbody>
+        </table>`)}
+        <div class="pbox"><h4>핵심 소구</h4><ul>
+          <li>저금리로 이자 부담 최소화 → 택시 수익으로 빠른 회수</li>
+          <li>전기차 유지비 절감 (전기요금 vs LPG·가솔린 대비 대폭 절감)</li>
+        </ul></div>
+        <small style="color:var(--tx-muted);">※ 법인택시 모빌리티(JM) 출고 불가 · 상세 내용 금융 프로모션 공문 참조</small>
+      </div>
+    </div>`;
+  }
 
   const incCard = (cls) => ['증차 기본조건',
     '<span class="'+(cls||'hl')+'"><strong>60만원</strong></span><br><small>지방자치단체 증차 \'본인가\' 결과 공문 필요</small>',
@@ -22007,8 +22261,8 @@ PANELS.commercial = (()=>{
   ])}
   <hr class="dv">
   ${saleSectionV2(
-    [incCard()],
-    [saveAutoSingle('dt23-comm',30), taxiRebuyRadio('dt23-comm')],
+    [],
+    [saveAutoSingle('dt23-comm',30), rebuyIncRadio('dt23-comm')],
     [],
     [corpTaxiDiscRadio('dt23-comm')]
   )}
@@ -22020,14 +22274,14 @@ PANELS.commercial = (()=>{
   const grandeur = `<div class="vpanel" id="vp-commercial-grandeur" data-g="commercial">
   ${tipBox('그랜저 영업용 핵심 전략', [
     '생산월(최대 300만) + 세이브오토(30~50만) → 최대 <strong>350만원</strong>',
-    '\'25년 12월 이전~26년 4월 재고 집중 공략 — 생산월 <strong>300만원</strong> 최고 조건',
-    '26년 5월 생산: <strong>250만원</strong> / 6월·7월 이후: 생산월 조건 없음',
+    '<strong>9월 확대!</strong> \'25년 12월 이전~26년 5월 생산 재고 <strong>300만원</strong> 최고 조건',
+    '26년 6월 이후 생산: 생산월 조건 없음',
     '재구매 고객 추가: +30만(2회차) / +50만(3회차 이상)',
   ])}
   <hr class="dv">
   ${saleSectionV2(
-    [incCard()],
-    [saveAutoRadio('grandeur-comm'), taxiRebuyRadio('grandeur-comm')],
+    [],
+    [saveAutoRadio('grandeur-comm'), rebuyIncRadio('grandeur-comm')],
     [],
     [grandeurBirthRadio('grandeur-comm'), corpTaxiDiscRadio('grandeur-comm')]
   )}
@@ -22039,17 +22293,19 @@ PANELS.commercial = (()=>{
   const ioniq5 = `<div class="vpanel" id="vp-commercial-ioniq5" data-g="commercial">
   ${tipBox('아이오닉5 영업용 핵심 전략', [
     '생산월(최대 150만) + 친환경 타겟(50만) + 충전크레딧(20만) → 최대 <strong>220만원+α</strong>',
-    '\'25년 12월~26년 5월 재고: 생산월 <strong>150만원</strong> 최우선 소구',
+    '26년 5월 이전 재고: 생산월 <strong>150만원</strong> 최우선 소구',
     'EV 택시 동반자 플랜 36M <strong>2.7%</strong> 저금리 — 월 납입금 절감 집중 소구',
     '법인택시 EV 묶기 출고: 2대 <strong>150만</strong> / 3대 이상 <strong>200만</strong>(1대당)',
   ])}
   <hr class="dv">
   ${saleSectionV2(
-    [['EV 에브리케어 충전크레딧','<span class="hlev">20만원</span>','',20], incCard('hlev')],
-    [saveAutoSingle('ioniq5-comm',30,'hlev'), taxiRebuyRadio('ioniq5-comm')],
-    [['친환경차 택시 타겟','<span class="hlev"><strong>50만원</strong></span><br><small>26년 8월 친환경 개인택시 출고 고객</small>','',50]],
-    [evBirthRadio('ioniq5-comm'), evTaxiPlanInfo, corpTaxiDiscRadio('ioniq5-comm'), evBundleRadio('ioniq5-comm')]
+    [['EV 에브리케어 충전크레딧','<span class="hlev">20만원</span>','',20]],
+    [saveAutoSingle('ioniq5-comm',30,'hlev'), rebuyIncRadio('ioniq5-comm','hlev')],
+    [['친환경차 택시 타겟','<span class="hlev"><strong>50만원</strong></span><br><small>26년 9월 친환경 개인택시 출고 고객</small>','',50]],
+    [evBirthRadio('ioniq5-comm'), corpTaxiDiscRadio('ioniq5-comm'), evBundleRadio('ioniq5-comm')]
   )}
+  <hr class="dv">
+  ${taxiPlanSection('ioniq5-comm')}
   <hr class="dv">
   ${notesHtml}
   </div>`;
@@ -22058,17 +22314,19 @@ PANELS.commercial = (()=>{
   const ioniq6 = `<div class="vpanel" id="vp-commercial-ioniq6" data-g="commercial">
   ${tipBox('더 뉴 아이오닉6 영업용 핵심 전략', [
     '생산월(최대 150만) + 친환경 타겟(50만) + 충전크레딧(20만) → 최대 <strong>220만원+α</strong>',
-    '\'25년 12월~26년 5월 재고: 생산월 <strong>150만원</strong> 최우선 소구',
+    '26년 5월 이전 재고: 생산월 <strong>150만원</strong> 최우선 소구',
     'EV 택시 동반자 플랜 36M <strong>2.7%</strong> 저금리 — 월 납입금 절감 집중 소구',
     '법인택시 EV 묶기 출고: 2대 <strong>150만</strong> / 3대 이상 <strong>200만</strong>(1대당)',
   ])}
   <hr class="dv">
   ${saleSectionV2(
-    [['EV 에브리케어 충전크레딧','<span class="hlev">20만원</span>','',20], incCard('hlev')],
-    [saveAutoSingle('ioniq6-comm',30,'hlev'), taxiRebuyRadio('ioniq6-comm')],
-    [['친환경차 택시 타겟','<span class="hlev"><strong>50만원</strong></span><br><small>26년 8월 친환경 개인택시 출고 고객</small>','',50]],
-    [evBirthRadio('ioniq6-comm'), evTaxiPlanInfo, corpTaxiDiscRadio('ioniq6-comm'), evBundleRadio('ioniq6-comm')]
+    [['EV 에브리케어 충전크레딧','<span class="hlev">20만원</span>','',20]],
+    [saveAutoSingle('ioniq6-comm',30,'hlev'), rebuyIncRadio('ioniq6-comm','hlev')],
+    [['친환경차 택시 타겟','<span class="hlev"><strong>50만원</strong></span><br><small>26년 9월 친환경 개인택시 출고 고객</small>','',50]],
+    [evBirthRadio('ioniq6-comm'), corpTaxiDiscRadio('ioniq6-comm'), evBundleRadio('ioniq6-comm')]
   )}
+  <hr class="dv">
+  ${taxiPlanSection('ioniq6-comm')}
   <hr class="dv">
   ${notesHtml}
   </div>`;
@@ -22077,17 +22335,19 @@ PANELS.commercial = (()=>{
   const konaev = `<div class="vpanel" id="vp-commercial-konaev" data-g="commercial">
   ${tipBox('코나 일렉트릭 영업용 핵심 전략', [
     '생산월(최대 150만) + 친환경 타겟(50만) + 충전크레딧(20만) → 최대 <strong>220만원+α</strong>',
-    '\'25년 12월~26년 5월 재고: 생산월 <strong>150만원</strong> 최우선 소구',
+    '26년 5월 이전 재고: 생산월 <strong>150만원</strong> 최우선 소구',
     'EV 택시 동반자 플랜 36M <strong>2.7%</strong> 저금리 — 월 납입금 절감 집중 소구',
     '법인택시 EV 묶기 출고: 2대 <strong>150만</strong> / 3대 이상 <strong>200만</strong>(1대당)',
   ])}
   <hr class="dv">
   ${saleSectionV2(
-    [['EV 에브리케어 충전크레딧','<span class="hlev">20만원</span>','',20], incCard('hlev')],
-    [saveAutoSingle('konaev-comm',30,'hlev'), taxiRebuyRadio('konaev-comm')],
-    [['친환경차 택시 타겟','<span class="hlev"><strong>50만원</strong></span><br><small>26년 8월 친환경 개인택시 출고 고객</small>','',50]],
-    [evBirthRadio('konaev-comm'), evTaxiPlanInfo, corpTaxiDiscRadio('konaev-comm'), evBundleRadio('konaev-comm')]
+    [['EV 에브리케어 충전크레딧','<span class="hlev">20만원</span>','',20]],
+    [saveAutoSingle('konaev-comm',30,'hlev'), rebuyIncRadio('konaev-comm','hlev')],
+    [['친환경차 택시 타겟','<span class="hlev"><strong>50만원</strong></span><br><small>26년 9월 친환경 개인택시 출고 고객</small>','',50]],
+    [evBirthRadio('konaev-comm'), corpTaxiDiscRadio('konaev-comm'), evBundleRadio('konaev-comm')]
   )}
+  <hr class="dv">
+  ${taxiPlanSection('konaev-comm')}
   <hr class="dv">
   ${notesHtml}
   </div>`;
@@ -22102,14 +22362,14 @@ PANELS.commercial = (()=>{
   ])}
   <hr class="dv">
   ${saleSectionV2(
-    [incCard('hlev')],
+    [],
     [
       radioGroup('EV구매 충전혜택 (택1)', 'sg',
         makeCardRadio('com','20만 충전크레딧','<span class="hlev"><strong>20만원</strong></span>','stariaev-comm-charge','',20) +
         makeCardRadio('com','7kW 홈충전기','<span class="hlev">홈충전기 지급</span><br><small>금액 환산 미포함</small>','stariaev-comm-charge','',0)
       ),
       saveAutoSingle('stariaev-comm',30,'hlev'),
-      taxiRebuyRadio('stariaev-comm'),
+      rebuyIncRadio('stariaev-comm','hlev'),
     ],
     [],
     [corpTaxiDiscRadio('stariaev-comm')]
@@ -22127,8 +22387,8 @@ PANELS.commercial = (()=>{
   ])}
   <hr class="dv">
   ${saleSectionV2(
-    [incCard()],
-    [saveAutoSingle('stariamobility-comm',30), taxiRebuyRadio('stariamobility-comm')],
+    [],
+    [saveAutoSingle('stariamobility-comm',30), rebuyIncRadio('stariamobility-comm')],
     [],
     [corpTaxiDiscRadio('stariamobility-comm')]
   )}
@@ -22136,7 +22396,7 @@ PANELS.commercial = (()=>{
   ${notesHtml}
   </div>`;
 
-  return hdr('linear-gradient(135deg,#37474F,#546E7A)','','영업용','2026년 8월 택시 판매조건',['택시','영업용'])
+  return hdr('linear-gradient(135deg,#37474F,#546E7A)','','영업용','2026년 9월 택시 판매조건',['택시','영업용'])
     + vtabs('commercial',[
         ['dt23','DT23 (쏘나타)'],
         ['grandeur','그랜저'],
@@ -22715,28 +22975,29 @@ if ('serviceWorker' in navigator) {
   /* ────────────────────────────────
      업데이트마다 아래 두 곳만 수정
      ──────────────────────────────── */
-  var VERSION = '2608-02';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
+  var VERSION = '2609-01';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
   var UPDATE_DATE = '2026.09.01';   // 업데이트 날짜 표시용
   var UPDATES = [                   // 업데이트 내용 목록
     {
-      title: '<span style="color:var(--accent-warn);">[안내] 9월 판매조건/납기 업데이트 지연 안내</span>',
-      desc:  '당사 시스템 점검으로 9월 1일 내 업데이트 예정'
+      title: '9월 판매조건/납기 업데이트 완료',
+      desc:  'G80·G90 생산월 조건 강화, 그랜저 영업용 생산월 확대, 더 뉴 그랜저 트레이드인 신설 등 반영'
     },
     {
-      title: '<span style="color:var(--accent-warn);">[신규적용] EV 부담다운 간편견적 탭 추가</span>',
-      desc:  'EV 보조금 조회 탭 연계, 월 납입금 조회 및 안내 가능'
+      title: '트레이드인 혜택 조회 9월 2일 추가 업데이트 예정',
+      desc:  '시스템 이슈로 업데이트 미실시, 추가 반영 예정'
+    },
+  {
+      title: '<span style="color:var(--accent-warn);">[신규] 2026 추석 가족사랑조건 100만원</span>',
+      desc:  '그랜저·싼타페·팰리세이드·스타리아·아이오닉5·6·9·코나EV 대상'
     },
     {
-      title: '8/28 기준 전기차 공모 현황 업데이트',
-      desc:  '거제·사천·남해·함안·김해 등 임박 마감 지역 반영, 김해시 신규 추가'
+      title: '<span style="color:var(--accent-warn);">[신규] EV to 내연기관 전환 출고 혜택 50만 / 비포서비스 애프터세일즈 20만</span>',
+      desc:  '국내승용 전차종 대상 (신형 아반떼·신형 그랜저 제외)'
     },
+
   ];
   /* ────────────────────────────────
      여기까지만 수정
-         {
-      title: '8월 판매조건/납기 업데이트 완료',
-      desc:  '생산월 조건·신규 프로모션·EV에브리케어 변경사항 반영'
-    },
      ──────────────────────────────── */
 
   var SKIP_KEY = 'popup_skip_' + VERSION;
