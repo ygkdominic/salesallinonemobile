@@ -16408,29 +16408,25 @@ PANELS.summary=`
     <span style="font-size: 15px;font-weight:800;color:var(--tx-primary);">경남지역본부 주요 공지사항</span>
   </div>
 
-  <!-- 공지 1 안내 -->
+  <!-- 공지 1 안내 — [중요] 신형 아반떼 관련 안내사항 -->
 <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
 <button class="accordion-btn"
-  style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);"
-  onclick="this.classList.toggle(\'open\');this.nextElementSibling.classList.toggle(\'open\');">
+  style="border-left:4px solid var(--accent-warn);border-radius:var(--r-md);"
+  onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
       <span style="display:flex;align-items:center;gap:8px;flex:1;">
-        <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">안내</span>
+        <span style="background:#FFF5F5;color:#C62828;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">중요</span>
 
-        <span>세일즈 올인원 관련 주요 안내사항</span>
+        <span>[중요] 신형 아반떼 관련 안내사항</span>
       </span>
       <span class="acc-arrow">▼</span>
     </button>
     <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
       <div class="tip-box" style="margin-bottom:12px;">
         <ul>
-          <li><strong>[필수] 첫 이용 시 홈화면에 추가하고, 앱으로 활용하세요! </strong></li>
-          <li> 주요 프로모션 변경사항 및 당사/경쟁사 납기 반영 </li>
-          <li> 현대 EV 주요 혜택 / 보조금 조회 / 트레이드인 혜택 / 블루멤버스 포인트 조회 기능 추가</li>
-          <li> 차종별 금융 활용, 주요 판매팁 적극 활용해보세요. </li>
+          <li><strong>스마트키 보조키 1개만 지급</strong> — 향후 현대 전차종 모델이어 시점부터 1개씩 지급 예정 (제네시스는 확인 중)</li>
+          <li><strong>타이어 모빌리티 키트(TMK) 미지급</strong> — 향후 현대차종은 개조차 이상 이벤트 시점부터, 제네시스는 MY 이벤트 시점부터 미지급</li>
         </ul>
       </div>
-      <div class="wbox">정확한 견적은 <strong>국내판매시스템/TOPS</strong>에서 반드시 확인해주세요.</div>
-     <div class="wbox">수정 필요 사항/신규 기능 요청은 <strong>김영관 책임</strong>에게 연락해주세요.</div>
     </div>
   </div>
 
@@ -16443,16 +16439,19 @@ PANELS.summary=`
   onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
   <span style="display:flex;align-items:center;gap:8px;flex:1;">
     <span style="background:#E3F5EC;color:#1A7035;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">EV</span>
-    <span style="color:var(--accent-warn);font-weight:800;">경남 하반기 전기차 공모 안내<br>(8/28 기준)</span>
+    <span style="background:#FFF5F5;color:#C62828;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">창원 공고 임박</span>
+    <span style="color:var(--accent-warn);font-weight:800;">경남 하반기 전기차 공모 안내<br><span style="color:#C62828;">창원 9/7 공고 · 9/11 접수 예정</span> (9/2 기준)</span>
   </span>
   <span class="acc-arrow">▼</span>
 </button>
 <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
 
-  <!-- 고객 상담 멘트 -->
-  <div style="background:#FFF5F5;border-radius: var(--r-sm);padding:11px 14px;margin-bottom:10px;border:1.5px solid rgba(240,68,82,0.2);">
-    <div style="font-size: 13.5px;font-weight:800;color:var(--accent-warn);margin-bottom:4px;">고객 상담 활용 멘트</div>
-    <div style="font-size: 14.5px;font-weight:800;color:#C62828;line-height:1.6;">"지역별로 잔여대수가 얼마 남지 않았습니다.<br> 원하시는 차종이 있으시면 서둘러 신청하세요!"</div>
+  <!-- 메인 강조: 경쟁사 EV 납기 증가 + 창원 변경사항 -->
+  <div style="background:#FFF5F5;border-radius: var(--r-sm);padding:11px 14px;margin-bottom:10px;border:1.5px solid rgba(240,68,82,0.3);">
+    <div style="font-size: 14.5px;font-weight:800;color:#C62828;line-height:1.7;">
+      9월 경쟁사 EV 납기가 대폭 증가했습니다. 참고하셔서 당사 EV로 적극 유도 바랍니다.<br>
+      <strong>[창원시 변경]</strong> 9/7(월) 공고 → 9/11(금) 접수 예정 <small>(승용 10시, 화물/승합 14시)</small> · 공모 대수 <strong>승용 1,800대 · 화물 450대 · 승합 48대</strong>(스타리아 기준)
+    </div>
   </div>
 
   <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:600;margin-bottom:8px;">
@@ -16556,18 +16555,18 @@ PANELS.summary=`
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">-</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">72</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">69</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">1,854</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">530</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">58</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">2,354</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">680</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">66</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">31</td>
         <td style="text-align:left; color:var(--tx-muted); font-size: 13.5px;">경남 17개 지자체 합 (양산 관할 외 제외)</td>
       </tr>
       <!-- 창원시 -->
-      <tr>
-        <td>창원시</td>
+      <tr style="background:#FFF5F5;">
+        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">창원시</td>
         <td>-</td><td>-</td><td>-</td><td>우선2</td>
-        <td>1,300</td><td>300</td><td>40</td><td>20</td>
-        <td style="text-align:left; color:var(--tx-primary);">9월 2주차 공고_3주차 접수예정<br><small>(확정시 재공지 예정) / 수소 9월말</small></td>
+        <td style="font-weight:800; color:#C62828;">1,800</td><td style="font-weight:800; color:#C62828;">450</td><td style="font-weight:800; color:#C62828;">48</td><td>20</td>
+        <td style="text-align:left; color:#C62828; font-weight:700;">9/7(월) 공고 · 9/11(금) 접수<br><small style="color:#856404;font-weight:500;">(승용 10시, 화물/승합 14시) · 스타리아 기준</small></td>
       </tr>
       <!-- 진주시 -->
       <tr>
@@ -16737,50 +16736,10 @@ PANELS.summary=`
   <div style="flex:1;height:1px;background:rgba(49,130,246,0.15);"></div>
 </div>
 
-<!-- ══ '들어줘, 글레오' 전시장 방문고객 이벤트 ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>'들어줘, 글레오' 전시장 방문고객 이벤트</span>
-      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <strong>기간:</strong> 2026년 9월 1일 ~ 9월 30일<br>
-    <strong>대상:</strong> 지점·대리점·드라이빙라운지 방문, 디 올 뉴 아반떼 Gleo AI 체험 후 설문조사 참여 고객<br>
-    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
-      <strong>EVENT 1. 설문 참여만 해도 100% 당첨</strong> <small>(선착순 1만명)</small><br>
-      아반떼 전시·시승차 Gleo AI와 대화 후 안내문 QR로 설문 참여 시 <span class="hl">5천원 모바일 상품권</span> 100% 증정 (차수당 선착순 2,500명)<br>
-      <small style="color:var(--tx-muted);">1차(9/1~9) 올리브영 · 2차(9/10~16) GS25 · 3차(9/17~23) 배달의민족 · 4차(9/24~30) 이마트</small>
-    </div>
-    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
-      <strong>EVENT 2. 인스타그램 인증 이벤트</strong><br>
-      Gleo AI와의 대화를 사진/영상 촬영 후 인스타그램 업로드 시 추첨으로 경품 추가 증정 (설문조사 참여 필수)<br>
-      <small style="color:var(--tx-muted);">아반떼 9박10일 시승권+스테이폴리오 100만원권(1명), 다이슨 헤어드라이어(5명), B&O 무선스피커(20명) 등<br>계정 @gleo_avante · 해시태그 #현대자동차 #아반떼 #들어줘글레오 (비공개 계정 참여 불가)</small>
-    </div>
-  </div>
+<!-- ── 차종군: 전차종 공통 ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:8px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:var(--tx-muted);background:var(--bg-subtle);padding:2px 9px;border-radius:10px;">전차종 공통</span>
 </div>
-
-<!-- ══ 제네시스 전기차 E-pit 충전 감사 프로모션 ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>제네시스 전기차 E-pit 충전 감사 프로모션</span>
-      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <strong>기간:</strong> 2026년 9월 1일 ~ 11월 30일<br>
-    <strong>대상:</strong> GV60(마그마 포함)·GV70 EV·G80 EV <small>(개인 AA1·개인사업자 BA1 限)</small><br>
-    <strong>혜택:</strong> 프로모션 기간 내 전국 <span class="hl">E-pit 및 현대엔지니어링 충전소</span>(일부 제외) 초고속·완속 충전요금 <span class="hl">0원/kWh</span><br>
-    <small style="color:var(--tx-muted);">① 9~10월 내 제네시스 전기차 출고 및 E-pit 앱에서 혜택 신청 → ② 9~11월 限 전국 E-pit·현대엔지니어링 충전소 무료 충전 제공</small>
-  </div>
-</div>
-
 
 <!-- ══ 2026 추석 가족사랑조건 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
@@ -16837,104 +16796,32 @@ PANELS.summary=`
   </div>
 </div>
 
-<!-- ══ 더 뉴 그랜저 트레이드인 타겟조건 ══ -->
+<!-- ── 차종군: 제네시스 ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:8px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:#A47551;background:#F9F5F0;padding:2px 9px;border-radius:10px;">제네시스</span>
+</div>
+
+<!-- ══ 제네시스 전기차 E-pit 충전 감사 프로모션 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
   <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>더 뉴 그랜저 — 트레이드인 타겟조건 신설</span>
+      <span>제네시스 전기차 E-pit 충전 감사 프로모션</span>
       <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <strong>대상:</strong> 더 뉴 그랜저 전 트림<br>
-    <strong>혜택:</strong> 당사 매각 <span class="hl">50만원</span> / 타사 매각 <span class="hl">30만원</span> · 노후차 트레이드인 <span class="hl">20만원</span> 별도<br>
-    <small style="color:var(--tx-muted);">※ 그동안 트레이드인 타겟 대상에서 제외되어 있었으나 9월부 최초 신설</small>
+    <strong>기간:</strong> 2026년 9월 1일 ~ 11월 30일<br>
+    <strong>대상:</strong> GV60(마그마 포함)·GV70 EV·G80 EV <small>(개인 AA1·개인사업자 BA1 限)</small><br>
+    <strong>혜택:</strong> 프로모션 기간 내 전국 <span class="hl">E-pit 및 현대엔지니어링 충전소</span>(일부 제외) 초고속·완속 충전요금 <span class="hl">0원/kWh</span><br>
+    <small style="color:var(--tx-muted);">① 9~10월 내 제네시스 전기차 출고 및 E-pit 앱에서 혜택 신청 → ② 9~11월 限 전국 E-pit·현대엔지니어링 충전소 무료 충전 제공</small>
   </div>
 </div>
 
-<!-- ══ 팰리세이드 전용카드 프로모션 ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>팰리세이드 전용카드 프로모션 50만</span>
-      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <strong>대상:</strong> 팰리세이드 구매 고객 <small>(개인/개인사업자 AA1·BA1)</small><br>
-    <strong>조건:</strong> 현대/제네시스 전용카드 2,000만원 이상 결제 + 세이브오토 이용<br>
-    <strong>혜택:</strong> <span class="hl">25만원 D/C + 25만원 캐시백</span> = 총 <span class="hl">50만원</span><br>
-    <small style="color:var(--tx-muted);">※ 출고 전 해당 타겟 입력 필수</small>
-  </div>
-</div>
-
-<!-- ══ 제네시스 카드 제휴 프로모션 ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>제네시스 카드 제휴 프로모션</span>
-      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <div style="padding:5px 0 8px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong style="color:#A47551;">GS 칼텍스 고급유 할인 프로모션</strong> <small style="background:var(--bg);padding:1px 5px;border-radius:4px;">전차종</small><br>
-      <strong>기간:</strong> 2026년 8월 1일 ~ 12월 31일<br>
-      <strong>대상:</strong> 제네시스 전 차종 (개인 AA1·개인사업자 BA1 限)<br>
-      <strong>혜택:</strong> 고급 휘발유 <span style="color:#A47551;font-weight:800;">리터당 50원 할인</span> (월 최대 2만원)<br>
-      <small style="color:var(--tx-muted);">출고 고객 대상 익월 1~2주차 문자 발송 예정 (할인 등록 후 365일 사용 가능)</small>
-    </div>
-    <div style="padding:8px 0 0;">
-      <strong style="color:#A47551;">대한항공 마일리지 적립 프로모션</strong> <small style="background:#E3F5EC;color:#1A7035;padding:1px 5px;border-radius:4px;">EV</small><br>
-      <strong>기간:</strong> 2026년 8월 1일 ~ 12월 31일<br>
-      <strong>대상:</strong> GV60(마그마 포함)·GV70 EV·G80 EV (개인 AA1·개인사업자 BA1 限)<br>
-      <strong>혜택:</strong> 구매고객 전원 대상 <span style="color:#A47551;font-weight:800;">대한항공 1만 마일리지</span> 적립<br>
-      <small style="color:var(--tx-muted);">대상 차종 출고 및 마일리지 적립 신청서 작성 → 본사 주관 Skypass 회원번호 취합 후 익월 자동 적립</small>
-    </div>
-  </div>
-</div>
-
-<!-- ══ 현대N 지인추천 이벤트 ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>현대N 지인추천 이벤트</span>
-      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <strong>기간:</strong> 2026년 8월 3일 ~ 9월 30일<br>
-    <strong>대상:</strong> 추천하신 분(현대N 신차 구매 이력 보유, N Line 제외) / 추천받은 분(현대N 신규 구매자: 아반떼N·아이오닉5N·아이오닉6N) <small>둘 다 개인(AA1)·개인사업자(BA1) 限</small><br>
-    <strong>혜택:</strong> 추천받은 분 <span class="hl">50만원 구매혜택(쿠폰)</span> / 추천하신 분·받은 분 공통 <span class="hl">26FW N컬렉션 MA-1 자켓</span><br>
-    <small style="color:var(--tx-muted);">旣 출고고객 H-event 응모 및 쿠폰 수령(본사 주관 매주 월 발송) → 추천하신 분이 추천받은 분에게 쿠폰 직접 전달 → 계약 시 쿠폰 제출·타겟조건 적용<br>※ 쿠폰 적용 시 성명 두 자리+연락처 뒤 2자리 계약자와 일치 여부 확인 必</small>
-  </div>
-</div>
-
-<!-- ══ 현대차증권 X 현대자동차 제휴 프로모션 ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>현대차증권 X 현대자동차 제휴 프로모션</span>
-      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <strong>신청기간:</strong> 2026년 7월 10일 ~ 10월 9일 <small>(출고: 26년 10월 31일 限)</small><br>
-    <strong>대상:</strong> 전차종 출고 · 일반개인(AA1)·개인사업자(BA1) 限 <small>(캐스퍼·캐스퍼일렉트릭·트럭·버스·택시 제외)</small><br>
-    <strong>참여방법:</strong> 현대닷컴/마이현대 이벤트 배너로 계좌개설 이벤트 참여 후 현대차증권 생애최초 계좌개설 → 현대자동차 계약금 할인 이벤트 신청 및 10월 내 대상 차종 계약/출고<br>
-    <strong>혜택:</strong> ① <span class="hl">현대차 계약금 10만원 타겟 D/C</span> ② 현대차증권 플러스 금융상품권 3만원권 및 거래수수료 3개월 할인 ③ 금융상품권 5천원권 추가 증정 <small>(선착순 5천명 限)</small><br>
-    <small style="color:var(--tx-muted);">※ 혜택(타겟조건) 문자 수신 고객 본인 명의 구매 시 적용 (타인 양도 불가, 공동명의 가능)</small>
-  </div>
+<!-- ── 차종군: 현대 EV ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:10px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:var(--hyundai-azure);background:#E3F5EC;padding:2px 9px;border-radius:10px;">현대 EV</span>
 </div>
 
 <!-- ══ 경쟁 EV 되치기 D/C ══ -->
@@ -16975,31 +16862,58 @@ PANELS.summary=`
     <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(0,180,147,0.15);font-size: 13.5px;line-height:1.8;">
       <strong>재구매 고객 중도상환 수수료 면제</strong><br>
       · 할부 이용 중: 만기 <strong>3개월 이내</strong> 적용<br>
-      · 렌트/리스 이용 중: 만기 <strong>1개월 이내</strong> 적용<br>
+      · 렌트/리스 이용 중: 만기 <strong>5개월 이내</strong> 적용<br>
       지자체 보조금 소진 후에도 렌트/리스 추가 보조금으로 출고 가능<br>
       <small style="color:var(--tx-muted);">※ 영업용·N 이용 불가 / 타겟코드 입력 필수 / 현대캐피탈 이용수수료 2.0% 고정</small>
     </div>
   </div>
 </div>
 
-<!-- ══ KAI 임직원 특별 D/C ══ -->
+<!-- ── 차종군: 현대 내연기관·HEV ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:10px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:var(--hyundai-blue-mid);background:var(--hyundai-blue-light);padding:2px 9px;border-radius:10px;">현대 내연기관·HEV</span>
+</div>
+
+<!-- ══ '들어줘, 글레오' 전시장 방문고객 이벤트 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
   <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
     <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>한국항공우주산업/한국항공서비스 임직원 특별 D/C</span>
-      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">경남 한정</span>
+      <span>'들어줘, 글레오' 전시장 방문고객 이벤트</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <strong>대상:</strong> 한국항공우주산업 / 한국항공서비스 재직 임직원<br>
-    <strong>차종:</strong> 현대·제네시스 전 차종 <small>(캐스퍼·쏘나타 택시·상용 제외)</small><br>
-    <strong>혜택:</strong> 현대 <span class="hl">30만원</span> / 제네시스 <span style="color:#A47551;font-weight:800;">50만원</span><br>
-    <strong>기간:</strong> 2026년 7월 1일 ~ 12월 31일 · <strong>출고 기준</strong><br>
-    <small style="color:#C62828;">※ 예산 소진 시 조기 마감될 수 있습니다.</small><br>
-    <strong>방법:</strong> 경남 지점/대리점 방문 후 <strong>재직증명서 사본 제출</strong><br>
-    <small style="color:var(--tx-muted);">임직원 본인·배우자 공동명의 가능 · 가족관계증명서 필요<br>타 할인 중복 여부 최종 확인 필수</small>
+    <strong>기간:</strong> 2026년 9월 1일 ~ 9월 30일<br>
+    <strong>대상:</strong> 지점·대리점·드라이빙라운지 방문, 디 올 뉴 아반떼 Gleo AI 체험 후 설문조사 참여 고객<br>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
+      <strong>EVENT 1. 설문 참여만 해도 100% 당첨</strong> <small>(선착순 1만명)</small><br>
+      아반떼 전시·시승차 Gleo AI와 대화 후 안내문 QR로 설문 참여 시 <span class="hl">5천원 모바일 상품권</span> 100% 증정 (차수당 선착순 2,500명)<br>
+      <small style="color:var(--tx-muted);">1차(9/1~9) 올리브영 · 2차(9/10~16) GS25 · 3차(9/17~23) 배달의민족 · 4차(9/24~30) 이마트</small>
+    </div>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
+      <strong>EVENT 2. 인스타그램 인증 이벤트</strong><br>
+      Gleo AI와의 대화를 사진/영상 촬영 후 인스타그램 업로드 시 추첨으로 경품 추가 증정 (설문조사 참여 필수)<br>
+      <small style="color:var(--tx-muted);">아반떼 9박10일 시승권+스테이폴리오 100만원권(1명), 다이슨 헤어드라이어(5명), B&O 무선스피커(20명) 등<br>계정 @gleo_avante · 해시태그 #현대자동차 #아반떼 #들어줘글레오 (비공개 계정 참여 불가)</small>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 더 뉴 그랜저 트레이드인 타겟조건 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>더 뉴 그랜저 — 트레이드인 타겟조건 신설</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>대상:</strong> 더 뉴 그랜저 전 트림<br>
+    <strong>혜택:</strong> 당사 매각 <span class="hl">50만원</span> / 타사 매각 <span class="hl">30만원</span> · 노후차 트레이드인 <span class="hl">20만원</span> 별도<br>
+    <small style="color:var(--tx-muted);">※ 그동안 트레이드인 타겟 대상에서 제외되어 있었으나 9월부 최초 신설</small>
   </div>
 </div>
 
@@ -17010,28 +16924,136 @@ PANELS.summary=`
   <div style="flex:1;height:1px;background:rgba(0,0,0,0.08);"></div>
 </div>
 
-<!-- ══ 현장렌트사 우대 타겟 ══ -->
+<!-- ── 차종군: 제네시스 ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:8px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:#A47551;background:#F9F5F0;padding:2px 9px;border-radius:10px;">제네시스</span>
+</div>
+
+<!-- ══ 제네시스 카드 제휴 프로모션 ══ -->
 <div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
   <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
     onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;">
-      <span>현장렌트사 우대 타겟 조건</span>
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>제네시스 카드 제휴 프로모션</span>
       <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
     </span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <div style="padding:5px 0 5px;border-bottom:1px solid rgba(0,0,0,0.06);">
-      <strong>현대 승용</strong> <small>(쏘나타·그랜저·코나·투싼·싼타페·팰리·스타리아·아이오닉5·6 — ICE/HEV/EV 포함)</small><br>
-      1대 <span class="hl">10만</span> / 2~3대 <span class="hl">30만</span> / 4~5대 <span class="hl">40만</span> / 6대↑ <span class="hl">50만원</span>
+    <div style="padding:5px 0 8px;border-bottom:1px solid rgba(164,117,81,0.15);">
+      <strong style="color:#A47551;">GS 칼텍스 고급유 할인 프로모션</strong> <small style="background:var(--bg);padding:1px 5px;border-radius:4px;">전차종</small><br>
+      <strong>기간:</strong> 2026년 8월 1일 ~ 12월 31일<br>
+      <strong>대상:</strong> 제네시스 전 차종 (개인 AA1·개인사업자 BA1 限)<br>
+      <strong>혜택:</strong> 고급 휘발유 <span style="color:#A47551;font-weight:800;">리터당 50원 할인</span> (월 최대 2만원)<br>
+      <small style="color:var(--tx-muted);">출고 고객 대상 익월 1~2주차 문자 발송 예정 (할인 등록 후 365일 사용 가능)</small>
     </div>
-    <div style="padding:5px 0 5px;border-bottom:1px solid rgba(0,0,0,0.06);">
-      <strong>제네시스</strong> <small>(G80·GV70·GV80 — ICE/EV 포함)</small><br>
-      1대 <span class="hlg">20만</span> / 2~3대 <span class="hlg">40만</span> / 4~5대 <span class="hlg">60만</span> / 6대↑ <span class="hlg">100만원</span>
+    <div style="padding:8px 0 0;">
+      <strong style="color:#A47551;">대한항공 마일리지 적립 프로모션</strong> <small style="background:#E3F5EC;color:#1A7035;padding:1px 5px;border-radius:4px;">EV</small><br>
+      <strong>기간:</strong> 2026년 8월 1일 ~ 12월 31일<br>
+      <strong>대상:</strong> GV60(마그마 포함)·GV70 EV·G80 EV (개인 AA1·개인사업자 BA1 限)<br>
+      <strong>혜택:</strong> 구매고객 전원 대상 <span style="color:#A47551;font-weight:800;">대한항공 1만 마일리지</span> 적립<br>
+      <small style="color:var(--tx-muted);">대상 차종 출고 및 마일리지 적립 신청서 작성 → 본사 주관 Skypass 회원번호 취합 후 익월 자동 적립</small>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 제네시스 생산월 조건 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>제네시스 생산월 조건</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 강화</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
+      <strong>G80</strong> — 7월 이전 재고 <span class="hlg">5% 할인</span> <small>(8월 이후 생산분 조건 없음, 기존 4%→5% 인상)</small>
+    </div>
+    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
+      <strong>GV70</strong> — 7월 이전 재고 <span class="hlg">3% 할인</span> <small>(8월 이후 생산분 조건 없음)</small>
+    </div>
+    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
+      <strong>GV80</strong> — 7월 이전 재고 <span class="hlg">5% 할인</span> <small>(8월 이후 생산분 조건 없음)</small>
+    </div>
+    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
+      <strong>G90</strong> — '25.12월 이전~'26.5월 생산 <span class="hlg">10% 할인</span> <small>(6월 이후 생산분 조건 없음, 기존 6%→10% 인상)</small>
     </div>
     <div style="padding:5px 0 0;">
-      <small style="color:var(--tx-muted);">Fleet社(롯데렌탈·SK렌터카 등 직납업체) 제외 · 현장 법인 직접 출고건만 해당<br>※ 더 뉴 그랜저 · 제네시스 전동화 · N 차종 · 스타리아EV 제외</small>
+      <small style="color:var(--tx-muted);">전용카드·트레이드인 등 추가 조건 합산 가능</small>
     </div>
+  </div>
+</div>
+
+<!-- ── 차종군: 현대 EV ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:10px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:var(--hyundai-azure);background:#E3F5EC;padding:2px 9px;border-radius:10px;">현대 EV</span>
+</div>
+
+<!-- ══ EV 특별혜택 아이오닉 100만대 기념 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-azure);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>EV 특별혜택! 아이오닉 100만대 기념</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    아이오닉 100만대 기념 특별조건<br>
+    <span style="color:var(--hyundai-azure);font-weight:800;">아이오닉5·6·9·코나EV 150만 / 포터EV·ST1 100만</span><br>
+    <strong>대상:</strong> 26년 계약 + 8월 내 출고 고객 · <strong>개인(AA1)·개인사업자(BA1) 한정</strong><br>
+    EV 부담Down <strong style="color:#E65100;">월 10만원대</strong> 납입금 병행 가능<br>
+    <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(0,180,147,0.18);font-size: 13.5px;">
+      아이오닉9 생산월 조건 추가 최대 400만원 별도 가산 가능
+    </div>
+  </div>
+</div>
+
+<!-- ══ EV 부담Down ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-azure);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;">
+      <span>EV 부담Down</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    코나EV · 아이오닉5 · 아이오닉6 — <strong style="color:#E65100;">월 10만원대</strong>로 EV 이용!<br>
+    <strong>신규</strong> <span class="hlev">2.8%</span> / <strong>재구매</strong> <span class="hlev">2.3%</span> (재구매 -0.5%p 추가 인하)<br>
+    <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(0,180,147,0.15);font-size: 13.5px;line-height:1.8;">
+      <strong>재구입 대상 차종 확대</strong><br>
+      ① 현대/제네시스 <strong>전 차종</strong> 재구입 → 최대 유예율 <strong>55%</strong> (60% 선택 불가)<br>
+      ② EV/FCEV 차종 限 재구입 → 최대 유예율 <strong>60%</strong> 가능<br>
+      <small style="color:var(--tx-muted);">※ 포터EV·캐스퍼EV·ST1·스타리아EV 승합/화물 재구입 제외</small>
+    </div>
+  </div>
+</div>
+
+<!-- ── 차종군: 현대 내연기관·HEV ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:10px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:var(--hyundai-blue-mid);background:var(--hyundai-blue-light);padding:2px 9px;border-radius:10px;">현대 내연기관·HEV</span>
+</div>
+
+<!-- ══ 팰리세이드 전용카드 프로모션 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>팰리세이드 전용카드 프로모션 50만</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>대상:</strong> 팰리세이드 구매 고객 <small>(개인/개인사업자 AA1·BA1)</small><br>
+    <strong>조건:</strong> 현대/제네시스 전용카드 2,000만원 이상 결제 + 세이브오토 이용<br>
+    <strong>혜택:</strong> <span class="hl">25만원 D/C + 25만원 캐시백</span> = 총 <span class="hl">50만원</span><br>
+    <small style="color:var(--tx-muted);">※ 출고 전 해당 타겟 입력 필수</small>
   </div>
 </div>
 
@@ -17084,76 +17106,9 @@ PANELS.summary=`
   </div>
 </div>
 
-<!-- ══ 제네시스 생산월 조건 ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>제네시스 생산월 조건</span>
-      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 강화</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong>G80</strong> — 7월 이전 재고 <span class="hlg">5% 할인</span> <small>(8월 이후 생산분 조건 없음, 기존 4%→5% 인상)</small>
-    </div>
-    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong>GV70</strong> — 7월 이전 재고 <span class="hlg">3% 할인</span> <small>(8월 이후 생산분 조건 없음)</small>
-    </div>
-    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong>GV80</strong> — 7월 이전 재고 <span class="hlg">5% 할인</span> <small>(8월 이후 생산분 조건 없음)</small>
-    </div>
-    <div style="padding:5px 0 6px;border-bottom:1px solid rgba(164,117,81,0.15);">
-      <strong>G90</strong> — '25.12월 이전~'26.5월 생산 <span class="hlg">10% 할인</span> <small>(6월 이후 생산분 조건 없음, 기존 6%→10% 인상)</small>
-    </div>
-    <div style="padding:5px 0 0;">
-      <small style="color:var(--tx-muted);">전용카드·트레이드인 등 추가 조건 합산 가능</small>
-    </div>
-  </div>
-</div>
-
-<!-- ══ EV 특별혜택 아이오닉 100만대 기념 ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-azure);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
-      <span>EV 특별혜택! 아이오닉 100만대 기념</span>
-      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    아이오닉 100만대 기념 특별조건<br>
-    <span style="color:var(--hyundai-azure);font-weight:800;">아이오닉5·6·9·코나EV 150만 / 포터EV·ST1 100만</span><br>
-    <strong>대상:</strong> 26년 계약 + 8월 내 출고 고객 · <strong>개인(AA1)·개인사업자(BA1) 한정</strong><br>
-    EV 부담Down <strong style="color:#E65100;">월 10만원대</strong> 납입금 병행 가능<br>
-    <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(0,180,147,0.18);font-size: 13.5px;">
-      아이오닉9 생산월 조건 추가 최대 400만원 별도 가산 가능
-    </div>
-  </div>
-</div>
-
-<!-- ══ EV 부담Down ══ -->
-<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
-  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-azure);border-radius:var(--r-md);font-size: 16px;"
-    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-    <span style="display:flex;align-items:center;gap:8px;flex:1;">
-      <span>EV 부담Down</span>
-      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
-    </span>
-    <span class="acc-arrow">▼</span>
-  </button>
-  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-    코나EV · 아이오닉5 · 아이오닉6 — <strong style="color:#E65100;">월 10만원대</strong>로 EV 이용!<br>
-    <strong>신규</strong> <span class="hlev">2.8%</span> / <strong>재구매</strong> <span class="hlev">2.3%</span> (재구매 -0.5%p 추가 인하)<br>
-    <div style="margin-top:7px;padding-top:7px;border-top:1px solid rgba(0,180,147,0.15);font-size: 13.5px;line-height:1.8;">
-      <strong>재구입 대상 차종 확대</strong><br>
-      ① 현대/제네시스 <strong>전 차종</strong> 재구입 → 최대 유예율 <strong>55%</strong> (60% 선택 불가)<br>
-      ② EV/FCEV 차종 限 재구입 → 최대 유예율 <strong>60%</strong> 가능<br>
-      <small style="color:var(--tx-muted);">※ 포터EV·캐스퍼EV·ST1·스타리아EV 승합/화물 재구입 제외</small>
-    </div>
-  </div>
+<!-- ── 차종군: 수소(FCEV) ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:10px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:#1A7035;background:#E3F5EC;padding:2px 9px;border-radius:10px;">수소(FCEV)</span>
 </div>
 
 <!-- ══ 넥쏘 1주년 기념 ══ -->
@@ -17172,6 +17127,94 @@ PANELS.summary=`
     <strong>당사 차량 매각:</strong> <span class="hl">+200만원</span><br>
     <strong>타사 차량 매각:</strong> <span class="hl">+100만원</span><br>
     <small>넥쏘 외 차종 보유 고객도 당사 매각 +200만원 가능</small>
+  </div>
+</div>
+
+<!-- ── 차종군: 기타 제휴·법인 ── -->
+<div style="display:flex;align-items:center;gap:6px;margin:10px 0 6px 2px;">
+  <span style="font-size: 11px;font-weight:800;color:var(--tx-secondary);background:var(--bg-subtle);padding:2px 9px;border-radius:10px;">기타 제휴·법인</span>
+</div>
+
+<!-- ══ 현대N 지인추천 이벤트 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>현대N 지인추천 이벤트</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>기간:</strong> 2026년 8월 3일 ~ 9월 30일<br>
+    <strong>대상:</strong> 추천하신 분(현대N 신차 구매 이력 보유, N Line 제외) / 추천받은 분(현대N 신규 구매자: 아반떼N·아이오닉5N·아이오닉6N) <small>둘 다 개인(AA1)·개인사업자(BA1) 限</small><br>
+    <strong>혜택:</strong> 추천받은 분 <span class="hl">50만원 구매혜택(쿠폰)</span> / 추천하신 분·받은 분 공통 <span class="hl">26FW N컬렉션 MA-1 자켓</span><br>
+    <small style="color:var(--tx-muted);">旣 출고고객 H-event 응모 및 쿠폰 수령(본사 주관 매주 월 발송) → 추천하신 분이 추천받은 분에게 쿠폰 직접 전달 → 계약 시 쿠폰 제출·타겟조건 적용<br>※ 쿠폰 적용 시 성명 두 자리+연락처 뒤 2자리 계약자와 일치 여부 확인 必</small>
+  </div>
+</div>
+
+<!-- ══ 현대차증권 X 현대자동차 제휴 프로모션 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>현대차증권 X 현대자동차 제휴 프로모션</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>신청기간:</strong> 2026년 7월 10일 ~ 10월 9일 <small>(출고: 26년 10월 31일 限)</small><br>
+    <strong>대상:</strong> 전차종 출고 · 일반개인(AA1)·개인사업자(BA1) 限 <small>(캐스퍼·캐스퍼일렉트릭·트럭·버스·택시 제외)</small><br>
+    <strong>참여방법:</strong> 현대닷컴/마이현대 이벤트 배너로 계좌개설 이벤트 참여 후 현대차증권 생애최초 계좌개설 → 현대자동차 계약금 할인 이벤트 신청 및 10월 내 대상 차종 계약/출고<br>
+    <strong>혜택:</strong> ① <span class="hl">현대차 계약금 10만원 타겟 D/C</span> ② 현대차증권 플러스 금융상품권 3만원권 및 거래수수료 3개월 할인 ③ 금융상품권 5천원권 추가 증정 <small>(선착순 5천명 限)</small><br>
+    <small style="color:var(--tx-muted);">※ 혜택(타겟조건) 문자 수신 고객 본인 명의 구매 시 적용 (타인 양도 불가, 공동명의 가능)</small>
+  </div>
+</div>
+
+<!-- ══ KAI 임직원 특별 D/C ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>한국항공우주산업/한국항공서비스 임직원 특별 D/C</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">경남 한정</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>대상:</strong> 한국항공우주산업 / 한국항공서비스 재직 임직원<br>
+    <strong>차종:</strong> 현대·제네시스 전 차종 <small>(캐스퍼·쏘나타 택시·상용 제외)</small><br>
+    <strong>혜택:</strong> 현대 <span class="hl">30만원</span> / 제네시스 <span style="color:#A47551;font-weight:800;">50만원</span><br>
+    <strong>기간:</strong> 2026년 7월 1일 ~ 12월 31일 · <strong>출고 기준</strong><br>
+    <small style="color:#C62828;">※ 예산 소진 시 조기 마감될 수 있습니다.</small><br>
+    <strong>방법:</strong> 경남 지점/대리점 방문 후 <strong>재직증명서 사본 제출</strong><br>
+    <small style="color:var(--tx-muted);">임직원 본인·배우자 공동명의 가능 · 가족관계증명서 필요<br>타 할인 중복 여부 최종 확인 필수</small>
+  </div>
+</div>
+
+<!-- ══ 현장렌트사 우대 타겟 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;">
+      <span>현장렌트사 우대 타겟 조건</span>
+      <span style="background:var(--bg);color:var(--tx-muted);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">유지</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <div style="padding:5px 0 5px;border-bottom:1px solid rgba(0,0,0,0.06);">
+      <strong>현대 승용</strong> <small>(쏘나타·그랜저·코나·투싼·싼타페·팰리·스타리아·아이오닉5·6 — ICE/HEV/EV 포함)</small><br>
+      1대 <span class="hl">10만</span> / 2~3대 <span class="hl">30만</span> / 4~5대 <span class="hl">40만</span> / 6대↑ <span class="hl">50만원</span>
+    </div>
+    <div style="padding:5px 0 5px;border-bottom:1px solid rgba(0,0,0,0.06);">
+      <strong>제네시스</strong> <small>(G80·GV70·GV80 — ICE/EV 포함)</small><br>
+      1대 <span class="hlg">20만</span> / 2~3대 <span class="hlg">40만</span> / 4~5대 <span class="hlg">60만</span> / 6대↑ <span class="hlg">100만원</span>
+    </div>
+    <div style="padding:5px 0 0;">
+      <small style="color:var(--tx-muted);">Fleet社(롯데렌탈·SK렌터카 등 직납업체) 제외 · 현장 법인 직접 출고건만 해당<br>※ 더 뉴 그랜저 · 제네시스 전동화 · N 차종 · 스타리아EV 제외</small>
+    </div>
   </div>
 </div>
 
@@ -18151,24 +18194,25 @@ const tradeinNoticeHtml = `
     <span style="font-size: 15px;font-weight:800;color:var(--tx-primary);">트레이드인 주요 공지사항</span>
   </div>
 
-  <!-- 공지 1: 8월 주요 변경사항 -->
+  <!-- 공지 1: 9월 주요 변경사항 -->
   <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
     <button class="accordion-btn"
       style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);"
       onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
       <span style="display:flex;align-items:center;gap:8px;flex:1;">
-        <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">8월 변경</span>
-        <span>8월 트레이드인 주요 변경사항 안내</span>
+        <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">9월 변경</span>
+        <span>9월 트레이드인 주요 변경사항 안내</span>
       </span>
       <span class="acc-arrow">▼</span>
     </button>
     <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
       <div class="tip-box" style="margin-bottom:12px;">
-        <h4 style="display:flex;align-items:center;gap:7px;">8월 주요 변경 체크사항</h4>
+        <h4 style="display:flex;align-items:center;gap:7px;">9월 주요 변경 체크사항</h4>
         <ul>
-          <li><strong>[변경] 더드림쿠폰 연식 기준 완화</strong> — 기존 "6년 이상~7년8개월" → <strong>~7년 8개월 이내 (6년 하한 폐지)</strong></li>
-          <li><strong>[신규] 트레이드인 공동명의 적용 기준 완화</strong> — 8월부, 중고차 공동명의자(배우자·직계존비속)가 신차 출고 시 트레이드인 적용 가능</li>
-          <li><strong>[신규] 매매주문서 내 중고차 차량번호 입력란 신설</strong> — 신차 계약 여러 개 또는 공동명의자 출고 시 자동 매칭 편의 제공</li>
+          <li><strong>[신규] 더드림쿠폰 — 제네시스 내연기관(G70·G80·GV70·GV80) 50만원 신설</strong> — 가솔린/HEV/LPG 한정, 기존 EV·현대 내연기관 쿠폰과 별도 운영</li>
+          <li><strong>[확대] 트레이드인 타겟 적용 차종 확대</strong> — 더 뉴 그랜저 가솔린/LPG 트레이드인 적용 가능 (캐스퍼·디올뉴아반떼·더뉴그랜저HEV·스타리아EV·중대형상용 제외)</li>
+          <li><strong>[신규] 「내 차 농사, 풍년이로다」이벤트</strong> — 9/1~9/30, 차량진단·내차팔기·트레이드인출고 단계별 경품 제공</li>
+          <li><strong>[확대] 비매집중개 제휴 입찰사 확대</strong> — 19개사 → 33개사로 확대, 견적입찰 마감기준 일부 완화</li>
         </ul>
       </div>
     </div>
@@ -18176,14 +18220,127 @@ const tradeinNoticeHtml = `
 
   <div style="height:8px;"></div>
 
-  <!-- 공지 2: 공동명의 적용 기준 완화 -->
+  <!-- 공지 2: 더드림쿠폰 9월 운영안 -->
+  <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
+    <button class="accordion-btn"
+      style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);"
+      onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+      <span style="display:flex;align-items:center;gap:8px;flex:1;">
+        <span style="background:#FFF5F5;color:#C62828;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">9월 신규</span>
+        <span>더드림쿠폰 — 9월 제네시스 내연기관 구간 신설</span>
+      </span>
+      <span class="acc-arrow">▼</span>
+    </button>
+    <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+      <div class="tip-box" style="margin-bottom:12px;">
+        <h4 style="display:flex;align-items:center;gap:7px;">9월 더드림쿠폰 운영안</h4>
+        <ul>
+          <li><strong>[신규] 제네시스 내연기관(G70·G80·GV70·GV80) 50만원 구간 신설</strong> — 가솔린/HEV/LPG 한정</li>
+          <li>연식: ~7년 8개월 이내 / 주행거리: 14만km 이내 (동일) / ※ 1년/5천km 미만 차량 및 N/마그마 제외</li>
+          <li>그 외 구간 쿠폰 금액 전월 동일 유지</li>
+        </ul>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size: 13.5px;">
+        <thead>
+          <tr style="background:#2D3540;">
+            <th style="color:#fff;padding:7px 9px;text-align:left;border-radius:6px 0 0 0;">브랜드·차종</th>
+            <th style="color:#fff;padding:7px 9px;text-align:center;min-width:60px;">쿠폰 금액</th>
+            <th style="color:#fff;padding:7px 9px;text-align:left;border-radius:0 6px 0 0;">비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#F9F5F0;">
+            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-weight:700;color:#A47551;">제네시스 GV60·GV70e·G80e</td>
+            <td style="padding:8px 9px;text-align:center;font-weight:800;color:#A47551;border-bottom:1px solid #f0f0f0;">100만원</td>
+            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-size: 12.5px;color:var(--tx-muted);">~7년8개월/14만km</td>
+          </tr>
+          <tr style="background:#F0FFF9;">
+            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-weight:700;color:var(--hyundai-azure);">현대 아이오닉5·아이오닉6</td>
+            <td style="padding:8px 9px;text-align:center;font-weight:800;color:var(--hyundai-azure);border-bottom:1px solid #f0f0f0;">50만원</td>
+            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-size: 12.5px;color:var(--tx-muted);">~7년8개월/14만km</td>
+          </tr>
+          <tr style="background:#FFF5F5;">
+            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-weight:700;color:#C62828;">제네시스 G70·G80·GV70·GV80<br><span style="font-size: 12.5px;font-weight:400;color:var(--tx-muted);">가솔린/HEV/LPG 한정</span></td>
+            <td style="padding:8px 9px;text-align:center;font-weight:800;color:#C62828;border-bottom:1px solid #f0f0f0;">50만원</td>
+            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-size: 12.5px;color:var(--tx-muted);">~7년8개월/14만km<br>9월 신규</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 9px;font-weight:700;">현대 내연기관<br><span style="font-size: 12.5px;font-weight:400;color:var(--tx-muted);">캐스퍼·아반떼·쏘나타·그랜저(IG/GN7)·코나·투싼 등</span></td>
+            <td style="padding:8px 9px;text-align:center;font-weight:800;">30만원</td>
+            <td style="padding:8px 9px;font-size: 12.5px;color:var(--tx-muted);">~7년8개월/14만km<br>※ 디젤 제외</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="height:8px;"></div>
+
+  <!-- 공지 3: 내 차 농사 이벤트 (9월 신규) -->
+  <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
+    <button class="accordion-btn"
+      style="border-left:4px solid #C62828;border-radius:var(--r-md);"
+      onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+      <span style="display:flex;align-items:center;gap:8px;flex:1;">
+        <span style="background:#FFF5F5;color:#C62828;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">9월 신규</span>
+        <span>「내 차 농사, 풍년이로다」이벤트 안내</span>
+      </span>
+      <span class="acc-arrow">▼</span>
+    </button>
+    <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+      <div class="tip-box" style="margin-bottom:12px;">
+        <h4 style="display:flex;align-items:center;gap:7px;">기간: 2026.9.1 ~ 9.30</h4>
+        <ul>
+          <li><strong>이벤트1 (차량진단 완료)</strong> — 쿠팡이츠 1만원 × 250명 추첨</li>
+          <li><strong>이벤트2 (내차팔기 완료)</strong> — 마켓컬리 5만원 × 100명 추첨</li>
+          <li><strong>이벤트3 (트레이드인 출고)</strong> — 쿠쿠 밥솥 + 여주쌀 × 10명 추첨</li>
+        </ul>
+      </div>
+      <div class="wbox" style="background:var(--hyundai-blue-light);border-color:#90CAF9;color:#1A237E;">이벤트 페이지: <a href="https://buly.kr/uWmLXF" target="_blank" style="color:#1A237E;font-weight:700;">buly.kr/uWmLXF</a> · POP 전거점 2부씩 배포</div>
+    </div>
+  </div>
+
+  <div style="height:8px;"></div>
+
+  <!-- 공지 4: 비매집중개 입찰사 확대 (9월 확대) -->
+  <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
+    <button class="accordion-btn"
+      style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);"
+      onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+      <span style="display:flex;align-items:center;gap:8px;flex:1;">
+        <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">9월 확대</span>
+        <span>비매집중개 제휴 입찰사 확대</span>
+      </span>
+      <span class="acc-arrow">▼</span>
+    </button>
+    <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+      <div class="tip-box" style="margin-bottom:12px;">
+        <h4 style="display:flex;align-items:center;gap:7px;">9월 변경 사항</h4>
+        <ul>
+          <li><strong>제휴 입찰사 확대</strong>: 19개사 → <strong>33개사</strong> (고가차·1톤트럭·외산차 매입딜러 대상)</li>
+          <li><strong>견적입찰 마감기준 변경</strong>: ① 고객 조기 수락 ② 입찰시간 18시간 종료는 유지, ③ "8개사 입찰 시 종료" 조건은 9월부 삭제</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:8px;"></div>
+
+  <!-- 기존 유지 구분선 -->
+  <div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px;">
+    <div style="width:3px;height:14px;background:var(--tx-muted);border-radius:2px;flex-shrink:0;"></div>
+    <span style="font-size: 12.5px;font-weight:800;color:var(--tx-muted);letter-spacing:.8px;">기존 유지 항목</span>
+    <div style="flex:1;height:1px;background:rgba(0,0,0,0.08);"></div>
+  </div>
+
+  <!-- 공지 5: 공동명의 적용 기준 완화 (유지) -->
   <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
     <button class="accordion-btn"
       style="border-left:4px solid var(--accent-warn);border-radius:var(--r-md);"
       onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
       <span style="display:flex;align-items:center;gap:8px;flex:1;">
-        <span style="background:#FFF5F5;color:#C62828;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">8월 신규</span>
-        <span>트레이드인 공동명의 적용 기준 완화 (8월부)</span>
+        <span style="background:var(--bg-subtle);color:var(--tx-secondary);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">유지</span>
+        <span>트레이드인 공동명의 적용 기준 완화 (유지)</span>
       </span>
       <span class="acc-arrow">▼</span>
     </button>
@@ -18222,64 +18379,13 @@ const tradeinNoticeHtml = `
 
   <div style="height:8px;"></div>
 
-  <!-- 공지 3: 더드림쿠폰 8월 운영안 -->
-  <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
-    <button class="accordion-btn"
-      style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);"
-      onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
-      <span style="display:flex;align-items:center;gap:8px;flex:1;">
-        <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">변경</span>
-        <span>더드림쿠폰 — 8월 연식 기준 완화</span>
-      </span>
-      <span class="acc-arrow">▼</span>
-    </button>
-    <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
-      <div class="tip-box" style="margin-bottom:12px;">
-        <h4 style="display:flex;align-items:center;gap:7px;">8월 더드림쿠폰 운영안</h4>
-        <ul>
-          <li><strong>연식 기준 완화</strong>: 기존 6년 이상~7년8개월 → <strong>~7년 8개월 이내 (6년 하한 폐지)</strong></li>
-          <li>주행거리: 14만km 이내 (동일) / ※ 1년/5천km 미만 차량 및 N/마그마 제외</li>
-          <li>쿠폰 금액 전월 동일 유지</li>
-        </ul>
-      </div>
-      <table style="width:100%;border-collapse:collapse;font-size: 13.5px;">
-        <thead>
-          <tr style="background:#2D3540;">
-            <th style="color:#fff;padding:7px 9px;text-align:left;border-radius:6px 0 0 0;">브랜드·차종</th>
-            <th style="color:#fff;padding:7px 9px;text-align:center;min-width:60px;">쿠폰 금액</th>
-            <th style="color:#fff;padding:7px 9px;text-align:left;border-radius:0 6px 0 0;">비고</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="background:#F9F5F0;">
-            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-weight:700;color:#A47551;">제네시스 GV60·GV70e·G80e</td>
-            <td style="padding:8px 9px;text-align:center;font-weight:800;color:#A47551;border-bottom:1px solid #f0f0f0;">100만원</td>
-            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-size: 12.5px;color:var(--tx-muted);">~7년8개월/14만km</td>
-          </tr>
-          <tr style="background:#F0FFF9;">
-            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-weight:700;color:var(--hyundai-azure);">현대 아이오닉5·아이오닉6</td>
-            <td style="padding:8px 9px;text-align:center;font-weight:800;color:var(--hyundai-azure);border-bottom:1px solid #f0f0f0;">50만원</td>
-            <td style="padding:8px 9px;border-bottom:1px solid #f0f0f0;font-size: 12.5px;color:var(--tx-muted);">~7년8개월/14만km</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 9px;font-weight:700;">현대 내연기관<br><span style="font-size: 12.5px;font-weight:400;color:var(--tx-muted);">캐스퍼·아반떼·쏘나타·그랜저(IG)·코나·투싼 등</span></td>
-            <td style="padding:8px 9px;text-align:center;font-weight:800;">30만원</td>
-            <td style="padding:8px 9px;font-size: 12.5px;color:var(--tx-muted);">~7년8개월/14만km<br>※ 디젤 제외</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div style="height:8px;"></div>
-
-  <!-- 공지 4: 타사 앱 연계 -->
+  <!-- 공지 6: 타사 앱 연계 (유지) -->
   <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
     <button class="accordion-btn"
       style="border-left:4px solid var(--hyundai-azure);border-radius:var(--r-md);"
       onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
       <span style="display:flex;align-items:center;gap:8px;flex:1;">
-        <span style="background:#E3F5EC;color:#1A7035;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">신규</span>
+        <span style="background:var(--bg-subtle);color:var(--tx-secondary);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">유지</span>
         <span>타사 앱 연계 트레이드인 유입 활성화</span>
       </span>
       <span class="acc-arrow">▼</span>
@@ -18300,7 +18406,7 @@ const tradeinNoticeHtml = `
 
   <div style="height:8px;"></div>
 
-  <!-- 공지 5: 1톤 트럭 디젤 (기존 유지) -->
+  <!-- 공지 7: 1톤 트럭 디젤 (기존 유지) -->
   <div class="accordion-wrap" style="margin-bottom:0;border-radius:var(--r-md);overflow:hidden;">
     <button class="accordion-btn"
       style="border-left:4px solid var(--hyundai-azure);border-radius:var(--r-md);"
@@ -18767,6 +18873,11 @@ ${saleSectionV2(
   </div>`;
 
   return hdr('linear-gradient(135deg,#1565C0,#1E88E5)','','아반떼','ICE / HEV / N · 모빌리티(JH) 5.4% / 일반(JA) 6.2%',['ICE','HEV','N'])
+    +`<div class="wbox" style="background:#FFF5F5;border-color:var(--accent-warn);color:#C62828;">
+      <strong>[중요] 신형 아반떼 관련 안내사항</strong><br>
+      · 스마트키 보조키 1개만 지급 (향후 현대 전차종 모델이어 시점부터 1개씩 지급 예정, 제네시스는 확인 중)<br>
+      · 타이어 모빌리티 키트(TMK) 미지급 (향후 현대차종 개조차 이상 이벤트 시점부터, 제네시스 MY 이벤트 시점부터 미지급)
+    </div>`
     +vtabs('avante',[['ice','ICE / HEV'],['n','아반떼 N']])+ice+n;
 })();
 
@@ -19196,7 +19307,7 @@ PANELS.santafe=(()=>{
     [birthMonthRadio('santafe', BIRTH_SANTAFE), rentRadio('santafe'), corpRadio('santafe')]
   )
   +'<hr class="dv">'
-  +promoSection([[true,'유예형(XV/XU)','최대 유예율 <strong>65%</strong>'],[false,'표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>']])
+  +promoSection([[true,'유예형(XV/XU)','최대 유예율 <strong>65%</strong>'],[false,'표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>'],[true,'다자녀(지방이주) 할부/리스/렌트(JM)','서울→非서울 이주 + 미성년 자녀 2명↑ 가구<br>할부 전구간 <strong>1.9%</strong> · 리스/렌트 <strong>10%</strong>(특별2%+금리할인8%)<br><small>안전용품 KIT 제공(소화기·안전망치·경광등) · 선택형 주민등록등본으로 대상 확인</small>']])
   +'<hr class="dv">'
   +ptabs('santafe',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','유예형'],['j5','현장렌트사'],['jk','단기소액저금리']])
   +tblYuye('santafe','XV','XU', RATE_CONFIG.ICE_STANDARD.yuye)
@@ -19695,6 +19806,12 @@ PANELS.porterev=(()=>{
     <li>재구매 고객 <strong style="color:#C62828;">-0.5%p → 최저 2.3%</strong></li>
     <li>코드: 신규 <strong>XI / XH</strong> · 재구매 <strong>XE / XA</strong></li>
   </ul></div>
+  ${T(`<table class="rt"><thead><tr><th>구분</th><th>추가 보조금</th><th>예상 월 납입금</th></tr></thead><tbody>
+    <tr><td class="lb">소상공인</td><td>290만</td><td><strong style="color:#E65100;">월 5만원</strong> (일 약 1,800원)</td></tr>
+    <tr><td class="lb">농업인</td><td>97만</td><td><strong style="color:#E65100;">월 11만원</strong> (일 약 3,700원)</td></tr>
+    <tr><td class="lb">일반</td><td>-</td><td><strong style="color:#E65100;">월 14만원</strong> (일 약 4,600원)</td></tr>
+  </tbody></table>`)}
+  <div class="wbox" style="font-size: 12.5px;">차량가 4,350만(할인 350만) 기준 · 유예율 50% 선택 시 예시 · 지자체별 보조금에 따라 차이 발생</div>
 </div></div>`
 +tblStd('porterev','JH','JA', RATE_CONFIG.EV_PORTER.std)
 +tblVar('porterev','JJ','JI', RATE_CONFIG.EV_PORTER.var)
@@ -19800,7 +19917,7 @@ PANELS.nexo=(()=>{
   +`<div class="chg-box"><strong>6월 변경</strong> · 넥쏘 부담Down: 39M 모빌리티 <strong>2.8%</strong> / 일반 <strong>3.8%</strong><br>· <strong style="color:#4527A0;">트레이드인 강화: 넥쏘 外 차종 당사 매각도 200만원 가능!</strong><br>· <strong style="color:#4527A0;">타사 차량 신규 매각: 100만원 (신규 적용)</strong></div>`
   +delivBox('1개월', null)
   +tipBox('넥쏘 최적 판매 전략', [
-  '<strong>1주년 기념 대폭 강화!</strong> 부담Down 39M <strong>1.8%</strong> — 월 최저 납입 <strong>6만원!</strong>',
+  '<strong>1주년 기념 대폭 강화!</strong> 부담Down 39M <strong>1.8%</strong> — 월 약 <strong>8만원(일 2,700원)!</strong>',
   '생산월(200만)+당사 트레이드인(200만)+수소충전크레딧(40만)+굿프렌드(15만) → 최대 <strong>455만원</strong>',
   '<strong style="color:#4527A0;">넥쏘 외 차종 보유 고객도 당사 매각 +200만원 가능!</strong>',
   '<strong style="color:#4527A0;">타사 차량 신규 매각도 +100만원 적용! — 고객 풀 대폭 확대</strong>',
@@ -19826,7 +19943,7 @@ PANELS.nexo=(()=>{
   )
   +'<hr class="dv">'
   +promoSection([[true,'넥쏘 부담Down39M(XI/XH)','모빌리티(XI): 39M <strong>1.8%</strong><br>일반(XH): 39M <strong>2.8%</strong><br>최대 유예율: <strong>45%</strong>'],[false,'표준형(JH)','36M: <strong>5.4%</strong>/48M: <strong>5.5%</strong>/60M: <strong>5.6%</strong>']])
-  +fboxSection(['부담Down 1.8%: 선수금 3.6% 기준 월 최저 <strong>6만원(일 1,900원)!</strong>','<strong style="color:#4527A0;">타사 차량 신규 매각 100만원 → 신규 고객 확장 가능!</strong>','넥쏘 외 차종 보유 고객도 당사 매각 +200만원 → 고객 풀 대폭 확대!'])
+  +fboxSection(['부담Down 1.8%: 선수율 5% 기준 월 약 <strong>8만원(일 2,700원)!</strong>','<strong style="color:#4527A0;">타사 차량 신규 매각 100만원 → 신규 고객 확장 가능!</strong>','넥쏘 외 차종 보유 고객도 당사 매각 +200만원 → 고객 풀 대폭 확대!'])
   +'<hr class="dv">'
 +ptabs('nexo',[
   ['nexodown','넥쏘 부담Down'],
@@ -19837,10 +19954,11 @@ PANELS.nexo=(()=>{
   ['jk','단기소액 무이자'],
 ])
   +`<div class="ppanel active" id="pp-nexo-nexodown" data-g="nexo"><div class="scard"><div class="stitle">넥쏘 부담Down 39개월 유예형</div>
-  <div class="new-box">🆕 월 14만원(일 4,500원)으로 넥쏘 이용! (선수금 3.6% 기준)</div>
+  <div class="new-box">🆕 월 약 8만원(일 2,700원)으로 넥쏘 이용! (선수율 5% 기준)</div>
 ${T(`<table class="rt"><thead><tr><th>기간</th><th class="th-m">모빌리티(XI)</th><th class="th-n">일반(XH)</th><th>유예율</th></tr></thead><tbody>
   <tr><td class="lb">39개월</td><td>${R}1.8%${Rc}</td><td>${R1}2.8%${Rc}</td><td>45%</td></tr>
-</tbody></table>`)}</div></div>`
+</tbody></table>`)}
+<small style="color:var(--tx-muted);">※ 2027 넥쏘 기준 (차량가 8,045만/국고보조금 2,250만/지자체 1,085만/트레이드인 200만)</small></div></div>`
 +tblStd('nexo','JH','JA', RATE_CONFIG.FCEV_NEXO.std)
 +tblVar('nexo','JJ','JI', RATE_CONFIG.FCEV_NEXO.var)   // 직접 참조
 +tblDef('nexo','JG','JF', RATE_CONFIG.FCEV_NEXO.def)
@@ -19925,8 +20043,9 @@ PANELS.g80ice=(()=>{
   [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
-  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>91만</strong> / 렌트 <strong>104만</strong><br>생산월조건 적용 시: 리스 <strong>82만~</strong> / 렌트 <strong>92만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>91만</strong> / 렌트 <strong>104만</strong><br>더베초 적용 시: 리스 <strong>86만</strong> / 렌트 <strong>97만</strong><br>생산월조건 적용 시: 리스 <strong>82만~</strong> / 렌트 <strong>92만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
+  [true,'제네시스 할부 전용 금융 프로그램','초장기할부 <strong>72/84/96/108/120개월</strong> 운영<br>유예기간 확대: 36M 유예율 ICE60%·EV48% / 48M ICE50%·EV40% / 60M ICE40%·EV30%<br>거치기간 12/24개월 운영<br><small>전 유형 25개월 이상 경과 시 중도상환수수료 전액 면제 · 법인사업자는 거치형/트레이드인 금리할인 제외</small>'],
 ])
   +'<hr class="dv">'
   +ptabs('g80ice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사'],['jk','단기소액저금리']])
@@ -19971,8 +20090,9 @@ PANELS.gv70ice=(()=>{
   [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
-  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>82만</strong> / 렌트 <strong>91만</strong><br>생산월조건 적용 시: 리스 <strong>75만~</strong> / 렌트 <strong>83만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>82만</strong> / 렌트 <strong>91만</strong><br>더베초 적용 시: 리스 <strong>77만</strong> / 렌트 <strong>85만</strong><br>생산월조건 적용 시: 리스 <strong>75만~</strong> / 렌트 <strong>83만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
+  [true,'제네시스 할부 전용 금융 프로그램','초장기할부 <strong>72/84/96/108/120개월</strong> 운영<br>유예기간 확대: 36M 유예율 ICE60%·EV48% / 48M ICE50%·EV40% / 60M ICE40%·EV30%<br>거치기간 12/24개월 운영<br><small>전 유형 25개월 이상 경과 시 중도상환수수료 전액 면제 · 법인사업자는 거치형/트레이드인 금리할인 제외</small>'],
 ])
   +'<hr class="dv">'
   +ptabs('gv70ice',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사'],['jk','단기소액저금리']])
@@ -20017,8 +20137,9 @@ PANELS.gv80=(()=>{
   [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔존가치 65%'],
-  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>98만</strong> / 렌트 <strong>114만</strong><br>생산월조건 적용 시: 리스 <strong>87만~</strong> / 렌트 <strong>101만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>98만</strong> / 렌트 <strong>114만</strong><br>더베초 적용 시: 리스 <strong>92만</strong> / 렌트 <strong>106만</strong><br>생산월조건 적용 시: 리스 <strong>87만~</strong> / 렌트 <strong>101만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
+  [true,'제네시스 할부 전용 금융 프로그램','초장기할부 <strong>72/84/96/108/120개월</strong> 운영<br>유예기간 확대: 36M 유예율 ICE60%·EV48% / 48M ICE50%·EV40% / 60M ICE40%·EV30%<br>거치기간 12/24개월 운영<br><small>전 유형 25개월 이상 경과 시 중도상환수수료 전액 면제 · 법인사업자는 거치형/트레이드인 금리할인 제외</small>'],
 ])
   +'<hr class="dv">'
   +ptabs('gv80',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['lease','임직원/그룹사 특화'],['j5','현장렌트사'],['jk','단기소액저금리']])
@@ -20064,8 +20185,9 @@ PANELS.g90=(()=>{
   +promoSection([
   [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
-  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>163만</strong> / 렌트 <strong>175만</strong><br>생산월조건 적용 시: 리스 <strong>139만~</strong> / 렌트 <strong>148만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','더베이직: 리스 <strong>163만</strong> / 렌트 <strong>175만</strong><br>더베초 적용 시: 리스 <strong>155만</strong> / 렌트 <strong>164만</strong><br>생산월조건 적용 시: 리스 <strong>139만~</strong> / 렌트 <strong>148만~</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
+  [true,'제네시스 할부 전용 금융 프로그램','초장기할부 <strong>72/84/96/108/120개월</strong> 운영<br>유예기간 확대: 36M 유예율 ICE60%·EV48% / 48M ICE50%·EV40% / 60M ICE40%·EV30%<br>거치기간 12/24개월 운영<br><small>전 유형 25개월 이상 경과 시 중도상환수수료 전액 면제 · 법인사업자는 거치형/트레이드인 금리할인 제외</small>'],
 ])
   +'<hr class="dv">'
   +ptabs('g90',[['std','표준형'],['var','변동금리'],['def','거치형'],['yuye','반납유예형'],['jk','단기소액저금리']])
@@ -20121,7 +20243,9 @@ PANELS.genesisev=(()=>{
   [true,'GS 칼텍스 고급유 할인 프로모션','고급 휘발유 <strong>리터당 50원 할인</strong> (월 최대 2만원)<br><small>\'26.8/1~12/31 · 출고 익월 개별 문자 발송</small>'],
   [false,'트레이드인 할부 (XW/XX)','인증중고차 매각 후 제네시스 신차 구매 시<br>표준형 할부 금리 <strong>-0.5%p</strong> 인하'],
   [true,'임직원/그룹사 특화(XZ/XY)','모빌리티(XZ): <strong>5.8%</strong><br>일반(XY): <strong>6.8%</strong><br>36개월 잔가율 65%'],
+  [true,'제네시스 파이낸스 리스/렌트 (60개월 기준)','G80 EV — 더베이직: 리스 <strong>116만</strong>/렌트 <strong>138만</strong> · 더베초: 리스 <strong>109만</strong>/렌트 <strong>132만</strong> · 생산월조건: 리스 <strong>103만</strong>/렌트 <strong>125만</strong><br>GV60 — 더베이직: 리스 <strong>84만</strong>/렌트 <strong>103만</strong> · 더베초: 리스 <strong>79만</strong>/렌트 <strong>98만</strong> · 생산월조건: 리스 <strong>75만</strong>/렌트 <strong>93만</strong><br><small>월납입방식 선택·중도상환수수료 면제·THE BETTER CHOICE(4%추가)·카라이프·방문정비 서비스 제공</small>'],
   [false,'더블픽 (12/24개월 렌트/리스)','① 만기 5개월 이내 중도상환 수수료 면제<br>② 4% 혜택 (당사 2%+현대캐피탈 2%)<br>③ 신차 우선공급 혜택'],
+  [true,'제네시스 할부 전용 금융 프로그램','초장기할부 <strong>72/84/96/108/120개월</strong> 운영<br>유예기간 확대: 36M 유예율 ICE60%·EV48% / 48M ICE50%·EV40% / 60M ICE40%·EV30%<br>거치기간 12/24개월 운영<br><small>전 유형 25개월 이상 경과 시 중도상환수수료 전액 면제 · 법인사업자는 거치형/트레이드인 금리할인 제외</small>'],
 ])
   +fboxSection(['GV60 MAGMA 임직원 특화: 표준형 대비 월 납입금 약 117만원 절감!'])
   +'<hr class="dv">'
@@ -22976,22 +23100,22 @@ if ('serviceWorker' in navigator) {
      업데이트마다 아래 두 곳만 수정
      ──────────────────────────────── */
   var VERSION = '2609-01';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
-  var UPDATE_DATE = '2026.09.01';   // 업데이트 날짜 표시용
+  var UPDATE_DATE = '2026.09.02';   // 업데이트 날짜 표시용
   var UPDATES = [                   // 업데이트 내용 목록
+    {
+      title: '<span style="color:var(--accent-warn);">[창원시] 전기차 공모 일정 변경 안내</span>',
+      desc:  '9/7(월) 공고 → 9/11(금) 접수(승용10시, 화물/승합14시) · 승용1,800·화물450·승합48대(스타리아 기준)'
+    },
     {
       title: '9월 판매조건/납기 업데이트 완료',
       desc:  'G80·G90 생산월 조건 강화, 그랜저 영업용 생산월 확대, 더 뉴 그랜저 트레이드인 신설 등 반영'
     },
-    {
-      title: '트레이드인 혜택 조회 9월 2일 추가 업데이트 예정',
-      desc:  '시스템 이슈로 업데이트 미실시, 추가 반영 예정'
-    },
   {
-      title: '<span style="color:var(--accent-warn);">[신규] 2026 추석 가족사랑조건 100만원</span>',
+      title: '[신규] 2026 추석 가족사랑조건 100만원',
       desc:  '그랜저·싼타페·팰리세이드·스타리아·아이오닉5·6·9·코나EV 대상'
     },
     {
-      title: '<span style="color:var(--accent-warn);">[신규] EV to 내연기관 전환 출고 혜택 50만 / 비포서비스 애프터세일즈 20만</span>',
+      title: '[신규] EV to 내연기관 전환 출고 혜택 50만 / 비포서비스 애프터세일즈 20만',
       desc:  '국내승용 전차종 대상 (신형 아반떼·신형 그랜저 제외)'
     },
 
