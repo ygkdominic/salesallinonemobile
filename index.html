@@ -16439,8 +16439,7 @@ PANELS.summary=`
   onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
   <span style="display:flex;align-items:center;gap:8px;flex:1;">
     <span style="background:#E3F5EC;color:#1A7035;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">EV</span>
-    <span style="background:#FFF5F5;color:#C62828;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">창원 공고 임박</span>
-    <span style="color:var(--accent-warn);font-weight:800;">경남 하반기 전기차 공모 안내<br><span style="color:#C62828;">창원 9/7 공고 · 9/11 접수 예정</span> (9/2 기준)</span>
+    <span style="color:var(--accent-warn);font-weight:800;">경남 하반기 전기차 공모 안내<br><span style="color:#C62828;">창원 9/11(금) 접수 · 사천 9/9(수) 접수 · 진주 9/17·9/21 접수 예정</span> (9/8 기준)</span>
   </span>
   <span class="acc-arrow">▼</span>
 </button>
@@ -16450,7 +16449,7 @@ PANELS.summary=`
   <div style="background:#FFF5F5;border-radius: var(--r-sm);padding:11px 14px;margin-bottom:10px;border:1.5px solid rgba(240,68,82,0.3);">
     <div style="font-size: 14.5px;font-weight:800;color:#C62828;line-height:1.7;">
       9월 경쟁사 EV 납기가 대폭 증가했습니다. 참고하셔서 당사 EV로 적극 유도 바랍니다.<br>
-      <strong>[창원시 변경]</strong> 9/7(월) 공고 → 9/11(금) 접수 예정 <small>(승용 10시, 화물/승합 14시)</small> · 공모 대수 <strong>승용 1,800대 · 화물 450대 · 승합 48대</strong>(스타리아 기준)
+      <strong>[창원시 변경]</strong> 9/7(월) 공고 → 9/11(금) 접수 예정 <small>(승용 10시, 화물/승합 14시)</small> · 공모 대수 <strong>승용 1,800대 · 화물 250대 · 승합 48대</strong>(스타리아 기준) · <strong>수소 9월말 공고 예정</strong>
     </div>
   </div>
 
@@ -16522,6 +16521,49 @@ PANELS.summary=`
     margin-bottom: 8px;
     font-weight: 600;
   }
+  /* 공고/접수 일정 표준 표기 */
+  .ev-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #fff;
+    padding: 1.5px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    vertical-align: 1px;
+    letter-spacing: .2px;
+  }
+  .ev-badge-gonggo { background: #6B7684; }
+  .ev-badge-jeobsu { background: #C62828; }
+  .ev-badge-closed { background: #9AA5B1; }
+  .ev-sched-line {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--tx-primary);
+    line-height: 1.8;
+  }
+  .ev-sched-line .d-jeobsu { color: #C62828; }
+  .ev-time-chip {
+    display: inline-block;
+    background: #FFF0F0;
+    color: #C62828;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+  }
+  .ev-sched-detail {
+    font-size: 12px;
+    color: var(--tx-muted);
+    margin-top: 3px;
+    line-height: 1.5;
+  }
+  .ev-sched-status {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--tx-muted);
+  }
 </style>
 
 <div class="scroll-hint">
@@ -16551,134 +16593,171 @@ PANELS.summary=`
       <!-- 경남 합계 (17개 지자체 기준, 양산 제외) -->
       <tr style="background:var(--hyundai-blue-light);">
         <td style="background:var(--hyundai-blue-light); color:var(--hyundai-blue-mid); font-weight:900;">경남 (합계)</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">6</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">2</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">-</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">72</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">67</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">69</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">2,354</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">680</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">66</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">2,872</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">537</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">62</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">31</td>
         <td style="text-align:left; color:var(--tx-muted); font-size: 13.5px;">경남 17개 지자체 합 (양산 관할 외 제외)</td>
       </tr>
-      <!-- 창원시 -->
+      <!-- 창원시: 최대 볼륨 + 접수확정(9/11) -->
       <tr style="background:#FFF5F5;">
         <td style="background:#FFF5F5; color:#C62828; font-weight:800;">창원시</td>
-        <td>-</td><td>-</td><td>-</td><td>우선2</td>
-        <td style="font-weight:800; color:#C62828;">1,800</td><td style="font-weight:800; color:#C62828;">450</td><td style="font-weight:800; color:#C62828;">48</td><td>20</td>
-        <td style="text-align:left; color:#C62828; font-weight:700;">9/7(월) 공고 · 9/11(금) 접수<br><small style="color:#856404;font-weight:500;">(승용 10시, 화물/승합 14시) · 스타리아 기준</small></td>
+        <td>-</td><td>-</td><td>-</td><td>우선1</td>
+        <td style="font-weight:800; color:#C62828;">1,800</td><td style="font-weight:800; color:#C62828;">250</td><td style="font-weight:800; color:#C62828;">48</td><td>20</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수</span><span class="d-jeobsu">9/11(금)</span><span class="ev-time-chip">승용 10시·화물/승합 14시</span></div>
+          <div class="ev-sched-detail">공고 9/7(월) · 스타리아 기준 · 수소 9월말 공고예정</div>
+        </td>
       </tr>
-      <!-- 진주시 -->
-      <tr>
-        <td>진주시</td>
+      <!-- 김해시: 대량 + 접수확정(승용 9/10) -->
+      <tr style="background:#FFF5F5;">
+        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">김해시</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="font-weight:800; color:#C62828;">500</td><td style="font-weight:800; color:#C62828;">30</td><td>-</td><td>-</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수</span><span class="d-jeobsu">화물 9/3(목)·승용 9/10(목)</span></div>
+          <div class="ev-sched-detail">공고 8/31(월)</div>
+        </td>
+      </tr>
+      <!-- 진주시: 대량(400) + 접수확정 -->
+      <tr style="background:#FFF5F5;">
+        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">진주시</td>
         <td>-</td><td>-</td><td>11</td><td>30</td>
         <td>300</td><td>100</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">9월11일 공고<br><small>(화물 9/17, 승용 9/21 접수예정)</small></td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수</span><span class="d-jeobsu">화물 9/17(목)·승용 9/21(월)</span></div>
+          <div class="ev-sched-detail">공고 9/11(금) 예정</div>
+        </td>
       </tr>
-      <!-- 거제시 -->
+      <!-- 사천시: 접수확정(9/9) -->
       <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">거제시</td>
-        <td>-</td><td style="font-weight:800; color:#C62828;">55</td><td style="font-weight:800; color:#C62828;">7</td><td>-</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:#C62828; font-weight:700;">8/31일 11시 접수</td>
-      </tr>
-      <!-- 통영시 -->
-      <tr>
-        <td>통영시</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td>50</td><td>50</td><td>10</td><td>10</td>
-        <td style="text-align:left; color:var(--tx-primary);">9월말 공고_10월초 접수 예정(전기/수소)</td>
+        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">사천시</td>
+        <td>-</td><td>-</td><td style="font-weight:800; color:#C62828;">20</td><td style="font-weight:800; color:#C62828;">28</td>
+        <td>20</td><td>12</td><td>-</td><td>-</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수</span><span class="d-jeobsu">9/9(수)</span><span class="ev-time-chip">10시</span></div>
+          <div class="ev-sched-detail">공고 9/7(월)</div>
+        </td>
       </tr>
       <!-- 밀양시 -->
       <tr>
         <td>밀양시</td>
         <td>-</td><td>-</td><td>-</td><td>-</td>
         <td>20</td><td>12</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">9/21 공고<br><small>(29일 접수: 승용 20 / 화물 12)</small></td>
-      </tr>
-      <!-- 사천시 -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">사천시</td>
-        <td>-</td><td>-</td><td style="font-weight:800; color:#C62828;">20</td><td style="font-weight:800; color:#C62828;">28</td>
-        <td>20</td><td>12</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:#C62828; font-weight:700;">9/7일 공고 (9/8일 접수)</td>
-      </tr>
-      <!-- 거창군 -->
-      <tr>
-        <td>거창군</td>
-        <td>-</td><td>-</td><td>8</td><td>-</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">추경 계획 없음</td>
-      </tr>
-      <!-- 고성군 -->
-      <tr>
-        <td>고성군</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td>50</td><td>5</td><td>2</td><td>1</td>
-        <td style="text-align:left; color:var(--tx-primary);">9월 중순 예정<br><small>(화물/승합 대수 확대 가능성 있음)</small></td>
-      </tr>
-      <!-- 남해군 -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">남해군</td>
-        <td>-</td><td>-</td><td>-</td><td style="font-weight:800; color:#C62828;">11</td>
-        <td>10</td><td>2</td><td>4</td><td>-</td>
-        <td style="text-align:left; color:#C62828; font-weight:700;">9/1일 접수</td>
-      </tr>
-      <!-- 산청군 -->
-      <tr>
-        <td>산청군</td>
-        <td>-</td><td>-</td><td>10</td><td>-</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">9월 승용·화물 13~15대가량 추가예정</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9/21(월)</div>
+          <div class="ev-sched-detail">접수예정 9/29(화) · 승용20·화물12</div>
+        </td>
       </tr>
       <!-- 의령군 -->
       <tr>
         <td>의령군</td>
         <td>-</td><td>-</td><td>6</td><td>-</td>
         <td>24</td><td>15</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">9/14일 공고 (9/21 접수 예정)</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9/14(월)</div>
+          <div class="ev-sched-detail">접수예정 9/21(월)</div>
+        </td>
       </tr>
-      <!-- 창녕군 -->
+      <!-- 고성군 -->
       <tr>
-        <td>창녕군</td>
-        <td>-</td><td>-</td><td>4</td><td>-</td>
+        <td>고성군</td>
         <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">현재 계획 없음</td>
-      </tr>
-      <!-- 하동군 -->
-      <tr>
-        <td>하동군</td>
-        <td>-</td><td>30</td><td>-</td><td>-</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">현재 계획 없음</td>
-      </tr>
-      <!-- 함안군 -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">함안군</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td>30</td><td>14</td><td>2</td><td>-</td>
-        <td style="text-align:left; color:#C62828; font-weight:700;">9월 1일 공고<br><small style="color:#856404;font-weight:500;">(9월7일 신청_승용30, 화물14, 승합2)</small></td>
-      </tr>
-      <!-- 함양군 -->
-      <tr>
-        <td>함양군</td>
-        <td>6</td><td>3</td><td>-</td><td>-</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">현재 계획 없음</td>
+        <td>50</td><td>5</td><td>2</td><td>1</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9월 중순 예정</div>
+          <div class="ev-sched-detail">화물/승합 대수 확대 가능성 있음</div>
+        </td>
       </tr>
       <!-- 합천군 -->
       <tr>
         <td>합천군</td>
         <td>-</td><td>-</td><td>6</td><td>-</td>
         <td>50</td><td>20</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:var(--tx-primary);">9월28일 공고_10월12~16일경 접수예정</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9/28(월)</div>
+          <div class="ev-sched-detail">접수예정 10/12~16 경</div>
+        </td>
       </tr>
-      <!-- 김해시 -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">김해시</td>
+      <!-- 통영시 -->
+      <tr>
+        <td>통영시</td>
         <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td>500</td><td>30</td><td>-</td><td>-</td>
-        <td style="text-align:left; color:#C62828; font-weight:700;">8/31 공고<br><small style="color:#856404;font-weight:500;">(화물 9/3일 접수, 승용 9/10일 접수)</small></td>
+        <td>50</td><td>50</td><td>10</td><td>10</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9월말 예정</div>
+          <div class="ev-sched-detail">접수예정 10월초 (전기/수소)</div>
+        </td>
+      </tr>
+      <!-- 산청군 -->
+      <tr>
+        <td>산청군</td>
+        <td>-</td><td>-</td><td>4</td><td>-</td>
+        <td>20</td><td>20</td><td>-</td><td>-</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9월말~10월초 예정</div>
+          <div class="ev-sched-detail">대수 미확정</div>
+        </td>
+      </tr>
+      <!-- 함안군: 접수 마감(9/7), 대수 확정치로 수정 -->
+      <tr>
+        <td>함안군</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td>38</td><td>23</td><td>2</td><td>-</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line ev-sched-status"><span class="ev-badge ev-badge-closed">마감</span>9/7(월) 접수마감</div>
+          <div class="ev-sched-detail">공고 9/1(화) · 승용38·화물23·승합2</div>
+        </td>
+      </tr>
+      <!-- 거제시: 마감 -->
+      <tr>
+        <td>거제시</td>
+        <td>-</td><td>-</td><td>7</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line ev-sched-status"><span class="ev-badge ev-badge-closed">마감</span>승용·화물 접수종료</div>
+        </td>
+      </tr>
+      <!-- 남해군: 마감 -->
+      <tr>
+        <td>남해군</td>
+        <td>-</td><td>-</td><td>1</td><td>11</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line ev-sched-status"><span class="ev-badge ev-badge-closed">마감</span>승용·화물 접수종료</div>
+        </td>
+      </tr>
+      <!-- 거창군: 계획 없음 -->
+      <tr>
+        <td>거창군</td>
+        <td>-</td><td>-</td><td>8</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left;"><span class="ev-sched-status">추경 계획 없음</span></td>
+      </tr>
+      <!-- 창녕군: 계획 없음 -->
+      <tr>
+        <td>창녕군</td>
+        <td>-</td><td>-</td><td>4</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left;"><span class="ev-sched-status">현재 계획 없음</span></td>
+      </tr>
+      <!-- 하동군: 계획 없음 -->
+      <tr>
+        <td>하동군</td>
+        <td>-</td><td>28</td><td>-</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left;"><span class="ev-sched-status">현재 계획 없음</span></td>
+      </tr>
+      <!-- 함양군: 계획 없음 -->
+      <tr>
+        <td>함양군</td>
+        <td>2</td><td>-</td><td>-</td><td>-</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td style="text-align:left;"><span class="ev-sched-status">현재 계획 없음</span></td>
       </tr>
     </tbody>
   </table>
@@ -17004,7 +17083,7 @@ PANELS.summary=`
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
     아이오닉 100만대 기념 특별조건<br>
     <span style="color:var(--hyundai-azure);font-weight:800;">아이오닉5·6·9·코나EV 150만 / 포터EV·ST1 100만</span><br>
-    <strong>대상:</strong> 26년 계약 + 8월 내 출고 고객 · <strong>개인(AA1)·개인사업자(BA1) 한정</strong><br>
+    <strong>대상:</strong> 26년 계약 + 9월 내 출고 고객 · <strong>개인(AA1)·개인사업자(BA1) 한정</strong><br>
     EV 부담Down <strong style="color:#E65100;">월 10만원대</strong> 납입금 병행 가능<br>
     <div style="margin-top:6px;padding-top:6px;border-top:1px solid rgba(0,180,147,0.18);font-size: 13.5px;">
       아이오닉9 생산월 조건 추가 최대 400만원 별도 가산 가능
@@ -23099,12 +23178,12 @@ if ('serviceWorker' in navigator) {
   /* ────────────────────────────────
      업데이트마다 아래 두 곳만 수정
      ──────────────────────────────── */
-  var VERSION = '2609-01';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
-  var UPDATE_DATE = '2026.09.02';   // 업데이트 날짜 표시용
+  var VERSION = '2609-02';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
+  var UPDATE_DATE = '2026.09.08';   // 업데이트 날짜 표시용
   var UPDATES = [                   // 업데이트 내용 목록
     {
-      title: '<span style="color:var(--accent-warn);">[창원시] 전기차 공모 일정 변경 안내</span>',
-      desc:  '9/7(월) 공고 → 9/11(금) 접수(승용10시, 화물/승합14시) · 승용1,800·화물450·승합48대(스타리아 기준)'
+      title: '<span style="color:var(--accent-warn);">[경남] 전기차 공모 현황 업데이트</span>',
+      desc:  '<span style="color:#C62828;font-weight:700;">창원 9/11(금) 접수</span>(승용1,800·화물250·승합48대, 수소 9월말) · <span style="color:#C62828;font-weight:700;">사천 9/9(수) 10시 접수</span> · 함안 9/7 접수마감(승용38·화물23·승합2)'
     },
     {
       title: '9월 판매조건/납기 업데이트 완료',
