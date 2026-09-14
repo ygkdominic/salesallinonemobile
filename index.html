@@ -1419,18 +1419,6 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
   box-shadow: 0 0 0 2.5px rgba(255,255,255,0.9), 0 0 0 4.5px var(--hyundai-azure) !important;
 }
 
-/* EV 부담DOWN 간편견적 버튼 불릿 */
-#btn-evcalc .ci {
-  background: linear-gradient(135deg, var(--hyundai-blue), var(--hyundai-blue-mid));
-  border-radius: 1px;
-  transform: rotate(45deg);
-}
-#btn-evcalc.active {
-  color: var(--hyundai-blue) !important;
-}
-#btn-evcalc.active .ci {
-  box-shadow: 0 0 0 2.5px rgba(255,255,255,0.9), 0 0 0 4.5px var(--hyundai-blue) !important;
-}
 
 /* ── 이달 핵심 공통 프로모션 섹션 타이틀 앞 네모 불릿 ── */
 .sum-head::before {
@@ -1477,316 +1465,6 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
 </style>
 </head>
 <body>
-
-<!-- ════════════════════════════════
-     랜딩 페이지 (암호 입력)
-════════════════════════════════ -->
-<div id="landing-page" style="
-  position: fixed; inset: 0; z-index: 9999;
-  background: var(--bg);
-  overflow-y: auto;
-  display: flex; flex-direction: column; align-items: center;
-">
-
-  <!-- 배경 장식 -->
-  <div style="
-    position: fixed; top:-120px; right:-80px;
-    width:340px; height:340px; border-radius:50%;
-    background:radial-gradient(circle,rgba(49,130,246,0.07) 0%,transparent 70%);
-    pointer-events:none; z-index:0;
-  "></div>
-  <div style="
-    position: fixed; bottom:-80px; left:-60px;
-    width:260px; height:260px; border-radius:50%;
-    background:radial-gradient(circle,rgba(0,180,147,0.06) 0%,transparent 70%);
-    pointer-events:none; z-index:0;
-  "></div>
-
-  <!-- 헤더바 — 메인 앱 .top-header와 동일 구조 -->
-  <div style="
-    background:var(--bg-white);
-    padding:0 16px;
-    height:52px;
-    display:flex; align-items:center; justify-content:space-between;
-    box-shadow:0 1px 0 rgba(0,0,0,0.06);
-    position:sticky; top:0; z-index:100;
-    width:100%;
-  ">
-    <div style="
-      background:var(--bg); border:none;
-      color:var(--tx-secondary); font-size: 21px;
-      width:36px; height:36px; border-radius: var(--r-sm);
-      display:flex; align-items:center; justify-content:center;
-      opacity:0.3; pointer-events:none;
-    ">☰</div>
-    <span style="
-      background:var(--hyundai-blue-light); border:none;
-      color:var(--hyundai-blue);
-      font-size: 13.5px; font-weight:700;
-      padding:5px 14px; border-radius: var(--r-lg);
-    ">현대차 경남지역본부</span>
-  </div>
-
-<!-- 히어로 — 상세페이지(.hero)와 동일 구조 -->
-<div style="
-  background:linear-gradient(135deg,var(--hyundai-blue-light) 0%,#F0F8FF 50%,#EBF9F5 100%);
-  padding:48px 18px 30px;
-  text-align:center;
-  position:relative; overflow:hidden;
-  border-bottom:1px solid rgba(49,130,246,0.1);
-  width:100%;
-  min-height:200px;
-">
-  <!-- 배경 장식 원 -->
-  <div style="
-    position:absolute; top:-60px; right:-40px;
-    width:220px; height:220px;
-    background:radial-gradient(circle,rgba(49,130,246,0.08) 0%,transparent 70%);
-    border-radius:50%;
-    pointer-events:none;
-  "></div>
-
-  <!-- 아이워브로 뱃지 -->
-  <div style="
-    display:inline-flex; align-items:center; gap:6px;
-    background:rgba(49,130,246,0.1);
-    color:var(--hyundai-blue);
-    font-size: 14.5px; font-weight:700;
-    padding:6px 14px; border-radius: var(--r-lg);
-    margin-bottom:12px; letter-spacing:0.3px;
-    position:relative; z-index:1;
-  ">경남 카마스터 시크릿 노트 Ep.7</div>
-
-  <!-- 타이틀 -->
-  <h1 style="
-    font-size: 23px; font-weight:900;
-    color:var(--tx-primary);
-    line-height:1.35; letter-spacing:-0.5px;
-    margin-bottom:8px;
-    position:relative; z-index:1;
-  ">26년 9월 현대자동차 경남지역본부<br><span style="color:var(--hyundai-blue);">Sales All-in-One</span></h1>
-
-  <!-- 서브텍스트 -->
-  <p style="
-    font-size: 13.5px; color:var(--tx-secondary);
-    font-weight:500; line-height:1.6;
-    position:relative; z-index:1;
-    margin:0;
-  ">차종별 판매조건 · 납기 · 판매팁 · 금융 프로모션 · 트레이드인을 한번에!<br>
-   </p>
-  </div>
-
-
-  <!-- 콘텐츠 -->
-  <div style="width:100%;max-width:480px;padding:0 16px 60px;position:relative;z-index:1;">
-
-    <!-- ① 암호 입력 카드 (위로) -->
-    <div style="
-      background:var(--bg-white);border-radius: var(--r-lg);padding:22px 18px 20px;
-      margin-top:20px;box-shadow:0 2px 14px rgba(0,0,0,0.04);
-      border:1px solid rgba(0,0,0,0.04);
-    ">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
-        <div style="
-          width:34px;height:34px;border-radius: var(--r-sm);
-          background:linear-gradient(135deg,#F5F0FF,#EDE0FF);
-          display:flex;align-items:center;justify-content:center;font-size: 17px;flex-shrink:0;
-        "></div>
-        <div>
-          <div style="font-size: 11px;font-weight:700;color:var(--tx-muted);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:2px;">Password Required</div>
-          <div style="font-size: 14.5px;font-weight:800;color:var(--tx-primary);">배포된 비밀번호를 입력하세요.</div>
-        </div>
-      </div>
-
-      <div style="position:relative;margin-bottom:12px;">
-        <input
-          type="password"
-          id="ld-pw"
-          placeholder="비밀번호를 입력하세요"
-          maxlength="20"
-          autocomplete="off"
-          spellcheck="false"
-          style="
-            width:100%;height:52px;
-            border:2px solid rgba(0,0,0,0.08);border-radius: var(--r-md);
-            background:var(--bg-subtle);
-            font-family:'Noto Sans KR',sans-serif;
-            font-size: 17px;font-weight:700;color:var(--tx-primary);
-            letter-spacing:4px;text-align:center;
-            outline:none;
-            -webkit-appearance:none;
-            transition:all 0.18s;
-          "
-        >
-        <button
-          type="button"
-          onclick="ldTogglePw()"
-          id="ld-pw-toggle"
-          style="
-            position:absolute;right:14px;top:50%;transform:translateY(-50%);
-            background:none;border:none;color:var(--tx-muted);font-size: 19px;
-            cursor:pointer;padding:4px;
-            display:flex;align-items:center;justify-content:center;
-          "
-        ></button>
-      </div>
-
-      <div id="ld-error" style="
-        display:none;
-        font-size: 13.5px;font-weight:600;color:var(--accent-warn);
-        text-align:center;margin-top:-6px;margin-bottom:10px;
-      ">비밀번호가 올바르지 않습니다. 다시 확인해주세요.</div>
-
-      <button
-        id="ld-enter-btn"
-        onclick="ldTryEnter()"
-        style="
-          width:100%;height:52px;
-          background:linear-gradient(135deg,var(--hyundai-blue) 0%,var(--hyundai-blue-mid) 100%);
-          color:var(--bg-white);border:none;border-radius: var(--r-md);
-          font-family:'Noto Sans KR',sans-serif;
-          font-size: 16px;font-weight:800;cursor:pointer;letter-spacing:-0.3px;
-          box-shadow:0 4px 14px rgba(49,130,246,0.3);
-          transition:all 0.18s;
-          display:flex;align-items:center;justify-content:center;gap:8px;
-        "
-      >Enter →</button>
-
-      <div style="margin-top:12px;font-size: 14.5px;color:var(--tx-muted);text-align:center;line-height:1.6;font-weight:500;">
-        본 앱은 현대자동차 경남지역본부 카마스터 전용 앱으로<br>
-        외부 유출 및 무단 배포를 금지합니다.<br>
-        문의: 경남지역본부 김영관 책임
-      </div>
-    </div>
-
-  <!-- ② 공지사항 카드 (아래로) -->
-<div style="
-  background:var(--bg-white);border-radius: var(--r-lg);padding:18px 18px 16px;
-  margin-top:14px;box-shadow:0 2px 14px rgba(0,0,0,0.04);
-  border:1px solid rgba(0,0,0,0.04);
-">
-  <div style="
-    display:flex;align-items:center;gap:10px;
-    margin-bottom:14px;padding-bottom:12px;
-    border-bottom:1px solid rgba(0,0,0,0.05);
-  ">
-    <div style="
-      width:34px;height:34px;border-radius: var(--r-sm);
-      background:linear-gradient(135deg,var(--hyundai-blue-light),#E0F0FF);
-      display:flex;align-items:center;justify-content:center;font-size: 17px;flex-shrink:0;
-    "></div>
-    <div>
-      <div style="font-size: 11px;font-weight:700;color:var(--tx-muted);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:2px;">업데이트 공지</div>
-      <div style="font-size: 14.5px;font-weight:800;color:var(--tx-primary);">세일즈 올인원 주요 업데이트 안내</div>
-    </div>
-  </div>
-
-  <!-- 공지 1 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--bg);color:var(--tx-secondary);min-width:64px;box-sizing:border-box;">중요</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">초기 안내에 따라 홈화면 앱으로 추가 후 활용하세요.</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.05.31</div>
-    </div>
-  </div>
-
-  <!-- 공지 1-1 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);min-width:64px;box-sizing:border-box;">업데이트</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">9월 판매조건 업데이트 완료</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.09.01</div>
-    </div>
-  </div>
-
-  <!-- 공지 2 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);min-width:64px;box-sizing:border-box;">업데이트</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">8월 판매조건 업데이트 완료</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.08.01</div>
-    </div>
-  </div>
-
-  <!-- 공지 2 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);min-width:64px;box-sizing:border-box;">업데이트</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">7월 판매조건 업데이트 완료</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.06.30</div>
-    </div>
-  </div>
-
-  <!-- 공지 2 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);min-width:64px;box-sizing:border-box;">업데이트</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">전차종 가격표, 판매조건표 추가</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.06.19</div>
-    </div>
-  </div>
-
-
-  <!-- 공지 2 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);min-width:64px;box-sizing:border-box;">업데이트</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">더 뉴 그랜저/블루멤버스 포인트 안내 추가</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.06.12</div>
-    </div>
-  </div>
-
-  <!-- 공지 2 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);min-width:64px;box-sizing:border-box;">업데이트</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">6월 판매조건 업데이트 완료</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.05.31</div>
-    </div>
-  </div>
-
-  <!-- 공지 3 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.04);">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:#E3F5EC;color:#1A7035;min-width:64px;box-sizing:border-box;">NEW</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">전기차 보조금 조회/현대 EV 혜택 기능 추가</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.05.31</div>
-    </div>
-  </div>
-
-  <!-- 공지 4 -->
-  <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;">
-    <span style="display:inline-flex;align-items:center;justify-content:center;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;margin-top:2px;background:#E3F5EC;color:#1A7035;min-width:64px;box-sizing:border-box;">NEW</span>
-    <div>
-      <div style="font-size: 14px;font-weight:600;color:var(--tx-primary);line-height:1.5;margin-bottom:2px;">트레이드인 혜택 조회 기능 추가</div>
-      <div style="font-size: 13.5px;color:var(--tx-muted);font-weight:500;">2026.05.22</div>
-    </div>
-  </div>
-</div>
-
-<div style="margin-top:24px;font-size: 14.5px;color:var(--tx-light);text-align:center;line-height:1.8;font-weight:500;">
-      본 앱은 현대자동차 경남지역본부 내부 자료입니다.<br>
-      외부 유출 및 무단 배포를 금지합니다.
-    </div>
-
-  </div>
-</div>
-
-<!-- 성공 오버레이 -->
-<div id="ld-success" style="
-  display:none;
-  position:fixed;inset:0;background:var(--bg-white);z-index:10000;
-  flex-direction:column;align-items:center;justify-content:center;gap:16px;
-">
-  <div style="
-    width:80px;height:80px;border-radius:50%;
-    background:linear-gradient(135deg,var(--hyundai-blue),var(--hyundai-azure));
-    display:flex;align-items:center;justify-content:center;font-size: 37px;
-  ">✓</div>
-  <div style="font-size: 19px;font-weight:800;color:var(--tx-primary);letter-spacing:-0.4px;">인증 완료!</div>
-  <div style="font-size: 14px;color:var(--tx-muted);font-weight:500;">Sales All-in-One으로 이동합니다...</div>
-</div>
-
 
 <!-- 오버레이 -->
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
@@ -2016,14 +1694,19 @@ function showCar(id,name,opts){
     document.querySelectorAll('[id^="evs-c-"]').forEach(function(el){ el.classList.remove('on'); });
     var childRow = document.getElementById('evs-child-row');
     if(childRow) childRow.style.display = 'none';
-  }
 
-  if(id === 'evcalc' && typeof EvCalcCore !== 'undefined'){
-    EvCalcCore.reset();
+    /* EV 부담DOWN 간편견적(EV 보조금 조회 내 인라인 삽입)도 함께 초기화 */
+    if (typeof EvCalcCore !== 'undefined') {
+      EvCalcCore.reset();
+    }
+    var evcalcHeading = document.getElementById('evcalc-inline-heading');
+    var evcalcSlotEl  = document.getElementById('evcalc-inline-slot');
+    if (evcalcHeading) evcalcHeading.style.display = 'none';
+    if (evcalcSlotEl)  evcalcSlotEl.style.display  = 'none';
   }
 
   /* 할인바 표시/숨김 */
-  const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || id==='bluemembers' || id==='evcalc' || id==='vscenter' || VS_IDS_LIST.includes(id);
+  const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || id==='bluemembers' || id==='vscenter' || VS_IDS_LIST.includes(id);
   document.body.style.paddingBottom = isNoBar
     ? 'calc(76px + max(10px, env(safe-area-inset-bottom, 0px)))'
     : 'calc(196px + max(10px, env(safe-area-inset-bottom, 0px)))';
@@ -2100,9 +1783,8 @@ function vsGateKey(e){
 const SIDEBAR=[
   {label:'전체',items:[
     {id:'summary',ci:'',name:'홈 화면[전체 요약]',tag:'ALL',tc:'t-sum'},
-    {id:'evcalc',ci:'',name:'EV 부담DOWN 간편견적',tag:'EV',tc:'t-ev'},
     {id:'evbenefit',ci:'',name:'현대 EV 주요 혜택',tag:'EV',tc:'t-ev'},
-    {id:'evsubsidy',ci:'',name:'EV 보조금 조회',tag:'EV',tc:'t-ev'},
+    {id:'evsubsidy',ci:'',name:'EV 보조금 조회 및 부담다운 간편견적',tag:'EV',tc:'t-ev'},
     {id:'tradein',ci:'',name:'트레이드인 혜택 조회',tag:'혜택',tc:'t-sum'},
     {id:'bluemembers', ci:'', name:'블루멤버스 포인트 안내', tag:'혜택', tc:'t-sum'},
 
@@ -2162,7 +1844,7 @@ const VS_IDS = [
     h += `<div class="sb-group"><div class="sb-label">${g.label}</div>`;
     g.items.forEach(it => {
       const a = (gi === 0 && it.id === 'summary') ? ' active' : '';
-      const isNew = ['newgrandeur', 'commercial', 'evcalc'].includes(it.id);   
+      const isNew = ['newgrandeur', 'commercial', 'evsubsidy'].includes(it.id);
       const isChg8 = it.id === 'evbenefit';
       const isVs  = VS_IDS.includes(it.id);
       h += `<button class="car-btn${a}${isVs ? ' vs-btn' : ''}" id="btn-${it.id}" onclick="showCar('${it.id}','${it.name}')">
@@ -2197,13 +1879,13 @@ const VS_IDS = [
       +   'border:1px solid rgba(94,47,192,0.25);'
       + '">'
       + '<div style="flex:1;min-width:0;font-size: 14.5px;font-weight:800;color:#5E2FC0;">'
-      +     '신차 상담 에이전트(PC/태블릿)'
+      +     '고객 상담 에이전트'
       + '</div>'
       + '<span style="font-size:14px;color:#5E2FC0;flex-shrink:0;">↗</span>'
       + '</a>'
 
-    /* ① 차종별 가격표 다운로드 */
-      + '<a href="https://hmcprice.com/vehicle_price"'
+    /* ① 현대 가격표/카탈로그 다운로드 */
+      + '<a href="https://www.hyundai.com/kr/ko/e/vehicles/catalog-price-download"'
       + ' target="_blank" rel="noopener"'
       + ' style="'
       +   'display:flex;align-items:center;gap:10px;'
@@ -2212,24 +1894,24 @@ const VS_IDS = [
       +   'border:1px solid rgba(49,130,246,0.2);'
       + '">'
       + '<div style="flex:1;min-width:0;font-size: 14.5px;font-weight:800;color:var(--hyundai-blue-mid);">'
-      +     '차종별 가격표 다운로드'
+      +     '현대 가격표/카탈로그'
       + '</div>'
       + '<span style="font-size:14px;color:var(--hyundai-blue);flex-shrink:0;">↗</span>'
       + '</a>'
 
-      /* ② 국내사업 판매조건 다운로드 */
-      + '<a href="https://hmcprice.com/sales"'
+    /* ② 제네시스 가격표/카탈로그 다운로드 */
+      + '<a href="https://www.genesis.com/kr/ko/support/download-center/genesis-models.html"'
       + ' target="_blank" rel="noopener"'
       + ' style="'
       +   'display:flex;align-items:center;gap:10px;'
-      +   'background:#F0FFF9;border-radius: var(--r-md);padding:10px 13px;min-height:44px;'
+      +   'background:#F9F5F0;border-radius: var(--r-md);padding:10px 13px;min-height:44px;'
       +   'text-decoration:none;-webkit-tap-highlight-color:transparent;'
-      +   'border:1px solid rgba(0,180,147,0.2);'
+      +   'border:1px solid rgba(164,117,81,0.3);'
       + '">'
-      + '<div style="flex:1;min-width:0;font-size: 14.5px;font-weight:800;color:#007A60;">'
-      +     '국내사업 판매조건 다운로드'
+      + '<div style="flex:1;min-width:0;font-size: 14.5px;font-weight:800;color:#A47551;">'
+      +     '제네시스 가격표/카탈로그'
       + '</div>'
-      + '<span style="font-size:14px;color:var(--hyundai-azure);flex-shrink:0;">↗</span>'
+      + '<span style="font-size:14px;color:#A47551;flex-shrink:0;">↗</span>'
       + '</a>';
 
     /* 블루멤버스 버튼 바로 다음에 삽입 */
@@ -14282,22 +13964,21 @@ if (evSel.dv) {
   if (cn)  cn.textContent  = document.getElementById('evs-model').value;
   if (rt)  rt.textContent  = document.getElementById('evs-region').value + ' · 현대/제네시스 · 2026년 기준';
 
-  /* ↓↓↓ EV 부담DOWN 간편견적 연동 버튼 활성화 ↓↓↓ */
-  var goBtn = document.getElementById('evs-to-evcalc-btn');
-  if (goBtn) {
-    var evcalcVKey = evsGetEvCalcVehicle(model);
-    if (evType === 'passenger' && evcalcVKey) {
-      var evcalcTKey = evsGetEvCalcTrim(evcalcVKey, model);
-      var subsidyWon = total * 10000; /* 만원 → 원 */
-      goBtn.style.display = 'block';
-      goBtn.onclick = function() {
-        if (window.EvCalcCore && EvCalcCore.prefillAndOpen) {
-          EvCalcCore.prefillAndOpen(evcalcVKey, evcalcTKey, subsidyWon);
-        }
-      };
-    } else {
-      goBtn.style.display = 'none';
+  /* ↓↓↓ EV 부담DOWN 간편견적 인라인 자동 연동 ↓↓↓ */
+  var evcalcHeading = document.getElementById('evcalc-inline-heading');
+  var evcalcSlot    = document.getElementById('evcalc-inline-slot');
+  var evcalcVKey    = evsGetEvCalcVehicle(model);
+  if (evType === 'passenger' && evcalcVKey) {
+    var evcalcTKey = evsGetEvCalcTrim(evcalcVKey, model);
+    var subsidyWon = total * 10000; /* 만원 → 원 */
+    if (evcalcHeading) evcalcHeading.style.display = 'block';
+    if (evcalcSlot)    evcalcSlot.style.display = 'block';
+    if (window.EvCalcCore && EvCalcCore.prefillAndOpen) {
+      EvCalcCore.prefillAndOpen(evcalcVKey, evcalcTKey, subsidyWon);
     }
+  } else {
+    if (evcalcHeading) evcalcHeading.style.display = 'none';
+    if (evcalcSlot)    evcalcSlot.style.display = 'none';
   }
 }
 
@@ -15029,20 +14710,27 @@ ${evsCondCard('lowincome','차상위 이하 계층','개인사업자/법인 불�
         보조금은 지차제 예산 소진 시 조기 마감됩니다.<br>
          정확한 금액은 무공해차 통합누리집에서 확인하세요.
       </div>
-      <button id="evs-to-evcalc-btn" style="display:none;width:100%;margin-top:14px;height:48px;border:none;border-radius: var(--r-md);background:var(--hyundai-blue);color:#fff;font-size: 15px;font-weight:800;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
-        EV 부담DOWN 간편견적 바로가기
-      </button>
     </div>
   </div>
 </div>
+
+<!-- ════ EV 부담DOWN 간편견적 (보조금 대상 차종 조회 시 자동으로 이어짐) ════ -->
+<div id="evcalc-inline-heading" style="display:none;margin-top:18px;padding-top:16px;border-top:2px dashed rgba(49,130,246,0.25);">
+  <div style="font-size: 15px;font-weight:800;color:var(--hyundai-blue);display:flex;align-items:center;gap:6px;">
+    <span>▼</span> 조회한 보조금으로 EV 부담DOWN 계산 이어가기
+  </div>
+  <div style="font-size: 13px;color:var(--tx-muted);font-weight:600;margin-top:2px;">차종·트림·보조금이 자동 입력되었습니다. 아래 단계를 순서대로 진행해주세요.</div>
+</div>
+<div id="evcalc-inline-slot" style="display:none;margin-top:10px;"></div>
 `;
 
 })(); /* PANELS.evsubsidy IIFE 종료 */
 
 /* ════════════════════════════════
-   EV 부담DOWN 간편견적 패널
+   EV 부담DOWN 간편견적 — 'EV 보조금 조회' 패널 내부에 인라인 삽입
+   (별도 사이드바 메뉴/패널 아님 — evcalc-inline-slot에 주입됨)
 ════════════════════════════════ */
-PANELS.evcalc = (function() {
+window.EVCALC_PANEL_HTML = (function() {
 
 /* ── 차종별 트림 가격 데이터 ──────────────────────
    base        : 기본차량가 (원 단위, 정가)
@@ -15409,11 +15097,9 @@ function evcalcCopySummary() {
 }
 
 function evcalcGoSubsidyTab() {
-  if (typeof showCar === 'function') showCar('evsubsidy', 'EV 보조금 조회');
-}
-
-function evcalcGoSubsidyTab() {
-  if (typeof showCar === 'function') showCar('evsubsidy', 'EV 보조금 조회');
+  /* 이미 같은 패널(EV 보조금 조회) 내부이므로 위로 스크롤만 이동 */
+  var top = document.getElementById('panel-evsubsidy');
+  if (top) top.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /* ↓↓↓ 여기부터 새로 추가 ↓↓↓ */
@@ -15432,7 +15118,7 @@ function evcalcMapSubsidyVehicle(code) {
 
 function evcalcPrefillAndOpen(vehicleKey, trimKey, subsidyWon) {
   if (!vehicleKey || !EVCALC_DATA[vehicleKey]) return;
-  if (typeof showCar === 'function') showCar('evcalc', 'EV 부담DOWN 간편견적');
+  /* EV 보조금 조회 패널 내부에 인라인으로 이어지므로 별도 패널 전환은 하지 않음 */
 
   evcalcState.vehicle = vehicleKey;
   const trims = EVCALC_DATA[vehicleKey].trims;
@@ -15461,12 +15147,8 @@ function evcalcPrefillAndOpen(vehicleKey, trimKey, subsidyWon) {
     evcalcRenderPriceCard();
     evcalcUpdateMaxYuye();
 
-    ecUnlockedStep = 3;
-    ecOpenStep = 3;
+    /* 단계를 임의로 건너뛰거나 자동 스크롤하지 않음 — 1→2→3 순차 입력 유지 */
     ecRenderAccordion();
-
-    const el = document.getElementById('ec-step-3');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 80);
 }
 
@@ -15589,7 +15271,7 @@ return `
 .ec-copy-btn{width:100%;margin-top:14px;height:46px;border:none;border-radius:var(--r-md);background:var(--tx-primary);color:#fff;font-size: 14.5px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;}
 </style>
 
-${hdr('linear-gradient(135deg,var(--hyundai-blue-light),#F0F8FF)','','현대 EV 부담DOWN 간편견적 - EV 보조금 탭 연동','36개월 유예형 할부 · 코나 일렉트릭·아이오닉5·아이오닉6 한정',['간편견적','36개월'])}
+${hdr('linear-gradient(135deg,var(--hyundai-blue-light),#F0F8FF)','','EV 부담DOWN 간편견적','36개월 유예형 할부 · 코나 일렉트릭·아이오닉5·아이오닉6 한정',['간편견적','36개월'])}
 
 <div class="ec-accordion">
 
@@ -15736,7 +15418,7 @@ ${hdr('linear-gradient(135deg,var(--hyundai-blue-light),#F0F8FF)','','현대 EV 
 
 </div>
 `;
-})(); /* PANELS.evcalc IIFE 종료 */
+})(); /* EVCALC_PANEL_HTML IIFE 종료 */
 
 /* ════════════════════════════════
    현대 EV 주요 혜택 패널
@@ -16439,7 +16121,7 @@ PANELS.summary=`
   onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
   <span style="display:flex;align-items:center;gap:8px;flex:1;">
     <span style="background:#E3F5EC;color:#1A7035;font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);white-space:nowrap;flex-shrink:0;">EV</span>
-    <span style="color:var(--accent-warn);font-weight:800;">경남 하반기 전기차 공모 안내<br><span style="color:#C62828;">창원 9/11(금) 접수 · 사천 9/9(수) 접수 · 진주 9/17·9/21 접수 예정</span> (9/8 기준)</span>
+    <span style="color:var(--accent-warn);font-weight:800;">경남 하반기 전기차 공모 안내<br><span style="color:#C62828;">창원 승용·승합 마감임박 · 김해 승용 잔여 약 150대</span> (9/14 기준)</span>
   </span>
   <span class="acc-arrow">▼</span>
 </button>
@@ -16449,7 +16131,8 @@ PANELS.summary=`
   <div style="background:#FFF5F5;border-radius: var(--r-sm);padding:11px 14px;margin-bottom:10px;border:1.5px solid rgba(240,68,82,0.3);">
     <div style="font-size: 14.5px;font-weight:800;color:#C62828;line-height:1.7;">
       9월 경쟁사 EV 납기가 대폭 증가했습니다. 참고하셔서 당사 EV로 적극 유도 바랍니다.<br>
-      <strong>[창원시 변경]</strong> 9/7(월) 공고 → 9/11(금) 접수 예정 <small>(승용 10시, 화물/승합 14시)</small> · 공모 대수 <strong>승용 1,800대 · 화물 250대 · 승합 48대</strong>(스타리아 기준) · <strong>수소 9월말 공고 예정</strong>
+      <strong>[창원시 긴급]</strong> 승용·승합 공모 물량이 선착순으로 빠르게 소진되고 있습니다 — <strong>마감 임박, 즉시 접수 바랍니다.</strong> <small>(화물은 접수마감 · 승용 1,800대·승합 48대, 스타리아 기준 · 수소는 9월말 공고 예정)</small><br>
+      <strong>[김해시]</strong> 승용 잔여 약 <strong>150대</strong> — 소진 전 서둘러 접수 안내 바랍니다.
     </div>
   </div>
 
@@ -16536,6 +16219,7 @@ PANELS.summary=`
   .ev-badge-gonggo { background: #6B7684; }
   .ev-badge-jeobsu { background: #C62828; }
   .ev-badge-closed { background: #9AA5B1; }
+  .ev-badge-tbd    { background: #B0B8C1; }
   .ev-sched-line {
     font-size: 13.5px;
     font-weight: 800;
@@ -16593,7 +16277,7 @@ PANELS.summary=`
       <!-- 경남 합계 (17개 지자체 기준, 양산 제외) -->
       <tr style="background:var(--hyundai-blue-light);">
         <td style="background:var(--hyundai-blue-light); color:var(--hyundai-blue-mid); font-weight:900;">경남 (합계)</td>
-        <td style="font-weight:900; color:var(--hyundai-blue-mid);">2</td>
+        <td style="font-weight:900; color:var(--hyundai-blue-mid);">약152</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">-</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">67</td>
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">69</td>
@@ -16603,107 +16287,109 @@ PANELS.summary=`
         <td style="font-weight:900; color:var(--hyundai-blue-mid);">31</td>
         <td style="text-align:left; color:var(--tx-muted); font-size: 13.5px;">경남 17개 지자체 합 (양산 관할 외 제외)</td>
       </tr>
-      <!-- 창원시: 최대 볼륨 + 접수확정(9/11) -->
+      <!-- 창원시: 화물만 마감, 승용·승합 접수중(마감임박) — 최우선 액션 -->
       <tr style="background:#FFF5F5;">
         <td style="background:#FFF5F5; color:#C62828; font-weight:800;">창원시</td>
         <td>-</td><td>-</td><td>-</td><td>우선1</td>
-        <td style="font-weight:800; color:#C62828;">1,800</td><td style="font-weight:800; color:#C62828;">250</td><td style="font-weight:800; color:#C62828;">48</td><td>20</td>
+        <td style="font-weight:800; color:#C62828;">1,800</td><td>250</td><td style="font-weight:800; color:#C62828;">48</td><td>20</td>
         <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수</span><span class="d-jeobsu">9/11(금)</span><span class="ev-time-chip">승용 10시·화물/승합 14시</span></div>
-          <div class="ev-sched-detail">공고 9/7(월) · 스타리아 기준 · 수소 9월말 공고예정</div>
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">마감임박</span><span class="d-jeobsu">승용·승합 선착순 접수중</span></div>
+          <div class="ev-sched-detail" style="color:#C62828;font-weight:700;">지금 바로 접수 안내 바랍니다 — 승용·승합 물량 얼마 남지 않았습니다</div>
+          <div class="ev-sched-detail">화물만 접수마감(9/11) · 공고 9/7(월) · 스타리아 기준 · 수소 9월말 공고예정</div>
         </td>
       </tr>
-      <!-- 김해시: 대량 + 접수확정(승용 9/10) -->
+      <!-- 김해시: 승용 잔여 약 150대, 접수 진행중 -->
       <tr style="background:#FFF5F5;">
         <td style="background:#FFF5F5; color:#C62828; font-weight:800;">김해시</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td style="font-weight:800; color:#C62828;">500</td><td style="font-weight:800; color:#C62828;">30</td><td>-</td><td>-</td>
+        <td style="font-weight:800; color:#C62828;">약150</td><td>-</td><td>-</td><td>-</td>
+        <td>500</td><td>30</td><td>-</td><td>-</td>
         <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수</span><span class="d-jeobsu">화물 9/3(목)·승용 9/10(목)</span></div>
-          <div class="ev-sched-detail">공고 8/31(월)</div>
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수중</span><span class="d-jeobsu">승용 잔여 약 150대</span></div>
+          <div class="ev-sched-detail" style="color:#C62828;font-weight:700;">소진 전 서둘러 접수 안내 바랍니다</div>
+          <div class="ev-sched-detail">화물 접수마감(9/3) · 공고 8/31(월)</div>
         </td>
       </tr>
-      <!-- 진주시: 대량(400) + 접수확정 -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">진주시</td>
+      <!-- 진주시: 접수예정 9/17·9/21 -->
+      <tr>
+        <td>진주시</td>
         <td>-</td><td>-</td><td>11</td><td>30</td>
         <td>300</td><td>100</td><td>-</td><td>-</td>
         <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수</span><span class="d-jeobsu">화물 9/17(목)·승용 9/21(월)</span></div>
-          <div class="ev-sched-detail">공고 9/11(금) 예정</div>
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수예정</span><span class="d-jeobsu">화물 9/17(목)·승용 9/21(월)</span></div>
+          <div class="ev-sched-detail">공고 9/11(금) 완료</div>
         </td>
       </tr>
-      <!-- 사천시: 접수확정(9/9) -->
-      <tr style="background:#FFF5F5;">
-        <td style="background:#FFF5F5; color:#C62828; font-weight:800;">사천시</td>
-        <td>-</td><td>-</td><td style="font-weight:800; color:#C62828;">20</td><td style="font-weight:800; color:#C62828;">28</td>
-        <td>20</td><td>12</td><td>-</td><td>-</td>
-        <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수</span><span class="d-jeobsu">9/9(수)</span><span class="ev-time-chip">10시</span></div>
-          <div class="ev-sched-detail">공고 9/7(월)</div>
-        </td>
-      </tr>
-      <!-- 밀양시 -->
-      <tr>
-        <td>밀양시</td>
-        <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td>20</td><td>12</td><td>-</td><td>-</td>
-        <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9/21(월)</div>
-          <div class="ev-sched-detail">접수예정 9/29(화) · 승용20·화물12</div>
-        </td>
-      </tr>
-      <!-- 의령군 -->
+      <!-- 의령군: 접수예정 9/21 -->
       <tr>
         <td>의령군</td>
         <td>-</td><td>-</td><td>6</td><td>-</td>
         <td>24</td><td>15</td><td>-</td><td>-</td>
         <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9/14(월)</div>
-          <div class="ev-sched-detail">접수예정 9/21(월)</div>
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수예정</span><span class="d-jeobsu">9/21(월)</span></div>
+          <div class="ev-sched-detail">공고 9/14(월) 완료</div>
         </td>
       </tr>
-      <!-- 고성군 -->
+      <!-- 밀양시: 접수예정 9/29 -->
       <tr>
-        <td>고성군</td>
+        <td>밀양시</td>
         <td>-</td><td>-</td><td>-</td><td>-</td>
-        <td>50</td><td>5</td><td>2</td><td>1</td>
+        <td>20</td><td>12</td><td>-</td><td>-</td>
         <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9월 중순 예정</div>
-          <div class="ev-sched-detail">화물/승합 대수 확대 가능성 있음</div>
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수예정</span><span class="d-jeobsu">9/29(화)</span></div>
+          <div class="ev-sched-detail">공고 9/21(월) 예정 · 승용20·화물12</div>
         </td>
       </tr>
-      <!-- 합천군 -->
-      <tr>
-        <td>합천군</td>
-        <td>-</td><td>-</td><td>6</td><td>-</td>
-        <td>50</td><td>20</td><td>-</td><td>-</td>
-        <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9/28(월)</div>
-          <div class="ev-sched-detail">접수예정 10/12~16 경</div>
-        </td>
-      </tr>
-      <!-- 통영시 -->
+      <!-- 통영시: 접수예정 10월초 -->
       <tr>
         <td>통영시</td>
         <td>-</td><td>-</td><td>-</td><td>-</td>
         <td>50</td><td>50</td><td>10</td><td>10</td>
         <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9월말 예정</div>
-          <div class="ev-sched-detail">접수예정 10월초 (전기/수소)</div>
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수예정</span><span class="d-jeobsu">10월초</span></div>
+          <div class="ev-sched-detail">공고 9월말 예정 · 전기/수소</div>
         </td>
       </tr>
-      <!-- 산청군 -->
+      <!-- 합천군: 접수예정 10/12~16 -->
+      <tr>
+        <td>합천군</td>
+        <td>-</td><td>-</td><td>6</td><td>-</td>
+        <td>50</td><td>20</td><td>-</td><td>-</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line"><span class="ev-badge ev-badge-jeobsu">접수예정</span><span class="d-jeobsu">10/12~16 경</span></div>
+          <div class="ev-sched-detail">공고 9/28(월) 예정</div>
+        </td>
+      </tr>
+      <!-- 고성군: 접수일정 미정 -->
+      <tr>
+        <td>고성군</td>
+        <td>-</td><td>-</td><td>-</td><td>-</td>
+        <td>50</td><td>5</td><td>2</td><td>1</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line ev-sched-status"><span class="ev-badge ev-badge-tbd">미정</span>접수일정 미정</div>
+          <div class="ev-sched-detail">공고 9월 중순 예정 · 화물/승합 대수 확대 가능성 있음</div>
+        </td>
+      </tr>
+      <!-- 산청군: 접수일정 미정 -->
       <tr>
         <td>산청군</td>
         <td>-</td><td>-</td><td>4</td><td>-</td>
         <td>20</td><td>20</td><td>-</td><td>-</td>
         <td style="text-align:left;">
-          <div class="ev-sched-line"><span class="ev-badge ev-badge-gonggo">공고</span>9월말~10월초 예정</div>
-          <div class="ev-sched-detail">대수 미확정</div>
+          <div class="ev-sched-line ev-sched-status"><span class="ev-badge ev-badge-tbd">미정</span>접수일정 미정</div>
+          <div class="ev-sched-detail">공고 9월말~10월초 예정 · 대수 미확정</div>
         </td>
       </tr>
-      <!-- 함안군: 접수 마감(9/7), 대수 확정치로 수정 -->
+      <!-- 사천시: 접수 마감(9/9) -->
+      <tr>
+        <td>사천시</td>
+        <td>-</td><td>-</td><td>20</td><td>28</td>
+        <td>20</td><td>12</td><td>-</td><td>-</td>
+        <td style="text-align:left;">
+          <div class="ev-sched-line ev-sched-status"><span class="ev-badge ev-badge-closed">마감</span>9/9(수) 접수마감</div>
+          <div class="ev-sched-detail">공고 9/7(월)</div>
+        </td>
+      </tr>
+      <!-- 함안군: 접수 마감(9/7) -->
       <tr>
         <td>함안군</td>
         <td>-</td><td>-</td><td>-</td><td>-</td>
@@ -16796,7 +16482,8 @@ PANELS.summary=`
       <strong style="color:var(--hyundai-blue-mid);">[변경] G80 생산월 조건 강화</strong><br> - 4% → <strong>5%</strong> (7월 이전 재고까지 확대 적용)<br>
       <strong style="color:var(--hyundai-blue-mid);">[변경] G90 생산월 조건 강화</strong><br> - 6% → <strong>10%</strong> ('25.12월 이전~'26.5월 생산분)<br>
       <strong style="color:var(--hyundai-blue-mid);">[변경] 그랜저 영업용(택시) 생산월 조건 확대</strong><br> - 5월 생산분까지 <strong>300만원</strong> 유지 (기존 5월 250만 → 300만)<br>
-      <strong style="color:var(--hyundai-blue-mid);">[연장] 경쟁 EV 되치기 특별 D/C</strong><br> - 9월 한정 · 선착순 50대 계속 운영<br>
+      <strong style="color:var(--hyundai-blue-mid);">[강조] 경쟁 EV 되치기 특별 D/C</strong><br> - 고객 혜택 <strong>20만원</strong> 할인 / 지점·대리점 포상 <strong>대당 20만원</strong> (9월 한정 · 선착순 50대)<br>
+      <strong style="color:var(--hyundai-blue-mid);">[강조] 타지역 견적 고객 특별 지원</strong><br> - 경남 외 지역(부산·울산·대구 등) 견적 이력 고객 출고 시 고객 10만원 D/C + 지점/대리점 대당 10만원 포상 (선착순 50대)<br>
       <strong style="color:var(--tx-muted);">[정리] '썸머페스타' 캠페인명 삭제</strong><br> - 그랜저·쏘나타·싼타페·팰리세이드·스타리아 생산월 조건으로 통합 표기 (금액 동일)<br>
       <strong style="color:var(--accent-warn);">[종료] 더 뉴 그랜저 재고한정 저금리</strong><br> - JM 36M 3.0%/48M 3.5%/60M 4.0% 종료<br>
       <strong style="color:var(--hyundai-blue-mid);">[신규] '들어줘, 글레오' 전시장 방문고객 이벤트</strong><br> - 디 올 뉴 아반떼 Gleo AI 체험+설문 참여 시 100% 당첨(선착순 1만명) · 인스타그램 인증 추첨 이벤트<br>
@@ -16875,6 +16562,34 @@ PANELS.summary=`
   </div>
 </div>
 
+<!-- ══ 타지역 견적 고객 특별 지원 ══ -->
+<div class="accordion-wrap" style="margin-bottom:8px;border-radius:var(--r-md);overflow:hidden;">
+  <button class="accordion-btn" style="border-left:4px solid var(--hyundai-blue);border-radius:var(--r-md);font-size: 16px;"
+    onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+    <span style="display:flex;align-items:center;gap:8px;flex:1;flex-wrap:wrap;">
+      <span>타지역 견적 고객 특별 지원</span>
+      <span style="background:var(--hyundai-blue-light);color:var(--hyundai-blue-mid);font-size: 9px;font-weight:800;padding:2px 7px;border-radius: var(--r-sm);letter-spacing:.3px;white-space:nowrap;">9월 신규</span>
+    </span>
+    <span class="acc-arrow">▼</span>
+  </button>
+  <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
+    <strong>기간:</strong> 2026년 9월 1일 ~ 9월 30일 · <strong>출고일 기준</strong><br>
+    <strong>대상 차종:</strong> 국내승용 차종 <small>(상용·캐스퍼 제외)</small><br>
+    <strong>대상 고객:</strong> 경남지역본부 관할 지역 거주 고객 중, 타 지역(부산·울산·대구 등) 거주 견적 이력 고객 <small>(계약 여부 무관)</small><br>
+    <strong>고객 혜택:</strong> <span class="hl">10만원 추가 D/C</span><br>
+    <strong>지점/대리점 포상:</strong> <span class="hl">대당 10만원</span><br>
+    <strong>지원 대수:</strong> 선착순 50대 <small>(마감 시 별도 공지 예정)</small><br>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
+      <strong>세부 내용:</strong> 대상 고객이 기간 내 출고 시 추가 D/C 지원 (타지역 거주 견적서 사본 담당자 송부 및 검토 후 D/C 진행)<br>
+      <small style="color:var(--tx-muted);">※ 타 지역 거주 견적서: 카카오톡 메시지/문자/인쇄 등 양식 무관</small>
+    </div>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.06);">
+      <strong style="color:var(--accent-warn);">비고:</strong> 타 지역 견적일은 경남지역본부 관할 거주지 <strong>계약일 이전</strong> 건에 한하여 지원<br>
+      <small style="color:var(--tx-muted);">(예: 계약일 9/4(금) → 타지역 견적일 9/3(목) 이전이면 지원 가능, 9/4(금) 견적은 미인정)</small>
+    </div>
+  </div>
+</div>
+
 <!-- ── 차종군: 제네시스 ── -->
 <div style="display:flex;align-items:center;gap:6px;margin:8px 0 6px 2px;">
   <span style="font-size: 11px;font-weight:800;color:#A47551;background:#F9F5F0;padding:2px 9px;border-radius:10px;">제네시스</span>
@@ -16916,8 +16631,8 @@ PANELS.summary=`
   <div class="accordion-body" style="border-radius:0 0 var(--r-xl) var(--r-xl);">
     <strong>대상 차종:</strong> 아이오닉5 · 6 · 9 / 코나 일렉트릭<br>
     <strong>조건:</strong> 타사 전기차(EV3·EV6·EV9·모델Y 등) 계약 고객의 현대 EV 신차 출고<br>
-    <strong>고객 혜택:</strong> <span style="color:var(--hyundai-azure);font-weight:800;">10만원 할인</span> (개인/개인사업자 · 선착순 50대)<br>
-    <strong>지점/대리점 포상:</strong> <span class="hl">대당 10만원</span><br>
+    <strong>고객 혜택:</strong> <span style="color:var(--hyundai-azure);font-weight:800;">20만원 할인</span> (개인/개인사업자 · 선착순 50대)<br>
+    <strong>지점/대리점 포상:</strong> <span class="hl">대당 20만원</span><br>
     <strong>기간:</strong> 2026년 9월 1일 ~ 9월 30일 · <strong>출고일 기준</strong><br>
     <small style="color:var(--tx-muted);">경쟁사 EV 견적서 또는 계약서 사본 (사진촬영본도 인정)<br>
     ※ 고객 주소지 무관 (경남 외 지역 고객도 경남지역 내 구매 시 인정)<br>
@@ -18613,24 +18328,18 @@ html += '</tr>';
 html += '</thead>';
 html += '<tbody>';
 
-function grpRow(label) {
-  return '<tr style="background:var(--bg);">'
-    + '<td colspan="8" style="padding:6px 12px;font-size: 13.5px;font-weight:800;color:var(--tx-secondary);letter-spacing:0.5px;">'
-    + label + '</td></tr>';
-}
-
 function mergedRow(cars, points, corp, isEven) {
   var bg = isEven ? 'var(--bg-subtle)' : '#fff';
   var row = '<tr style="background:'+bg+';">';
-  row += '<td style="padding:10px 12px;font-weight:600;color:var(--tx-primary);border-bottom:1px solid #f0f0f0;line-height:1.8;">'
-    + cars.join('<br>') + '</td>';
+  row += '<td style="padding:10px 12px;font-weight:600;color:var(--tx-primary);border-bottom:1px solid #f0f0f0;line-height:1.6;font-size: 14.5px;">'
+    + cars.join(', ') + '</td>';
   points.forEach(function(v, i) {
     var isMax = (i===5);
     var bl = (i===0) ? 'border-left:2px solid rgba(49,130,246,0.15);' : 'border-left:1px solid #f0f0f0;';
     row += '<td style="padding:10px 6px;text-align:center;border-bottom:1px solid #f0f0f0;vertical-align:middle;'+bl
       +'font-weight:'+(isMax?'900':'600')+';'
       +'color:'+(isMax?'var(--hyundai-blue)':'var(--tx-secondary)')+';'
-      +'font-size:'+(isMax?'12':'11')+'px;">'
+      +'font-size: 14.5px;">'
       +v+'만</td>';
   });
   row += '<td style="padding:10px 6px;text-align:center;border-bottom:1px solid #f0f0f0;vertical-align:middle;border-left:2px solid rgba(0,0,0,0.06);font-weight:700;color:var(--tx-muted);font-size: 14.5px;">'
@@ -18641,20 +18350,11 @@ function mergedRow(cars, points, corp, isEven) {
 
 var ri = 0;
 
-html += grpRow('▸ 경형 / 소형 RV');
-html += mergedRow(['캐스퍼 (ICE / EV)', '베뉴'], [5,10,15,25,30,40], 3, ri++%2===0);
-
-html += grpRow('▸ 아반떼 계열 / 코나 · 투싼 / 포터');
-html += mergedRow(['아반떼 (ICE / HEV / N)', '코나 (ICE / HEV / EV)', '투싼 (ICE / HEV)', '포터 (LPDI / EV)'], [7,14,21,30,40,50], 5, ri++%2===0);
-
-html += grpRow('▸ 쏘나타 · 그랜저 · 아이오닉6');
-html += mergedRow(['쏘나타 (ICE / HEV)', '그랜저 (ICE / HEV)', '더 뉴 그랜저 (ICE / HEV)', '아이오닉6 (EV / N)'], [10,20,30,45,60,75], 7, ri++%2===0);
-
-html += grpRow('▸ 싼타페 · 팰리세이드 · 아이오닉5 · 아이오닉9 · 넥쏘');
-html += mergedRow(['싼타페 (ICE / HEV)', '팰리세이드 (ICE / HEV)', '아이오닉5 (EV / N)', '아이오닉9', '넥쏘 FCEV'], [10,20,30,45,60,75], 7, ri++%2===0);
-
-html += grpRow('▸ 스타리아 · ST1');
-html += mergedRow(['스타리아 (ICE / HEV / EV)', 'ST1'], [10,20,30,45,60,75], 7, ri++%2===0);
+html += mergedRow(['캐스퍼', '베뉴'], [5,10,15,25,30,40], 3, ri++%2===0);
+html += mergedRow(['아반떼', '코나', '투싼', '포터'], [7,14,21,30,40,50], 5, ri++%2===0);
+html += mergedRow(['쏘나타', '그랜저', '더 뉴 그랜저', '아이오닉6'], [10,20,30,45,60,75], 7, ri++%2===0);
+html += mergedRow(['싼타페', '팰리세이드', '아이오닉5', '아이오닉9', '넥쏘'], [10,20,30,45,60,75], 7, ri++%2===0);
+html += mergedRow(['스타리아', 'ST1'], [10,20,30,45,60,75], 7, ri++%2===0);
 
 html += '</tbody>';
 html += '</table>';
@@ -22661,6 +22361,12 @@ PANELS.vscenter = (function(){
     const isActive = (id === 'summary') ? ' active' : '';
     return '<div class="car-panel' + isActive + '" id="panel-' + id + '">' + PANELS[id] + '</div>';
   }).join('');
+
+  /* EV 부담DOWN 간편견적을 'EV 보조금 조회' 패널 내부 슬롯에 인라인 삽입 */
+  var evcalcSlot = document.getElementById('evcalc-inline-slot');
+  if (evcalcSlot && typeof window.EVCALC_PANEL_HTML === 'string') {
+    evcalcSlot.innerHTML = window.EVCALC_PANEL_HTML;
+  }
 })();
 
 
@@ -22801,73 +22507,6 @@ PANELS.vscenter = (function(){
   }
 })();
 
-/* ════════════════════════════════
-   랜딩 페이지 — 암호 인증 함수
-════════════════════════════════ */
-const LD_PW = 'hd2026';
-
-function ldTryEnter() {
-  const pw = document.getElementById('ld-pw').value;
-  const errEl = document.getElementById('ld-error');
-  const btnEl = document.getElementById('ld-enter-btn');
-
-  if (pw === LD_PW) {
-    sessionStorage.setItem('sales_auth', 'ok');
-
-    btnEl.textContent = '인증 중...';
-    btnEl.style.opacity = '0.8';
-
-    const successEl = document.getElementById('ld-success');
-    successEl.style.display = 'flex';
-
-    setTimeout(function () {
-      document.getElementById('landing-page').style.display = 'none';
-      successEl.style.display = 'none';
-      document.body.style.overflow = '';  /* 스크롤 해제 */
-    }, 1200);
-
-  } else {
-    errEl.style.display = 'block';
-    const pwInput = document.getElementById('ld-pw');
-    pwInput.style.borderColor = 'var(--accent-warn)';
-    pwInput.style.background = '#FFF5F5';
-    pwInput.focus();
-  }
-}
-
-function ldHandleKey(e) {
-  if (e.key === 'Enter') ldTryEnter();
-}
-
-function ldClearError() {
-  const errEl = document.getElementById('ld-error');
-  const pwInput = document.getElementById('ld-pw');
-  errEl.style.display = 'none';
-  pwInput.style.borderColor = 'rgba(0,0,0,0.08)';
-  pwInput.style.background = 'var(--bg-subtle)';
-}
-
-function ldTogglePw() {
-  const pwInput = document.getElementById('ld-pw');
-  const toggleBtn = document.getElementById('ld-pw-toggle');
-  if (pwInput.type === 'password') {
-    pwInput.type = 'text';
-    toggleBtn.textContent = '';
-  } else {
-    pwInput.type = 'password';
-    toggleBtn.textContent = '';
-  }
-}
-
-/* 일반 콘텐츠는 비밀번호 없이 바로 이용 가능 — 랜딩 게이트는 더 이상 자동 표시하지 않음
-   (경쟁사 정보는 openVsGate()에서 별도로 보호) */
-(function() {
-  var landing = document.getElementById('landing-page');
-  if (landing) landing.style.display = 'none';
-  document.body.style.overflow = '';
-})();
-
-
 </script>
 <!-- 프로모션 상세 바텀시트 -->
 <div class="promo-sheet-overlay" id="promoSheetOverlay" onclick="closePromoSheet(event)">
@@ -22961,25 +22600,9 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-/* ── 랜딩 페이지 비밀번호 인풋 이벤트 바인딩 (방어 코드) ── */
+/* ── 방어 코드: 이벤트 바인딩 ── */
 (function() {
   function bindEvents() {
-    var pwInput = document.getElementById('ld-pw');
-    if (pwInput) {
-      pwInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-          if (typeof ldTryEnter === 'function') {
-            ldTryEnter();
-          } else {
-            console.error('ldTryEnter 함수가 로드되지 않았습니다. 코드 상단의 문법 오류를 확인하세요.');
-          }
-        }
-      });
-      pwInput.addEventListener('input', function() {
-        if (typeof ldClearError === 'function') ldClearError();
-      });
-    }
-
     var modelSel = document.getElementById('evs-model');
     if (modelSel) {
       modelSel.addEventListener('change', function() {
@@ -23178,12 +22801,20 @@ if ('serviceWorker' in navigator) {
   /* ────────────────────────────────
      업데이트마다 아래 두 곳만 수정
      ──────────────────────────────── */
-  var VERSION = '2609-02';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
-  var UPDATE_DATE = '2026.09.08';   // 업데이트 날짜 표시용
+  var VERSION = '2609-04';          // 새 배포 시 변경 (예: '2607-02', '2608-01')
+  var UPDATE_DATE = '2026.09.14';   // 업데이트 날짜 표시용
   var UPDATES = [                   // 업데이트 내용 목록
     {
-      title: '<span style="color:var(--accent-warn);">[경남] 전기차 공모 현황 업데이트</span>',
-      desc:  '<span style="color:#C62828;font-weight:700;">창원 9/11(금) 접수</span>(승용1,800·화물250·승합48대, 수소 9월말) · <span style="color:#C62828;font-weight:700;">사천 9/9(수) 10시 접수</span> · 함안 9/7 접수마감(승용38·화물23·승합2)'
+      title: '<span style="color:var(--accent-warn);">[창원·김해] 접수 임박 — 즉시 안내 바랍니다</span>',
+      desc:  '<span style="color:#C62828;font-weight:700;">창원 승용·승합 선착순 마감임박</span>(화물만 접수마감) · <span style="color:#C62828;font-weight:700;">김해 승용 잔여 약 150대</span> · 진주 9/17·9/21 접수예정'
+    },
+    {
+      title: '[강조] 경쟁 EV 되치기 특별 D/C',
+      desc:  '고객 혜택 20만원 할인 / 지점·대리점 포상 대당 20만원 (9월 한정·선착순 50대)'
+    },
+    {
+      title: '[강조] 타지역 견적 고객 특별 지원',
+      desc:  '경남 외 지역(부산·울산·대구 등) 견적 이력 고객 출고 시 고객 10만원 D/C + 지점/대리점 대당 10만원 포상 (선착순 50대, 9/1~9/30 출고분)'
     },
     {
       title: '9월 판매조건/납기 업데이트 완료',
