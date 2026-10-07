@@ -389,7 +389,6 @@ body {
 .t-ice  { background: var(--bg); color: var(--tx-secondary); }
 .t-all  { background: #FBF5EC; color: #8B6A3A; }
 .t-sum  { background: var(--hyundai-blue-light); color: var(--hyundai-blue); }
-.t-vs   { background: #FEEAEA; color: #C62828; }
 
 
 /* ════════════════════════════════
@@ -1055,74 +1054,6 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
 .target-card-title { font-size: 14.5px; font-weight:700; color:var(--tx-primary); margin-bottom:6px; }
 .target-card-body  { font-size: 13.5px; color:var(--tx-secondary); line-height:1.7; }
 
-/* ── USP List ── */
-.usp-list { list-style:none; padding:0; margin:0; }
-.usp-item { border-radius:var(--r-xl); padding:14px 16px; margin-bottom:9px; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.04); border-left:4px solid var(--hyundai-azure); }
-.usp-item:last-child { margin-bottom:0; }
-.usp-num { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; background:var(--hyundai-blue); color:#fff; border-radius:50%; font-size: 14.5px; font-weight:800; margin-right:8px; flex-shrink:0; }
-.usp-title { font-size: 14.5px; font-weight:700; color:var(--tx-primary); display:flex; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px; }
-.usp-body  { font-size: 13.5px; color:var(--tx-secondary); line-height:1.75; padding-left:30px; }
-.usp-body strong { color:#C05000; }
-.usp-tag { display:inline-block; background:var(--hyundai-blue-light); color:var(--hyundai-blue); font-size: 13.5px; font-weight:700; padding:2px 8px; border-radius: var(--r-sm); vertical-align:middle; text-transform:uppercase; }
-
-/* ── Compare Table — 모바일 최적화 ── */
-.cmp-table-wrap {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: var(--r-sm);
-  /* 가로 스크롤 힌트 그라데이션 */
-  background:
-    linear-gradient(to right, white 30%, rgba(255,255,255,0)),
-    linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%,
-    radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.08), transparent),
-    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.08), transparent) 0 100%;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
-  background-attachment: local, local, scroll, scroll;
-}
-.cmp-tbl {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14.5px;          /* 10.5→11px */
-  min-width: 420px;         /* 핵심: 최소 너비 강제 지정 */
-  word-break: keep-all;     /* 단어 단위 줄바꿈 */
-}
-.cmp-tbl th {
-  padding: 8px 8px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 13.5px;
-  white-space: nowrap;      /* 헤더 줄바꿈 방지 */
-}
-.cmp-tbl th.lh { text-align: left; }
-.cmp-tbl th.th-res { background: #37474F !important; color: #fff; }
-.cmp-tbl th.th-so  { background: #C62828 !important; color: #fff; }
-.cmp-tbl td {
-  padding: 8px 8px;
-  border-bottom: 1px solid rgba(0,0,0,0.04);
-  text-align: center;
-  vertical-align: middle;
-  font-size: 14.5px;
-  word-break: keep-all;     /* 단어 단위 줄바꿈 */
-  line-height: 1.5;
-}
-.cmp-tbl td.lb {
-  text-align: left;
-  font-weight: 600;
-  color: var(--tx-secondary);
-  background: var(--bg-subtle);
-  border-right: 1px solid rgba(0,0,0,0.04);
-  white-space: nowrap;      /* 항목명 줄바꿈 방지 */
-  min-width: 80px;
-  max-width: 110px;
-}
-.cmp-tbl tr:last-child td { border-bottom: none; }
-.cmp-tbl tr:hover td { background: var(--hyundai-blue-light); }
-.cmp-win  { color: #1A7035; font-weight: 700; }
-.cmp-lose { color: #C62828; }
-.cmp-draw { color: var(--tx-muted); }
-
 /* ── accordion-body 내부 table 전체 — 가로 스크롤 래퍼 ── */
 .accordion-body table {
   width: 100%;
@@ -1171,13 +1102,6 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
   word-break: keep-all;
 }
 
-
-/* ── Don't Say ── */
-.dont-say { background:#FFF5F5; border:none; border-radius:var(--r-xl); padding:14px 16px; margin-top:14px; box-shadow:inset 0 0 0 1.5px rgba(240,68,82,0.2); }
-.dont-say-title { font-size: 14.5px; font-weight:700; color:var(--accent-warn); margin-bottom:8px; letter-spacing:.5px; text-transform:uppercase; }
-.dont-say ul { list-style:none; padding:0; margin:0; }
-.dont-say li { font-size: 13.5px; color:#8B0000; padding:4px 0 4px 18px; position:relative; line-height:1.6; }
-.dont-say li::before { content:'×'; position:absolute; left:0; font-size: 13.5px; font-weight:800; color:var(--accent-warn); }
 
 /* ════════════════════════════════
    Toss Style — 이모지 아이콘 박스
@@ -1283,21 +1207,6 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
   box-shadow: inset 0 0 0 2px #fff;
 }
 
-/* ════════════════════════════════
-   경쟁사 vs 버튼 스타일
-════════════════════════════════ */
-.car-btn.vs-btn .ctag {
-  background: #FEEAEA;
-  color: #C62828;
-}
-.car-btn.vs-btn.active {
-  color: var(--accent-warn) !important;
-}
-.car-btn.vs-btn.active .ci {
-  background: var(--accent-warn) !important;
-  box-shadow: 0 0 0 2.5px rgba(255,255,255,0.9), 0 0 0 4.5px var(--accent-warn) !important;
-}
-
 /* EV 보조금 조회 버튼 */
 #btn-evsubsidy .ci {
   background: linear-gradient(135deg, var(--hyundai-azure), var(--hyundai-blue));
@@ -1311,22 +1220,6 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
   box-shadow: 0 0 0 2.5px rgba(255,255,255,0.9), 0 0 0 4.5px var(--hyundai-azure) !important;
 }
 
-
-/* vs 버튼 닷 — 빨간색 */
-#btn-konaice_vs .ci,
-#btn-tucson_vs .ci,
-#btn-santafe_vs .ci,
-#btn-palisade_vs .ci,
-#btn-konaev_vs .ci,
-#btn-ioniq5_vs_ev5 .ci,
-#btn-ioniq5_vs_ev6 .ci,
-#btn-ioniq5_vs_modely .ci,
-#btn-ioniq9_vs .ci,
-#btn-staria_vs .ci,
-#btn-staria_lounge_vs .ci {
-  background: var(--accent-warn) !important;
-  border-radius: 50%;
-}
 
 /* 아코디언 테이블 — 모바일 최적화 */
 .accordion-body table {
@@ -1354,57 +1247,6 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
 .accordion-body table tr:last-child td {
   border-bottom: none;
 }
-
-/* ════════════════════════════════
-   VS 패널 전용 아코디언 스타일
-════════════════════════════════ */
-.vs-acc-wrap {
-  margin-bottom: 10px;
-  border-radius: var(--r-xl);
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.05);
-}
-.vs-acc-btn {
-  width: 100%;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  padding: 15px 16px;
-  border: none; cursor: pointer;
-  background: #fff;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 15px; font-weight: 700;
-  color: var(--tx-primary);
-  text-align: left; transition: background 0.18s;
-  gap: 10px;
-}
-.vs-acc-btn:hover,
-.vs-acc-btn.open { background: var(--bg-subtle); }
-.vs-acc-label { flex: 1; line-height: 1.4; }
-.vs-acc-arrow {
-  font-size: 14.5px;
-  transition: transform 0.25s;
-  color: var(--tx-muted);
-  flex-shrink: 0;
-}
-.vs-acc-btn.open .vs-acc-arrow { transform: rotate(180deg); }
-.vs-acc-body {
-  display: none;
-  background: #fff;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  padding: 14px;
-  overflow-x: hidden;
-}
-.vs-acc-body.open {
-  display: block;
-  animation: fs 0.2s ease;
-}
-.vs-acc-target { border-left: 4px solid var(--hyundai-blue); }
-.vs-acc-usp    { border-left: 4px solid var(--hyundai-azure); }
-.vs-acc-price  { border-left: 4px solid var(--accent-amber); }
-.vs-acc-spec   { border-left: 4px solid var(--tx-muted); }
-.vs-acc-script { border-left: 4px solid #5E2FC0; }
-.vs-acc-warn   { border-left: 4px solid var(--accent-warn); }
 
 /* EV 주요 혜택 버튼 불릿 — EV보조금과 동일 스타일 */
 #btn-evbenefit .ci {
@@ -1465,6 +1307,212 @@ hr.dv { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 16px 0; }
 </style>
 </head>
 <body>
+
+<!-- ════════════════════════════════
+     초기 랜딩 페이지 — 비밀번호 인증
+════════════════════════════════ -->
+<div id="landing-page" style="
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--bg);
+  overflow-y: auto;
+  display: flex; flex-direction: column; align-items: center;
+">
+  <!-- 배경 장식 -->
+  <div style="
+    position: fixed; top:-120px; right:-80px;
+    width:340px; height:340px; border-radius:50%;
+    background:radial-gradient(circle,rgba(49,130,246,0.07) 0%,transparent 70%);
+    pointer-events:none; z-index:0;
+  "></div>
+  <div style="
+    position: fixed; bottom:-80px; left:-60px;
+    width:260px; height:260px; border-radius:50%;
+    background:radial-gradient(circle,rgba(0,180,147,0.06) 0%,transparent 70%);
+    pointer-events:none; z-index:0;
+  "></div>
+
+  <!-- 히어로 — 본문 .hero와 동일 구조 -->
+  <div class="hero" style="width:100%;position:relative;z-index:1;">
+    <h1 class="hero-title">26년 10월 <br>현대자동차 경남지역본부<br><span class="ac">Sales All-in-One</span></h1>
+    <p class="hero-sub">차종별 판매조건·납기·판매팁·금융 프로모션·트레이드인을 한번에!</p>
+    <div class="hero-contact-row">
+      <span class="contact-badge">
+        문의 : 김영관 책임
+        <span class="contact-tooltip">055-290-6004</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- 콘텐츠 -->
+  <div style="width:100%;max-width:480px;padding:0 16px 60px;position:relative;z-index:1;">
+
+    <!-- ① 비밀번호 입력 카드 -->
+    <div style="
+      background:var(--bg-white);border-radius:var(--r-xl);padding:22px 18px 20px;
+      margin-top:20px;box-shadow:var(--shadow-md);
+      border:1px solid rgba(0,0,0,0.04);
+    ">
+      <div style="margin-bottom:18px;">
+        <span style="font-size: 15px;font-weight:800;color:var(--tx-primary);">배포된 비밀번호를 입력하세요(공문 참조)</span>
+      </div>
+
+      <div style="position:relative;margin-bottom:12px;">
+        <input
+          type="password"
+          id="ld-pw"
+          placeholder="비밀번호를 입력하세요"
+          maxlength="20"
+          autocomplete="off"
+          spellcheck="false"
+          onkeydown="ldHandleKey(event)"
+          oninput="ldClearError()"
+          style="
+            width:100%;height:52px;
+            border:2px solid rgba(0,0,0,0.08);border-radius:var(--r-md);
+            background:var(--bg-subtle);
+            font-family:'Noto Sans KR',sans-serif;
+            font-size:16px;font-weight:700;color:var(--tx-primary);
+            letter-spacing:4px;text-align:center;
+            outline:none;
+            -webkit-appearance:none;
+            transition:all 0.18s;
+          "
+        >
+        <button
+          type="button"
+          onclick="ldTogglePw()"
+          id="ld-pw-toggle"
+          style="
+            position:absolute;right:14px;top:50%;transform:translateY(-50%);
+            background:none;border:none;color:var(--tx-muted);font-size:18px;
+            cursor:pointer;padding:4px;
+            display:flex;align-items:center;justify-content:center;
+            font-size:12px;font-weight:700;
+          ">보기</button>
+      </div>
+
+      <div id="ld-error" style="
+        display:none;
+        font-size:12px;font-weight:600;color:var(--accent-warn);
+        text-align:center;margin-top:-6px;margin-bottom:10px;
+      ">비밀번호가 올바르지 않습니다. 다시 확인해주세요.</div>
+
+      <button
+        id="ld-enter-btn"
+        onclick="ldTryEnter()"
+        style="
+          width:100%;height:52px;
+          background:linear-gradient(135deg,var(--hyundai-blue) 0%,var(--hyundai-blue-mid) 100%);
+          color:#FFFFFF;border:none;border-radius:var(--r-md);
+          font-family:'Noto Sans KR',sans-serif;
+          font-size:15px;font-weight:800;cursor:pointer;letter-spacing:-0.3px;
+          box-shadow:0 4px 14px rgba(49,130,246,0.3);
+          transition:all 0.18s;
+          display:flex;align-items:center;justify-content:center;gap:8px;
+        "
+      >Enter →</button>
+    </div>
+
+    <!-- ② 보안 관련 안내 카드 -->
+    <div style="
+      background:var(--bg-white);border-radius:var(--r-xl);padding:18px 18px 16px;
+      margin-top:14px;box-shadow:var(--shadow-md);
+      border:1px solid rgba(0,0,0,0.04);
+    ">
+      <div style="
+        margin-bottom:14px;padding-bottom:12px;
+        border-bottom:1px solid rgba(0,0,0,0.05);
+      ">
+        <span style="font-size: 15px;font-weight:800;color:var(--tx-primary);">보안 관련 안내</span>
+      </div>
+      <ul style="font-size:12.5px;color:var(--tx-secondary);font-weight:500;line-height:1.9;padding-left:18px;margin:0;">
+        <li>본 앱은 현대자동차 경남지역본부 카마스터 전용 앱입니다.</li>
+        <li>접속링크 및 비밀번호의 외부 유출·무단 배포를 금지합니다.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- 랜딩 인증 성공 오버레이 -->
+<div id="ld-success" style="
+  display:none;
+  position:fixed;inset:0;background:var(--bg-white);z-index:10000;
+  flex-direction:column;align-items:center;justify-content:center;gap:16px;
+">
+  <div style="font-size:18px;font-weight:800;color:var(--tx-primary);letter-spacing:-0.4px;">인증 완료!</div>
+  <div style="font-size:12.5px;color:var(--tx-muted);font-weight:500;">Sales All-in-One으로 이동합니다...</div>
+</div>
+
+<script>
+/* ════════════════════════════════
+   랜딩 페이지 — 암호 인증 함수
+════════════════════════════════ */
+const LD_PW = 'hd2026';
+
+function ldTryEnter() {
+  const pwInput = document.getElementById('ld-pw');
+  const errEl   = document.getElementById('ld-error');
+  const btnEl   = document.getElementById('ld-enter-btn');
+
+  if (pwInput.value === LD_PW) {
+    sessionStorage.setItem('sales_auth', 'ok');
+
+    btnEl.textContent = '인증 중...';
+    btnEl.style.opacity = '0.8';
+
+    const successEl = document.getElementById('ld-success');
+    successEl.style.display = 'flex';
+
+    setTimeout(function () {
+      document.getElementById('landing-page').style.display = 'none';
+      successEl.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 1200);
+
+  } else {
+    errEl.style.display = 'block';
+    pwInput.style.borderColor = 'var(--accent-warn)';
+    pwInput.style.background = '#FFF5F5';
+    pwInput.focus();
+  }
+}
+
+function ldHandleKey(e) {
+  if (e.key === 'Enter') ldTryEnter();
+}
+
+function ldClearError() {
+  const errEl   = document.getElementById('ld-error');
+  const pwInput = document.getElementById('ld-pw');
+  errEl.style.display = 'none';
+  pwInput.style.borderColor = 'rgba(0,0,0,0.08)';
+  pwInput.style.background = 'var(--bg-subtle)';
+}
+
+function ldTogglePw() {
+  const pwInput   = document.getElementById('ld-pw');
+  const toggleBtn = document.getElementById('ld-pw-toggle');
+  if (pwInput.type === 'password') {
+    pwInput.type = 'text';
+    toggleBtn.textContent = '숨김';
+  } else {
+    pwInput.type = 'password';
+    toggleBtn.textContent = '보기';
+  }
+}
+
+/* 인증 여부에 따라 조건부로 랜딩 노출/스크롤 처리 */
+(function() {
+  if (sessionStorage.getItem('sales_auth') === 'ok') {
+    const landing = document.getElementById('landing-page');
+    if (landing) landing.style.display = 'none';
+    document.body.style.overflow = '';
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
+})();
+</script>
 
 <!-- 오버레이 -->
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
@@ -1642,21 +1690,8 @@ function renderBar(){
   cntEl.textContent='조건 '+selectedItems.size+'개 선택 · ※ 최대 기준 · 실제 조건 확인 필요';
 }
 
-/* ── VS 패널 ID 목록 ── */
-const VS_IDS_LIST = [
-  'konaice_vs','tucson_vs','santafe_vs','palisade_vs',
-  'konaev_vs','ioniq5_vs_ev5','ioniq5_vs_ev6',
-  'ioniq5_vs_modely','ioniq9_vs',
-  'staria_vs','staria_lounge_vs'
-];
-
 function showCar(id,name,opts){
   opts = opts || {};
-  /* 경쟁사 정보(vscenter 및 개별 vs 패널)는 별도 비밀번호로 보호 */
-  if((id==='vscenter' || VS_IDS_LIST.includes(id)) && sessionStorage.getItem('sales_auth')!=='ok'){
-    openVsGate(id,name);
-    return;
-  }
   /* 뒤로가기 히스토리 — goBack()으로 온 이동은 다시 쌓지 않음 */
   if(!opts.fromBack && id !== currentPanel.id){
     navStack.push(currentPanel);
@@ -1666,8 +1701,7 @@ function showCar(id,name,opts){
   document.querySelectorAll('.car-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.car-btn').forEach(b=>b.classList.remove('active'));
   const p=document.getElementById('panel-'+id);
-  const btnId = VS_IDS_LIST.includes(id) ? 'vscenter' : id;
-  const b=document.getElementById('btn-'+btnId);
+  const b=document.getElementById('btn-'+id);
   if(p)p.classList.add('active');
   if(b)b.classList.add('active');
   resetDiscount();
@@ -1706,7 +1740,7 @@ function showCar(id,name,opts){
   }
 
   /* 할인바 표시/숨김 */
-  const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || id==='bluemembers' || id==='vscenter' || VS_IDS_LIST.includes(id);
+  const isNoBar = id==='summary' || id==='tradein' || id==='evsubsidy' || id==='evbenefit' || id==='finagent' || id==='bluemembers';
   document.body.style.paddingBottom = isNoBar
     ? 'calc(76px + max(10px, env(safe-area-inset-bottom, 0px)))'
     : 'calc(196px + max(10px, env(safe-area-inset-bottom, 0px)))';
@@ -1735,46 +1769,6 @@ if(id==='gv80'){
     const gc=document.getElementById('gv80-base-card');
     if(gc&&!gc.classList.contains('selected'))toggleDiscount(gc);
 }
-}
-
-/* ════════════════════════════════
-   경쟁사 정보 전용 비밀번호 게이트
-════════════════════════════════ */
-const VS_GATE_PW = 'hd2026';
-let pendingVsNav = null;
-
-function openVsGate(id,name){
-  pendingVsNav = {id:id, name:name};
-  const modal = document.getElementById('vs-gate-modal');
-  const input = document.getElementById('vs-gate-pw');
-  const err = document.getElementById('vs-gate-error');
-  if(err) err.style.display = 'none';
-  if(input){ input.value=''; }
-  if(modal) modal.style.display = 'flex';
-  setTimeout(function(){ if(input) input.focus(); }, 50);
-}
-function closeVsGate(){
-  pendingVsNav = null;
-  const modal = document.getElementById('vs-gate-modal');
-  if(modal) modal.style.display = 'none';
-}
-function submitVsGate(){
-  const input = document.getElementById('vs-gate-pw');
-  const err = document.getElementById('vs-gate-error');
-  if(input && input.value === VS_GATE_PW){
-    sessionStorage.setItem('sales_auth','ok');
-    const modal = document.getElementById('vs-gate-modal');
-    if(modal) modal.style.display = 'none';
-    const target = pendingVsNav || {id:'vscenter', name:'경쟁사 비교 정보'};
-    pendingVsNav = null;
-    showCar(target.id, target.name);
-  } else {
-    if(err) err.style.display = 'block';
-    if(input){ input.style.borderColor = 'var(--accent-warn)'; input.focus(); }
-  }
-}
-function vsGateKey(e){
-  if(e.key === 'Enter') submitVsGate();
 }
 
 /* ════════════════════════════════
@@ -1827,19 +1821,10 @@ const SIDEBAR=[
     {id:'g90',ci:'',name:'G90',tag:'ICE',tc:'t-all'},
     {id:'genesisev',ci:'',name:'GV60 / G80e / GV70e',tag:'EV',tc:'t-ev'},
   ]},
-  {label:'경쟁사 정보',items:[
-    {id:'vscenter',ci:'',name:'경쟁사 비교 정보',tag:'비교',tc:'t-vs'},
-  ]},
 ];
 (function(){
   const sb = document.getElementById('sidebar-root');
   const closeRow = sb.querySelector('.sidebar-close-row');
-const VS_IDS = [
-  'konaice_vs','tucson_vs','santafe_vs','palisade_vs',
-  'konaev_vs','ioniq5_vs_ev5','ioniq5_vs_ev6',
-  'ioniq5_vs_modely','ioniq9_vs',
-  'staria_vs','staria_lounge_vs'
-];
   let h = '';
   SIDEBAR.forEach((g, gi) => {
     h += `<div class="sb-group"><div class="sb-label">${g.label}</div>`;
@@ -1847,8 +1832,7 @@ const VS_IDS = [
       const a = (gi === 0 && it.id === 'summary') ? ' active' : '';
       const isNew = ['newgrandeur', 'newavante', 'commercial', 'evsubsidy'].includes(it.id);
       const isChg8 = it.id === 'evbenefit';
-      const isVs  = VS_IDS.includes(it.id);
-      h += `<button class="car-btn${a}${isVs ? ' vs-btn' : ''}" id="btn-${it.id}" onclick="showCar('${it.id}','${it.name}')">
+      h += `<button class="car-btn${a}" id="btn-${it.id}" onclick="showCar('${it.id}','${it.name}')">
         <span class="ci"></span>
         <span class="car-btn-name">${it.name}${isNew ? '<span class="badge-new">NEW</span>' : ''}${isChg8 ? '<span style="background:var(--accent-warn);color:#fff;font-size: 9px;font-weight:800;padding:2px 6px;border-radius: var(--r-sm);margin-left:4px;vertical-align:middle;">8월 변경</span>' : ''}</span>
         <span class="ctag ${it.tc}">${it.tag}</span>
@@ -1975,36 +1959,6 @@ function tipBoxRaw(title, items) {
   </div>`;
 }
 
-/* ── VS 패널 전용 핵심 한 문장 박스 (하늘색 그라데이션 + 파란 강조) ── */
-function vsOneliner(items) {
-  return `<div style="
-    background: linear-gradient(135deg, var(--hyundai-blue-light) 0%, #E8F5FF 100%);
-    border-radius: var(--r-xl);
-    padding: 20px 18px;
-    margin-bottom: 18px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(49,130,246,0.1);
-    border: 1px solid rgba(49,130,246,0.12);
-  ">
-    <div style="
-      font-size: 13.5px;
-      color: var(--hyundai-blue);
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      opacity: 0.7;
-    ">핵심 한 문장</div>
-    <div style="
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--tx-primary);
-      line-height: 1.8;
-      text-align: center;
-    ">${items.map(i => `<span>${i}</span>`).join('<br>')}</div>
-  </div>`;
-}
-
 function fboxSection(items) {
   return `<div class="fbox">
     <div class="fbox-title">금융 활용 포인트</div>
@@ -2126,10 +2080,7 @@ function toggleAcc(btn) {
   if (!isOpen) {
     body.querySelectorAll('table').forEach(tbl => {
       /* 이미 래퍼가 있으면 스킵 */
-      if (tbl.parentElement.classList.contains('cmp-table-wrap') ||
-          tbl.parentElement.classList.contains('tbl-scroll-wrap')) return;
-      /* cmp-tbl은 이미 .cmp-table-wrap이 감쌈 */
-      if (tbl.classList.contains('cmp-tbl')) return;
+      if (tbl.parentElement.classList.contains('tbl-scroll-wrap')) return;
 
       /* inline table에 스크롤 래퍼 추가 */
       const wrapper = document.createElement('div');
@@ -2144,73 +2095,6 @@ function toggleAcc(btn) {
       tbl.style.fontSize = '11px';
     });
   }
-}
-
-
-function uspList(items) {
-  return `<ul class="usp-list">${items.map(([num,title,tag,body])=>`
-    <li class="usp-item">
-      <div class="usp-title">
-        <span class="usp-num">${num}</span>${title}
-        <span class="usp-tag">${tag}</span>
-      </div>
-      <div class="usp-body">${body}</div>
-    </li>`).join('')}</ul>`;
-}
-
-function cmpTable(th1color, th1label, th2label, rows) {
-  return `<div class="cmp-table-wrap"><table class="cmp-tbl">
-    <thead>
-      <tr>
-        <th style="background:#2D3540;color:#fff;text-align:left;border-radius:8px 0 0 0;min-width:80px;" class="lh">항목</th>
-        <th style="background:linear-gradient(135deg,#DBEAFE,#EFF6FF);color:#1E40AF;font-weight:800;min-width:110px;">${th1label}</th>
-        <th style="background:linear-gradient(135deg,#FEE2E2,#FFF5F5);color:#B91C1C;font-weight:800;min-width:110px;">${th2label}</th>
-        <th style="background:#2D3540;color:#fff;border-radius:0 8px 0 0;min-width:80px;">결과</th>
-      </tr>
-    </thead>
-    <tbody>
-      ${rows.map(([lb,a,b,res,resClass])=>`
-        <tr>
-          <td class="lb">${lb}</td>
-          <td>${a}</td>
-          <td>${b}</td>
-          <td class="${resClass||'cmp-draw'}" style="font-size: 13.5px;">${res}</td>
-        </tr>`).join('')}
-    </tbody>
-  </table></div>`;
-}
-
-
-function dontSay(items) {
-  return `<div class="dont-say">
-    <div class="dont-say-title">지양하는 것이 좋은 멘트</div>
-    <ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul>
-  </div>`;
-}
-
-/* ════════════════════════════════
-   VS 패널 전용 헬퍼 함수
-   (saleSectionV2/qaList의 다른 호출 형태 지원)
-════════════════════════════════ */
-function vsCardGrid(title, items) {
-  if (!items || !Array.isArray(items)) return '';
-  return '<div style="margin-bottom:16px;">'
-    + '<div style="font-weight:800;font-size: 15px;color:var(--tx-primary);'
-    + 'margin-bottom:12px;padding-bottom:8px;padding-top:18px;'
-    + 'border-bottom:2px solid rgba(0,0,0,0.06);">' + title + '</div>'
-    + items.map(function(it) {
-        return '<div style="background:#fff;border-radius: var(--r-md);padding:13px 14px;'
-          + 'margin-bottom:9px;box-shadow:0 2px 8px rgba(0,0,0,0.04);'
-          + 'border-left:3px solid var(--hyundai-azure);">'
-          + '<div style="font-weight:700;font-size: 14.5px;color:var(--tx-primary);'
-          + 'margin-bottom:5px;display:flex;align-items:center;gap:8px;">'
-          + '<span style="font-size: 17px;">' + (it.icon || '') + '</span>'
-          + (it.title || '') + '</div>'
-          + '<div style="font-size: 13.5px;color:var(--tx-secondary);line-height:1.75;padding-left:24px;">'
-          + (it.desc || '') + '</div>'
-          + '</div>';
-      }).join('')
-    + '</div>';
 }
 
 function saleSectionV2(comCards, comRadioBlocks, spcCards, spcRadioBlocks) {
@@ -2269,53 +2153,6 @@ function saleSectionV2(comCards, comRadioBlocks, spcCards, spcRadioBlocks) {
     + comRadioHtml
     + spcSection;
 }
-
-
-function vsQaList(title, items) {
-  if (!items || !Array.isArray(items)) return '';
-  var uid = 'vsqa_' + Math.random().toString(36).slice(2,8);
-  return '<div style="margin-bottom:16px;margin-top:22px;">'
-    + '<div style="font-weight:800;font-size: 14.5px;color:#fff;'
-    + 'background:linear-gradient(90deg,var(--hyundai-blue),var(--hyundai-azure));'
-    + 'padding:8px 14px;border-radius: var(--r-sm);margin-bottom:11px;">' + title + '</div>'
-    + items.map(function(it, i) {
-        var qid = uid + '_' + i;
-        return '<div class="qa-item" id="' + qid + '" style="margin-bottom:9px;">'
-          + '<div class="qa-q" onclick="(function(el){el.classList.toggle(\'open\');})(document.getElementById(\'' + qid + '\'))">'
-          + '<span class="qa-q-icon">Q.</span>'
-          + '<span class="qa-q-text">' + (it.q || '') + '</span>'
-          + '<span class="qa-arrow">▼</span>'
-          + '</div>'
-          + '<div class="qa-a">'
-          + '<div class="qa-a-inner">A.&nbsp;&nbsp;' + (it.a || '') + '</div>'
-          + '</div>'
-          + '</div>';
-      }).join('')
-    + '</div>';
-}
-
-/* ════════════════════════════════
-   VS 아코디언 토글
-════════════════════════════════ */
-function toggleVsAcc(btn) {
-  var body = btn.nextElementSibling;
-  var isOpen = btn.classList.contains('open');
-  btn.classList.toggle('open', !isOpen);
-  body.classList.toggle('open', !isOpen);
-}
-
-/* VS 아코디언 래퍼 생성 헬퍼 */
-function vsAcc(colorClass, icon, title, content) {
-  return '<div class="vs-acc-wrap ' + colorClass + '">'
-    + '<button class="vs-acc-btn" onclick="toggleVsAcc(this)">'
-    + '<span style="font-size: 16px;flex-shrink:0;">' + icon + '</span>'
-    + '<span class="vs-acc-label">' + title + '</span>'
-    + '<span class="vs-acc-arrow">▼</span>'
-    + '</button>'
-    + '<div class="vs-acc-body">' + content + '</div>'
-    + '</div>';
-}
-
 
 function tradeInRadio(id, own, other, colorCls) {
   colorCls = colorCls || 'hl';
@@ -20359,1993 +20196,6 @@ PANELS.genesisev=(()=>{
 })();
 
 /* ════════════════════════════════
-   경쟁사 비교 패널 (모바일)
-════════════════════════════════ */
-
-PANELS.konaice_vs = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','코나 ICE vs 기아 셀토스','현대 코나가 더 합리적인 선택입니다',['VS 가이드','ICE/HEV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['셀토스가 기아의 신형 컴팩트 SUV라면, <span style="color:var(--hyundai-blue);font-weight:800;">코나는 여러차례 모델 이어를 통한 높은 완성도와 압도적인 가성비, N Line 고성능 감성까지 제공하는 현대를 대표하는 글로벌 컴팩트 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 코나가 딱입니다',
-    vsCardGrid('이런 고객에게 코나가 딱입니다', [
-      {
-        icon: '',
-        title: '가성비를 꼼꼼히 따지는 고객',
-        desc: '1.6T H-Pick이 셀토스 프레스티지보다 193만원 저렴. HEV H-Pick은 133만원 저렴. 월등한 가성비'
-      },
-      {
-        icon: '',
-        title: '유지비 중시 고객 (코나 HEV vs 셀토스 가솔린)',
-        desc: '셀토스 가솔린 살 예산에 조금만 보태면 코나 하이브리드 구매 가능. 연간 2만km 주행 시 유류비 차이로 약 2.5년이면 초기 비용 차이 회수 가능.'
-      },
-      {
-        icon: '',
-        title: '가성비/법인 고객 (코나 2.0)',
-        desc: '코나 2.0 가솔린은 2,396만원부터 시작하여, 셀토스 1.6T 2,515만원보다 저렴하게 엔트리 모델을 구성할 수 있어 법인 및 가성비 수요에 적합합니다.'
-      },
-      {
-        icon: '',
-        title: '하이브리드 경제성과 안정성을 원하는 고객',
-        desc: '코나 HEV 복합연비 최대 19.8km/ℓ + 10년/20만km 배터리 무상보증. e-Motion Drive 기본 탑재.'
-      },
-      {
-        icon: '',
-        title: '퍼포먼스를 중시하는 2030 드라이버',
-        desc: '1.6 터보 198마력 — 셀토스 193마력 대비 5마력 우위. N Line으로 메쉬 그릴·스포일러·알칸타라 시트까지, N을 기반으로 한 고성능 감성.'
-      },
-      {
-        icon: '',
-        title: '다양한 인테리어 감성을 원하는 고객',
-        desc: '블랙·그레이·세이지 그린·베이지·에코 패키지 등 셀토스보다 훨씬 다양한 실내 컬러 패키지.'
-      },
-      {
-        icon: '',
-        title: '친환경 가치를 중시하는 고객',
-        desc: '에코 패키지 — 친환경 천연가죽·스웨이드, Recycled PET 헤드라이닝·플로어 매트 적용.'
-      },
-      {
-        icon: '',
-        title: '조용하고 고급스러운 주행을 원하는 고객',
-        desc: '이중접합 차음 유리(윈드실드), 플로어 카펫 언더패드, 후륜 멤버 부싱으로 NVH를 고려한 전용 설계.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 코나만의 핵심 강점 (USP)',
-    vsCardGrid('핵심 강점 (USP)', [
-      {
-        icon: '①',
-        title: '더 강한 1.6 터보 엔진 출력 [셀토스 대비 +5마력]',
-        desc: '코나 1.6 터보 최고출력 198마력 vs 셀토스 193마력 → 5마력 우위. 가솔린 복합연비도 코나 13.0km/ℓ vs 셀토스 12.5km/ℓ로 코나 앞섭니다.'
-      },
-      {
-        icon: '②',
-        title: 'N Line 라인업 — 셀토스엔 없는 고성능 서브 라인 [코나 강점]',
-        desc: 'N Line 전용 외관: 메쉬 그릴, 윙타입 스포일러, 싱글 트윈팁 머플러, 다이아몬드 컷 휠.<br>N Line 전용 인테리어: N 로고 + 레드 스티치 + 알칸타라/천연가죽 콤비 시트.'
-      },
-      {
-        icon: '③',
-        title: '5~6가지 인테리어 컬러 패키지 [셀토스 대비 2배]',
-        desc: '블랙·그레이·세이지 그린·베이지·에코 패키지 등 — 셀토스 대비 월등한 다양성과 친환경 컨셉의 에코 패키지(Recycled PET 헤드라이닝)'
-      },
-      {
-        icon: '④',
-        title: '하이브리드 전용 e-Motion Drive 시스템 [코나 HEV 강점]',
-        desc: 'e-Dynamic Drive: 코너링 시 모터 제어 → 안정된 코너링.<br>e-Comfort Drive: 과속방지턱 흔들림 최소화.<br>셀토스의 E-Ride(방지턱 제어)보다 진보된 통합 제어 시스템.'
-      },
-      {
-        icon: '⑤',
-        title: '10년/20만km 하이브리드 배터리 무상보증',
-        desc: '전기구동모터 + 고전압 배터리 + HPCU까지 10년/20만km 무상 보증. 코나 HEV 복합연비 최대 19.8km/ℓ.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 코나가 더 저렴하다! — 트림별 가격 비교',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 코나는 셀토스와 유사 사양 비교 시 적게는 약 50만원, 많게는 200만원 가까이 합리적으로 구매 가능합니다.
-    </div>
-    ${cmpTable(
-      '','코나 1.6T 가솔린','셀토스 1.6T 가솔린',
-      [
-        ['엔트리 트림','모던 2,429만원','트렌디 2,477만원','코나 -48만원 ','cmp-win'],
-        ['주력 트림 ','H-Pick 2,647만원','프레스티지 2,840만원','코나 -193만원 ','cmp-win']
-      ]
-    )}
-    ${cmpTable(
-      '','코나 HEV (세제혜택 후)','셀토스 HEV (세제혜택 후)',
-      [
-        ['엔트리 트림','모던 2,896만원','트렌디 2,898만원','코나 -2만원 ','cmp-win'],
-        ['주력 트림 ','H-Pick 3,075만원','프레스티지 3,208만원','코나 -133만원 ','cmp-win'],
-        ['상위 트림 ','프리미엄 3,318만원','시그니처 3,469만원','코나 -151만원 ','cmp-win']
-      ]
-    )}`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 코나 vs 셀토스 핵심 스펙 비교',
-    cmpTable(
-      '','현대 코나','기아 셀토스',
-      [
-        ['전장','4,355mm','4,430mm','셀토스 +75mm','cmp-lose'],
-        ['전폭','1,825mm','1,820mm','코나 +5mm ','cmp-win'],
-        ['전고','1,575mm','1,610mm','셀토스 +35mm','cmp-lose'],
-        ['휠베이스','2,660mm','2,690mm','셀토스 +30mm','cmp-lose'],
-        ['가솔린 최고출력','198마력','193마력','코나 +5마력 ','cmp-win'],
-        ['가솔린 복합연비','13.0km/ℓ (17")','12.5km/ℓ (16")','코나 우위 ','cmp-win'],
-        ['HEV 복합연비 (최고)','19.8km/ℓ','19.5km/ℓ','코나 근소 우위 ','cmp-win'],
-        ['N Line 라인업','있음','없음','코나 우위 ','cmp-win'],
-        ['인테리어 컬러 패키지','5~6가지','3가지','코나 우위 ','cmp-win'],
-        ['에코/친환경 패키지','있음','없음','코나 우위 ','cmp-win'],
-        ['승차감 제어 (HEV)','e-Motion Drive (코너링+방지턱)','E-Ride (방지턱만)','코나 우위 ','cmp-win'],
-        ['HEV 중간 트림 가격','H-Pick 3,075만','프레스티지 3,208만','코나 -133만 ','cmp-win'],
-        ['1.6T 가솔린 중간 트림 가격','H-Pick 2,647만','프레스티지 2,840만','코나 -193만 ','cmp-win'],
-        ['바이브로 사운드 시트','없음','있음 (옵션)','셀토스 강점','cmp-lose'],
-        ['HEV 배터리 보증','10년/20만km 명시','10년/20만km 명시','동일','cmp-draw'],
-        ['변속기 (가솔린)','8단 자동변속기','8단 자동변속기','동일','cmp-draw']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ 셀토스 비교 시 대응 스크립트',
-    vsQaList('셀토스 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "셀토스가 크기가 더 크지 않나요?"',
-        a: '전장 기준으로 신형인 셀토스가 80mm 더 길긴 해요. 그런데 실내에서 중요한 건 휠베이스인데, 코나 2,660mm vs 셀토스 2,690mm로 30mm 차이예요. 3세대 코나는 신규 플랫폼으로 공간 효율성을 극대화했고 풀 플랫에 가까운 2열 폴딩을 지원합니다. 겉으로 보이는 크기보다 실제 타봤을 때 느끼는 공간감이 더 중요하거든요.'
-      },
-      {
-        q: 'Q2. "셀토스가 비슷한 가격인데, 굳이 코나를 살 이유가 있나요?"',
-        a: '가격표를 직접 비교해보면 코나가 더 유리해요. 하이브리드 중간 트림에서 코나 H-Pick이 셀토스 프레스티지보다 133만원 저렴한데도 내비게이션, 통풍시트, 전동시트가 기본으로 들어가 있습니다. 1.6 가솔린 터보는 무려 193만원 저렴하고요. 차액으로 가족분들 선물 사드리는건 어떨까요?'
-      },
-      {
-        q: 'Q3. "셀토스 가솔린을 살까 하는데, 코나 하이브리드는 너무 비싸지 않나요?"',
-        a: '셀토스 가솔린 프레스티지(2,840만)와 코나 하이브리드 H-Pick(3,075만)을 비교하면 초기 비용은 코나가 235만원 더 비쌉니다. 하지만 연간 2만km를 주행하신다고 가정하면, 코나 하이브리드의 압도적인 연비(19.8km/ℓ) 덕분에 1년에 기름값만 약 105만원을 절약하실 수 있습니다. 즉, 2년 정도만 타시면 차량 가격 차이를 100% 회수하시게 됩니다.'
-      },
-      {
-        q: 'Q4. "셀토스에 바이브로 사운드 시트가 있던데요?"',
-        a: '셀토스의 바이브로 사운드 시트는 분명 특색 있는 기능이에요. 그런데 코나는 플로어 카펫 언더패드, 후륜 멤버 부싱을 적용해서 차체 하부에서 올라오는 소음과 진동을 근본적으로 잡았습니다. 매일 타면서 느끼는 주행 중 정숙함이 장기적으로는 더 값어치 있지 않을까요?'
-      },
-      {
-        q: 'Q5. "셀토스 하이브리드 연비가 좋다던데?"',
-        a: '공식 수치로 셀토스 HEV 19.5km/ℓ, 코나 HEV 19.8km/ℓ로 코나가 근소하게 앞섭니다. 연비보다 더 중요한 차이가 있어요. 코나 HEV에는 e-Dynamic Drive, e-Comfort Drive 시스템이 있어서 방지턱뿐만 아니라 코너링 시에도 모터가 제어하여 승차감을 높여줍니다. 셀토스의 E-Ride보다 더 진보된 통합 제어 시스템이죠.'
-      },
-      {
-        q: 'Q6. "코나에서 가성비가 좋은 트림이 어떤 트림인가요?"',
-        a: '하이브리드라면 코나 H-Pick이 가성비 최고입니다. 셀토스 프레스티지보다 133만원 저렴하면서 내비게이션, 통풍시트, 전동시트, 후측방 충돌방지가 기본이에요. 가솔린 모델도 H-Pick이 셀토스보다 193만원 저렴하면서 동등 이상의 사양을 제공합니다.'
-      },
-      {
-        q: 'Q7. "N Line이 따로 있는 게 뭐가 다른가요?"',
-        a: 'N Line은 단순 외관 패키지가 아니라 현대차 고성능 N 브랜드의 서브 라인업이에요. 메쉬 그릴, 윙타입 스포일러, 싱글 트윈팁 머플러, 다이아몬드 컷 19인치 휠, 알칸타라+천연가죽 콤비 시트에 레드 스티치까지 — N 감성을 느껴보시는 것도 추천 드려요.'
-      },
-      {
-        q: 'Q8. "하이브리드 배터리가 나중에 문제 생기면 어떡하죠?"',
-        a: '코나 HEV는 10년/20만km동안 하이브리드 배터리 및 관련 부품(전기구동모터, 고전압 배터리, HPCU 핵심 제어 시스템) 모두 보증해드려요. 10년이면 대부분 고객분들의 교체 주기와 거의 같아서 사실상 타는 동안 배터리 걱정은 없다고 보시면 됩니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "코나가 셀토스보다 크다" → 전장·축간거리 모두 셀토스가 더 크기 때문에 실내 공간 활용성 등으로 커뮤니케이션 필요해요.',
-      '· "바이브로 사운드 시트보다 낫다" → 셀토스 만의 신규 기능이나 일상적인 음악은 프리미엄 사운드 시스템이 대중적으로 인기가 많다로 커뮤니케이션 해주세요.',
-      '· "셀토스 연비가 더 낮다" → 코나 19.8km/ℓ vs 셀토스 19.5km/ℓ, 근소 우위 수준입니다.'
-    ])
-  )}
-
-</div>
-`;
-
-PANELS.tucson_vs = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','투싼 vs 기아 스포티지','현대 투싼이 더 합리적인 선택입니다',['VS 가이드','ICE/HEV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['스포티지가 다양한 라인업의 기아 준중형 SUV라면, <span style="color:var(--hyundai-blue);font-weight:800;">투싼은 전트림 가격 경쟁력 우세한 HEV, N Line 고성능 감성 및 영유아 운전모드까지 — 현대가 만든 가장 완성도 높은 준중형 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 투싼이 딱입니다',
-    vsCardGrid('이런 고객에게 투싼이 딱입니다', [
-      {
-        icon: '',
-        title: 'HEV 가격 우위를 원하는 고객',
-        desc: '전 HEV 트림에서 투싼이 스포티지보다 76만~156만원 저렴. 동등 사양 기준 현재 투싼이 가격 대비 가치 월등히 우세.'
-      },
-      {
-        icon: '',
-        title: '영유아·어린 자녀를 키우는 가족',
-        desc: '영유아 운전모드(HEV 전 트림 기본) — 급가속·급제동·주차충격을 모터가 필터링. 레이더 기반 어드밴스드 후석 승객 알림 탑재.'
-      },
-      {
-        icon: '',
-        title: '고성능 N 감성을 원하는 드라이버',
-        desc: 'N Line 전용 메쉬 그릴·스포일러·싱글 트윈팁 머플러·스웨이드+천연가죽 콤비 시트·레드 스티치.'
-      },
-      {
-        icon: '',
-        title: '야간 운전이 많은 고객',
-        desc: '지능형 헤드램프(IFS) — 대향차 눈부심 방지하면서 상향등 유지 → 야간 시야 극대화. 스포티지 미적용.'
-      },
-      {
-        icon: '',
-        title: '하이브리드 장기 신뢰를 중시하는 고객',
-        desc: '10년/20만km HEV 배터리 무상보증. 전기구동모터·고전압 배터리·HPCU 모두 포함.'
-      },
-      {
-        icon: '',
-        title: '다양한 인테리어를 원하는 고객',
-        desc: '브라운 팩·그린/블랙/그레이·블랙/그레이 투톤·N Line 레드스티치 등 풍부한 인테리어 조합.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 투싼만의 핵심 강점 (USP)',
-    vsCardGrid('핵심 강점 (USP)', [
-      {
-        icon: '①',
-        title: '전 HEV 트림 가격 우위 — 76만~156만원 저렴 [가격 경쟁력]',
-        desc: '엔트리 트림부터 최상위 트림까지 투싼 HEV가 스포티지 HEV보다 저렴합니다. 특히 주력인 프리미엄 트림은 156만원이나 저렴합니다.'
-      },
-      {
-        icon: '②',
-        title: '지능형 헤드램프(IFS) — 야간 안전의 차이 [인스퍼레이션 기본]',
-        desc: '야간 마주 오는 대향차 눈부심 방지 + 상향등 기능 유지로 전방 시야를 극대화합니다. 스포티지에는 적용되지 않은 고급 사양입니다.'
-      },
-      {
-        icon: '③',
-        title: 'N Line 라인업 — 차원이 다른 고성능 감성 [투싼 강점]',
-        desc: '단순한 외관 패키지인 스포티지 X-Line과 달리, 투싼 N Line은 스웨이드+천연가죽 콤비 시트와 레드 스티치 등 실내 소재까지 고성능 감성으로 차별화했습니다.'
-      },
-      {
-        icon: '④',
-        title: '영유아 운전모드 — 패밀리 SUV의 완성 [투싼 HEV 강점]',
-        desc: '젊은 가족층이 선호하는 투싼이죠. 투싼 HEV 전 트림에 영유아 운전모드가 적용되어 높은 전고로 인해 영유아가 느끼는 급가속·급제동·주차 충격을 모터가 자동으로 필터링하여 부드러운 승차감을 제공합니다.'
-      },
-      {
-        icon: '⑤',
-        title: '어드밴스드 후석 승객 알림 — 레이더 기반 정밀 감지 [H-Pick 이상 기본]',
-        desc: '투싼은 정밀 레이더 센서로 수면 중인 영유아의 미세한 움직임까지 감지합니다. 스포티지는 드라이브 와이즈 옵션에 센서 타입으로만 포함되어 정밀도에서 차이가 납니다.'
-      },
-      {
-        icon: '⑥',
-        title: 'HEV 10년/20만km 배터리 무상보증 [장기 안심]',
-        desc: '전기구동모터 + 하이브리드 고전압 배터리 + HPCU까지 10년/20만km 무상 보증으로 편안하게 타시면 됩니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 투싼이 더 저렴하다! — 트림별 가격 비교',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 투싼 HEV는 스포티지 HEV 전 트림 대비 76만~156만원 저렴합니다. 가격 민감도가 높은 중형 SUV에서 가성비는 훌륭한 소구 포인트입니다.
-    </div>
-    <div style="font-weight:700;margin:16px 0 8px;color:#222;font-size: 14px;">가솔린 트림별 연비·출력 비교</div>
-    ${cmpTable(
-      '','투싼 가솔린','스포티지 가솔린',
-      [
-        ['전장','4,640mm (N Line 4,650mm)','4,685mm','스포티지 +45mm'],
-        ['전폭','1,865mm','1,865mm','동일'],
-        ['전고','1,665mm','1,660mm','투싼 +5mm '],
-        ['휠베이스','2,755mm','2,755mm','동일'],
-        ['최고출력','180마력','180마력','동일'],
-        ['변속기','7단 DCT','8단 자동','스포티지 소폭 우위'],
-        ['복합연비 (17"/2WD)','12.5km/ℓ','12.3km/ℓ','투싼 소폭 우위 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>가솔린 핵심</strong><br>
-      · 출력은 동일 180마력이나, 투싼의 7단 DCT vs 스포티지 8단 자동은 주행 감성 차이 발생<br>
-      · 복합연비는 투싼이 0.2km/ℓ 앞서며, 연간 1만5천km 기준 실질 비용 차이는 미미
-    </div>
-    <div style="font-weight:700;margin:16px 0 8px;color:#222;font-size: 14px;">하이브리드 트림별 가격 비교 (세제혜택 후)</div>
-    ${cmpTable(
-      '','투싼 HEV (개소세 3.5%)','스포티지 HEV',
-      [
-        ['전장','4,640mm (N Line 4,650mm)','4,685mm','스포티지 +45mm'],
-        ['전폭','1,865mm','1,865mm','동일'],
-        ['전고','1,665mm','1,660mm','투싼 +5mm '],
-        ['휠베이스','2,755mm','2,755mm','동일'],
-        ['엔트리 트림','모던 3,270만원','프레스티지 3,346만원','투싼 -76만원 '],
-        ['중간 트림 ','프리미엄 3,514만원','노블레스 3,670만원','투싼 -156만원 '],
-        ['중간 트림 2','H-Pick 3,597만원','노블레스 3,670만원','투싼 -73만원 '],
-        ['상위 트림','인스퍼레이션 3,861만원','시그니처 3,931만원','투싼 -70만원 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>HEV 가성비 Best 추천</strong><br>
-      · Best 1 — 투싼 프리미엄 vs 스포티지 노블레스: 156만원 저렴 + 내비·통풍시트·스마트폰 무선충전·스마트 테일게이트 기본 포함<br>
-      · Best 2 — 투싼 H-Pick vs 스포티지 노블레스: 73만원 저렴 + 추가로 운전석·동승석 8way 전동시트·2열 열선시트·어드밴스드 후석 승객 알림 기본
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 투싼 vs 스포티지 핵심 스펙 비교',
-    cmpTable(
-      '','현대 투싼','기아 스포티지',
-      [
-        ['전장','4,640mm (N Line 4,650mm)','4,685mm','스포티지 +45mm'],
-        ['전폭','1,865mm','1,865mm','동일'],
-        ['전고','1,665mm','1,660mm','투싼 +5mm '],
-        ['휠베이스','2,755mm','2,755mm','동일'],
-        ['가솔린 변속기','7단 DCT','8단 자동','스포티지 단수 우위'],
-        ['가솔린 복합연비','12.5km/ℓ (17"/2WD)','12.3km/ℓ (17"/2WD)','투싼 우위 '],
-        ['HEV 시스템 출력','235마력','235마력','동일'],
-        ['HEV 복합연비 (최고)','16.2km/ℓ','16.3km/ℓ','스포티지 근소 우위'],
-        ['이중접합 차음 유리','윈드실드+1열 도어 (전 트림 기본)','윈드실드+1열 (프레스티지~), +2열 (노블레스~)','스포티지 2열 우위'],
-        ['지능형 헤드램프(IFS)','있음 (인스퍼레이션 기본)','없음','투싼 우위 '],
-        ['어드밴스드 후석 승객 알림','레이더 기반 (H-Pick 기본)','센서 타입 (드라이브와이즈)','투싼 정밀도 우위 '],
-        ['N Line 라인업','있음 (내장재 포함)','없음 (X-Line은 외관위주)','투싼 우위 '],
-        ['LPG 라인업','없음','있음','스포티지 강점']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ 스포티지 비교 시 대응 스크립트',
-    vsQaList('스포티지 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "스포티지가 더 크지 않나요?"',
-        a: '전장 기준으로 현재 신차인 스포티지가 45mm 더 길긴 해요. 그런데 실내에서 가장 중요한 건 휠베이스인데, 투싼과 스포티지 모두 2,755mm로 완전히 동일합니다. 2열 레그룸, 탑승 공간은 같아요. 대신 투싼은 전고가 5mm 더 높아서 헤드룸 개방감이 더 여유롭습니다.'
-      },
-      {
-        q: 'Q2. "스포티지 하이브리드 연비가 더 좋다던데요?"',
-        a: '공식 기준으로 스포티지 HEV 최고 연비가 16.3km/ℓ, 투싼 HEV가 16.2km/ℓ로 차이가 0.1km/ℓ입니다. 연간 1만5천km 주행 기준으로 계산하면 연간 1~2만원 차이에 불과해요. 그 차이보다, 투싼에는 스포티지에 없는 영유아 운전모드, 지능형 헤드램프, 레이더 기반 후석 승객 알림까지 있으니 투싼이 훨씬 더 많이 드리는 거죠.'
-      },
-      {
-        q: 'Q3. "아이가 있는데 어떤 차가 더 좋을까요?"',
-        a: '자녀가 계신다면 투싼이 훨씬 맞습니다. 투싼 하이브리드에는 영유아 운전모드가 있어서 급가속·급제동·주차 충격을 모터가 자동으로 필터링해줘요. 스포티지에는 이런 기능이 없습니다. 거기에 어드밴스드 후석 승객 알림도 레이더 센서로 수면 중인 영유아까지 감지해서 차를 떠날 때 알려줘요. 아이 키우는 부모님께 정말 값진 기능들입니다.'
-      },
-      {
-        q: 'Q4. "스포티지는 2열까지 차음유리가 들어가서 더 조용하다던데요?"',
-        a: '스포티지 노블레스 이상 트림에 2열 차음유리가 들어가는 것은 맞습니다. 하지만 투싼은 윈드실드와 1열 차음유리를 기본으로 적용하면서, 플로어 카펫 언더패드 등 차체 바닥에서 올라오는 소음을 잡는 흡차음재 설계에 공을 들였습니다. 단순히 유리 한 장만이 아니라 차체 전반에 걸쳐 소음을 잡는 구조라는 점에서 투싼의 주행 정숙성도 매우 뛰어납니다.'
-      },
-      {
-        q: 'Q5. "스포티지가 디자인이 더 세련됐다는 사람도 있던데요?"',
-        a: '스포티지도 스타맵 시그니처 라이팅으로 독특한 감성이 있죠. 그런데 투싼은 N Line 라인업이 있어서 선택의 폭이 훨씬 넓습니다. 전용 메쉬 그릴, 싱글 트윈팁 머플러, 스웨이드+천연가죽 콤비 시트에 레드 스티치까지 — 스포티지에는 이에 해당하는 고성능 서브 라인업 자체가 없어요.'
-      },
-      {
-        q: 'Q6. "야간에 운전이 많은데 어떤 차가 더 안전한가요?"',
-        a: '투싼에는 지능형 헤드램프(IFS)가 적용되어 있어요. 야간에 마주 오는 차량의 눈을 부시게 하지 않으면서도 상향등을 유지해서 전방 시야를 최대한 확보해주는 기능입니다. 야간 운전이 많으시다면 투싼이 실질적인 안전 운행에 유리한 면이 있죠.'
-      },
-      {
-        q: 'Q7. "하이브리드 배터리 걱정이 돼요."',
-        a: '투싼 하이브리드는 10년, 20만km 배터리 무상 보증하고, 전기구동모터, 고전압 배터리, HPCU 핵심 제어 시스템까지 전부 포함이에요. 10년이면 대부분 고객분들의 차량 교체 주기와 거의 같기 때문에, 사실상 타는 동안 배터리 걱정은 없다고 보시면 됩니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "투싼이 이중접합차음 유리를 더 넓게 적용한다" → 스포티지는 노블레스 이상 2열까지 적용됩니다.',
-      '· "연비가 더 좋다" → 스포티지 HEV가 16.3km/ℓ로 동등 수준. 굳이 수치 비교는 불필요합니다.',
-      '· "투싼이 더 크다" → 전장 기준 스포티지가 더 큼. 휠베이스 등 실내 사이즈로 우세 어필해보세요.',
-      '· "스포티지에는 후석 승객 알림이 없다" → 센서 타입으로 존재함. 레이더 방식의 정밀도 차이로 어필해보세요.'
-    ])
-  )}
-
-</div>
-`;
-
-
-PANELS.santafe_vs = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','싼타페 vs 기아 쏘렌토','현대 싼타페가 더 합리적인 선택입니다',['VS 가이드','ICE/HEV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['쏘렌토가 세련된 디자인의 도심형 패밀리 SUV라면, <span style="color:var(--hyundai-blue);font-weight:800;">싼타페는 러기드하면서 박시한 디자인으로 일상과 아웃도어 활동을 모두 잡은 — 현대가 만든 가장 실용적인 액티브 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 싼타페가 딱입니다',
-    vsCardGrid('이런 고객에게 싼타페가 딱입니다', [
-      {
-        icon: '‍‍‍',
-        title: '5~7인 대가족 / 3열 필수 고객',
-        desc: '박시한 디자인의 SUV 프로파일로 압도적인 3열 헤드룸/레그룸과 트렁크 공간 활용성.'
-      },
-      {
-        icon: '',
-        title: '장거리 여행 잦은 드라이버',
-        desc: '레그레스트 포함 릴렉션 컴포트 시트로 조수석 동반자가 비행기 비즈니스석처럼 다리를 쭉 뻗고 휴식 가능.'
-      },
-      {
-        icon: '',
-        title: '개성 있는 SUV를 원하는 고객',
-        desc: '갤로퍼부터 이어진 정통 박시 SUV 헤리티지. 캘리그래피·블랙잉크 트림으로 취향에 따른 개성 연출 가능.'
-      },
-      {
-        icon: '',
-        title: '실속을 중시하는 꼼꼼한 고객',
-        desc: '고객 선호 사양 모두 포함한 가성비 H-Pick 트림: 프로젝션 LED·동승석 전동시트·에르고 모션 시트·서라운드뷰·레그레스트·HUD까지 모두 기본 포함.'
-      },
-      {
-        icon: '',
-        title: '캠핑·차박을 즐기는 가족',
-        desc: '테라스 컨셉 테일게이트, 공식 루프탑 텐트·에어매트 지원. 싼타페는 캠핑을 포함해 가족과의 시간을 위한 차.'
-      },
-      {
-        icon: '',
-        title: '하이브리드를 선호하는 고객',
-        desc: '10년/20만km 하이브리드 배터리 무상보증. 고전압 배터리·전기모터·HPCU 전부 포함.'
-      },
-      {
-        icon: '',
-        title: '위생·청결을 중시하는 부모',
-        desc: 'UV-C 살균 멀티 트레이로 스마트폰·마스크를 자외선 살균. 어린 자녀가 있는 가정에 강력한 소구 포인트.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 싼타페만의 핵심 강점 (USP)',
-    vsCardGrid('핵심 강점 (USP)', [
-      {
-        icon: '①',
-        title: '압도적인 공간성 = 체감 공간의 차이 [쏘렌토 대비 +70mm]',
-        desc: '싼타페는 박시한 디자인으로 3열 승객의 공간성 뿐만 아니라 러기지 활용성도 극대화한 차량입니다. 기본 전고 1,720mm, 루프랙 장착 시 1,770mm. 쏘렌토(루프랙 1,700mm) 대비 70mm 더 높아 3열 헤드룸, 트렁크 개방감에서 체감이 다릅니다. 기본 전고 기준으로도 싼타페(1,720mm)가 쏘렌토(1,695mm)보다 25mm 더 높습니다.'
-      },
-      {
-        icon: '②',
-        title: 'H-Pick — 같은 가격대 최강 가성비 트림 [가격 대비 사양 압도]',
-        desc: '프로젝션 LED 헤드램프·동승석 8way 전동시트·에르고 모션 시트·1열 릴렉션 컴포트(레그레스트)·서라운드뷰·HUD까지 모두 기본 제공. 개별 옵션으로 맞추면 387만원이 추가되는 사양을 압도적인 가성비로 누릴 수 있습니다.'
-      },
-      {
-        icon: '③',
-        title: '테라스 컨셉 테일게이트 — 캠핑을 위해 설계된 차 [싼타페 강점]',
-        desc: '와이드 테일게이트 오프닝은 야외 공간의 연장으로 설계. 현대 공식 액세서리로 루프탑 텐트(아이캠퍼), 에어 매트까지 지원. 쏘렌토에는 해당 공식 캠핑 액세서리 라인업 없음.'
-      },
-      {
-        icon: '④',
-        title: '양방향 멀티 콘솔 [싼타페 강점]',
-        desc: '1열뿐 아니라 2열에서도 콘솔을 열 수 있어 가족들과 함께 사용하기에 편리합니다. 쏘렌토에는 없는 기능입니다.'
-      },
-      {
-        icon: '⑤',
-        title: '레그레스트 포함 1열 릴렉션 컴포트 시트 [싼타페 우위]',
-        desc: '조수석에 다리 받침대(레그레스트)가 달린 릴렉션 컴포트 시트 적용. 장거리 여행 시 동반자의 피로를 확실하게 줄여줍니다. 쏘렌토는 최상위 트림에 옵션으로 제공됩니다.'
-      },
-      {
-        icon: '⑥',
-        title: 'UV-C 살균 멀티 트레이 [싼타페 강점]',
-        desc: '자외선(UV-C)으로 스마트폰·마스크·장갑 등 소지품을 살균합니다. 역시 쏘렌토에는 없는 기능입니다.'
-      },
-      {
-        icon: '⑦',
-        title: '10년/20만km 하이브리드 배터리 무상보증',
-        desc: '고전압 배터리, 전기 구동모터, HPCU까지 10년/20만km 무상 보증.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-spec','','③ 싼타페 vs 쏘렌토 핵심 스펙 비교',
-    cmpTable(
-      '','싼타페 HEV','쏘렌토 HEV',
-      [
-        ['전장','4,830mm','4,815mm','싼타페 우위 '],
-        ['전폭','1,900mm','1,900mm','동일'],
-        ['전고 (기본)','1,720mm','1,695mm','싼타페 +25mm '],
-        ['휠베이스','2,815mm','2,815mm','동일'],
-        ['전고 (루프랙)','1,770mm','1,700mm','싼타페 +70mm '],
-        ['HEV 복합연비 (최고)','15.5km/ℓ','15.7km/ℓ','거의 동등'],
-        ['HEV 시스템 출력','235PS','235PS','동일'],
-        ['양방향 멀티 콘솔','있음','없음','싼타페 우위 '],
-        ['UV-C 살균 트레이','있음 (캘리그래피)','없음','싼타페 우위 '],
-        ['테라스 테일게이트','있음','없음','싼타페 우위 '],
-        ['레그레스트 릴렉션 시트','있음 (레그레스트 포함)','릴렉션 있으나 레그레스트 없음','싼타페 우위 '],
-        ['공식 캠핑 액세서리','루프탑텐트·에어매트','없음','싼타페 우위 '],
-        ['프로젝션 LED (프레스티지↑)','프레스티지 기본','시그니처 이상 (스타일 옵션)','싼타페 우위 '],
-        ['동승석 8way 전동시트 (프레스티지↑)','프레스티지 기본','시그니처 이상','싼타페 우위 '],
-        ['중간 트림 가격 비교','프레스티지 4,314만','노블레스 4,284만','쏘렌토 30만 저렴'],
-        ['디젤 라인업','없음','있음','쏘렌토 강점'],
-        ['에르고 모션 시트','있음 (H-Pick↑)','있음 (컴포트 옵션)','동등 (트림별 차이)']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','④ 쏘렌토 비교 시 대응 스크립트',
-    vsQaList('쏘렌토 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "쏘렌토가 디자인이 더 세련된 것 같던데요?"',
-        a: '감성적으로 쏘렌토는 도회적이고 매끈한 느낌이 강하죠. 싼타페는 현대차의 정통 SUV 헤리티지를 이어받은 각지고 강인한 박시 스타일입니다. 레인지로버, 디펜더, 포드 브롱코 같은 차들이 전부 이 각진 스타일로 가고 있거든요. 10년 이상 타도 질리지 않는 스타일이라는 평이 많아요.'
-      },
-      {
-        q: 'Q2. "크기가 비슷한 거 아닌가요?"',
-        a: '루프랙 기준으로 싼타페가 쏘렌토보다 70mm 더 높습니다. 70mm면 어른 손바닥 하나 크기예요. 기본 전고도 싼타페 1,720mm로 쏘렌토 1,695mm보다 25mm 높아요. 이 차이와 박시한 디자인 덕분에 3열 헤드룸, 트렁크 개방감에서 실제로 크게 느껴지세요. 특히 3열에 앉는 분이 계신다면 싼타페가 훨씬 여유롭습니다.'
-      },
-      {
-        q: 'Q3. "쏘렌토 노블레스가 싼타페 프레스티지보다 싸고 서라운드뷰도 기본이던데요?"',
-        a: '맞아요, 쏘렌토 노블레스가 30만원 저렴하고 서라운드뷰·원격주차가 기본이에요. 그런데 싼타페 프레스티지는 프로젝션 LED 헤드램프, 동승석 8way 전동시트, 듀얼 무선충전이 기본으로 들어가요. 두 차가 서로 다른 곳에 강점이 있는 구조예요.\n만약 두 가지 모두 원하신다면 싼타페 H-Pick을 추천드려요. 옵션으로 개별선택시보다 훨씬 저렴한 가격에 서라운드뷰·원격주차는 물론이고, 프로젝션 LED·에르고 모션 시트·레그레스트 릴렉션·HUD까지 전부 기본으로 드립니다.'
-      },
-      {
-        q: 'Q4. "캠핑은 쏘렌토로도 되지 않나요?"',
-        a: '맞아요, 쏘렌토도 캠핑 가능한 SUV입니다. 그런데 싼타페는 기획 단계부터 캠핑을 전제로 설계한 차예요. 현대 공식 액세서리로 루프탑 텐트, 에어 매트까지 지원합니다. 쏘렌토는 캠핑도 \'되는\' 차고, 싼타페는 캠핑을 \'위해\' 만든 차입니다.'
-      },
-      {
-        q: 'Q5. "쏘렌토는 연비가 더 좋다던데요?"',
-        a: '공식 기준으로 쏘렌토 HEV 최고 연비가 15.7km/ℓ, 싼타페 HEV가 15.5km/ℓ입니다. 차이가 0.2km/ℓ인데요, 연간 1만5천km 주행 기준으로 연간 2~3만원 차이에 불과합니다. 그 차이보다 싼타페의 70mm 높은 차체, 양방향 멀티 콘솔, UV-C 살균 트레이, 레그레스트 릴렉션 시트가 훨씬 체감되는 차이가 아닐까요?'
-      },
-      {
-        q: 'Q6. "쏘렌토에도 릴렉션 시트가 있던데요?"',
-        a: '쏘렌토에도 릴렉션 시트가 있어요. 그런데 싼타페의 릴렉션 컴포트 시트에는 레그레스트(다리 받침대)가 달려 있습니다. 조수석에 앉은 동반자가 다리를 쭉 뻗고 비즈니스석처럼 누울 수 있는 건데 장거리 여행 시 동반자의 피로도가 확실히 다릅니다.'
-      },
-      {
-        q: 'Q7. "쏘렌토가 디젤이 있던데, 장거리에는 디젤이 낫지 않나요?"',
-        a: '디젤은 분명 장거리 연료비 측면에서 유리한 면이 있어요. 그런데 최근 디젤 환경 규제 강화와 요소수 문제, 도심 주행 시 소음과 진동을 고려하면 HEV가 더 실용적인 경우가 많습니다. 싼타페 HEV는 15.5km/ℓ 연비에 조용하고 부드러운 주행감을 제공하거든요. 장거리 여행이 잦으시더라도 HEV로 충분하고, 오히려 캠핑 아이템이 많은 싼타페와 더 잘 어울린다고 생각합니다.'
-      },
-      {
-        q: 'Q8. "UV-C 살균이 실제로 효과가 있나요?"',
-        a: '자외선 C파(UV-C)는 세균과 바이러스의 DNA를 파괴하는 방식으로 살균하는 원리로, 의료 현장에서도 활용되는 검증된 기술이에요. 스마트폰, 마스크, 카드, 자동차 키 등을 넣고 작동시키면 됩니다. 어린 자녀가 있는 가정이나 위생에 민감한 분들에게 실제로 가장 반응이 좋은 기능 중 하나입니다. 쏘렌토에는 없는 기능이에요.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "싼타페가 연비가 더 좋아요" → 쏘렌토 HEV가 15.7km/ℓ로 소폭 우세하나 동등 수준입니다.',
-      '· "쏘렌토 디젤보다 연비가 낫다" → 순수 장거리 연료비는 디젤이 유리할 수 있음. 친환경 트렌드 강조하며 HEV로 유도해보세요.',
-      '· "전고가 60mm 더 높다" → 기본 기준 25mm, 루프랙 기준 70mm 차이. 정확한 수치로 얘기해주세요.'
-    ])
-  )}
-
-</div>
-`;
-
-PANELS.palisade_vs = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','팰리세이드 vs 르노 필랑트','현대 팰리세이드가 더 합리적인 선택입니다',['VS 가이드','ICE/HEV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['필랑트가 유럽 감성의 세련된 5인승 크로스오버라면, <span style="color:var(--hyundai-blue);font-weight:800;">팰리세이드는 334마력의 하이브리드로 9인 가족까지 넉넉하게 품는 — 현대의 플래그십 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 팰리세이드가 딱입니다',
-    vsCardGrid('이런 고객에게 팰리세이드가 딱입니다', [
-      {
-        icon: '‍‍‍',
-        title: '7~9인 대가족 / 단체 이동 필요 고객',
-        desc: '7인승·9인승 선택 가능. 9인승은 고속도로 버스 전용차로 이용 가능 + 부가세 환급·취득세 감면·개소세 면제 혜택까지.'
-      },
-      {
-        icon: '',
-        title: '압도적인 존재감·프리미엄을 원하는 고객',
-        desc: '전장 5,060mm / 전폭 1,980mm의 풀사이즈 바디. 거실/가구 디자인에서 영감받은 프리미엄 리빙 스페이스 인테리어.'
-      },
-      {
-        icon: '',
-        title: '장거리 가족여행·레저 즐기는 고객',
-        desc: '스테이 모드로 시동 없이 공조·멀티미디어 사용 가능. 실내 V2L로 캠핑 가전 연결. 야외에서도 집처럼 편안하게.'
-      },
-      {
-        icon: '',
-        title: '하이브리드 퍼포먼스·경제성 원하는 고객',
-        desc: '시스템 334마력 + 복합연비 14.1km/ℓ. 대형 SUV의 고출력에도 연비는 동급 최고 수준.'
-      },
-      {
-        icon: '',
-        title: '법인·임직원·의전용 단체 고객',
-        desc: '9인승 부가세 환급, 임직원 특화 할부(XZ/XY) 36개월 잔가 65% 상향 → 월 납입금 대폭 절감'
-      },
-      {
-        icon: '',
-        title: '오디오·엔터테인먼트 중시 고객',
-        desc: 'BOSE 14스피커 + 외장앰프. 블루링크 스토어로 넷플릭스·게임 등 차내 스트리밍 가능.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 팰리세이드만의 핵심 강점 (USP)',
-    vsCardGrid('핵심 강점 (USP)', [
-      {
-        icon: '①',
-        title: '압도적인 차체 크기 — 진짜 풀사이즈 SUV [필랑트 대비 전고 +170mm]',
-        desc: '전장 5,060mm / 전폭 1,980mm / 전고 1,805mm / 휠베이스 2,970mm. 필랑트 대비 전장 +145mm, 전폭 +90mm, 전고 +170mm, 휠베이스 +150mm. 같은 차급이 아닙니다.'
-      },
-      {
-        icon: '②',
-        title: '9인승 선택 — 실질적 법적·경제적 혜택 [팰리세이드 강점]',
-        desc: '9인승 선택 시 부가가치세 환급 + 개별소비세 면제 + 취득세·등록세 감면. 고속도로 버스 전용차로 이용 가능(6명 이상 탑승 시). 필랑트는 5인승이라 이런 혜택이 전혀 없습니다.'
-      },
-      {
-        icon: '③',
-        title: '334PS 하이브리드 — 대형 SUV 최강 출력 [필랑트 대비 +84마력]',
-        desc: '시스템 최고출력 334마력 (엔진 262PS + 전기모터 54.0kW). 필랑트 하이브리드 250마력 대비 84마력 우위. 복합연비 14.1km/ℓ — 이 크기에서 이 연비는 동급 최고.'
-      },
-      {
-        icon: '④',
-        title: '스테이 모드 + 실내 V2L — 차박·캠핑 완전 지원 [팰리세이드 강점]',
-        desc: '스테이 모드: 시동 없이 배터리로 공조·멀티미디어 사용.<br>실내 V2L: 커피머신, 전기스토브 등 캠핑 가전 직접 연결.<br>필랑트에는 없는 기능입니다.'
-      },
-      {
-        icon: '⑤',
-        title: '2열 다이내믹 바디케어 시트 (마사지 기능) [팰리세이드 강점]',
-        desc: '2열 탑승자에게 개별 제어 가능한 마사지 기능 제공. 필랑트에는 없는 기능입니다.'
-      },
-      {
-        icon: '⑥',
-        title: 'BOSE 14스피커 + 2026 올해의 차 수상 [팰리세이드 우위]',
-        desc: 'BOSE 14스피커 + 외장앰프 — 필랑트 BOSE 10스피커 대비 4개 우위. 2026 대한민국 올해의 차 하이브리드 SUV 부문 수상.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 트림별 가격 구조 비교 및 소구 포인트',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 팰리세이드와 필랑트는 차급과 타겟 고객이 완전히 다릅니다. 필랑트는 5인승 중형 크로스오버(4~5천만원대)이며, 팰리세이드는 7~9인승 대형 플래그십 SUV(5~6천만원대)입니다. 가격 차이 이상의 압도적인 공간과 성능 차이를 강조하세요.
-    </div>
-    <div style="font-weight:700;margin:16px 0 8px;color:#222;font-size: 14px;">트림별 가격 구조 비교 (세제혜택 후 기준)</div>
-    ${cmpTable(
-      '','팰리세이드 HEV (현대)','필랑트 HEV (르노)',
-      [
-        ['전장','5,060mm','4,915mm','팰리세이드 +145mm '],
-        ['전폭','1,980mm','1,890mm','팰리세이드 +90mm '],
-        ['전고','1,805mm','1,635mm','팰리세이드 +170mm '],
-        ['휠베이스','2,970mm','2,820mm','팰리세이드 +150mm '],
-        ['엔트리 트림','익스클루시브 7인승 5,046만 / 334마력 / 14.1km/ℓ','테크노 4,331만 / 250마력 / 15.1km/ℓ','차급 차이로 인한 기본 가격 차이 존재'],
-        ['주력 트림 ','프레스티지 7인승 5,642만 / 천연가죽·서라운드뷰·스마트테일게이트','아이코닉 4,696만 / 파노라믹루프·동승석디스플레이','팰리세이드가 더 비싸나 공간/출력 압도적 우위'],
-        ['최상위 트림 ','캘리그래피 7인승 6,326만 / 나파가죽·에르고모션·BOSE 14스피커','에스프리 알핀 4,971만 / 알핀 전용 내외장·스마트룸미러','팰리세이드가 더 비싸나 플래그십 럭셔리 사양 우위']
-      ]
-    )}
-    <div class="tip-box" style="margin:16px 0;">
-      <strong>핵심 소구 포인트 — 팰리세이드 HEV 프레스티지 (5,642만) vs 필랑트 HEV 아이코닉 (4,696만)</strong><br><br>
-      결론: 약 946만원의 가격 차이가 있지만, 팰리세이드는 그 이상의 가치를 제공합니다!<br><br>
-      단순 가격 비교로는 필랑트가 저렴하지만, 팰리세이드는 전장 +145mm, 전고 +170mm의 압도적인 풀사이즈 바디와 +84PS 더 강력한 334마력의 출력을 자랑합니다. 또한 7~9인승의 다목적 공간 활용성과 스테이 모드, 실내 V2L 등 대형 SUV만의 특화 사양을 갖추고 있어, 가족 단위 고객이나 레저 활동을 즐기는 고객에게는 비교 불가한 만족감을 선사합니다.<br><br>
-      <strong>고객 설득 멘트:</strong> "필랑트가 가격은 저렴하지만, 팰리세이드는 차급 자체가 다릅니다. 334마력의 여유로운 힘과 9인 가족도 편안하게 타는 넓은 공간, 그리고 차박까지 완벽하게 지원하는 스테이 모드는 팰리세이드에서만 누릴 수 있는 프리미엄입니다."
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 팰리세이드 vs 필랑트 핵심 스펙 비교',
-    cmpTable(
-      '','팰리세이드 HEV','르노 필랑트 HEV',
-      [
-        ['전장','5,060mm','4,915mm','팰리세이드 +145mm '],
-        ['전폭','1,980mm','1,890mm','팰리세이드 +90mm '],
-        ['전고','1,805mm','1,635mm','팰리세이드 +170mm '],
-        ['휠베이스','2,970mm','2,820mm','팰리세이드 +150mm '],
-        ['시스템 최고출력','334PS','250PS','팰리세이드 +84PS '],
-        ['HEV 복합연비','14.1km/ℓ (18인치 2WD)','15.1km/ℓ (19/20인치)','필랑트 우위'],
-        ['최대 승차인원','7인 / 9인','5인','팰리세이드 우위 '],
-        ['9인승 세제혜택','있음 (9인승 선택 시)','없음','팰리세이드 우위 '],
-        ['버스전용차로 이용','있음 (9인승, 6인+ 탑승 시)','없음','팰리세이드 우위 '],
-        ['스테이 모드','있음','없음','팰리세이드 우위 '],
-        ['실내 V2L','있음 (라이프스타일 패키지)','없음','팰리세이드 우위 '],
-        ['2열 마사지 시트','있음 (다이내믹 바디케어)','없음','팰리세이드 우위 '],
-        ['사운드 시스템','BOSE 14스피커+외장앰프','BOSE 10스피커 (옵션)','팰리세이드 우위 '],
-        ['차내 스트리밍','블루링크 스토어 (전석 화면)','동승석 디스플레이 지원','동등'],
-        ['올해의 차 수상','2026 하이브리드 SUV','없음','팰리세이드 우위 ']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ 필랑트 비교 시 대응 스크립트',
-    vsQaList('필랑트 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "필랑트가 디자인이 세련되고 유럽 감성이 있던데요?"',
-        a: '맞아요, 필랑트는 유러피언 쿠페 감성이 확실히 독특하죠. 그런데 팰리세이드는 가구 디자인에서 영감을 받은 프리미엄 리빙 스페이스라는 컨셉으로, 탑승했을 때 \'호텔 라운지에 앉은 것 같다\'는 느낌을 주는 인테리어예요. 타는 사람이 매일 느끼는 공간의 품격이 결국 더 중요하지 않을까요?'
-      },
-      {
-        q: 'Q2. "필랑트가 연비가 더 좋다던데요?"',
-        a: '맞아요, 공식 수치로 필랑트가 1km/ℓ 정도 앞서는 건 사실입니다. 그런데 팰리세이드는 시스템 출력 334마력의 대형 7~9인승 SUV이고, 필랑트는 250마력의 5인승 크로스오버예요. 출력이 84마력나 더 강하고 차체도 훨씬 크고 무거운데 연비 차이가 겨우 1km/ℓ라는 건 팰리세이드 하이브리드 기술이 얼마나 뛰어난지를 보여주는 거예요. 연간 1만5천km 주행 시 연료비 차이는 연 4~5만원 수준입니다.'
-      },
-      {
-        q: 'Q3. "5인 가족인데 9인승이 왜 필요하죠?"',
-        a: '5인 가족이라면 탑승 인원은 충분하죠. 그런데 팰리세이드 9인승의 매력은 단순히 좌석 수가 아닙니다. 부가세 환급, 개별소비세 면제, 취득세 감면까지 받으실 수 있어서 실제 구매 부담이 크게 줄어들어요. 거기에다 6인 이상 탑승 시 고속도로 버스전용차로도 이용 가능해서 장거리에서 시간도 아낄 수 있고요. 필랑트는 5인승이라 이런 혜택이 전혀 없습니다.'
-      },
-      {
-        q: 'Q4. "캠핑이나 차박을 즐기는데 어떤 차가 더 맞나요?"',
-        a: '캠핑·차박이라면 팰리세이드가 훨씬 강합니다. 스테이 모드가 있어서 시동을 끄고도 배터리로 에어컨과 히터를 그대로 쓸 수 있어요. 거기에 실내 V2L 단자로 커피머신이나 전기 스토브 같은 캠핑 가전도 바로 연결 가능합니다. 필랑트에는 이런 기능이 없어요.'
-      },
-      {
-        q: 'Q5. "필랑트가 ADAS 기능이 34가지나 된다던데요?"',
-        a: '필랑트가 ADAS 기능을 많이 홍보하는 건 맞아요. 그런데 기능 \'개수\'보다 중요한 건 실제 주행에서 얼마나 자연스럽게 작동하느냐예요. 팰리세이드는 수십 년간 검증된 현대차 ADAS 시스템에 HDA2(고속도로 주행 보조)까지 탑재되어 있어요. 기능 숫자보다 작동 안정성과 통합성이 실사용에서 더 중요합니다.'
-      },
-      {
-        q: 'Q6. "필랑트가 더 날렵하고 운전하기 편할 것 같아요."',
-        a: '필랑트는 전장 4,915mm의 크로스오버라서 분명 도심에서 다루기 편하죠. 팰리세이드는 5,060mm의 풀사이즈 SUV라 처음엔 익숙해지는 시간이 필요해요. 그런데 서라운드 뷰 모니터, 원격 스마트 주차 보조로 주차 편의성을 충분히 보완했고, 고속도로에서는 오히려 큰 차체의 안정감과 334마력의 여유로운 가속이 훨씬 만족스럽다는 오너 후기가 많습니다.'
-      },
-      {
-        q: 'Q7. "법인 차로 쓰려는데 어떤 게 더 유리할까요?"',
-        a: '법인 용도라면 팰리세이드가 압도적으로 유리합니다. 9인승 선택 시 부가가치세 환급이 가능하고, 임직원 특화 할부(XZ/XY)를 활용하면 36개월 잔가율 65% 적용 시 월 납입금을 대폭 절감할 수 있어요. BOSE 14스피커와 리무진급 2열 공간으로 의전 차량으로도 손색이 없습니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "연비가 더 좋아요" → 필랑트가 15.1km/ℓ로 근소 우위이나 차급 차이 강조 필요합니다.',
-      '· "ADAS 기능이 더 많다" → 필랑트가 34가지로 홍보. 당사는 통합해서 운영하며 기술력 더 우수하므로 숫자 비교는 불필요합니다.',
-      '· "디자인이 더 낫다" → 취향 차이로 자연스럽게 팰리세이드 디자인 강조해보세요.',
-      '· "필랑트도 대형 SUV다" → 전장 4,915mm로 준대형급이나 쿠페 라인으로 중형급과 비슷함을 강조해주세요.'
-    ])
-  )}
-
-</div>
-`;
-
-
-PANELS.konaev_vs = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','코나 일렉트릭 vs 기아 EV3','현대 코나 일렉트릭이 더 합리적인 선택입니다',['VS 가이드','EV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['<span style="color:var(--hyundai-blue);font-weight:800;">코나 일렉트릭은 풀옵션(Inspiration) 기준, EV3 대비 저렴한 가격, N Line의 독보적 스포티함, 그리고 2026 EV 에브리케어로 전기차 특화 보장 프로그램까지 제공하는 완벽한 소형 전기 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 코나 일렉트릭가 딱입니다',
-    vsCardGrid('이런 고객에게 코나 일렉트릭가 딱입니다', [
-      {
-        icon: '',
-        title: '풀옵션 사양을 가장 실속있게 원하는 고객',
-        desc: '코나 Inspiration은 서라운드뷰·HDA2·원격 스마트 주차 보조가 기본! EV3 Earth에서 동일 사양을 맞추면 옵션비만 213만원이 추가되어 최종 가격은 코나가 더 저렴해집니다.'
-      },
-      {
-        icon: '',
-        title: '전기차 화재/중고값 등 전기차에 대한 불안이 큰 고객',
-        desc: '2026 EV Every Care — 화재 피해 최대 100억원 지원, 잔존가치 55% 보장, 10년 10회 무상점검. 20만 충전크레딧, EV바디케어 및 신차교환 등 코나 일렉트릭은 숫자로 확실하게 보장합니다.'
-      },
-      {
-        icon: '',
-        title: '스포티한 디자인을 원하는 고객',
-        desc: '코나 N Line은 알칸타라 콤비 시트, 윙타입 스포일러, 전용 19인치 휠 등 실내까지 진짜 고성능 감성을 담았습니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 코나 일렉트릭만의 핵심 강점 (USP)',
-    vsCardGrid('핵심 강점 (USP)', [
-      {
-        icon: '①',
-        title: 'Inspiration 풀옵션 구성 시 가격 경쟁력 우세!',
-        desc: '코나 Inspiration(4,992만원)은 서라운드뷰, HDA2, 원격 스마트 주차 보조가 기본 포함입니다. EV3 롱레인지 Earth(4,810만원)는 저렴해 보이지만, 서라운드뷰(모니터링 +104만)와 HDA2(드라이브와이즈 +109만)를 추가하면 5,023만원이 됩니다. 동일 사양 구성 시 코나가 31만원 더 저렴합니다.'
-      },
-      {
-        icon: '②',
-        title: '2026 EV 에브리케어 — 업계 최강 전기차 보증 [현대차만의 강점]',
-        desc: '① 화재 안심 최대 100억원 지원<br>② 잔존가치 55% 보장<br>③ 10년 10회 무상점검<br>④ 신차 교환(출고 2년 내 전손)<br>⑤ 바디케어(1년/2만km)<br>⑥ 20만 충전 크레딧 및 다양한 EV 충전 솔루션 제공'
-      },
-      {
-        icon: '③',
-        title: 'N Line — 고성능 감성의 스포티 라인업 [디자인 차별화]',
-        desc: 'N Line 전용 인테리어: N 로고 알칸타라/천연가죽 콤비 시트, 레드 스티치, 메탈 페달.<br>외관: 윙타입 스포일러, 싱글 트윈팁 머플러.'
-      },
-      {
-        icon: '④',
-        title: '프렁크 (Front Trunk) 기본 적용 [공간 활용성]',
-        desc: '코나 일렉트릭는 후드 아래 PE룸 공간에 27ℓ의 프렁크 수납공간을 마련하여 운동 용품이나 세차용품 등을 깔끔하게 보관할 수 있습니다. (EV3는 25ℓ)'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 가격경쟁력 시나리오별 분석 — Inspiration 우세!',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 단순 시작가 비교가 아닌, 동일 사양 구성 기준 최종 지불 금액을 비교하세요. Inspiration(풀옵션) 구성에서 코나가 가격 경쟁력이 우세합니다. 하위 트림은 EV3가 우세하므로 솔직하게 인정하고 전기차 고객들 특성 고려하여 풀옵션으로 Inspiration으로 업셀링하세요.
-    </div>
-    <div style="font-weight:700;margin:16px 0 8px;color:#222;font-size: 14px;">핵심 시나리오 — Inspiration vs EV3 롱레인지 Earth (동일 사양 구성)</div>
-    ${cmpTable(
-      '','코나 Inspiration','EV3 롱레인지 Earth',
-      [
-        ['전장','4,355mm','4,305mm','코나 +50mm '],
-        ['전폭','1,825mm','1,850mm','EV3 +25mm'],
-        ['전고','1,575mm','1,590mm','EV3 +15mm'],
-        ['휠베이스','2,660mm','2,680mm','EV3 +20mm'],
-        ['기본가','4,992만원','4,810만원','EV3 182만 저렴'],
-        ['서라운드뷰','기본 포함','+104만원 추가','코나 우위 '],
-        ['HDA2','기본 포함','+109만원 추가','코나 우위 '],
-        ['원격 스마트 주차','기본 포함','모니터링 옵션 필요','코나 우위 '],
-        ['최종가 (동일 사양)','4,992만원','5,023만원','코나 31만 저렴 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>결론: 코나가 31만원 더 저렴합니다!</strong><br>
-      EV3 Earth가 시작가는 182만원 싸 보이지만, 필수 선호 옵션인 서라운드뷰와 HDA2를 넣는 순간 코나보다 비싸집니다.<br><br>
-      <strong>고객 설득 멘트:</strong> "고객님, EV3 Earth가 싸 보이시죠? 그런데 주차할 때 꼭 필요한 서라운드뷰랑 고속도로 반자율주행(HDA2) 넣으시면 5천만원이 넘어가서 코나보다 비싸집니다. 코나 인스퍼레이션은 그게 처음부터 다 기본으로 들어있어서 가성비가 훨씬 좋습니다."
-    </div>
-    <div class="tip-box" style="margin:12px 0;border-left:4px solid var(--accent-warn);">
-      <strong>주의 구간 — 하위 트림(스탠다드/프리미엄)은 EV3가 스펙/가격 우세</strong><br><br>
-      · 코나 E-Value+(4,152만) vs EV3 스탠다드 Air(3,995만): EV3가 저렴하고 배터리 용량도 큽니다. 이 구간은 방어하기 어려우므로, 주행거리를 중시하는 고객은 롱레인지로 유도하세요.<br>
-      · 코나 롱레인지 Premium(4,657만) vs EV3 롱레인지 Air(4,415만): EV3가 저렴하고 배터리/주행거리가 깁니다. 이 구간 고객은 반드시 "인스퍼레이션 트림"으로 업셀링 하거나, "화재 100억 보상(EV 에브리케어)"의 안심감으로 설득해야 합니다.
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 코나 일렉트릭 vs EV3 핵심 스펙 비교',
-    cmpTable(
-      '','코나 일렉트릭','기아 EV3',
-      [
-        ['전장','4,355mm','4,305mm','코나 +50mm '],
-        ['전폭','1,825mm','1,850mm','EV3 +25mm'],
-        ['전고','1,575mm','1,590mm','EV3 +15mm'],
-        ['휠베이스 (실내공간)','2,660mm','2,680mm','EV3 소폭 우위'],
-        ['배터리 (롱레인지)','64.8kWh','81.4kWh','EV3 우위'],
-        ['주행거리 (LR 17인치)','417km','501km','EV3 우위'],
-        ['급속충전 (10→80%)','39분','31분','EV3 우위'],
-        ['서라운드뷰 모니터','Inspiration 기본 포함','옵션 +104만원 (모니터링)','코나 우위 '],
-        ['HDA2 (차로변경 보조)','Inspiration 기본 포함','옵션 +109만원 (드라이브와이즈)','코나 우위 '],
-        ['원격 스마트 주차','Inspiration 기본 포함','모니터링 옵션 필요','코나 우위 '],
-        ['N Line / GT-Line','N Line (알칸타라 시트 등)','GT-Line (외관 패키지)','N Line 완성도 압도 '],
-        ['EV 보증 프로그램','EV Every Care / 100억·55%·10년 명시','e-라이프 패키지 (수치 미명시)','코나 명시 우위 '],
-        ['프렁크 (전면 수납)','27L 기본 적용','25L 기본 적용','코나 소폭 우위'],
-        ['Inspiration vs Earth 최종가','4,992만원','5,023만원 (동일 사양 옵션 포함)','코나 31만 저렴 ']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ EV3 비교 시 대응 스크립트',
-    vsQaList('EV3 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "EV3가 배터리도 크고 주행거리도 훨씬 길지 않나요?"',
-        a: '맞습니다. EV3가 최신 플랫폼이라 배터리 용량과 주행거리(501km vs 417km)에서 앞서는 것은 사실입니다. 하지만 현실적으로 매일 400km 이상 주행하시나요? 출퇴근과 주말 드라이브에는 코나로도 충분합니다. 오히려 전기차는 화재나 중고차 가격에 대한 불안감이 더 큰 문제인데, 코나는 EV Every Care를 통해 화재 시 최대 100억원 지원, 잔존가치 55% 보장을 명확한 숫자로 약속드립니다. 주행거리 80km보다 이 안심감이 훨씬 크지 않으실까요?'
-      },
-      {
-        q: 'Q2. "EV3 Earth가 코나 Inspiration보다 싸지 않나요?"',
-        a: '시작 가격만 보면 EV3 Earth가 182만원 저렴해 보입니다. 그런데 EV3 Earth에서 주차할 때 필수인 서라운드뷰를 넣으면 104만원, 고속도로 반자율주행(HDA2)을 넣으면 109만원이 추가됩니다. 두 가지만 넣어도 EV3가 코나 Inspiration보다 31만원 더 비싸집니다. 코나 Inspiration은 이 고급 옵션들이 처음부터 다 기본으로 들어있어서 실질적인 가성비는 코나가 훨씬 좋습니다.'
-      },
-      {
-        q: 'Q3. "N Line은 그냥 외관 꾸미기 아닌가요?"',
-        a: '코나 N Line은 현대차 고성능 N 브랜드의 독립 서브 라인업입니다. 알칸타라와 천연가죽이 혼합된 전용 시트, 레드 스티치, 메탈 페달, 윙타입 스포일러까지 실내외 완성도가 전혀 다릅니다. 진짜 스포티한 감성의 전기차를 원하신다면 코나 일렉트릭이 답입니다.'
-      },
-      {
-        q: 'Q4. "EV3가 충전 속도도 더 빠르다던데요?"',
-        a: '네, 급속 충전 시 EV3가 31분, 코나가 39분으로 EV3가 8분 정도 빠릅니다. 이 부분은 솔직히 EV3의 강점이에요. 다만 실생활에서 전기차 충전은 대부분 밤에 집이나 아파트에서 완속 충전으로 이루어집니다. 급속 충전기를 매일 쓰시는 게 아니라면, 8분의 차이가 실제 생활에 미치는 영향은 생각보다 크지 않을 수 있어요.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "코나가 실내 공간(휠베이스)이 더 넓다" → 코나 2,660mm &lt; EV3 2,680mm. EV3가 더 깁니다.',
-      '· "코나가 충전이 더 빠르다" → 코나 39분 &gt; EV3 31분. EV3가 소폭 빠릅니다. 비슷하다고 커뮤니케이션 해주세요.',
-      '· "코나 배터리가 더 크고 주행거리가 길다" → EV3가 아무래도 신형이라 배터리/주행거리 모두 우세합니다. 코나의 강점 위주로 커뮤니케이션 해주세요.',
-      '· "이중접합 차음유리가 코나는 2열까지 들어간다" → 코나는 윈드실드(앞유리)만 적용됩니다.'
-    ])
-  )}
-
-</div>
-`;
-
-PANELS.ioniq5_vs_ev5 = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','아이오닉5 vs 기아 EV5','현대 아이오닉5가 더 완성도 높은 선택입니다',['VS 가이드','EV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['EV5가 패밀리 실용성을 앞세운 기아 중형 전기 SUV라면, <span style="color:var(--hyundai-blue);font-weight:800;">아이오닉5는 동급 최장 3,000mm 휠베이스 · 18분 초급속 충전 · N과 N Line 고성능 감성까지 — 더 넓고, 더 빠르고, 더 완성도 높은 전기 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 아이오닉5가 딱입니다 (vs. EV5)',
-    vsCardGrid('이런 고객에게 아이오닉5가 딱입니다', [
-      {
-        icon: '',
-        title: '충전 속도가 절대적으로 중요한 고객',
-        desc: '아이오닉5 18분(350kW 10→80%) vs EV5 30분 — 12분 차이. 장거리 고속도로 주행 시 휴게소에서의 12분은 실질적으로 크게 체감됩니다.'
-      },
-      {
-        icon: '',
-        title: '2열 레그룸·실내 공간이 최우선인 고객',
-        desc: '휠베이스 3,000mm vs EV5 2,750mm — 250mm 차이. 한뼘이 넘는 차이죠. 2열 탑승자의 레그룸은 휠베이스가 결정합니다. 전장이 아닌 휠베이스를 보세요.'
-      },
-      {
-        icon: '',
-        title: 'N, N Line 고성능 감성을 원하는 고객',
-        desc: '아이오닉5 N과 N Line 고성능 — 가니쉬 히든 라이팅, 알칸타라 시트, 레드 스티치, N 전용 20인치 휠.'
-      },
-      {
-        icon: '',
-        title: '정숙성·NVH를 최우선으로 하는 고객',
-        desc: '이중접합 차음유리 윈드실드+1열+2열 도어 기본 (E-Lite 제외). EV5는 에어 기준 윈드실드+1열만 기본, 2열은 컴포트II 옵션(+69만원).'
-      },
-      {
-        icon: '',
-        title: '보증·서비스 안심을 중시하는 고객',
-        desc: '2026 EV Every Care — 화재 피해 최대 100억원 지원, 잔존가치 55% 보장, 10년 10회 무상점검. 20만 충전크레딧, EV바디케어 및 신차교환 등'
-      },
-      {
-        icon: '',
-        title: '하이테크 기술 감성을 선호하는 고객',
-        desc: '아이오닉5는 파킹 어시스트 선택 시 \'디지털 사이드 미러\' 적용 가능. 야간 주행이나 비가 올때 하이테크 기술 편의성에서 아이오닉5 우위.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 아이오닉5 핵심 강점 — EV5 대비 USP',
-    vsCardGrid('핵심 강점 — EV5 대비 USP', [
-      {
-        icon: '①',
-        title: '동급 최장 휠베이스 3,000mm — 압도적 실내 레그룸 [EV5 대비 +250mm]',
-        desc: '아이오닉5 3,000mm vs EV5 2,750mm — 250mm 차이. 전장이 아닌 휠베이스가 2열 레그룸을 결정합니다. EV5가 확장형 센터콘솔과 폴드&다이브 시트로 공간 활용성을 강조하지만, 기본 레그룸 자체는 아이오닉5가 앞섭니다.'
-      },
-      {
-        icon: '②',
-        title: '초급속 충전 18분 — EV5 대비 12분 빠름 [350kW 10→80% 기준]',
-        desc: '아이오닉5 400V/800V 멀티 충전 시스템 → 18분 vs EV5 30분. 공식 수치 기준 12분 차이. 고속도로 장거리 주행 시 휴게소 충전에서 12분을 매번 절약합니다.'
-      },
-      {
-        icon: '③',
-        title: '이중접합 차음유리 — 윈드실드+1열+2열 도어 기본 (E-Lite 제외) [EV5는 2열 옵션]',
-        desc: '아이오닉5 주력 트림(익스클루시브 이상) 윈드실드·1열·2열 도어 이중접합 차음유리 기본. EV5 에어 기준 윈드실드·1열만 기본 — 2열은 컴포트II 옵션 +69만원 추가 필요. 전기차는 엔진 소음이 없어 풍절음·노면 소음이 더 잘 들립니다.'
-      },
-      {
-        icon: '④',
-        title: 'N Line — EV5 GT-Line과 차원이 다른 고성능 서브 라인 [N 브랜드 정체성]',
-        desc: 'N Line 전용 가니쉬 히든 라이팅(충전 표시등 포함) — EV5 GT-Line에 없는 시그니처. 알칸타라/천연가죽 콤비 시트(옵션), 레드 스티치 전체 적용, 메탈 페달, N 전용 20인치 휠, 바디컬러 휠아치 몰딩.'
-      },
-      {
-        icon: '⑤',
-        title: '2026 EV 에브리케어 — 업계 최강 전기차 보증 프로그램 [EV5 e-라이프 대비 구체적 수치 명시]',
-        desc: '① 화재 안심 최대 100억원<br>② 잔존가치 55% 보장<br>③ 10년 10회 무상점검<br>④ 신차 교환(출고 2년 내 전손)<br>⑤ 바디케어(1년/2만km)<br>⑥ 긴급충전 특약보험 연 2회<br>기아 e-라이프 패키지는 충전 솔루션, 카케어/견인, 잔가보장 수준의 패키지 프로그램'
-      },
-      {
-        icon: '⑥',
-        title: '프레스티지 풀사양 — HDA2·BOSE·HUD·릴렉션 기본 구성 [EV5 드라이브와이즈 +134만 대비]',
-        desc: '롱레인지 프레스티지(5,915만): HDA2·BOSE 8스피커·HUD·릴렉션 컴포트(레그레스트)·천연가죽·가니쉬 히든 라이팅 기본.<br>EV5는 HDA2(드라이브와이즈 +134만), HUD(스마트커넥트 옵션), 사운드(하만카돈 옵션) 별도 추가 필요.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 가격경쟁력 분석 — 익스클루시브 트림 297만 원 차이로 설득!',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 주력 트림인 익스클루시브 vs 어스 비교 시 가격 차이를 297만 원으로 좁혀 설득 장벽을 낮추고, 상위 트림(프레스티지)에서는 압도적인 사양 우위를 강조하세요.
-    </div>
-    <div style="font-weight:700;margin:16px 0 8px;color:#222;font-size: 14px;">트림별 가격 구조 비교 (세제혜택 후 기준)</div>
-    ${cmpTable(
-      '','아이오닉5 (현대)','EV5 (기아)',
-      [
-        ['엔트리 롱레인지','롱레인지 E-Lite 5,064만 / 직물시트·유니버설아일랜드·V2L미적용','에어 롱레인지 4,575만 / 81.4kWh / 160kW / 460km','EV5 에어 롱레인지가 489만 저렴 / 배터리·주행거리 EV5 우세'],
-        ['주력 트림 ','롱레인지 익스클루시브 5,450만 / 인조가죽·유니버설아일랜드·V2L·통풍','어스 롱레인지 4,950만 / 81.4kWh / 160kW / 460km','EV5 어스 롱레인지가 500만 저렴 (아래 시나리오 1 참조)'],
-        ['스포티 라인','N Line 익스클루시브 5,650만 / 천연가죽·히든라이팅·N전용 20인치','GT-Line 롱레인지 5,060만 / 81.4kWh / 160kW / 460km','EV5 GT-Line 590만 저렴 / 단, N Line 완성도 차이 큼'],
-        ['상위 트림 ','롱레인지 프레스티지 5,915만 / HDA2·BOSE·HUD·릴렉션레그레스트 기본','어스 롱레인지 4,950만+드라이브와이즈134만+하만카돈+스마트커넥트','동일 사양 구성 시 아이오닉5 경쟁력 확보']
-      ]
-    )}
-    <div style="font-weight:700;margin:20px 0 8px;color:#222;font-size: 14px;">핵심 시나리오 1 — 주력 트림 익스클루시브 vs EV5 어스 롱레인지 (설득 장벽 낮추기)</div>
-    ${cmpTable(
-      '','아이오닉5 익스클루시브','EV5 어스 롱레인지',
-      [
-        ['기본가','5,450만원','4,950만원','EV5 500만 저렴'],
-        ['1/2열 이중접합 차음유리','기본 포함','컴포트II +69만원','아이오닉5 우위 '],
-        ['HDA2','별도 옵션','드라이브와이즈 +134만원','—'],
-        ['실내외 V2L','기본 포함','옵션 여부 확인 필요','아이오닉5 우위 '],
-        ['최종가 (유사 사양)','5,450만원','5,153만원 (+69만+134만)','단 297만원 차이!']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>결론: 단 297만 원 차이!</strong><br><br>
-      <strong>고객 설득 멘트:</strong> "고객님, EV5에 고속도로 주행보조랑 2열차음 유리 넣으시면 5,153만 원입니다. 여기서 297만 원만 더 쓰시면, 충전 시간 12분 단축(18분 초급속), 그랜저급 실내 공간(휠베이스 3,000mm), 그리고 화재 시 100억 보상되는 아이오닉 5를 타실 수 있습니다. 전기차는 충전 속도와 공간이 생명인데 300만 원 투자는 절대 아깝지 않으실 겁니다."
-    </div>
-    <div style="font-weight:700;margin:20px 0 8px;color:#222;font-size: 14px;">핵심 시나리오 2 — 상위 트림 프레스티지 vs EV5 어스 롱레인지 (압도적 사양 우위)</div>
-    ${cmpTable(
-      '','아이오닉5 프레스티지','EV5 어스 롱레인지',
-      [
-        ['기본가','5,915만원','4,950만원','EV5 965만 저렴'],
-        ['HDA2','기본 포함','드라이브와이즈 +134만원','아이오닉5 우위 '],
-        ['BOSE 8스피커+외장앰프','기본 포함','하만카돈 옵션 +64만원','아이오닉5 우위 '],
-        ['HUD','기본 포함','스마트커넥트 옵션 +74만원','아이오닉5 우위 '],
-        ['릴렉션 컴포트 (레그레스트)','기본 포함','컴포트I 옵션','아이오닉5 우위 '],
-        ['2열 이중접합 차음유리','기본 포함','컴포트II +69만원','아이오닉5 우위 '],
-        ['가니쉬 히든 라이팅','기본 포함','없음','아이오닉5 우위 '],
-        ['EV5 최종가 (동일 사양)','5,915만원','약 5,291만원~','EV5 624만 저렴']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>결론: EV5 어스 롱레인지에서 동일 사양 맞추면 5,291만원. 아이오닉5 프레스티지(5,915만원)보다 624만원 저렴하지만, 아이오닉5에는 18분 초급속 충전, 3,000mm 휠베이스, 가니쉬 히든 라이팅, BOSE 기본, 이중접합 차음유리 2열 기본까지 포함.</strong><br><br>
-      <strong>고객 설득 멘트:</strong> "EV5에서 사양 맞추면 5,291만원이에요. 624만원 더 내고 아이오닉5 프레스티지를 사면 18분 충전, 더 넓은 2열, 히든 라이팅까지 받습니다."
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 아이오닉5 vs EV5 핵심 스펙 비교',
-    cmpTable(
-      '','아이오닉5 (현대)','기아 EV5',
-      [
-        ['전장','4,635mm','4,615mm','아이오닉5 +20mm '],
-        ['전폭','1,890mm','1,875mm','아이오닉5 +15mm '],
-        ['전고','1,605mm','1,665mm','EV5 +60mm'],
-        ['휠베이스','3,000mm','2,750mm','아이오닉5 +250mm '],
-        ['배터리 (스탠다드)','63.0kWh / 124.9kW(170PS)','60.3kWh / 115kW(156PS)','배터리·출력 모두 아이오닉5 우위 '],
-        ['배터리 (롱레인지)','84.0kWh / 168kW(229PS)','81.4kWh / 160kW(217PS)','배터리·출력 아이오닉5 우위 '],
-        ['주행거리 (롱레인지 2WD 복합)','485km','460km','아이오닉5 +25km '],
-        ['초급속 충전 (10→80%)','18분','30분','아이오닉5 12분 빠름 '],
-        ['AWD 최고출력','239kW(325PS)','195kW(265PS)','아이오닉5 +60PS '],
-        ['이중접합 차음유리','윈드실드+1열+2열 기본 (E-Lite 제외)','윈드실드+1열 기본 / 2열 컴포트II 옵션 +69만','아이오닉5 우위 '],
-        ['디지털 사이드 미러','선택 가능 (파킹 어시스트 적용 시)','미적용','아이오닉5 하이테크 우위 '],
-        ['N Line / GT-Line','N Line (N 브랜드) / 가니쉬 히든 라이팅 포함','GT-Line (외관 패키지)','N Line 완성도 압도 '],
-        ['HDA2 기본 트림','프레스티지 기본','드라이브와이즈 옵션 +134만','아이오닉5 우위 '],
-        ['사운드 (기본 트림)','프레스티지 BOSE 8스피커 기본','하만카돈 옵션','아이오닉5 우위 '],
-        ['HUD','프레스티지 기본','스마트커넥트 옵션','프레스티지는 기본 '],
-        ['서라운드뷰','파킹 어시스트 옵션','모니터링 옵션 +138만','비슷한 수준'],
-        ['릴렉션 컴포트 (레그레스트)','프레스티지 기본 (레그레스트 명시)','컴포트I 옵션','아이오닉5 우위 '],
-        ['2열 폴드&다이브 시트','미적용','풀플랫 지원','EV5 강점'],
-        ['3존 공조 (2열 온도)','없음','있음','EV5 강점'],
-        ['펫 모드','없음','있음','EV5 강점'],
-        ['AI 어시스턴트','없음','기아 AI 어시스턴트','EV5 강점'],
-        ['EV 보증','EV Every Care / 100억·55%·10년 명시','e-라이프 패키지 (수치 미명시)','아이오닉5 명시 우위 '],
-        ['전비 (롱레인지 2WD 복합)','5.2km/kWh','5.0km/kWh','아이오닉5 근소 우위 ']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ EV5 비교 시 대응 스크립트',
-    vsQaList('EV5 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "EV5가 훨씬 싸지 않나요?"',
-        a: 'EV5가 초기 비용은 조금 쌀 수 있습니다. 하지만 아이오닉 5는 \'잔존가치 55% 보장\'으로 나중에 중고차로 파실 때 감가 방어가 확실하게 약속되어 있습니다. 게다가 \'화재 시 100억 보상\'이라는 명확한 숫자가 주는 안심감은 기아의 e-라이프 패키지에서는 찾아볼 수 없는 현대차만의 책임감입니다. 또한 주력 트림 기준으로 필수 옵션을 맞추면 가격 차이는 297만 원으로 줄어듭니다. 300만 원 투자로 18분 초급속 충전과 그랜저급 실내 공간을 얻는 것이 훨씬 이득입니다.'
-      },
-      {
-        q: 'Q2. "EV5가 실내 공간이 넓고 실용적이라던데요?"',
-        a: 'EV5는 2열 폴드&다이브로 풀플랫이 가능하고 시트백 테이블도 있어요. 실용적인 공간 활용이 장점이죠. 그런데 실내 공간의 기본인 레그룸은 휠베이스가 결정해요. 아이오닉5 휠베이스 3,000mm vs EV5 2,750mm — 250mm 차이입니다. 어른 손바닥 한 뼘 정도의 큰 차이에요. 탑승한 채로 느끼는 2열 레그룸은 아이오닉5가 확실히 넓어요. 실용적인 활용은 EV5, 기본 여유로움은 아이오닉5가 앞서는 구조예요.'
-      },
-      {
-        q: 'Q3. "EV5 GT-Line이 아이오닉5 N Line보다 싸지 않나요?"',
-        a: 'EV5 GT-Line 롱레인지(5,060만원)이 아이오닉5 N Line 익스클루시브(5,650만원)보다 590만원 저렴한 건 맞아요. 그런데 N Line의 핵심은 GT-Line과 차원이 달라요. 아이오닉5 N Line에만 있는 가니쉬 히든 라이팅 — 충전할 때만 나타나는 고유 라이팅 패턴이에요. 알칸타라/천연가죽 콤비 시트, 레드 스티치 전체 적용, N 전용 20인치 휠, 바디컬러 휠아치 몰딩까지 — EV5 GT-Line은 이런 완성도에 미치지 못합니다.'
-      },
-      {
-        q: 'Q4. "이중접합 차음유리는 EV5도 들어가지 않나요?"',
-        a: '가격표를 직접 확인했는데요, EV5 에어 기준으로 윈드실드와 1열 도어는 기본인데 2열 도어는 컴포트II 옵션 69만원을 더 내야 들어가요. 아이오닉5는 주력인 익스클루시브 트림부터 윈드실드·1열·2열 도어 이중접합 차음유리가 기본이에요. 전기차는 엔진 소음이 없어 풍절음과 노면 소음이 더 잘 들리는데, 2열까지 차음유리가 들어가는지 여부가 승차감에서 큰 차이를 만들어냅니다.'
-      },
-      {
-        q: 'Q5. "EV5에 AI 어시스턴트, 펫 모드, 3존 공조가 있어서 더 첨단 아닌가요?"',
-        a: 'EV5의 AI 어시스턴트, 펫 모드, 3존 공조는 분명 특색 있는 기능이에요. 그런데 아이오닉5에는 EV Every Care가 있어요. 전기차 화재 시 최대 100억원 지원, 잔존가치 55% 보장, 10년 10회 무상점검 — 매일 AI와 대화하는 것보다 전기차를 타는 10년 동안 받는 보호가 더 실질적이지 않을까요?'
-      },
-      {
-        q: 'Q6. "EV5가 배터리가 커서 오래 타도 되지 않나요?"',
-        a: '아이오닉5 84kWh vs EV5 81.4kWh — 실제로 아이오닉5 배터리가 더 커요. 주행거리도 아이오닉5 485km, EV5 460km로 아이오닉5가 25km 더 길고요. 배터리 용량 면에서도 아이오닉5가 앞섭니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "EV5보다 배터리가 작다" → 아이오닉5 84kWh > EV5 81.4kWh. 아이오닉5가 더 큽니다.',
-      '· "EV5보다 주행거리가 짧다" → 아이오닉5 485km > EV5 460km. 아이오닉5가 더 길어요.',
-      '· "EV5 GT-Line이 N Line이랑 비슷하다" → 완성도·브랜드 정체성 차이 크기 때문에 N만의 고성능 감성을 강조해주세요.'
-    ])
-  )}
-
-</div>
-`;
-
-PANELS.ioniq5_vs_ev6 = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','아이오닉5 vs 기아 EV6','현대 아이오닉5가 더 완성도 높은 선택입니다',['VS 가이드','EV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['EV6가 스포티한 세단형 크로스오버 EV라면, <span style="color:var(--hyundai-blue);font-weight:800;">아이오닉5는 100mm 더 긴 휠베이스, 천연가죽 시트의 고급감, 유니버설 아일랜드의 공간감까지 — 더 넓고, 더 고급스러운 완성형 전기 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 아이오닉5가 딱입니다 (vs. EV6)',
-    vsCardGrid('이런 고객에게 아이오닉5가 딱입니다', [
-      {
-        icon: '',
-        title: '실내 레그룸·거주 공간이 최우선인 고객',
-        desc: '아이오닉5 휠베이스 3,000mm vs EV6 2,900mm — 100mm 차이. EV6는 전장(4,695mm)이 더 길지만 휠베이스는 짧아 실내 레그룸은 아이오닉5가 앞섭니다.'
-      },
-      {
-        icon: '',
-        title: '진짜 \'고급 소재\'를 원하는 고객',
-        desc: 'EV6는 최상위 어스/GT-Line을 사도 \'인조가죽\'입니다. 아이오닉5 프레스티지와 N Line은 \'천연가죽 시트\'가 기본 적용되어 착좌감과 고급감이 다릅니다.'
-      },
-      {
-        icon: '',
-        title: '캠핑/차박 등 V2L 활용이 많은 고객',
-        desc: '아이오닉5는 주력 트림(Exclusive)부터 실외 V2L 커넥터가 기본입니다. EV6는 최상위 어스 트림을 가거나 별도 옵션을 넣어야 실외 V2L이 가능합니다.'
-      },
-      {
-        icon: '',
-        title: 'N Line 히든 라이팅 감성을 원하는 고객',
-        desc: '아이오닉5 N Line 전용 가니쉬 히든 라이팅(충전 표시등 포함) — EV6 GT-Line에 없는 시그니처. 충전할 때만 나타나는 독보적인 라이팅 패턴.'
-      },
-      {
-        icon: '',
-        title: '프레스티지급 풀사양을 기본으로 원하는 고객',
-        desc: '아이오닉5 프레스티지: HDA2·BOSE·HUD·천연가죽 기본. EV6 어스: HDA2(+65만)·메리디안 사운드(+99만) 별도 필요 — 최종가격 비교 시 아이오닉5가 유리합니다.'
-      },
-      {
-        icon: '',
-        title: '좁은 주차장 승하차가 불편했던 고객',
-        desc: '아이오닉5의 \'유니버설 아일랜드(슬라이딩 콘솔)\' 덕분에 운전석 문을 열기 힘들 때 동승석으로 쉽게 이동하여 내릴 수 있습니다. EV6는 고정형이라 불가능합니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 아이오닉5 핵심 강점 — EV6 대비 USP',
-    vsCardGrid('핵심 강점 — EV6 대비 USP', [
-      {
-        icon: '①',
-        title: '상위 트림 천연가죽 시트 기본 적용 [EV6는 전 트림 인조가죽]',
-        desc: '아이오닉5 프레스티지 / N Line은 천연가죽 시트가 기본입니다. 반면 EV6는 5,640만원짜리 어스나 5,700만원짜리 GT-Line을 구매해도 프리미엄 바이오 \'인조가죽\'이 적용됩니다. 소재의 급이 다릅니다.'
-      },
-      {
-        icon: '②',
-        title: '휠베이스 3,000mm & 유니버설 아일랜드 [압도적 공간감]',
-        desc: '아이오닉5 3,000mm vs EV6 2,900mm. 100mm 더 긴 휠베이스에, 최대 140mm 후방 이동이 가능한 유니버설 아일랜드가 적용되어 1열 좌우 이동이 자유롭고 2열 공간 활용성이 극대화됩니다.'
-      },
-      {
-        icon: '③',
-        title: '실외 V2L 커넥터 기본 적용 트림 우위 [Exclusive부터 기본]',
-        desc: '아이오닉5는 주력 트림인 Exclusive(5,450만)부터 차량 밖에서 전기를 쓸 수 있는 \'실외 V2L 커넥터\'가 기본으로 제공됩니다. EV6는 에어(5,240만) 트림에서는 실내 V2L만 기본이며, 실외 V2L을 쓰려면 하이테크 옵션을 넣거나 어스 트림으로 가야 합니다.'
-      },
-      {
-        icon: '④',
-        title: 'N Line 가니쉬 히든 라이팅 — EV6 GT-Line에 없는 시그니처 [EV6 GT-Line 차별화]',
-        desc: 'N Line 전용 가니쉬 히든 라이팅(충전 표시등 포함) — 충전할 때만 나타나는 아이오닉5만의 시그니처 라이팅. EV6 GT-Line은 전용 범퍼·바디컬러 휠 클래딩 수준으로 히든 라이팅은 없습니다.'
-      },
-      {
-        icon: '⑤',
-        title: '프레스티지 풀옵션 사양 vs EV6 어스 옵션 비용 [최종가 동등~유리]',
-        desc: 'EV6 어스 롱레인지(5,640만)에서 HDA2(+65만)+메리디안 사운드(+99만) 추가 시 5,804만원. 아이오닉5 프레스티지(5,915만원)와 111만원 차이지만, 아이오닉5는 천연가죽·BOSE·히든 라이팅·18분 초급속 충전 모두 포함. 실질 가성비는 아이오닉5 승리.'
-      },
-      {
-        icon: '⑥',
-        title: '2026 EV 에브리케어 구체적 수치 명시 [EV6 e-라이프 대비]',
-        desc: '① 화재 최대 100억원<br>② 잔존가치 55%<br>③ 10년 10회 무상점검<br>④ 신차교환(출고 2년 내 전손)<br>⑤ 바디케어(1년/2만km)<br>모두 구체적 수치로 명시. EV6의 기아 e-라이프 패키지는 구체적 % 미명시.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 가격경쟁력 분석 — 프레스티지·N Line 우위',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 아이오닉5 vs EV6는 프레스티지 구간에서 가장 경쟁력 있습니다. EV6 어스에 옵션을 넣으면 가격이 비슷해지는데, "EV6는 인조가죽, 아이오닉5는 천연가죽"이라는 팩트 하나로 게임을 끝낼 수 있습니다.
-    </div>
-    <div style="font-weight:700;margin:16px 0 8px;color:#222;font-size: 14px;">트림별 가격 구조 비교 (세제혜택 후 기준)</div>
-    ${cmpTable(
-      '','아이오닉5 (현대)','EV6 (기아)',
-      [
-        ['엔트리 롱레인지','롱레인지 E-Lite 5,064만 / 직물시트·유니버설아일랜드·V2L미적용','라이트 롱레인지 4,760만 / 84kWh / 168kW / 494km','EV6 라이트 롱레인지가 304만 저렴 / 주행거리 EV6 우세'],
-        ['주력 트림 ','롱레인지 익스클루시브 5,450만 / 인조가죽·실외V2L·통풍 기본','에어 롱레인지 5,240만 / 인조가죽·실외V2L 옵션 필요','EV6 에어롱레인지가 210만 저렴 / 단, 실외 V2L은 아이오닉5만 기본'],
-        ['스포티 라인','N Line 익스클루시브 5,650만 / 천연가죽·히든라이팅·N전용 20인치','GT-Line 롱레인지 5,700만 / 인조가죽·히든라이팅 없음','아이오닉5 N Line이 50만 저렴 / 소재/디자인 아이오닉5 압승 '],
-        ['상위 트림 ','롱레인지 프레스티지 5,915만 / 천연가죽·HDA2·BOSE·HUD 기본','어스 롱레인지 5,640만+HDA2+사운드 / 인조가죽 적용','동일 사양 구성 시 아이오닉5 소재 경쟁력 압승 ']
-      ]
-    )}
-    <div style="font-weight:700;margin:20px 0 8px;color:#222;font-size: 14px;">핵심 시나리오 — 프레스티지 vs EV6 어스 롱레인지 (동일 사양 구성)</div>
-    ${cmpTable(
-      '','아이오닉5 프레스티지','EV6 어스 롱레인지',
-      [
-        ['기본가','5,915만원','5,640만원','EV6 275만 저렴'],
-        ['시트 소재','에코프로세스 천연가죽','바이오 인조가죽','아이오닉5 압도적 우위 '],
-        ['HDA2','기본 포함','드라이브와이즈 +65만원','아이오닉5 우위 '],
-        ['사운드','BOSE 8스피커+외장앰프 기본','메리디안 14스피커 +99만원','아이오닉5 우위 '],
-        ['HUD','기본 포함','어스 기본 포함','동등'],
-        ['릴렉션 컴포트 (레그레스트)','기본 포함 (레그레스트 명시)','어스 기본 (레그레스트 미명시)','아이오닉5 명시 우위 '],
-        ['가니쉬 히든 라이팅','기본 포함','없음','아이오닉5 우위 '],
-        ['EV6 최종가 (HDA2+사운드 추가)','5,915만원','약 5,804만원~','111만원 차이 · 천연가죽 등 사양 압승 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>결론: EV6 어스 롱레인지에 HDA2·메리디안 사운드 추가 시 5,804만원. 아이오닉5 프레스티지(5,915만원)와 111만원 차이입니다. 하지만 아이오닉5는 '천연가죽 시트'이고 EV6는 '인조가죽 시트'입니다.</strong><br><br>
-      천연가죽 시트 하나만으로도 111만원의 가치는 충분히 상쇄되며, 여기에 BOSE, 히든 라이팅, 휠베이스 100mm 우위까지 가져갑니다.<br><br>
-      <strong>고객 설득 멘트:</strong> "고객님, EV6 어스에 옵션 넣으면 5,804만원이에요. 아이오닉5 프레스티지와 111만원 차이인데, 가장 중요한 시트가 EV6는 인조가죽이고 아이오닉5는 천연가죽입니다. 6천만원 가까운 차를 사시는데 당연히 천연가죽을 타셔야죠. 게다가 실내도 훨씬 넓습니다."
-    </div>
-    <div style="font-weight:700;margin:20px 0 8px;color:#222;font-size: 14px;">N Line vs GT-Line — 50만원 저렴한데 소재는 압승!</div>
-    ${cmpTable(
-      '','아이오닉5 N Line 익스클루시브','EV6 GT-Line 롱레인지',
-      [
-        ['가격','5,650만원','5,700만원','아이오닉5 50만 저렴 '],
-        ['시트 소재','천연가죽 기본','인조가죽','아이오닉5 압도적 우위 '],
-        ['가니쉬 히든 라이팅','있음','없음','아이오닉5 우위 '],
-        ['브랜드 정체성','현대 N 브랜드 독립 라인','GT-Line 스타일 패키지','N Line 완성도 압도 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>스포티 라인 비교 포인트:</strong> "EV6 GT-Line보다 아이오닉5 N Line이 50만원 더 저렴한데, 시트는 천연가죽이 들어가고 가니쉬 히든 라이팅이라는 시그니처가 추가됩니다. 가성비와 감성 모두 아이오닉5 압승입니다."
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 아이오닉5 vs EV6 핵심 스펙 비교',
-    cmpTable(
-      '','아이오닉5 (현대)','기아 EV6',
-      [
-        ['전장','4,635mm','4,695mm','EV6 +60mm'],
-        ['전폭','1,890mm','1,890mm','동일'],
-        ['전고','1,605mm','1,550mm','아이오닉5 +55mm '],
-        ['휠베이스','3,000mm','2,900mm','아이오닉5 +100mm '],
-        ['시트 소재 (상위 트림)','천연가죽 (프레스티지/N Line)','인조가죽 (어스/GT-Line)','아이오닉5 압도적 우위 '],
-        ['센터 콘솔','유니버설 아일랜드 (슬라이딩)','고정형 콘솔','공간 활용성 아이오닉5 승 '],
-        ['실외 V2L 커넥터','Exclusive(중간)부터 기본','어스(상위)부터 기본','아이오닉5 우위 '],
-        ['배터리 (롱레인지)','84.0kWh / 168kW(229마력)','84.0kWh / 168kW(229마력)','동등'],
-        ['주행거리 (롱레인지 2WD 복합)','485km','494km','EV6 9km 우위'],
-        ['초급속 충전 (10→80%)','18분','18분','동등'],
-        ['이중접합 차음유리','윈드실드+1열+2열 전 트림 기본 (E-Lite 제외)','라이트: 윈드실드만 / 에어↑: 1열+2열 추가','아이오닉5 우위 '],
-        ['N Line / GT-Line','N Line (N 브랜드) / 가니쉬 히든 라이팅 포함','GT-Line (스타일 패키지) / 히든 라이팅 없음','N Line 압도 '],
-        ['HDA2 기본 트림','프레스티지 기본','드라이브와이즈 옵션 +65만','프레스티지 기본 '],
-        ['사운드 (상위 트림)','프레스티지 BOSE 8스피커 기본','어스: 메리디안 옵션 +99만','아이오닉5 프레스티지 기본 '],
-        ['HUD','프레스티지 기본','어스 기본 포함','어스 동등 (프레스티지 기본)'],
-        ['서라운드뷰','파킹 어시스트 옵션','어스 기본 포함','EV6 어스 기본 유리'],
-        ['릴렉션 컴포트 (레그레스트)','프레스티지 기본 (레그레스트 명시)','어스 기본 (레그레스트 미명시)','아이오닉5 명시 우위 '],
-        ['N Line vs GT-Line 가격','N Line 익스클루시브 5,650만','GT-Line 롱레인지 5,700만','아이오닉5 N Line이 50만 저렴 '],
-        ['프레스티지 vs 어스 최종가','프레스티지 5,915만','어스 롱레인지+옵션 ~5,804만','111만 차이 · 천연가죽 등 사양 압승 '],
-        ['EV 보증 명시','EV Every Care / 100억·55% 구체적 명시','e-라이프 패키지 (수치 미명시)','아이오닉5 명시 우위 ']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ EV6 비교 시 대응 스크립트',
-    vsQaList('EV6 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "EV6 어스가 가성비가 더 좋은 것 같아요. 서라운드뷰도 기본이고요."',
-        a: '고객님, 카탈로그와 가격표를 자세히 보시면 EV6는 6천만원에 육박하는 어스나 GT-Line을 사셔도 시트가 \'인조가죽\'입니다. 아이오닉5 프레스티지와 N Line은 \'천연가죽 시트\'가 기본 적용됩니다. EV6 어스에 HDA2, 사운드 옵션 맞추면 5,804만원인데, 111만원만 더 쓰시면 천연가죽 시트에 BOSE 사운드, 100mm 더 넓은 실내 공간까지 가져가시는 아이오닉5가 훨씬 고급스럽고 가성비가 뛰어납니다.'
-      },
-      {
-        q: 'Q2. "EV6가 주행거리가 더 길지 않나요?"',
-        a: '빌트인 캠 미적용 기준 EV6가 494km, 아이오닉5가 485km로 9km 차이가 나요. 거의 동급 수준이고, 실제 주행에서 9km 차이는 체감하기 어려운 차이예요. 오히려 중요한 건 실내 공간인데, 아이오닉5 휠베이스가 3,000mm로 EV6(2,900mm)보다 100mm 더 길어요. EV6는 전장이 40mm 더 길지만 휠베이스가 짧아서 실내 레그룸은 아이오닉5가 앞섭니다.'
-      },
-      {
-        q: 'Q3. "EV6 GT-Line이 아이오닉5 N Line보다 스포티하지 않나요?"',
-        a: '두 차 모두 스포티한 감성이 있어요. 그런데 아이오닉5 N Line에는 가니쉬 히든 라이팅이 있습니다 — 충전할 때만 나타나는 고유 라이팅 패턴이에요. EV6 GT-Line에는 이 기능이 없어요. 그리고 가격을 비교해보면 아이오닉5 N Line Exclusive(5,650만원)가 EV6 GT-Line 롱레인지(5,700만원)보다 50만원 더 저렴한데, 시트마저 아이오닉5는 천연가죽이고 EV6는 인조가죽입니다. 비교가 안 됩니다.'
-      },
-      {
-        q: 'Q4. "캠핑 갈 때 V2L을 쓰고 싶은데 어떤 차가 낫나요?"',
-        a: '캠핑용이시라면 무조건 아이오닉5입니다. 아이오닉5는 주력 트림인 Exclusive(5,450만)부터 차량 밖에서 전기를 쓸 수 있는 \'실외 V2L 커넥터\'가 기본으로 제공됩니다. EV6는 에어 트림에서는 실내 V2L만 되고, 실외에서 쓰시려면 하이테크 옵션을 넣거나 어스 트림으로 올라가셔야 합니다.'
-      },
-      {
-        q: 'Q5. "EV6가 스포티한 디자인이라 더 역동적이지 않나요?"',
-        a: 'EV6는 세단형 크로스오버 스타일로 낮고 날렵한 디자인이 확실히 역동적이에요. 아이오닉5는 SUV 체형으로 전고가 55mm 더 높습니다. 전고가 높으면 승하차가 편하고 헤드룸 여유가 더 있어요. 게다가 아이오닉5는 \'유니버설 아일랜드\'라고 해서 센터 콘솔이 뒤로 밀리기 때문에 좁은 주차장에서 동승석으로 내리기도 훨씬 편합니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "EV6보다 주행거리가 길다" → EV6 494km &gt; 아이오닉5 485km. 유사한 수준이라고 커뮤니케이션 해주세요.',
-      '· "배터리 용량이 더 크다" → 둘 다 84kWh로 동일해요.'
-    ])
-  )}
-
-</div>
-`;
-
-PANELS.ioniq5_vs_modely = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','아이오닉5 vs 테슬라 모델Y','현대 아이오닉5가 더 완성도 높은 선택입니다',['VS 가이드','EV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['모델Y가 소프트웨어와 슈퍼차저 네트워크를 앞세운 테슬라의 베스트셀러라면, <span style="color:var(--hyundai-blue);font-weight:800;">아이오닉5는 100mm 더 넓은 휠베이스, 천연가죽 시트, EV 에브리케어 안심 보증, 그리고 완성된 국산 AS 인프라까지 — 일상의 모든 것을 완성도 높게 갖춘 전기 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 아이오닉5가 딱입니다 (vs. 모델Y)',
-    vsCardGrid('이런 고객에게 아이오닉5가 딱입니다', [
-      {
-        icon: '',
-        title: '넓은 2열 실내 공간이 최우선인 고객',
-        desc: '아이오닉5 휠베이스 3,000mm vs 모델Y 2,890mm — 110mm 차이. 실내 레그룸의 핵심은 휠베이스이며, 아이오닉5가 압도적으로 넓습니다.'
-      },
-      {
-        icon: '',
-        title: '고급 소재·프리미엄 감성을 원하는 고객',
-        desc: '모델Y는 전 트림 인조가죽(비건 레더)입니다. 아이오닉5 프레스티지·N Line은 천연가죽 시트가 기본 적용됩니다. 6천만원대 차량의 소재 선택이 명확합니다.'
-      },
-      {
-        icon: '',
-        title: '전기차 화재·잔존가치 불안이 큰 고객',
-        desc: 'EV에브리케어 — 화재 최대 100억원 지원, 잔존가치 55% 보장, 10년 10회 무상점검. 테슬라에는 이에 상응하는 명시적 보증 프로그램이 없습니다.'
-      },
-      {
-        icon: '',
-        title: 'N 브랜드 고성능 감성을 원하는 고객',
-        desc: '아이오닉5 N과 N Line — 가니쉬 히든 라이팅, 알칸타라 콤비 시트, N 전용 20인치 휠. 테슬라 모델Y에는 이런 고성능 서브 라인업이 없습니다.'
-      },
-      {
-        icon: '',
-        title: '국내 AS·정비 접근성이 중요한 고객',
-        desc: '현대차는 전국 직영 서비스센터 및 블루핸즈 네트워크. 테슬라 서비스센터는 전국 주요 도시에만 한정되어 있어, 경남 지역 고객의 접근성 차이가 큽니다.'
-      },
-      {
-        icon: '',
-        title: '동일 예산에서 더 많은 사양을 원하는 고객',
-        desc: '아이오닉5 프레스티지(5,915만)는 천연가죽·HDA2·BOSE·HUD·이중접합 차음유리 기본. 모델Y 롱레인지 AWD(6,399만)는 더 비싼 가격에 인조가죽, HUD 없음.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 아이오닉5 핵심 강점 — 모델Y 대비 USP',
-    vsCardGrid('핵심 강점 — 모델Y 대비 USP', [
-      {
-        icon: '①',
-        title: '압도적인 휠베이스 3,000mm — 110mm 더 넓은 2열 [모델Y 대비 +110mm]',
-        desc: '아이오닉5 3,000mm vs 모델Y 2,890mm. 110mm 차이는 2열 탑승자의 무릎 공간(레그룸)에서 체감으로 확연히 드러납니다. 전장이 아닌 휠베이스가 실내 공간을 결정합니다.'
-      },
-      {
-        icon: '②',
-        title: '천연가죽 시트 기본 (프레스티지 / N Line) [모델Y 전 트림 인조가죽]',
-        desc: '아이오닉5 프레스티지와 N Line Exclusive는 에코프로세스 천연가죽 시트가 기본입니다. 테슬라 모델Y는 Performance를 포함한 전 트림에 비건 레더(인조가죽)가 적용됩니다. 6천만원대 차량에서 소재의 차이는 명확합니다.'
-      },
-      {
-        icon: '③',
-        title: 'EV 에브리케어 — 업계 최강 보증 프로그램 [테슬라 동급 보증 없음]',
-        desc: '① 화재 안심 최대 100억원 지원<br>② 잔존가치 55% 보장<br>③ 10년 10회 무상점검<br>④ 신차 교환(출고 2년 내 전손)<br>⑤ 바디케어(1년/2만km)<br>명확한 숫자로 약속합니다. 테슬라는 이에 상응하는 구체적 수치 보증 프로그램이 없습니다.'
-      },
-      {
-        icon: '④',
-        title: '800V 초급속 충전 18분 — 국내 인프라 안전성 [국내 어디서나 충전 가능]',
-        desc: '아이오닉5는 국내 모든 CCS1 급속 충전 인프라 이용 가능. 모델Y는 슈퍼차저 네트워크에 우선 최적화되어 있으며, 비슈퍼차저 이용 시 속도 저하 가능. 충전 네트워크 다양성에서 아이오닉5 우위.'
-      },
-      {
-        icon: '⑤',
-        title: '이중접합 차음유리 — 윈드실드+1열+2열 도어 기본 (E-Lite 제외) [주행 정숙성]',
-        desc: '아이오닉5 주력 트림(익스클루시브이상)에 윈드실드·1열·2열 도어 이중접합 차음유리 기본 적용. 전기차는 엔진 소음이 없어 풍절음·노면 소음이 직접 들립니다. 모델Y 주니퍼도 이중접합 유리 확대 적용되었으나 적용 범위 공식 미명시.'
-      },
-      {
-        icon: '⑥',
-        title: 'N Line / 가니쉬 히든 라이팅 — 테슬라에 없는 감성 [N 브랜드 정체성]',
-        desc: 'N Line 전용 가니쉬 히든 라이팅(충전 표시등 포함) — 충전 중에만 나타나는 아이오닉5만의 시그니처 라이팅. 테슬라 모델Y에는 이에 해당하는 고성능 서브 라인업 자체가 없습니다.'
-      },
-      {
-        icon: '⑦',
-        title: '국내 AS 네트워크 접근성 [경남 지역 중요]',
-        desc: '현대차 서비스센터 및 블루핸즈는 경남 전역 다수 포진. 테슬라 서비스센터는 서울·부산·대구 등 주요 대도시 중심으로 한정되어 있어, 경남 내 소도시 거주 고객의 경우 AS 접근성에서 현대차가 월등히 유리합니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 가격경쟁력 분석 — 프레스티지 484만, N Line 749만 저렴!',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 가격표 기준으로는 모델Y RWD가 저렴해 보이지만, 동일 사양 구성 기준으로 비교하면 아이오닉5가 훨씬 많은 것을 제공합니다. 특히 프레스티지 구간에서 천연가죽·BOSE·HDA2·HUD가 기본인 아이오닉5의 가성비가 압도적입니다.
-    </div>
-    <div style="font-weight:700;margin:16px 0 8px;color:#222;font-size: 14px;">트림별 가격 구조 비교 (세제혜택 후 기준)</div>
-    ${cmpTable(
-      '','아이오닉5 (현대)','테슬라 모델Y',
-      [
-        ['엔트리 트림','롱레인지 E-Lite 5,064만 / 84kWh·485km·직물시트','RWD 5,299만 / LFP 배터리·350km·인조가죽','아이오닉5 235만 저렴 / 주행거리도 135km 우세 '],
-        ['주력 트림 ','롱레인지 익스클루시브 5,450만 / 인조가죽·HDA·차음유리 기본','RWD 5,299만 또는 롱레인지 AWD 6,399만','RWD 대비 151만 비싸나 HDA·차음유리 기본 차이 있음'],
-        ['스포티 라인 ','N Line 익스클루시브 5,650만 / 천연가죽·히든라이팅·N 20인치','롱레인지 AWD 6,399만 / 인조가죽·오토파일럿','아이오닉5 N Line이 749만 저렴 / 소재·디자인 압승 '],
-        ['상위 트림 ','롱레인지 프레스티지 5,915만 / 천연가죽·HDA2·BOSE·HUD·차음유리','롱레인지 AWD 6,399만 / 인조가죽·오토파일럿 기본','아이오닉5 484만 저렴 / 천연가죽+BOSE+HUD 기본 ']
-      ]
-    )}
-    <div style="font-weight:700;margin:20px 0 8px;color:#222;font-size: 14px;">핵심 시나리오 — 프레스티지 vs 모델Y 롱레인지 AWD (동일 사양 구성)</div>
-    ${cmpTable(
-      '','아이오닉5 프레스티지','테슬라 모델Y 롱레인지 AWD',
-      [
-        ['기본가','5,915만원','6,399만원','아이오닉5 484만 저렴 '],
-        ['시트 소재','에코프로세스 천연가죽','비건 레더 (인조가죽)','아이오닉5 압도적 우위 '],
-        ['HDA2','기본 포함','기본 오토파일럿 포함 (EAP/FSD는 유료)','아이오닉5 기본 ADAS 유리 '],
-        ['BOSE 8스피커+외장앰프','기본 포함','없음 (BOSE급 별도 없음)','아이오닉5 우위 '],
-        ['헤드업 디스플레이(HUD)','기본 포함','없음','아이오닉5 우위 '],
-        ['가니쉬 히든 라이팅','기본 포함','없음','아이오닉5 우위 '],
-        ['이중접합 차음유리 (1·2열)','기본 포함','주니퍼 확대 적용 (공식 범위 미명시)','아이오닉5 공식 명시 우위 '],
-        ['릴렉션 컴포트 (레그레스트)','기본 포함','없음','아이오닉5 우위 '],
-        ['EV 에브리케어','화재100억·잔가55% 기본 적용','명시적 수치 프로그램 없음','아이오닉5 압도적 우위 '],
-        ['국내 충전 인프라','CCS1 모든 급속기 이용','슈퍼차저 의존도 높음','아이오닉5 인프라 우위 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>결론: 아이오닉5 프레스티지가 484만원 저렴하면서 천연가죽·BOSE·HUD·EV 에브리케어까지!</strong><br><br>
-      모델Y 롱레인지 AWD보다 484만원 저렴하면서, 아이오닉5 프레스티지는 천연가죽 시트, BOSE 프리미엄 사운드, HUD, 이중접합 차음유리, EV 에브리케어까지 기본 제공됩니다.<br><br>
-      <strong>고객 설득 멘트:</strong> "고객님, 모델Y 롱레인지 사시는 금액이면 아이오닉5 프레스티지를 사시고 484만원이 남아요. 그 차이로 천연가죽 시트에 BOSE 사운드, 화재 100억 보상까지 받으시는 겁니다. 경남에서 테슬라 서비스센터 가려면 부산까지 가셔야 하는데, 아이오닉5는 주변에 바로 맡기실 수 있습니다."
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 아이오닉5 vs 테슬라 모델Y 핵심 스펙 비교',
-    cmpTable(
-      '','아이오닉5 (현대)','테슬라 모델Y (주니퍼)',
-      [
-        ['전장','4,655mm','4,751mm','모델Y +96mm'],
-        ['전폭','1,890mm','1,921mm (미러 제외)','비슷한 수준'],
-        ['전고','1,605mm','1,624mm','모델Y 소폭 높음'],
-        ['휠베이스','3,000mm','2,890mm','아이오닉5 +110mm '],
-        ['배터리 (롱레인지)','84.0kWh','RWD: LFP / 롱레인지: NCM 상세수치 미공개','배터리 용량 아이오닉5 우위 '],
-        ['주행거리 (롱레인지 2WD 복합)','485km','RWD 350km / 롱레인지 511km','롱레인지 기준 모델Y 우위'],
-        ['초급속 충전 (10→80%)','18분 (350kW)','슈퍼차저 최대 250kW (약 25~30분 내외)','아이오닉5 우위 '],
-        ['충전 인프라','국내 CCS1 모든 급속기 이용','슈퍼차저 우선 최적화 (타 충전기 이용 시 속도 저하 가능)','아이오닉5 국내 인프라 우위 '],
-        ['시트 소재 (상위 트림)','천연가죽 (프레스티지/N Line)','비건 레더 (전 트림 인조가죽)','아이오닉5 압도적 우위 '],
-        ['2열 레그룸 (휠베이스)','3,000mm','2,890mm','아이오닉5 +110mm '],
-        ['슬라이딩 센터 콘솔','유니버설 아일랜드 (슬라이딩)','고정형','아이오닉5 공간 활용 우위 '],
-        ['HDA2 / 오토파일럿','프레스티지 기본 포함','기본 오토파일럿 포함 (EAP/FSD는 유료 옵션)','아이오닉5 기본 ADAS 유리 '],
-        ['헤드업 디스플레이(HUD)','프레스티지 기본','없음','아이오닉5 우위 '],
-        ['프리미엄 사운드','BOSE 8스피커 (프레스티지 기본)','13개 스피커 (롱레인지 이상 기본)','동등 수준 (브랜드 차이)'],
-        ['이중접합 차음유리','1열+2열 기본 (E-Lite 제외)','주니퍼 확대 적용 (공식 범위 미명시)','아이오닉5 공식 명시 우위 '],
-        ['후석 디스플레이','없음','8인치 뒷좌석 터치스크린','모델Y 강점'],
-        ['OTA 소프트웨어 업데이트','지원','폭넓은 업데이트 (테슬라 강점)','모델Y 강점'],
-        ['N Line / 고성능 서브 라인','N Line / N (N 브랜드)','없음','아이오닉5 우위 '],
-        ['EV 보증 프로그램','EV 에브리케어 / 화재100억·잔가55%·10년 명시','명시적 수치 프로그램 없음','아이오닉5 압도적 우위 '],
-        ['국내 AS 센터','전국 직영+블루핸즈 광범위','주요 대도시 중심 한정','경남 지역 아이오닉5 압도 '],
-        ['캠프/차박 모드','V2L 지원 (Exclusive↑)','캠프 모드 지원','모델Y 캠프모드 강점'],
-        ['프레스티지 vs 롱레인지 AWD 가격','프레스티지 5,915만','롱레인지 AWD 6,399만','아이오닉5 484만 저렴 '],
-        ['N Line vs 롱레인지 AWD 가격','N Line 익스클루시브 5,650만','롱레인지 AWD 6,399만','아이오닉5 N Line 749만 저렴 ']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ 모델Y 비교 시 대응 스크립트',
-    vsQaList('모델Y 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "테슬라가 더 유명하고 기술이 앞선 것 같은데요?"',
-        a: '테슬라가 전기차 선구자인건 맞습니다. 그런데 실제로 매일 타시면서 중요한 게 다르거든요. 아이오닉5 프레스티지는 모델Y 롱레인지 AWD보다 484만원이나 저렴하면서 천연가죽 시트, BOSE 사운드, HUD, 이중접합 차음유리에 화재 100억 보상까지 기본으로 드립니다. 테슬라 모델Y는 인조가죽에 HUD도 없어요.'
-      },
-      {
-        q: 'Q2. "테슬라는 자율주행이 더 발전되어 있지 않나요?"',
-        a: '테슬라 기본 오토파일럿은 어댑티브 크루즈와 차선 유지 기능입니다. 더 발전된 EAP나 FSD는 별도 유료 옵션이에요. 아이오닉5 프레스티지에 기본으로 들어있는 HDA2는 차로 변경 보조까지 포함된 고속도로 반자율주행입니다. 기본 탑재 ADAS 수준에서는 아이오닉5가 절대 뒤지지 않습니다.'
-      },
-      {
-        q: 'Q3. "테슬라 슈퍼차저가 더 빠르지 않나요?"',
-        a: '슈퍼차저 V3 기준 최대 250kW인데, 아이오닉5는 800V 시스템으로 최대 350kW 초급속 충전기에서 18분에 10→80% 충전됩니다. 더 빠릅니다. 그리고 아이오닉5는 전국 어디서나 CCS1 급속 충전기를 이용할 수 있어요. 테슬라는 슈퍼차저가 없는 곳에서는 다른 충전기 이용 시 속도가 떨어질 수 있습니다. 경남 지역에서는 충전 인프라 접근성 면에서 아이오닉5가 훨씬 유리합니다.'
-      },
-      {
-        q: 'Q4. "테슬라가 중고차 가격 방어가 더 잘 된다던데요?"',
-        a: '그 우려가 크셨군요. 아이오닉5는 그래서 EV 에브리케어로 잔존가치 55%를 직접 보장합니다. 테슬라는 이런 명확한 수치의 잔가 보장 프로그램이 없어요. 5년 후 아이오닉5를 팔 때 잔가가 55% 미달이면 현대캐피탈에서 차액을 보상해드리는 구조입니다. 중고차 불안을 보험으로 해결해드리는 겁니다.'
-      },
-      {
-        q: 'Q5. "테슬라가 뒷좌석 화면이 있어서 더 편리하지 않나요?"',
-        a: '테슬라 주니퍼의 8인치 뒷좌석 터치스크린은 분명 특색 있는 기능이에요. 하지만 1열 콘솔 뒷편에 있어서 막상 터치해가면서 쓰기가 불편해요. 반면 아이오닉5는 2열 탑승자의 레그룸이 110mm 더 넓습니다. 작은 화면 하나보다 실제로 다리를 쭉 뻗을 수 있는 110mm의 차이가 장거리 이동 시 훨씬 크게 체감됩니다. 화면은 스마트폰이 있으면 되지만, 레그룸은 돈 주고도 늘릴 수가 없어요.'
-      },
-      {
-        q: 'Q6. "테슬라가 주행거리가 더 길지 않나요?"',
-        a: '모델Y 롱레인지 기준으로 511km, 아이오닉5 롱레인지가 485km로 26km 차이가 납니다. 실제 주행에서 26km 차이는 도심 약 20~30분 거리예요. 그런데 아이오닉5는 800V 초급속 충전으로 18분이면 80%까지 충전되니까, 주행거리 차이는 한 번의 빠른 충전으로 완전히 상쇄됩니다. 주행거리 26km 차이보다 천연가죽 시트와 484만원이 더 가치 있지 않을까요?'
-      },
-      {
-        q: 'Q7. "전기차 화재 뉴스를 보니 걱정이 돼요. 테슬라는 LFP라 더 안전하다던데?"',
-        a: '전기차 화재 걱정이 크시군요. 그런데 테슬라 모델Y 롱레인지 AWD는 NCM(삼원계) 배터리예요. LFP가 들어가는 건 RWD 트림입니다. 아이오닉5도 NCM 배터리를 사용하구요. 더 중요한 건 만약 화재가 발생했을 때인데, 아이오닉5는 EV 에브리케어로 화재 피해 최대 100억원을 현대에서 직접 지원합니다. 테슬라에는 이런 명확한 보상 프로그램이 없어요. 혹시 모를 상황에 대한 안심감은 아이오닉5가 압도적으로 앞섭니다.'
-      },
-      {
-        q: 'Q8. "테슬라는 AS가 얼마나 불편한가요?"',
-        a: '경남 지역 기준으로 가장 가까운 테슬라 서비스센터는 창원 또는 부산까지 가셔야 합니다. 단순 점검이나 부품 문제가 생겼을 때 이 거리를 가야 한다면 상당히 불편하시죠. 아이오닉5는 경남 전역에 현대차 서비스센터와 블루핸즈가 광범위하게 있어서 가까운 곳에서 바로 해결하실 수 있어요. 10년 타는 차를 AS 때문에 멀리 가야 한다면, 그것도 큰 비용이고 스트레스입니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "테슬라는 자율주행이 안 된다" → 기본 오토파일럿이 탑재되어 있어요. FSD는 유료이나 기능은 존재합니다. 정확한 표현이 필요합니다.',
-      '· "테슬라 충전이 더 느리다" → 슈퍼차저 V3는 최대 250kW로 빠른 편이에요. 아이오닉5 18분 vs 테슬라 슈퍼차저 약 25분 내외로 정확하게 표현하세요.',
-      '· "테슬라는 한국에서 생산 안 한다" → 소비자에게 불필요한 자극이 될 수 있어요. AS와 인프라 관점으로만 이야기하세요.',
-      '· "테슬라는 중고차 가격이 폭락했다" → 시장 상황에 따라 다릅니다. EV 에브리케어 잔가 보장 소구로 대체하세요.',
-      '· "테슬라는 화재 위험이 더 높다" → 통계적 근거가 없어요. 아이오닉5의 100억 보상 프로그램으로 차별화 포인트를 전환하세요.',
-      '· "모델Y 롱레인지가 주행거리가 짧다" → 모델Y 롱레인지 AWD 511km &gt; 아이오닉5 485km. 모델Y가 더 깁니다.',
-      '· "배터리 용량이 더 크다" → 모델Y 롱레인지의 배터리 용량이 공식 미공개 상태이므로 용량 비교는 하지 마세요. 충전 속도(18분)와 인프라 다양성으로 소구하세요.'
-    ])
-  )}
-
-</div>
-`;
-
-
-PANELS.ioniq9_vs = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','아이오닉9 vs 기아 EV9','현대 아이오닉9이 더 완성도 높은 선택입니다',['VS 가이드','EV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['EV9이 기아의 대형 전기 SUV라면, <span style="color:var(--hyundai-blue);font-weight:800;">아이오닉9은 동급 최대 110.3kWh 배터리, 생성형 AI 어시스턴트, 나파가죽 등 플래그십에 걸맞은 \'진짜 럭셔리\'를 완성한 독보적 대형 SUV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 아이오닉9이 딱입니다',
-    vsCardGrid('이런 고객에게 아이오닉9이 딱입니다', [
-      {
-        icon: '',
-        title: '배터리·항속거리가 최우선인 고객',
-        desc: '아이오닉9 110.3kWh / 532km vs EV9 99.8kWh / 501km. 배터리가 10.5kWh 더 큽니다. 겨울철 히터 사용이나 캠핑(V2L) 시 배터리 스트레스가 훨씬 적습니다.'
-      },
-      {
-        icon: '',
-        title: '주력 트림 가성비를 원하는 고객',
-        desc: 'AWD 기준, 아이오닉9 프레스티지(7,605만)가 EV9 어스(7,689만)보다 84만원 저렴하면서도 BOSE 사운드, HDA2, 서라운드뷰 등 필수 옵션이 모두 기본입니다.'
-      },
-      {
-        icon: '',
-        title: '최고급 럭셔리 감성을 원하는 고객',
-        desc: 'EV9은 최상위 트림도 인조가죽입니다. 아이오닉9 캘리그래피는 나파가죽, 리얼 알루미늄, 바이오 스웨이드 등 플래그십에 걸맞은 진짜 고급 소재를 아낌없이 사용했습니다.'
-      },
-      {
-        icon: '',
-        title: '최신 AI·기술 감성을 원하는 고객',
-        desc: '현대 AI 어시스턴트 전 트림 기본! EV9에는 없는 생성형 AI로 일상 언어로 차량 제어가 가능합니다. 3종 카메라 클리닝 시스템도 아이오닉9만의 특화 기능입니다.'
-      },
-      {
-        icon: '',
-        title: '공신력·수상 이력을 중시하는 고객',
-        desc: '2026 대한민국 올해의 차 3관왕 수상 (한국자동차전문기자협회·중앙일보·한국자동차기자협회). 전문가들이 먼저 인정한 압도적 상품성입니다.'
-      },
-      {
-        icon: '',
-        title: 'USB 충전 편의성을 중시하는 고객',
-        desc: '100W C타입 USB 단자 전 좌석(1열 2개·2열 2개·3열 2개) + 충전 케이블 전 트림 기본. 노트북 충전도 거뜬합니다. (EV9은 에어 이상부터 기본)'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 아이오닉9 핵심 강점 (USP)',
-    vsCardGrid('핵심 강점 (USP)', [
-      {
-        icon: '①',
-        title: '동급 최대 배터리 110.3kWh / 532km [EV9 대비 +10.5kWh]',
-        desc: '아이오닉9 110.3kWh / 532km (2WD 19인치 복합) vs EV9 롱레인지 99.8kWh / 501km. 배터리 용량이 10.5kWh 더 큽니다. 전기차에서 배터리 용량은 곧 심리적 안정감입니다.'
-      },
-      {
-        icon: '②',
-        title: '프레스티지 AWD 가성비 우위 [EV9 어스 대비 84만 저렴]',
-        desc: '아이오닉9 프레스티지 AWD (7,605만) vs EV9 어스 롱레인지 AWD (7,689만). 아이오닉9이 84만원 저렴하면서 BOSE 14스피커, HDA2, 서라운드뷰, HUD, 릴렉션 컴포트, 원격 스마트 주차 보조가 모두 기본입니다.'
-      },
-      {
-        icon: '③',
-        title: '캘리그래피 나파가죽 — 소재의 급이 다름 [EV9은 인조가죽]',
-        desc: '캘리그래피는 나파가죽(디지털 펀칭, 3D 엠보), 리얼 알루미늄 대시보드, 바이오 스웨이드 헤드라이닝, 자외선 살균 시스템을 적용했습니다. EV9 최상위 GT-Line(바이오 인조가죽)과는 소재의 격이 다릅니다.'
-      },
-      {
-        icon: '④',
-        title: '현대 AI 어시스턴트 전 트림 기본 [EV9 미제공]',
-        desc: '아이오닉9 전 트림에 생성형 AI가 탑재되어, 복잡한 버튼 조작 없이 자연스러운 대화로 차량 기능을 제어할 수 있습니다. EV9에는 없는 최첨단 기능입니다.'
-      },
-      {
-        icon: '⑤',
-        title: '3종 카메라 클리닝 시스템 [악천후 시야 확보]',
-        desc: '후방 모니터, 디지털 센터 미러, 빌트인 캠 2 등 총 3개의 카메라를 고압수로 세정합니다. 오염되기 쉬운 대형 SUV의 후방 시야를 항상 깨끗하게 유지해 줍니다.'
-      },
-      {
-        icon: '⑥',
-        title: '2026 올해의 차 3관왕 수상 [공신력·브랜드 인증]',
-        desc: '한국자동차전문기자협회·중앙일보·한국자동차기자협회 3개 기관 동시 수상. 출시와 동시에 국내 최고 권위의 상을 휩쓸며 상품성을 입증했습니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 가격경쟁력 분석 — 프레스티지 AWD에서 84만 우세!',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 주력 트림인 프레스티지(AWD)는 EV9 어스보다 저렴하여 가성비가 뛰어나고, 최상위 캘리그래피는 EV9에 없는 나파가죽과 고급 소재로 진정한 플래그십의 가치를 제공합니다.
-    </div>
-    <div style="font-weight:700;margin:16px 0 8px;color:#222;font-size: 14px;">트림별 가격 구조 비교 (세제혜택 후, AWD 기준)</div>
-    ${cmpTable(
-      '','아이오닉9 (현대)','EV9 (기아)',
-      [
-        ['주력 비교 ','프레스티지 AWD 7,605만 / BOSE·HDA2·서라운드뷰·HUD 기본','어스 롱레인지 AWD 7,689만 / 동등 사양 기본 포함','아이오닉9 84만 저렴 / 배터리·주행거리 우세 '],
-        ['최상위 비교 ','캘리그래피 AWD 8,181만 / 나파가죽·리얼알루미늄·살균 기본','GT-Line AWD 7,917만 / 인조가죽·부스트 기본','EV9 264만 저렴 / 단, 아이오닉9 소재 압도적 우위']
-      ]
-    )}
-    <div style="font-weight:700;margin:20px 0 8px;color:#222;font-size: 14px;">핵심 시나리오 — 프레스티지 AWD vs EV9 어스 AWD (동일 사양 구성)</div>
-    ${cmpTable(
-      '','아이오닉9 프레스티지 AWD','EV9 어스 롱레인지 AWD',
-      [
-        ['기본가','7,605만원','7,689만원','아이오닉9 84만 저렴 '],
-        ['배터리 / 주행거리','110.3kWh / 503km (AWD)','99.8kWh / 445km (AWD)','아이오닉9 +10.5kWh / +58km '],
-        ['BOSE 14스피커+외장앰프','기본 포함','메리디안 사운드 기본 포함','동등 (브랜드 차이)'],
-        ['HDA2','기본 포함','어스 기본 포함','동등'],
-        ['서라운드뷰','기본 포함','어스 기본 포함','동등'],
-        ['HUD','기본 포함','어스 기본 포함','동등'],
-        ['현대 AI 어시스턴트','기본 포함','없음','아이오닉9 우위 '],
-        ['3종 카메라 클리닝','기본 포함','없음','아이오닉9 우위 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>최종 결론: 아이오닉9 프레스티지 AWD가 84만 저렴 + 배터리·주행거리 압도!</strong><br><br>
-      <strong>고객 설득 멘트:</strong> "고객님, 가장 많이 찾으시는 4륜 주력 트림을 비교해보면 아이오닉9이 84만원 더 저렴합니다. 그런데 배터리는 10kWh 더 크고, 주행거리는 58km나 더 길어요. 게다가 말로 다 되는 AI 비서까지 들어있으니 가성비는 아이오닉9이 훨씬 좋습니다."
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 아이오닉9 vs EV9 핵심 스펙 비교',
-    cmpTable(
-      '','아이오닉9 (현대)','기아 EV9',
-      [
-        ['전장','5,060mm','5,010mm (GT-Line 5,015mm)','아이오닉9 +50mm '],
-        ['전폭','1,980mm','1,980mm','동일'],
-        ['전고','1,790mm','1,755mm (루프랙 1,780mm)','아이오닉9 +35mm '],
-        ['휠베이스','3,130mm','3,100mm','아이오닉9 +30mm '],
-        ['배터리 용량','110.3kWh','99.8kWh (롱레인지)','아이오닉9 +10.5kWh '],
-        ['주행거리 (2WD 복합)','532km','501km (롱레인지 2WD)','아이오닉9 +31km '],
-        ['2WD 최고출력','160kW(218마력)','150kW(204마력)','아이오닉9 근소 우위 '],
-        ['AWD 최고출력 (항속형)','항속형 226kW(308마력)','283kW(384마력)','EV9 우위'],
-        ['AWD 최고출력 (성능형)','성능형 315kW(428마력)','GT-Line 283kW(384마력)','아이오닉9 성능형 우위 '],
-        ['현대 AI 어시스턴트','전 트림 기본','없음','아이오닉9 우위 '],
-        ['나파가죽 시트','캘리그래피 기본','인조가죽 (전 트림)','아이오닉9 소재 우위 '],
-        ['자외선 살균 시스템','캘리그래피 기본','없음','아이오닉9 우위 '],
-        ['3종 카메라 클리닝','전 트림 기본','없음','아이오닉9 우위 '],
-        ['BOSE/메리디안 14스피커','프레스티지↑ 기본','어스↑ 기본','동등 (트림별)'],
-        ['HDA2','전 트림 기본','전 트림 기본','동등'],
-        ['서라운드뷰','프레스티지↑ 기본 / Exclusive: 옵션','에어↑ 기본','EV9 에어부터 기본'],
-        ['HUD','프레스티지↑ 기본','어스↑ 기본 / 에어 옵션','아이오닉9 프레스티지 기준 유리'],
-        ['릴렉션 컴포트 (레그레스트)','프레스티지↑ 기본','어스↑ 기본','동등'],
-        ['2열 마사지 (바디케어)','캘리그래피 옵션 +80만','에어↑ 릴렉션 옵션 포함','EV9 구성 유리'],
-        ['에르고 모션 시트','캘리그래피 기본 / 프레스티지: 컴포트플러스 옵션','어스↑ 기본','EV9 어스 기준 유리'],
-        ['부스트 (제로백 단축)','없음','GT-Line 기본','EV9 GT-Line 강점'],
-        ['이중접합 차음유리','윈드실드+1/2열 도어 전 트림 기본','윈드실드+1열+2열 전 트림 기본','동등'],
-        ['100W C타입 USB','전 좌석 전 트림 기본','에어↑ 기본','아이오닉9 우위 '],
-        ['터레인 모드','HTRAC 선택 시','4WD 전 트림 기본','EV9 4WD 기본 구성 유리'],
-        ['프레스티지 vs 어스 가격 (AWD)','프레스티지 AWD 7,605만','어스 4WD 7,689만','아이오닉9 84만 저렴 '],
-        ['캘리그래피 vs GT-Line 가격','캘리그래피 AWD 8,181만','GT-Line 4WD 7,917만','EV9 264만 저렴 (소재는 아이오닉9 승)'],
-        ['EV 보증 수치 명시','화재 100억·잔가 55% 구체적 수치 명시','e-라이프 패키지 (수치 미명시)','아이오닉9 명시 우위 '],
-        ['2026 올해의 차','3관왕 수상','미기재','아이오닉9 우위 ']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ EV9 비교 시 대응 스크립트',
-    vsQaList('EV9 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "EV9이 많이 보이던데 아이오닉9은 왜 사야 하나요?"',
-        a: '시장에서는 아이오닉9 인기가 훨씬 많습니다. 직접 비교해보면 아이오닉9 배터리가 110.3kWh로 EV9(99.8kWh)보다 10.5kWh 더 크고, 주행거리도 532km로 501km보다 31km 더 깁니다. 2026년 올해의 차도 아이오닉9이 3개 기관에서 동시 수상했어요. 배터리 용량과 항속거리가 중요하신 분께는 아이오닉9이 객관적으로 앞서는 차입니다.'
-      },
-      {
-        q: 'Q2. "EV9 어스 풀옵션이 사양이 많아서 낫지 않나요?"',
-        a: '가장 많이 찾으시는 4륜(AWD) 주력 트림을 비교해보면, EV9 어스 4WD가 7,689만원인데 아이오닉9 프레스티지 AWD는 7,605만원이에요. 아이오닉9이 84만원 더 저렴한데 BOSE 사운드, HDA2, 서라운드뷰, HUD, 릴렉션 시트, 원격 주차 보조가 모두 기본으로 들어있어요. 배터리도 더 크고, 현대 AI 어시스턴트도 기본이니 가성비는 아이오닉9이 훨씬 좋습니다.'
-      },
-      {
-        q: 'Q3. "EV9 GT-Line이 아이오닉9 캘리그래피보다 싼데요?"',
-        a: '맞습니다. 4륜 풀옵션 기준으로 EV9 GT-Line이 264만원 정도 저렴합니다. 하지만 소재의 급이 완전히 다릅니다. EV9은 최상위 트림도 인조가죽을 쓰지만, 아이오닉9 캘리그래피는 나파가죽, 리얼 알루미늄, 바이오 스웨이드 등 플래그십에 걸맞은 진짜 고급 소재를 아낌없이 사용했습니다. 자외선 살균 시스템 같은 고급 편의사양도 추가되고요. 진정한 럭셔리를 원하신다면 캘리그래피가 정답입니다.'
-      },
-      {
-        q: 'Q4. "EV9은 4WD가 기본인데 아이오닉9은 옵션이라 불리하지 않나요?"',
-        a: '아이오닉9도 HTRAC I(+280만원)로 AWD를 선택할 수 있어요. 프레스티지에 HTRAC I을 더하면 7,605만원 — 여전히 EV9 어스 4WD(7,689만원)보다 84만원 저렴합니다. 그리고 AWD 주행거리도 아이오닉9 HTRAC I 기준 503km, EV9 어스 4WD 445km로 아이오닉9이 58km 더 깁니다.'
-      },
-      {
-        q: 'Q5. "EV9에 2열 마사지 기능이 있던데 아이오닉9에는 없나요?"',
-        a: 'EV9 릴렉션 옵션을 선택하면 2열 마사지(바디케어) 기능이 포함돼요. 아이오닉9은 캘리그래피 트림에서 2열 다이내믹 바디케어 시트를 옵션(+80만원)으로 선택할 수 있습니다. 캘리그래피 트림의 압도적인 나파가죽 소재와 함께 마사지 옵션을 추가하시면 훨씬 더 고급스러운 라운지 공간을 완성하실 수 있습니다.'
-      },
-      {
-        q: 'Q6. "EV9 보증 프로그램이 충분하지 않나요?"',
-        a: 'EV9도 기아 e-라이프 패키지로 충전·케어·잔가보장을 제공해요. 그런데 아이오닉9의 2026 EV 에브리케어는 화재 시 최대 100억원, 잔존가치 55% 보장이라는 구체적인 숫자가 명시돼 있어요. EV9 카탈로그·가격표에는 이런 구체적인 수치가 없습니다. 대형 전기차 구매에서 보증 내용의 투명성은 중요한 요소입니다.'
-      },
-      {
-        q: 'Q7. "아이오닉9이 신형이라 아직 검증이 덜 된 거 아닌가요?"',
-        a: '아이오닉9의 현대차 E-GMP 전기차 전용 플랫폼은 아이오닉5·6·EV6·EV9 등에서 이미 검증된 플랫폼입니다. 무엇보다 출시 직후 올해의 차 3관왕을 수상한 건 국내 전문가들이 이미 품질을 인정했다는 뜻이에요. 검증되지 않은 차가 3개 기관에서 동시에 올해의 차를 받을 수는 없습니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "EV9 어스보다 사양이 더 많다" → 에르고 모션·마사지는 어스에 기본, 아이오닉9은 옵션 추가 필요해요.',
-      '· "AWD 출력이 EV9보다 강하다" → 항속형 226kW &lt; EV9 4WD 283kW. 성능형 AWD(315kW) 기준으로 아이오닉9이 우월해요.',
-      '· "EV9 마사지 기능이 없다" → 릴렉션 옵션 선택 시 해당 기능 포함됩니다.',
-      '· "나파가죽이 최고다" → 취향 차이는 있을 수 있으나 인조가죽보다 고객 선호도가 월등히 높은건 사실이에요.',
-      '· "아이오닉9 캘리그래피가 더 싸다" → 2WD와 4WD를 섞어서 비교하면 안 됩니다. 4WD 기준 EV9 GT-Line이 더 저렴해요.'
-    ])
-  )}
-
-</div>
-`;
-
-PANELS.staria_vs = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','스타리아 일렉트릭 카고 EV vs 기아 PV5 카고','현대 스타리아 일렉트릭 카고가 더 완성도 높은 선택입니다',['VS 가이드','EV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['PV5가 미래 지향적 PBV 플랫폼을 앞세운 기아의 차세대 전기 밴이라면, <span style="color:var(--hyundai-blue);font-weight:800;">스타리아 일렉트릭 카고는 900kg 압도적 적재량·800V 초급속 충전·세미 보닛 안전구조·데이터 오픈 플랫폼까지 — 지금 당장 현장에 투입할 수 있는 완성형 비즈니스 EV입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 스타리아 일렉트릭 카고가 딱입니다',
-    vsCardGrid('이런 고객에게 스타리아 일렉트릭 카고가 딱입니다', [
-      {
-        icon: '',
-        title: '대용량 화물 운송이 잦은 사장님',
-        desc: '최대 900kg의 압도적 적재량. 한 번 움직일 때마다 300kg 더 싣는 차이가 하루 수익을 바꿉니다. PV5 카고(600~700kg) 대비 압도적 우위.'
-      },
-      {
-        icon: '',
-        title: '충전 대기 시간이 아까운 배송 사업자',
-        desc: '400V/800V 멀티 충전 시스템으로 초급속 충전기에서 최상의 속도를 냅니다. PV5는 400V 일반 충전만 지원. 시간이 돈인 물류 현장에서 결정적 차이.'
-      },
-      {
-        icon: '',
-        title: '운전자 안전을 최우선으로 생각하는 고객',
-        desc: '세미 보닛 디자인으로 전면 충돌 시 크럼플 존이 충격을 흡수합니다. 기존 캡오버(포터·봉고) 구조보다 운전자 생존 공간이 월등히 안전합니다.'
-      },
-      {
-        icon: '',
-        title: '물류 관제 시스템이 필요한 법인·중소물류사',
-        desc: '데이터 오픈 플랫폼으로 위치·속도·배터리 상태·문 열림 등을 API로 개방. 자체 관제 앱 연동이 가능한 B2B 최적화 차량.'
-      },
-      {
-        icon: '',
-        title: '특장·개조 차량이 필요한 사업자',
-        desc: '제작허용총중량 3,360kg으로 PV5(2,680kg) 대비 구조변경 범위가 훨씬 넓습니다. 냉동 탑차·앰뷸런스·이동 오피스 등 다양한 특장 변환 가능.'
-      },
-      {
-        icon: '',
-        title: '초기 구매 부담을 줄이고 싶은 소상공인',
-        desc: '상용 전기차 기준 국비+지자체 보조금 약 2,000만원 수준 적용 시 실구매가 2,000만원대 후반~3,000만원대 진입 가능. 디젤 대비 유지비도 대폭 절감.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 스타리아 일렉트릭 카고만의 핵심 강점 (USP)',
-    vsCardGrid('핵심 강점 (USP)', [
-      {
-        icon: '①',
-        title: '압도적인 최대 적재중량 900kg [PV5 대비 +300kg]',
-        desc: 'PV5 카고 3도어(600kg) 대비 300kg 더 실을 수 있습니다. 한 번 움직일 때마다 배송 효율이 달라지고, 그것이 곧 수익의 차이입니다. 제작허용총중량도 3,360kg으로 PV5(2,680kg)보다 커 특장 개조 범위도 훨씬 넓습니다.'
-      },
-      {
-        icon: '②',
-        title: '400V/800V 멀티 충전 시스템 [PV5는 400V만 지원]',
-        desc: '국내 모든 급속 충전 인프라에서 최적의 속도로 충전됩니다. 특히 초급속(350kW) 충전기에서 PV5 대비 충전 시간을 대폭 단축할 수 있습니다. 시간이 곧 돈인 배송 현장에서 결정적인 차이를 만들어냅니다.'
-      },
-      {
-        icon: '③',
-        title: '세미 보닛 디자인 — 운전자 안전구조 [캡오버 대비 압도적 안전]',
-        desc: '기존 포터·봉고 같은 캡오버(엔진이 좌석 아래) 구조와 달리, 전면부가 돌출된 세미 보닛 디자인으로 충돌 시 크럼플 존이 충격을 흡수합니다. 매일 도로를 달리는 배송 기사님의 생명을 지키는 구조적 안전입니다.'
-      },
-      {
-        icon: '④',
-        title: '데이터 오픈 플랫폼 — B2B 관제 연동 [PV5 미지원]',
-        desc: '차량의 위치·속도·배터리 상태·문 열림 등 주요 데이터를 API 형태로 외부 개방합니다. 물류사·특장 업체가 자체 관제 시스템이나 앱을 차량 인포테인먼트에 연동할 수 있어 기업 B2B 고객에게 독보적인 솔루션을 제공합니다.'
-      },
-      {
-        icon: '⑤',
-        title: '스마트 드라이브 레디 — 즉시 출발 [배송 효율 극대화]',
-        desc: '배송 완료 후 시동을 끄지 않고도 작업 후 즉시 출발 가능한 스마트 드라이브 레디 기능을 탑재했습니다. 다회차 배송이 많은 라스트마일 현장에서 체감 효율을 높여줍니다.'
-      },
-      {
-        icon: '⑥',
-        title: '강력한 160kW(218마력) 모터 [PV5 대비 +55마력]',
-        desc: 'PV5(120kW, 163마력) 대비 55마력 더 높은 출력. 짐을 가득 싣고도 오르막길을 거침없이 오르며, 복합 387km·도심 436km의 넉넉한 항속거리를 확보합니다(PV5 복합 377km·도심 421km).'
-      },
-      {
-        icon: '⑦',
-        title: '상용차 최고 수준 ADAS [안전 기술]',
-        desc: '전방 충돌 방지 보조·스마트 크루즈 컨트롤·차로 유지 보조 등 기존 상용 트럭에서 보기 힘들었던 고도화된 주행 안전 시스템이 기본 탑재됩니다. 장시간 운전하는 기사님의 피로도와 사고 위험을 함께 줄여줍니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 가격 및 세금·보조금 구조 비교',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> PV5는 '화물차'로 개소세 비과세라 시작가가 낮아 보입니다. 하지만 차급·배터리·출력·800V 충전 시스템이 근본적으로 다릅니다. 보조금 적용 후 실구매가와 장기 수익성을 함께 제시하세요.
-    </div>
-    ${cmpTable(
-      '','스타리아 일렉트릭 카고 3인승 모던','PV5 카고 롱레인지',
-      [
-        ['최대 적재중량','900kg (3도어)','600kg (3도어)','스타리아 +300kg '],
-        ['충전 시스템','400V/800V 멀티충전','400V급 일반 충전','스타리아 우위 '],
-        ['배터리 용량','84.0kWh','71.2kWh','스타리아 +12.8kWh '],
-        ['모터 최고출력','160kW (218마력)','120kW (163마력)','스타리아 +55마력 '],
-        ['기본 판매가','5,792만원','4,470만원','PV5 1,322만 저렴'],
-        ['차종 분류','승합차 (친환경 개소세 감면)','소형 화물차 (개소세 비과세)','분류 상이'],
-        ['상용EV 보조금 (예상)','약 2,000만원 수준','별도 확인 필요','스타리아 실구매가 경쟁력 '],
-        ['보조금 후 예상 실구매가','2,000만원대 후반~3,000만원대','별도 확인 필요','—'],
-        ['내비게이션','+105만원 (옵션)','12.9인치 기본','PV5 강점'],
-        ['SVM 옵션','테크 +125만원','모니터링 +71만원','—'],
-        ['동일사양 최종가 (내비+SVM+V2L)','6,022만원','4,579만원','PV5 1,443만 저렴']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>가격 차이를 뛰어넘는 스타리아의 가치</strong><br>
-      · 하루 배송 횟수가 같아도 300kg 더 싣는 차이가 월 수익을 바꿉니다<br>
-      · 800V 충전으로 절약하는 시간 = 추가 배송 = 추가 수익<br>
-      · 디젤 대비 연료비·소모품 절감으로 TCO(총소유비용) 대폭 절감<br>
-      · 세미 보닛 안전구조는 가격표에 없는 운전자 생명 보험입니다
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 스타리아 일렉트릭 카고 vs PV5 카고 핵심 스펙 비교',
-    cmpTable(
-      '','스타리아 일렉트릭 카고 3인승','PV5 카고 롱레인지',
-      [
-        ['전장','5,255mm','4,965mm','스타리아 +290mm '],
-        ['전폭','1,995mm','1,920mm','스타리아 +75mm '],
-        ['전고','1,990mm','1,980mm','스타리아 +10mm '],
-        ['휠베이스','3,273mm','3,100mm','스타리아 +173mm '],
-        ['최대 적재중량','900kg (3도어)','600kg (3도어)','스타리아 +300kg '],
-        ['충전 시스템','400V/800V 멀티충전','400V급 일반 충전','스타리아 우위 '],
-        ['배터리 용량','84.0kWh','71.2kWh','스타리아 +12.8kWh '],
-        ['모터 최고출력','160kW (218마력)','120kW (163마력)','스타리아 +55마력 '],
-        ['복합 주행거리','387km','377km','스타리아 +10km '],
-        ['도심 주행거리','436km','421km','스타리아 +15km '],
-        ['제작허용총중량','3,360kg','2,680kg','특장 범위 스타리아 '],
-        ['차체 안전구조','세미 보닛 (크럼플 존)','캡오버 유사 구조','운전자 안전 스타리아 '],
-        ['데이터 오픈 플랫폼','API 개방 (B2B 관제 연동)','미지원','스타리아 우위 '],
-        ['스마트 드라이브 레디','지원','미지원','스타리아 우위 '],
-        ['ADAS (안전 기술)','전방충돌방지·스마트크루즈·차로유지','HDA 기본 지원','동등 수준'],
-        ['V2L (외부 전원)','지원','지원','동등'],
-        ['이중접합 차음유리','윈드실드, 1열 도어','1열 도어','스타리아 우위 '],
-        ['내비게이션','옵션 (+105만)','12.9인치 기본','PV5 강점'],
-        ['상용EV 보조금 (예상)','약 2,000만원 수준','별도 확인 필요','스타리아 실구매가 경쟁력 ']
-      ]
-    )
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ PV5 비교 시 대응 스크립트',
-    vsQaList('PV5 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "PV5가 1,400만원이나 더 싸고 내비도 기본이던데요?"',
-        a: '사장님, 상용차는 \'돈을 벌어다 주는 차\'입니다. 스타리아는 PV5보다 짐을 300kg이나 더 실을 수 있어요. 하루에 같은 횟수를 움직여도 한 번에 더 많이 싣는 차이가 한 달, 1년 수익을 바꿉니다.\n게다가 전기차로 영업하실 때 제일 걱정되시는 게 충전 시간이죠? 스타리아는 800V 초급속 충전이라 휴게소에서 잠깐 쉬실 때 훨씬 빠르게 충전됩니다. 내비는 옵션 105만원 추가하면 되지만, 800V 충전과 900kg 적재량은 PV5에 돈 줘도 추가할 수 없습니다.'
-      },
-      {
-        q: 'Q2. "PV5는 옵션 구성도 좋고 HDA도 기본이던데, 스타리아가 실용적인가요?"',
-        a: 'PV5 옵션 구성이 좋게 나온 건 맞습니다. 하지만 스타리아도 내비플러스 옵션 하나면 HDA까지 완벽하게 들어가요. 옵션은 돈 주면 추가할 수 있지만, 차의 크기·900kg 적재·800V 충전·세미 보닛 안전구조는 PV5에 추가할 수 없는 스타리아만의 강점입니다.'
-      },
-      {
-        q: 'Q3. "PV5가 미래형 PBV라고 하던데, 더 첨단 아닌가요?"',
-        a: 'PV5는 분명 미래 지향적인 모듈 교체 개념이 인상적입니다. 그런데 \'지금 당장 배송 현장에서 돈을 벌어야 하는 사장님\'에게는 완성도 높은 즉시 투입 가능한 차가 더 중요합니다.\n스타리아에는 차량 데이터를 외부 관제 시스템에 API로 연동할 수 있는 데이터 오픈 플랫폼이 있어요. 여러 대를 운영하시는 사장님이라면 실시간으로 위치·배터리·배송 상황을 한눈에 관리하실 수 있습니다. 이건 지금 바로 쓸 수 있는 현실적인 기술입니다.'
-      },
-      {
-        q: 'Q4. "전기 화물차가 너무 비싸지 않나요? 디젤이 더 낫지 않을까요?"',
-        a: '처음 가격표만 보시면 그렇게 느끼실 수 있어요. 그런데 상용 전기차는 국비+지자체 보조금을 합하면 약 2,000만원 수준을 받을 수 있어서 실구매가가 2,000만원대 후반까지 내려옵니다. 거기에 연료비·엔진오일 등 유지비가 디젤 대비 훨씬 저렴하니, 3~4년 운행하시면 총 비용(TCO) 기준으로 전기차가 훨씬 유리합니다.'
-      },
-      {
-        q: 'Q5. "충돌 안전성은 다 거기서 거기 아닌가요?"',
-        a: '기존 포터·봉고는 엔진이 운전석 아래 있는 \'캡오버\' 구조라서 전면 충돌 시 충격이 그대로 운전자에게 전달됩니다. 스타리아는 전면부가 앞으로 튀어나온 \'세미 보닛\' 구조라 충돌 시 전면 크럼플 존이 충격을 먼저 흡수해요. 매일 도로를 달리시는 사장님 신체를 지키는 구조적인 안전의 차이입니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "PV5랑 같은 급의 차량입니다" → 차급·배터리·출력·충전 방식이 근본적으로 다름. 동급 비교 금지',
-      '· "보조금은 다 비슷합니다" → 차종 분류(승합차 vs 화물차)에 따라 보조금 구조 다르므로 최종 지역 보조금 확인 후 안내해주세요.',
-      '· "내비가 기본이라 PV5가 낫습니다" → 옵션 추가로 해결 가능한 부분으로 핵심 경쟁력인 적재량·충전 시스템으로 집중해주세요.'
-    ])
-  )}
-
-</div>
-`;
-
-
-PANELS.staria_lounge_vs = `
-${hdr('linear-gradient(135deg,var(--accent-warn),#C62828)','','스타리아 투어러 EV vs 기아 PV5 패신저','현대 스타리아 투어러가 더 완성도 높은 선택입니다',['VS 가이드','EV'])}
-
-<div class="content-body">
-
-  ${vsOneliner(
-    ['PV5가 5인승 중심의 차세대 PBV라면, <span style="color:var(--hyundai-blue);font-weight:800;">스타리아 투어러는 11인승의 대체 불가 탑승 공간·800V 초급속 충전·보조금 후 압도적 1인당 좌석 가성비 — 셔틀·레저·법인 수송의 유일한 전기 밴 솔루션입니다.']
-  )}
-
-  ${vsAcc('vs-acc-target','','① 이런 고객에게 스타리아 투어러가 딱입니다',
-    vsCardGrid('이런 고객에게 스타리아 투어러가 딱입니다', [
-      {
-        icon: '‍‍‍',
-        title: '기업 임직원 셔틀·단체 수송 담당자',
-        desc: '11인승으로 한 번에 11명 이동. 5인승 PV5로는 같은 인원을 3대에 나눠야 합니다. 유지비·충전비·관리비 모두 1대로 해결.'
-      },
-      {
-        icon: '',
-        title: '관광·레저 미니버스 대체 고객',
-        desc: '2~4열 풀 플랫 폴딩, 파노라믹 윈도우, 선루프까지. 단순 이동이 아닌 여행 감성을 담은 다인승 EV.'
-      },
-      {
-        icon: '',
-        title: '충전 대기 시간을 최소화하고 싶은 운영자',
-        desc: '11명을 태우고 장거리 이동 시 충전소 대기는 승객 불편으로 직결됩니다. 800V 초급속 충전으로 대기 시간 최소화.'
-      },
-      {
-        icon: '',
-        title: '1인당 수송 비용을 절감하고 싶은 고객',
-        desc: '보조금 적용 후 11인승 기준 1인당 좌석 비용이 PV5(5인승)의 절반 수준. 다인원 수송 운영에서 압도적인 경제성.'
-      },
-      {
-        icon: '',
-        title: '물류·셔틀 통합 관제가 필요한 법인',
-        desc: '데이터 오픈 플랫폼으로 셔틀 위치·배터리·탑승 현황 등을 API로 실시간 관제 시스템과 연동 가능. B2B 운영 최적화.'
-      },
-      {
-        icon: '',
-        title: '많은 승객의 안전이 최우선인 운영자',
-        desc: '세미 보닛 구조로 전면 충돌 시 크럼플 존이 충격 흡수. 전방충돌방지·스마트크루즈·차로유지 ADAS 기본 탑재. 승객 안전 최상위.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-usp','','② 스타리아 투어러만의 핵심 강점 (USP)',
-    vsCardGrid('핵심 강점 (USP)', [
-      {
-        icon: '①',
-        title: '대체 불가능한 11인승 탑승 공간 [전기 밴 유일]',
-        desc: '학원·기업 셔틀·대가족 이동 등 6인 이상이 타야 하는 상황에서 PV5(5인승)는 선택지가 될 수 없습니다. 국내 유일의 11인승 전기 밴으로 경쟁 차량이 없는 영역을 선접해주세요.'
-      },
-      {
-        icon: '②',
-        title: '400V/800V 멀티 충전 — 다인승에 필수 [PV5는 400V만 지원]',
-        desc: '여러 사람을 태우고 이동할 때 충전소 장시간 대기는 승객 불편으로 직결됩니다. 800V 초급속 충전으로 대기 시간을 최소화하여 서비스 품질을 높입니다.'
-      },
-      {
-        icon: '③',
-        title: '세미 보닛 구조 — 승객과 운전자 모두 안전 [캡오버 대비 압도적 안전]',
-        desc: '전면부 크럼플 존이 충돌 충격을 흡수하는 세미 보닛 디자인으로 운전자와 승객 모두의 생존 공간을 보호합니다. 다수의 승객을 책임지는 셔틀 차량에는 이런 구조가 필수적입니다.'
-      },
-      {
-        icon: '④',
-        title: '데이터 오픈 플랫폼 — 셔틀 관제 연동 [B2B 최적화]',
-        desc: '차량의 위치·배터리 상태·탑승 현황 등을 API로 개방하여 기업 셔틀 관제 시스템·학원 차량 앱과 실시간 연동이 가능합니다. PV5에는 없는 B2B 운영 솔루션입니다.'
-      },
-      {
-        icon: '⑤',
-        title: '풀 플랫 폴딩 + 파노라믹 윈도우 [레저·차박 감성]',
-        desc: '2~4열 모두 풀 플랫 폴딩으로 광활한 실내 공간이 완성됩니다. 후석 파노라믹 윈도우의 개방감과 함께 차박·단체 여행·레저 활동에 최적화. PV5는 이런 레저 감성 사양이 없습니다.'
-      },
-      {
-        icon: '⑥',
-        title: '보조금 후 압도적인 1인당 좌석 가성비 [PV5 대비 절반 수준]',
-        desc: '보조금 적용 후 실구매가 기준, 11인승으로 나누면 1인당 좌석 비용이 PV5(5인승)의 절반 수준으로 낮아집니다. 수송이 목적인 차량에서 이것이 진짜 가성비입니다.'
-      },
-      {
-        icon: '⑦',
-        title: '상용차 최고 수준 ADAS 기본 탑재 [다인승 안전의 완성]',
-        desc: '전방 충돌 방지 보조·스마트 크루즈 컨트롤·차로 유지 보조 등 승객을 태우는 다인승 차량에 필수적인 안전 기술이 기본 탑재됩니다. 장거리 셔틀 운행 시 운전자 피로 저감에도 효과적입니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-price','','③ 보조금 후 1인당 좌석 비용 비교 (가성비의 재발견)',
-    `<div class="tip-box" style="margin-bottom:12px;">
-      <strong>핵심 메시지:</strong> 총액 비교가 아닌 '1인당 좌석 비용'으로 프레이밍하세요. 보조금 적용 후 11인승으로 나누면 PV5(5인승)의 절반 수준입니다.
-    </div>
-    ${cmpTable(
-      '','스타리아 투어러 11인승','PV5 패신저 플러스 (5인승)',
-      [
-        ['전장','5,255mm','4,965mm','스타리아 +290mm '],
-        ['전폭','1,995mm','1,920mm','스타리아 +75mm '],
-        ['전고','1,990mm','1,980mm','스타리아 +10mm '],
-        ['휠베이스','3,273mm','3,100mm','스타리아 +173mm '],
-        ['기본 판매가 (세제혜택 후)','약 5,800만원대 (예상)','4,820만원','—'],
-        ['상용EV 보조금 (예상)','약 2,000만원 수준','별도 확인 필요','스타리아 실구매가 경쟁력 '],
-        ['보조금 후 예상 실구매가','약 3,800만원대','별도 확인 필요','—'],
-        ['탑승 인원','11명','5명','스타리아 압도 '],
-        ['보조금 후 1인당 좌석 비용','약 345만원 / 1인','약 964만원 / 1인','스타리아 약 65% 저렴 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;">
-      <strong>1인당 가성비 프레이밍 포인트</strong><br>
-      · 차량 총액은 스타리아가 높지만, 수송 목적의 차량은 1인당 비용으로 비교해야 합니다<br>
-      · 보조금 후 기준 스타리아 투어러의 1인당 좌석 비용이 PV5보다 약 65% 저렴<br>
-      · 800V 충전으로 절약하는 대기 시간 = 추가 운행 횟수 = 추가 수익<br>
-      · ※ 보조금은 지역별로 다르므로 반드시 지자체 기준 보조금 확인 후 안내해주세요.
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-spec','','④ 스타리아 투어러 vs PV5 패신저 핵심 스펙 비교',
-    `${cmpTable(
-      '','스타리아 투어러 11인승','PV5 패신저 (5인승)',
-      [
-        ['전장','5,255mm','4,965mm','스타리아 +290mm '],
-        ['전폭','1,995mm','1,920mm','스타리아 +75mm '],
-        ['전고','1,990mm','1,980mm','스타리아 +10mm '],
-        ['휠베이스','3,273mm','3,100mm','스타리아 +173mm '],
-        ['최대 탑승인원','11명 (4열 시트)','5명 (2열 시트)','스타리아 압도 '],
-        ['충전 시스템','400V/800V 멀티충전','400V급 일반 충전','스타리아 우위 '],
-        ['배터리 용량','84.0kWh','71.2kWh','스타리아 +12.8kWh '],
-        ['모터 최고출력','160kW (218마력)','120kW (163마력)','스타리아 +55마력 '],
-        ['복합 주행거리','387km','377km','스타리아 +10km '],
-        ['도심 주행거리','436km','421km','스타리아 +15km '],
-        ['차체 안전구조','세미 보닛 (크럼플 존)','캡오버 유사 구조','스타리아 운전자 안전 '],
-        ['시트 활용성','2~4열 풀 플랫 폴딩','2열 폴드&다이브','스타리아 우위 '],
-        ['파노라믹 윈도우','후석 파노라믹','일반 윈도우','스타리아 우위 '],
-        ['데이터 오픈 플랫폼','API 개방 (관제 연동)','미지원','스타리아 우위 '],
-        ['ADAS (안전 기술)','전방충돌방지·스마트크루즈·차로유지','HDA 기본 지원','동등 수준'],
-        ['V2L (외부 전원)','지원','지원','동등'],
-        ['최고속도','110km/h 제한 ','제한 없음','PV5 강점'],
-        ['내비게이션','옵션','기본','PV5 강점'],
-        ['1인당 좌석 비용 (보조금 후)','약 345만원','약 964만원','스타리아 약 65% 저렴 ']
-      ]
-    )}
-    <div class="tip-box" style="margin:12px 0;border-left:4px solid var(--accent-warn);">
-      <strong>필수 안내사항:</strong> 스타리아 투어러 일렉트릭 11인승은 최고속도 110km/h로 제한됩니다. 고속도로 운행이 많은 고객에게 반드시 사전 고지 필요. 속도 제한 없는 다인승이 필요하다면 스타리아 라운지 일렉트릭(7·9인승)을 대안으로 제시하세요.
-    </div>`
-  )}
-
-  ${vsAcc('vs-acc-script','','⑤ PV5 비교 시 대응 스크립트',
-    vsQaList('PV5 비교 시 대응 스크립트', [
-      {
-        q: 'Q1. "PV5 패신저가 가격도 싸고 옵션도 좋던데요?"',
-        a: '고객님, PV5는 5인승이고 스타리아 투어러는 11인승입니다. 차급 자체가 다릅니다. 5명 이상 태우실 일이 한 번이라도 있다면 PV5는 아예 운행이 불가능해요.\n보조금 받으신 후 11명으로 나누면 1인당 좌석 비용이 PV5의 절반도 안 됩니다. 수송이 목적인 차량에서 이것이 진짜 가성비입니다.'
-      },
-      {
-        q: 'Q2. "스타리아 11인승은 110km/h 속도 제한이 있어서 답답할 것 같아요."',
-        a: '11인승 이상 승합차에 적용되는 법정 안전 속도입니다. 많은 분을 태우는 만큼 안전이 최우선이기 때문인데요. 만약 속도 제한 없이 더 고급스럽게 다인승을 원하신다면 스타리아 라운지 일렉트릭(7·9인승)이 훌륭한 대안입니다. 속도 제한 없이 승용차처럼 편안하게 타실 수 있습니다.'
-      },
-      {
-        q: 'Q3. "PV5 도너 모델 사서 7인승으로 개조하면 되지 않나요?"',
-        a: 'PV5 도너 모델은 일반 고객님이 구매하실 수 없는 \'미완성 자동차\'입니다. \'자동차제작자\'로 등록된 특장 사업자만 구매해 개조 후 인증을 받아야 해요. 일반적인 다인승 차량이 필요하시다면 완성차로 나오는 스타리아 투어러 또는 라운지를 구매하시는 것이 맞습니다.'
-      },
-      {
-        q: 'Q4. "여러 대 운영하는데 관리가 어렵지 않을까요?"',
-        a: '오히려 스타리아가 더 유리합니다. 스타리아에는 데이터 오픈 플랫폼이 있어서 차량의 위치·배터리·운행 현황을 실시간으로 관제 시스템과 연동할 수 있습니다. 여러 대를 운영하실수록 이 기능이 더 큰 힘을 발휘해요. PV5에는 없는 기능입니다.'
-      },
-      {
-        q: 'Q5. "전기차 충전이 오래 걸려서 셔틀 운영에 불편하지 않을까요?"',
-        a: '좋은 질문입니다. 스타리아는 800V 초급속 충전 시스템이라 초급속 충전기에서 매우 빠르게 충전됩니다. PV5는 400V 일반 충전만 지원해서 같은 충전기에서도 더 오래 걸려요. 셔틀 차량일수록 충전 속도가 곧 운행 가용 시간이라 스타리아가 훨씬 유리합니다.'
-      }
-    ])
-  )}
-
-  ${vsAcc('vs-acc-warn','','유의해야 할 설명',
-    tipBoxRaw('유의사항', [
-      '· "PV5랑 비교되는 차입니다" → 제원 차이도 크며, 5인승 vs 11인승은 활용 용도 자체가 달라요. 비교 불가입니다.',
-      '· "110km/h 제한은 별거 아닙니다" → 고속도로 운행 많은 고객에게 중요한 정보. 반드시 사전 안내 후 라운지 대안 제시해주세요.',
-      '· "보조금이 확실히 2,000만원 나옵니다" → 지역별·시기별 보조금이 다름. 반드시 \'약 ~수준\' 표현 사용 후 확인되는대로 정확히 안내해주세요.'
-    ])
-  )}
-
-</div>
-`;
-
-
-/* ════════════════════════════════
    영업용 패널
 ════════════════════════════════ */
 PANELS.commercial = (()=>{
@@ -22611,44 +20461,6 @@ PANELS.commercial = (()=>{
         ['stariamobility','스타리아 모빌'],
       ])
     + dt23 + grandeur + ioniq5 + ioniq6 + konaev + stariaev + stariamobility;
-})();
-
-
-/* ════════════════════════════════
-   경쟁사 정보 허브 — 차종별 vs탭을 한 곳에 모음
-════════════════════════════════ */
-PANELS.vscenter = (function(){
-  function vsCard(id, base, rival, color){
-    return '<button type="button" onclick="showCar(\'' + id + '\',\'' + base + ' vs. ' + rival + '\')" style="'
-      + 'display:flex;align-items:center;gap:12px;width:100%;text-align:left;'
-      + 'background:#fff;border:none;border-radius: var(--r-md);padding:14px;margin-bottom:9px;'
-      + 'box-shadow:0 2px 10px rgba(0,0,0,0.04);border-left:4px solid ' + color + ';'
-      + 'cursor:pointer;font-family:\'Noto Sans KR\',sans-serif;-webkit-tap-highlight-color:transparent;'
-      + '">'
-      + '<div style="flex:1;min-width:0;">'
-      +   '<div style="font-size:15px;font-weight:800;color:var(--tx-primary);margin-bottom:2px;">' + base + ' <span style="color:var(--tx-muted);font-weight:700;">vs.</span> ' + rival + '</div>'
-      +   '<div style="font-size:13px;color:var(--tx-muted);font-weight:500;">탭하여 비교표 보기</div>'
-      + '</div>'
-      + '<span style="font-size:15px;color:var(--tx-muted);flex-shrink:0;">→</span>'
-      + '</button>';
-  }
-  function groupLabel(text){
-    return '<div class="sl" style="margin-top:22px;"><span class="sl-num" style="background:var(--hyundai-blue);">•</span>' + text + '</div>';
-  }
-  return hdr('linear-gradient(135deg,#37474F,#546E7A)','','경쟁사 비교 정보','우리 차와 경쟁 모델을 나란히 비교해서 보여드립니다',['비교','가이드'])
-    + groupLabel('현대 승용 · SUV')
-    + vsCard('konaice_vs','코나','셀토스','var(--hyundai-blue)')
-    + vsCard('tucson_vs','투싼','스포티지','var(--hyundai-blue)')
-    + vsCard('santafe_vs','싼타페','쏘렌토','var(--hyundai-blue)')
-    + vsCard('palisade_vs','팰리세이드','필랑트','var(--hyundai-blue)')
-    + groupLabel('현대 EV')
-    + vsCard('konaev_vs','코나 일렉트릭','EV3','var(--hyundai-azure)')
-    + vsCard('ioniq5_vs_ev5','아이오닉5','EV5','var(--hyundai-azure)')
-    + vsCard('ioniq5_vs_ev6','아이오닉5','EV6','var(--hyundai-azure)')
-    + vsCard('ioniq5_vs_modely','아이오닉5','테슬라 모델Y','var(--hyundai-azure)')
-    + vsCard('ioniq9_vs','아이오닉9','EV9','var(--hyundai-azure)')
-    + vsCard('staria_vs','스타리아 일렉트릭','PV5 카고','var(--hyundai-azure)')
-    + vsCard('staria_lounge_vs','스타리아 일렉트릭','PV5 패신저','var(--hyundai-azure)');
 })();
 
 /* ════════════════════════════════
@@ -23189,48 +21001,6 @@ if ('serviceWorker' in navigator) {
   }
 })();
 </script>
-
-<!-- 경쟁사 정보 전용 비밀번호 게이트 -->
-<div id="vs-gate-modal" style="
-  display:none; position:fixed; inset:0; z-index:9998;
-  background:rgba(0,0,0,0.45);
-  align-items:center; justify-content:center; padding:20px;
-">
-  <div style="
-    background:var(--bg-white); border-radius: var(--r-xl); width:100%; max-width:340px;
-    padding:24px 20px; box-shadow:0 12px 40px rgba(0,0,0,0.2);
-  ">
-    <div style="font-size:16px; font-weight:800; color:var(--tx-primary); margin-bottom:6px;">경쟁사 정보는 보호되어 있습니다</div>
-    <div style="font-size:14px; color:var(--tx-muted); font-weight:500; margin-bottom:16px; line-height:1.5;">배포된 비밀번호를 입력하시면 확인하실 수 있습니다.</div>
-    <input
-      type="password"
-      id="vs-gate-pw"
-      placeholder="비밀번호를 입력하세요"
-      maxlength="20" autocomplete="off" spellcheck="false"
-      onkeydown="vsGateKey(event)"
-      style="
-        width:100%; height:48px; border:2px solid rgba(0,0,0,0.08); border-radius: var(--r-md);
-        background:var(--bg-subtle); font-family:'Noto Sans KR',sans-serif;
-        font-size:16px; font-weight:700; color:var(--tx-primary);
-        letter-spacing:3px; text-align:center; outline:none; -webkit-appearance:none;
-        margin-bottom:8px;
-      "
-    >
-    <div id="vs-gate-error" style="display:none; font-size:13px; color:var(--accent-warn); font-weight:600; margin-bottom:8px;">비밀번호가 올바르지 않습니다.</div>
-    <div style="display:flex; gap:8px; margin-top:8px;">
-      <button type="button" onclick="closeVsGate()" style="
-        flex:1; height:48px; border:none; border-radius: var(--r-md);
-        background:var(--bg-subtle); color:var(--tx-secondary); font-weight:700; font-size:14.5px;
-        cursor:pointer; font-family:'Noto Sans KR',sans-serif;
-      ">닫기</button>
-      <button type="button" onclick="submitVsGate()" style="
-        flex:2; height:48px; border:none; border-radius: var(--r-md);
-        background:var(--hyundai-blue); color:#fff; font-weight:800; font-size:14.5px;
-        cursor:pointer; font-family:'Noto Sans KR',sans-serif;
-      ">확인</button>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
